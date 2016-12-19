@@ -1,0 +1,1444 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/22/2014 4:35:51 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="CUNHA-PC"
+  DTS:CreatorName="CUNHA-PC\Cunha"
+  DTS:DTSID="{2A73EBD1-2E61-4E12-9A32-DC0F9CCF4D9D}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.700.219"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="DadosDaSituacaoDosAlunos"
+  DTS:PackageType="5"
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{97EF8845-6367-456A-9C72-331BC09346C6}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D6FEDB09-9642-468D-9004-D563EE3AACDF}"
+      DTS:ObjectName="CUNHA-PC\SQLSERVER2014.DDSEducacional">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=CUNHA-PC\SQLSERVER2014;Initial Catalog=DDSEducacional;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.sistema_academico]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{65E26309-C6AF-48EC-8507-82C1B6CF1795}"
+      DTS:ObjectName="CUNHA-PC\SQLSERVER2014.sistema_academico">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=CUNHA-PC\SQLSERVER2014;Initial Catalog=sistema_academico;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Copiando dados do NDS para o DDS"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarefa Fluxo de Dados"
+      DTS:DTSID="{6558156B-3B71-435C-BA98-92ABF95CA601}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Copiando dados do NDS para o DDS"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Copiando dados do NDS para o DDS\DDS FatoAlunoConDesEva"
+              componentClassID="Microsoft.SQLServerDestination"
+              contactInfo="Destino do SQL Server;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;5"
+              description="Destino do SQL Server"
+              name="DDS FatoAlunoConDesEva"
+              version="5">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.String"
+                  description="O nome do objeto de banco de dados no qual copiar dados."
+                  expressionType="Notify"
+                  name="BulkInsertTableName">[dbo].[dimSituacaoAluno]</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica que qualquer restrição no objeto de destino será verificada durante a operação de cópia de dados. Corresponde a opção de inserção em massa CHECK_CONSTRAINTS."
+                  name="BulkInsertCheckConstraints">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o número da primeira linha a ser copiada. Corresponde à opção de inserção em massa FIRSTROW."
+                  expressionType="Notify"
+                  name="BulkInsertFirstRow">-1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica que qualquer disparador de inserção definido no objeto de destino será executado durante a cópia de dados. Corresponde à opção de inserção em massa FIRE_TRIGGERS."
+                  name="BulkInsertFireTriggers">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Corresponde à opção de inserção em massa KEEPIDENTITY."
+                  name="BulkInsertKeepIdentity">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as colunas que contêm null terão null copiado no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável somente se o carregamento rápido estiver ativado."
+                  name="BulkInsertKeepNulls">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o número da última linha a ser copiada. Corresponde à opção de inserção em massa LASTROW."
+                  expressionType="Notify"
+                  name="BulkInsertLastRow">-1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o número máximo de erros de sintaxe e erros de compilação que podem ocorrer antes do cancelamento da operação de cópia de dados. Cada linha que não puder ser copiada será ignorada e contada como um erro. Corresponde à opção de inserção em massa MAXERRORS."
+                  name="BulkInsertMaxErrors">-1</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica como os dados a serem copiados estão classificados. Corresponde à opção de inserção em massa ORDER."
+                  expressionType="Notify"
+                  name="BulkInsertOrder"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica que um bloqueio de nível de tabela é adquirido para a duração da operação de cópia de dados. Corresponde à opção de inserção em massa TABLOCK."
+                  name="BulkInsertTablock">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a quantidade de tempo em segundos que o adaptador de Destino SQL aguardará antes de encerrar se não houver dados disponíveis para inserção. Um valor de tempo limite de 0 significa que o adaptador de Destino SQL não terá tempo limite."
+                  expressionType="Notify"
+                  name="Timeout">30</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção dos dados."
+                  name="MaxInsertCommitSize">0</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Copiando dados do NDS para o DDS\DDS FatoAlunoConDesEva.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+                  connectionManagerRefId="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Copiando dados do NDS para o DDS\DDS FatoAlunoConDesEva.Inputs[Entrada de Destino do SQL Server]"
+                  hasSideEffects="true"
+                  name="Entrada de Destino do SQL Server">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\DDS FatoAlunoConDesEva.Inputs[Entrada de Destino do SQL Server].Columns[DESC_INSTITUICAO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DESC_INSTITUICAO"
+                      externalMetadataColumnId="Package\Copiando dados do NDS para o DDS\DDS FatoAlunoConDesEva.Inputs[Entrada de Destino do SQL Server].ExternalColumns[DESC_INSTITUICAO]"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[DESC_INSTITUICAO]" />
+                    <inputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\DDS FatoAlunoConDesEva.Inputs[Entrada de Destino do SQL Server].Columns[SIGLA_CURSO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="SIGLA_CURSO"
+                      externalMetadataColumnId="Package\Copiando dados do NDS para o DDS\DDS FatoAlunoConDesEva.Inputs[Entrada de Destino do SQL Server].ExternalColumns[SIGLA_CURSO]"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[SIGLA_CURSO]" />
+                    <inputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\DDS FatoAlunoConDesEva.Inputs[Entrada de Destino do SQL Server].Columns[ANO_LET]"
+                      cachedDataType="i2"
+                      cachedName="ANO_LET"
+                      externalMetadataColumnId="Package\Copiando dados do NDS para o DDS\DDS FatoAlunoConDesEva.Inputs[Entrada de Destino do SQL Server].ExternalColumns[ANO_LET]"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[ANO_LET]" />
+                    <inputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\DDS FatoAlunoConDesEva.Inputs[Entrada de Destino do SQL Server].Columns[QTD_ALUNO]"
+                      cachedDataType="i4"
+                      cachedName="QTD_ALUNO"
+                      externalMetadataColumnId="Package\Copiando dados do NDS para o DDS\DDS FatoAlunoConDesEva.Inputs[Entrada de Destino do SQL Server].ExternalColumns[QTD_ALUNO]"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[QTD_ALUNO]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Copiando dados do NDS para o DDS\DDS FatoAlunoConDesEva.Inputs[Entrada de Destino do SQL Server].ExternalColumns[DESC_INSTITUICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DESC_INSTITUICAO" />
+                    <externalMetadataColumn
+                      refId="Package\Copiando dados do NDS para o DDS\DDS FatoAlunoConDesEva.Inputs[Entrada de Destino do SQL Server].ExternalColumns[SIGLA_CURSO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="SIGLA_CURSO" />
+                    <externalMetadataColumn
+                      refId="Package\Copiando dados do NDS para o DDS\DDS FatoAlunoConDesEva.Inputs[Entrada de Destino do SQL Server].ExternalColumns[ANO_LET]"
+                      dataType="i2"
+                      name="ANO_LET" />
+                    <externalMetadataColumn
+                      refId="Package\Copiando dados do NDS para o DDS\DDS FatoAlunoConDesEva.Inputs[Entrada de Destino do SQL Server].ExternalColumns[QTD_ALUNO]"
+                      dataType="i4"
+                      name="QTD_ALUNO" />
+                    <externalMetadataColumn
+                      refId="Package\Copiando dados do NDS para o DDS\DDS FatoAlunoConDesEva.Inputs[Entrada de Destino do SQL Server].ExternalColumns[SITUACAO_Da_MATRICULA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="SITUACAO_Da_MATRICULA" />
+                    <externalMetadataColumn
+                      refId="Package\Copiando dados do NDS para o DDS\DDS FatoAlunoConDesEva.Inputs[Entrada de Destino do SQL Server].ExternalColumns[DATA_INSERCAO]"
+                      dataType="dbDate"
+                      name="DATA_INSERCAO" />
+                    <externalMetadataColumn
+                      refId="Package\Copiando dados do NDS para o DDS\DDS FatoAlunoConDesEva.Inputs[Entrada de Destino do SQL Server].ExternalColumns[DATA_ATUALIZACAO]"
+                      dataType="dbDate"
+                      name="DATA_ATUALIZACAO" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+              description="Origem OLE DB"
+              name="Sistema Academico AlunosConcluidos"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[CA_TOTAL_ALUNOS_CONCLUIDOS]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="A variável que contém o comando SQL a ser executado."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.sistema_academico]"
+                  connectionManagerRefId="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.sistema_academico]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Origem OLE DB]"
+                  name="Saída de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Origem OLE DB].Columns[DESC_INSTITUICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Origem OLE DB].ExternalColumns[DESC_INSTITUICAO]"
+                      length="50"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Origem OLE DB].Columns[DESC_INSTITUICAO]"
+                      name="DESC_INSTITUICAO"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Origem OLE DB].Columns[SIGLA_CURSO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Origem OLE DB].ExternalColumns[SIGLA_CURSO]"
+                      length="15"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Origem OLE DB].Columns[SIGLA_CURSO]"
+                      name="SIGLA_CURSO"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Origem OLE DB].Columns[Situacao_Da_Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Origem OLE DB].ExternalColumns[Situacao_Da_Matricula]"
+                      length="100"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Origem OLE DB].Columns[Situacao_Da_Matricula]"
+                      name="Situacao_Da_Matricula"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Origem OLE DB].Columns[ANO_LET]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Origem OLE DB].ExternalColumns[ANO_LET]"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Origem OLE DB].Columns[ANO_LET]"
+                      name="ANO_LET"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Origem OLE DB].Columns[PERIODO_LET]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Origem OLE DB].ExternalColumns[PERIODO_LET]"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Origem OLE DB].Columns[PERIODO_LET]"
+                      name="PERIODO_LET"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Origem OLE DB].Columns[QTD_ALUNO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Origem OLE DB].ExternalColumns[QTD_ALUNO]"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Origem OLE DB].Columns[QTD_ALUNO]"
+                      name="QTD_ALUNO"
+                      truncationRowDisposition="IgnoreFailure" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Origem OLE DB].ExternalColumns[DESC_INSTITUICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DESC_INSTITUICAO" />
+                    <externalMetadataColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Origem OLE DB].ExternalColumns[SIGLA_CURSO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="SIGLA_CURSO" />
+                    <externalMetadataColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Origem OLE DB].ExternalColumns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="273"
+                      name="Desc_Curso" />
+                    <externalMetadataColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Origem OLE DB].ExternalColumns[Situacao_Da_Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Situacao_Da_Matricula" />
+                    <externalMetadataColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Origem OLE DB].ExternalColumns[ANO_LET]"
+                      dataType="i2"
+                      name="ANO_LET" />
+                    <externalMetadataColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Origem OLE DB].ExternalColumns[PERIODO_LET]"
+                      dataType="ui1"
+                      name="PERIODO_LET" />
+                    <externalMetadataColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Origem OLE DB].ExternalColumns[QTD_ALUNO]"
+                      dataType="i4"
+                      name="QTD_ALUNO" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Erro de Origem OLE DB]"
+                  isErrorOut="true"
+                  name="Saída de Erro de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Erro de Origem OLE DB].Columns[DESC_INSTITUICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Erro de Origem OLE DB].Columns[DESC_INSTITUICAO]"
+                      name="DESC_INSTITUICAO" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Erro de Origem OLE DB].Columns[SIGLA_CURSO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Erro de Origem OLE DB].Columns[SIGLA_CURSO]"
+                      name="SIGLA_CURSO" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Erro de Origem OLE DB].Columns[Situacao_Da_Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Erro de Origem OLE DB].Columns[Situacao_Da_Matricula]"
+                      name="Situacao_Da_Matricula" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Erro de Origem OLE DB].Columns[ANO_LET]"
+                      dataType="i2"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Erro de Origem OLE DB].Columns[ANO_LET]"
+                      name="ANO_LET" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Erro de Origem OLE DB].Columns[PERIODO_LET]"
+                      dataType="ui1"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Erro de Origem OLE DB].Columns[PERIODO_LET]"
+                      name="PERIODO_LET" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Erro de Origem OLE DB].Columns[QTD_ALUNO]"
+                      dataType="i4"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Erro de Origem OLE DB].Columns[QTD_ALUNO]"
+                      name="QTD_ALUNO" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+              description="Origem OLE DB"
+              name="Sistema Academico AlunosDesligados"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[CA_TOTAL_ALUNOS_DESLIGADOS]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="A variável que contém o comando SQL a ser executado."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.sistema_academico]"
+                  connectionManagerRefId="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.sistema_academico]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Origem OLE DB]"
+                  name="Saída de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Origem OLE DB].Columns[DESC_INSTITUICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Origem OLE DB].ExternalColumns[DESC_INSTITUICAO]"
+                      length="50"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Origem OLE DB].Columns[DESC_INSTITUICAO]"
+                      name="DESC_INSTITUICAO"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Origem OLE DB].Columns[SIGLA_CURSO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Origem OLE DB].ExternalColumns[SIGLA_CURSO]"
+                      length="15"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Origem OLE DB].Columns[SIGLA_CURSO]"
+                      name="SIGLA_CURSO"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Origem OLE DB].Columns[Situacao_Da_Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Origem OLE DB].ExternalColumns[Situacao_Da_Matricula]"
+                      length="100"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Origem OLE DB].Columns[Situacao_Da_Matricula]"
+                      name="Situacao_Da_Matricula"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Origem OLE DB].Columns[ANO_LET]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Origem OLE DB].ExternalColumns[ANO_LET]"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Origem OLE DB].Columns[ANO_LET]"
+                      name="ANO_LET"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Origem OLE DB].Columns[PERIODO_LET]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Origem OLE DB].ExternalColumns[PERIODO_LET]"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Origem OLE DB].Columns[PERIODO_LET]"
+                      name="PERIODO_LET"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Origem OLE DB].Columns[QTD_ALUNO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Origem OLE DB].ExternalColumns[QTD_ALUNO]"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Origem OLE DB].Columns[QTD_ALUNO]"
+                      name="QTD_ALUNO"
+                      truncationRowDisposition="IgnoreFailure" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Origem OLE DB].ExternalColumns[DESC_INSTITUICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DESC_INSTITUICAO" />
+                    <externalMetadataColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Origem OLE DB].ExternalColumns[SIGLA_CURSO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="SIGLA_CURSO" />
+                    <externalMetadataColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Origem OLE DB].ExternalColumns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="273"
+                      name="Desc_Curso" />
+                    <externalMetadataColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Origem OLE DB].ExternalColumns[Situacao_Da_Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Situacao_Da_Matricula" />
+                    <externalMetadataColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Origem OLE DB].ExternalColumns[ANO_LET]"
+                      dataType="i2"
+                      name="ANO_LET" />
+                    <externalMetadataColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Origem OLE DB].ExternalColumns[PERIODO_LET]"
+                      dataType="ui1"
+                      name="PERIODO_LET" />
+                    <externalMetadataColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Origem OLE DB].ExternalColumns[QTD_ALUNO]"
+                      dataType="i4"
+                      name="QTD_ALUNO" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Erro de Origem OLE DB]"
+                  isErrorOut="true"
+                  name="Saída de Erro de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Erro de Origem OLE DB].Columns[DESC_INSTITUICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Erro de Origem OLE DB].Columns[DESC_INSTITUICAO]"
+                      name="DESC_INSTITUICAO" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Erro de Origem OLE DB].Columns[SIGLA_CURSO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Erro de Origem OLE DB].Columns[SIGLA_CURSO]"
+                      name="SIGLA_CURSO" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Erro de Origem OLE DB].Columns[Situacao_Da_Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Erro de Origem OLE DB].Columns[Situacao_Da_Matricula]"
+                      name="Situacao_Da_Matricula" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Erro de Origem OLE DB].Columns[ANO_LET]"
+                      dataType="i2"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Erro de Origem OLE DB].Columns[ANO_LET]"
+                      name="ANO_LET" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Erro de Origem OLE DB].Columns[PERIODO_LET]"
+                      dataType="ui1"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Erro de Origem OLE DB].Columns[PERIODO_LET]"
+                      name="PERIODO_LET" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Erro de Origem OLE DB].Columns[QTD_ALUNO]"
+                      dataType="i4"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Erro de Origem OLE DB].Columns[QTD_ALUNO]"
+                      name="QTD_ALUNO" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+              description="Origem OLE DB"
+              name="Sistema Academico AlunosEvadidos"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[CA_TOTAL_ALUNOS_EVADIDOS]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="A variável que contém o comando SQL a ser executado."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.sistema_academico]"
+                  connectionManagerRefId="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.sistema_academico]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Origem OLE DB]"
+                  name="Saída de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Origem OLE DB].Columns[DESC_INSTITUICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Origem OLE DB].ExternalColumns[DESC_INSTITUICAO]"
+                      length="50"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Origem OLE DB].Columns[DESC_INSTITUICAO]"
+                      name="DESC_INSTITUICAO"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Origem OLE DB].Columns[SIGLA_CURSO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Origem OLE DB].ExternalColumns[SIGLA_CURSO]"
+                      length="15"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Origem OLE DB].Columns[SIGLA_CURSO]"
+                      name="SIGLA_CURSO"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Origem OLE DB].Columns[Situacao_Da_Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Origem OLE DB].ExternalColumns[Situacao_Da_Matricula]"
+                      length="100"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Origem OLE DB].Columns[Situacao_Da_Matricula]"
+                      name="Situacao_Da_Matricula"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Origem OLE DB].Columns[ANO_LET]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Origem OLE DB].ExternalColumns[ANO_LET]"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Origem OLE DB].Columns[ANO_LET]"
+                      name="ANO_LET"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Origem OLE DB].Columns[PERIODO_LET]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Origem OLE DB].ExternalColumns[PERIODO_LET]"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Origem OLE DB].Columns[PERIODO_LET]"
+                      name="PERIODO_LET"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Origem OLE DB].Columns[QTD_ALUNO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Origem OLE DB].ExternalColumns[QTD_ALUNO]"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Origem OLE DB].Columns[QTD_ALUNO]"
+                      name="QTD_ALUNO"
+                      truncationRowDisposition="IgnoreFailure" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Origem OLE DB].ExternalColumns[DESC_INSTITUICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DESC_INSTITUICAO" />
+                    <externalMetadataColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Origem OLE DB].ExternalColumns[SIGLA_CURSO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="SIGLA_CURSO" />
+                    <externalMetadataColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Origem OLE DB].ExternalColumns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="273"
+                      name="Desc_Curso" />
+                    <externalMetadataColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Origem OLE DB].ExternalColumns[Situacao_Da_Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Situacao_Da_Matricula" />
+                    <externalMetadataColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Origem OLE DB].ExternalColumns[ANO_LET]"
+                      dataType="i2"
+                      name="ANO_LET" />
+                    <externalMetadataColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Origem OLE DB].ExternalColumns[PERIODO_LET]"
+                      dataType="ui1"
+                      name="PERIODO_LET" />
+                    <externalMetadataColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Origem OLE DB].ExternalColumns[QTD_ALUNO]"
+                      dataType="i4"
+                      name="QTD_ALUNO" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Erro de Origem OLE DB]"
+                  isErrorOut="true"
+                  name="Saída de Erro de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Erro de Origem OLE DB].Columns[DESC_INSTITUICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Erro de Origem OLE DB].Columns[DESC_INSTITUICAO]"
+                      name="DESC_INSTITUICAO" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Erro de Origem OLE DB].Columns[SIGLA_CURSO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Erro de Origem OLE DB].Columns[SIGLA_CURSO]"
+                      name="SIGLA_CURSO" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Erro de Origem OLE DB].Columns[Situacao_Da_Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Erro de Origem OLE DB].Columns[Situacao_Da_Matricula]"
+                      name="Situacao_Da_Matricula" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Erro de Origem OLE DB].Columns[ANO_LET]"
+                      dataType="i2"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Erro de Origem OLE DB].Columns[ANO_LET]"
+                      name="ANO_LET" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Erro de Origem OLE DB].Columns[PERIODO_LET]"
+                      dataType="ui1"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Erro de Origem OLE DB].Columns[PERIODO_LET]"
+                      name="PERIODO_LET" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Erro de Origem OLE DB].Columns[QTD_ALUNO]"
+                      dataType="i4"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Erro de Origem OLE DB].Columns[QTD_ALUNO]"
+                      name="QTD_ALUNO" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Copiando dados do NDS para o DDS\Unir Tudo"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Unir Tudo;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+              description="Combina linhas de vários fluxos de dados sem classificação. Por exemplo, adicione novamente as linhas a um fluxo de dados após a correção de erros. Se a classificação for importante, é recomendável usar a transformação Mesclagem."
+              name="Unir Tudo"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Inputs[Unir Tudo Entrada 1]"
+                  name="Unir Tudo Entrada 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Inputs[Unir Tudo Entrada 1].Columns[DESC_INSTITUICAO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DESC_INSTITUICAO"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Origem OLE DB].Columns[DESC_INSTITUICAO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Identificação de linhagem de coluna de saída"
+                          name="OutputColumnLineageID">#{Package\Copiando dados do NDS para o DDS\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[DESC_INSTITUICAO]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Inputs[Unir Tudo Entrada 1].Columns[SIGLA_CURSO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="SIGLA_CURSO"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Origem OLE DB].Columns[SIGLA_CURSO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Identificação de linhagem de coluna de saída"
+                          name="OutputColumnLineageID">#{Package\Copiando dados do NDS para o DDS\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[SIGLA_CURSO]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Inputs[Unir Tudo Entrada 1].Columns[Situacao_Da_Matricula]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Situacao_Da_Matricula"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Origem OLE DB].Columns[Situacao_Da_Matricula]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Identificação de linhagem de coluna de saída"
+                          name="OutputColumnLineageID">#{Package\Copiando dados do NDS para o DDS\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[Situacao_Da_Matricula]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Inputs[Unir Tudo Entrada 1].Columns[ANO_LET]"
+                      cachedDataType="i2"
+                      cachedName="ANO_LET"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Origem OLE DB].Columns[ANO_LET]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Identificação de linhagem de coluna de saída"
+                          name="OutputColumnLineageID">#{Package\Copiando dados do NDS para o DDS\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[ANO_LET]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Inputs[Unir Tudo Entrada 1].Columns[PERIODO_LET]"
+                      cachedDataType="ui1"
+                      cachedName="PERIODO_LET"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Origem OLE DB].Columns[PERIODO_LET]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Identificação de linhagem de coluna de saída"
+                          name="OutputColumnLineageID">#{Package\Copiando dados do NDS para o DDS\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[PERIODO_LET]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Inputs[Unir Tudo Entrada 1].Columns[QTD_ALUNO]"
+                      cachedDataType="i4"
+                      cachedName="QTD_ALUNO"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Origem OLE DB].Columns[QTD_ALUNO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Identificação de linhagem de coluna de saída"
+                          name="OutputColumnLineageID">#{Package\Copiando dados do NDS para o DDS\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[QTD_ALUNO]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Inputs[Entrada Unir Tudo 1]"
+                  hasSideEffects="true"
+                  name="Entrada Unir Tudo 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Inputs[Entrada Unir Tudo 1].Columns[DESC_INSTITUICAO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DESC_INSTITUICAO"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Origem OLE DB].Columns[DESC_INSTITUICAO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Identificação de linhagem de coluna de saída"
+                          name="OutputColumnLineageID">#{Package\Copiando dados do NDS para o DDS\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[DESC_INSTITUICAO]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Inputs[Entrada Unir Tudo 1].Columns[SIGLA_CURSO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="SIGLA_CURSO"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Origem OLE DB].Columns[SIGLA_CURSO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Identificação de linhagem de coluna de saída"
+                          name="OutputColumnLineageID">#{Package\Copiando dados do NDS para o DDS\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[SIGLA_CURSO]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Inputs[Entrada Unir Tudo 1].Columns[Situacao_Da_Matricula]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Situacao_Da_Matricula"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Origem OLE DB].Columns[Situacao_Da_Matricula]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Identificação de linhagem de coluna de saída"
+                          name="OutputColumnLineageID">#{Package\Copiando dados do NDS para o DDS\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[Situacao_Da_Matricula]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Inputs[Entrada Unir Tudo 1].Columns[ANO_LET]"
+                      cachedDataType="i2"
+                      cachedName="ANO_LET"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Origem OLE DB].Columns[ANO_LET]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Identificação de linhagem de coluna de saída"
+                          name="OutputColumnLineageID">#{Package\Copiando dados do NDS para o DDS\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[ANO_LET]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Inputs[Entrada Unir Tudo 1].Columns[PERIODO_LET]"
+                      cachedDataType="ui1"
+                      cachedName="PERIODO_LET"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Origem OLE DB].Columns[PERIODO_LET]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Identificação de linhagem de coluna de saída"
+                          name="OutputColumnLineageID">#{Package\Copiando dados do NDS para o DDS\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[PERIODO_LET]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Inputs[Entrada Unir Tudo 1].Columns[QTD_ALUNO]"
+                      cachedDataType="i4"
+                      cachedName="QTD_ALUNO"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Origem OLE DB].Columns[QTD_ALUNO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Identificação de linhagem de coluna de saída"
+                          name="OutputColumnLineageID">#{Package\Copiando dados do NDS para o DDS\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[QTD_ALUNO]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Inputs[Entrada Unir Tudo 2]"
+                  hasSideEffects="true"
+                  name="Entrada Unir Tudo 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Inputs[Entrada Unir Tudo 2].Columns[SIGLA_CURSO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="SIGLA_CURSO"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Origem OLE DB].Columns[SIGLA_CURSO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Identificação de linhagem de coluna de saída"
+                          name="OutputColumnLineageID">#{Package\Copiando dados do NDS para o DDS\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[SIGLA_CURSO]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Inputs[Entrada Unir Tudo 2].Columns[Situacao_Da_Matricula]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Situacao_Da_Matricula"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Origem OLE DB].Columns[Situacao_Da_Matricula]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Identificação de linhagem de coluna de saída"
+                          name="OutputColumnLineageID">#{Package\Copiando dados do NDS para o DDS\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[Situacao_Da_Matricula]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Inputs[Entrada Unir Tudo 2].Columns[ANO_LET]"
+                      cachedDataType="i2"
+                      cachedName="ANO_LET"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Origem OLE DB].Columns[ANO_LET]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Identificação de linhagem de coluna de saída"
+                          name="OutputColumnLineageID">#{Package\Copiando dados do NDS para o DDS\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[ANO_LET]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Inputs[Entrada Unir Tudo 2].Columns[PERIODO_LET]"
+                      cachedDataType="ui1"
+                      cachedName="PERIODO_LET"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Origem OLE DB].Columns[PERIODO_LET]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Identificação de linhagem de coluna de saída"
+                          name="OutputColumnLineageID">#{Package\Copiando dados do NDS para o DDS\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[PERIODO_LET]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Inputs[Entrada Unir Tudo 2].Columns[QTD_ALUNO]"
+                      cachedDataType="i4"
+                      cachedName="QTD_ALUNO"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Origem OLE DB].Columns[QTD_ALUNO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Identificação de linhagem de coluna de saída"
+                          name="OutputColumnLineageID">#{Package\Copiando dados do NDS para o DDS\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[QTD_ALUNO]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Inputs[Entrada Unir Tudo 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Entrada Unir Tudo 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Outputs[Unir Tudo Saída 1]"
+                  name="Unir Tudo Saída 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[DESC_INSTITUICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[DESC_INSTITUICAO]"
+                      name="DESC_INSTITUICAO" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[SIGLA_CURSO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[SIGLA_CURSO]"
+                      name="SIGLA_CURSO" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[Situacao_Da_Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[Situacao_Da_Matricula]"
+                      name="Situacao_Da_Matricula" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[ANO_LET]"
+                      dataType="i2"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[ANO_LET]"
+                      name="ANO_LET" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[PERIODO_LET]"
+                      dataType="ui1"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[PERIODO_LET]"
+                      name="PERIODO_LET" />
+                    <outputColumn
+                      refId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[QTD_ALUNO]"
+                      dataType="i4"
+                      lineageId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[QTD_ALUNO]"
+                      name="QTD_ALUNO" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Copiando dados do NDS para o DDS.Paths[Saída de Origem OLE DB]"
+              endId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Inputs[Unir Tudo Entrada 1]"
+              name="Saída de Origem OLE DB"
+              startId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos.Outputs[Saída de Origem OLE DB]" />
+            <path
+              refId="Package\Copiando dados do NDS para o DDS.Paths[Saída de Origem OLE DB1]"
+              endId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Inputs[Entrada Unir Tudo 1]"
+              name="Saída de Origem OLE DB"
+              startId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados.Outputs[Saída de Origem OLE DB]" />
+            <path
+              refId="Package\Copiando dados do NDS para o DDS.Paths[Saída de Origem OLE DB2]"
+              endId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Inputs[Entrada Unir Tudo 2]"
+              name="Saída de Origem OLE DB"
+              startId="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos.Outputs[Saída de Origem OLE DB]" />
+            <path
+              refId="Package\Copiando dados do NDS para o DDS.Paths[Unir Tudo Saída 1]"
+              endId="Package\Copiando dados do NDS para o DDS\DDS FatoAlunoConDesEva.Inputs[Entrada de Destino do SQL Server]"
+              name="Unir Tudo Saída 1"
+              startId="Package\Copiando dados do NDS para o DDS\Unir Tudo.Outputs[Unir Tudo Saída 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="250,42"
+          Id="Package\Copiando dados do NDS para o DDS"
+          TopLeft="201,91" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Copiando dados do NDS para o DDS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="125,42"
+          Id="Package\Copiando dados do NDS para o DDS\Unir Tudo"
+          TopLeft="341,167" />
+        <NodeLayout
+          Size="215,42"
+          Id="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos"
+          TopLeft="67,38" />
+        <NodeLayout
+          Size="202,42"
+          Id="Package\Copiando dados do NDS para o DDS\DDS FatoAlunoConDesEva"
+          TopLeft="332,321" />
+        <NodeLayout
+          Size="212,42"
+          Id="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados"
+          TopLeft="301,41" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos"
+          TopLeft="532,43" />
+        <EdgeLayout
+          Id="Package\Copiando dados do NDS para o DDS.Paths[Saída de Origem OLE DB2]"
+          TopLeft="619.5,85">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-186.75,82"
+              Start="0,0"
+              End="-186.75,74.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5248041775457" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,49.5248041775457"
+                    Point2="0,53.5248041775457"
+                    Point3="-4,53.5248041775457" />
+                  <mssgle:LineSegment
+                    End="-182.75,53.5248041775457" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-182.75,53.5248041775457"
+                    Point2="-186.75,53.5248041775457"
+                    Point3="-186.75,57.5248041775457" />
+                  <mssgle:LineSegment
+                    End="-186.75,74.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Copiando dados do NDS para o DDS.Paths[Saída de Origem OLE DB1]"
+          TopLeft="405.25,83">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,84"
+              Start="0,0"
+              End="0,76.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,76.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Copiando dados do NDS para o DDS.Paths[Saída de Origem OLE DB]"
+          TopLeft="174.5,80">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="199.75,87"
+              Start="0,0"
+              End="199.75,79.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.7885117493473" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,52.7885117493473"
+                    Point2="0,56.7885117493473"
+                    Point3="4,56.7885117493473" />
+                  <mssgle:LineSegment
+                    End="195.75,56.7885117493473" />
+                  <mssgle:CubicBezierSegment
+                    Point1="195.75,56.7885117493473"
+                    Point2="199.75,56.7885117493473"
+                    Point3="199.75,60.7885117493473" />
+                  <mssgle:LineSegment
+                    End="199.75,79.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Copiando dados do NDS para o DDS.Paths[Unir Tudo Saída 1]"
+          TopLeft="403.5,209">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="29.5,112"
+              Start="0,0"
+              End="29.5,104.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,52"
+                    Point2="0,56"
+                    Point3="4,56" />
+                  <mssgle:LineSegment
+                    End="25.5,56" />
+                  <mssgle:CubicBezierSegment
+                    Point1="25.5,56"
+                    Point2="29.5,56"
+                    Point3="29.5,60" />
+                  <mssgle:LineSegment
+                    End="29.5,104.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="Este pacote copia dados do sistema acadêmcio (NDS) para o modelo dimensional (DDS)."
+          ParentId="Package\Copiando dados do NDS para o DDS"
+          FontInfo="{assembly:Null}"
+          Size="497,40"
+          Id="c16018d4-df09-40c6-ab3d-e91cafdfb397"
+          TopLeft="18,393.888888888889" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Copiando dados do NDS para o DDS\DDS FatoAlunoConDesEva">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosConcluidos">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosDesligados">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Copiando dados do NDS para o DDS\Sistema Academico AlunosEvadidos">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

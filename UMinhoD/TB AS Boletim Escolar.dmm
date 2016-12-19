@@ -1,0 +1,402 @@
+﻿<MiningStructure xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="6241373b-4469-406b-b321-feb7a3d46f6b" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>TB AS Boletim Escolar</ID>
+  <Name>TB AS Boletim Escolar</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CaseTableName</Name>
+      <Value>dbo_TB_AS_BoletimEscolar</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-11050" scrolltop="-5575" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="26310" y="16150" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="TB_AS_BoletimEscolar" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="4170" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000a00004a10000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_TB_AS_BoletimEscolar" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-11050</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-5575</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="f7cfd7b2-a0ab-43ff-8ced-02400242eeba">
+    <DataSourceViewID>Exibição Boletim Escolar AS</DataSourceViewID>
+  </Source>
+  <Columns>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="686a4912-6ced-4341-acc7-54660f0a5a47">
+      <ID>Ano Letivo</ID>
+      <Name>Ano Letivo</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9aab243c-e7be-4556-88a0-44a79e7dd0fc">
+          <DataType>WChar</DataType>
+          <DataSize>4</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c739368e-2368-4b07-8d4b-5ade014c3428">
+            <TableID>dbo_TB_AS_BoletimEscolar</TableID>
+            <ColumnID>AnoLetivo</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="7d2b02f0-f9b2-451f-a548-d9b738f743be">
+      <ID>Boletim ID</ID>
+      <Name>Boletim ID</Name>
+      <IsKey>true</IsKey>
+      <Type>Long</Type>
+      <Content>Key</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="aba5d867-a453-4b4b-958a-841c2f548fea">
+          <DataType>Integer</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="06a6fdde-17f4-43a4-86be-f64613dc5cc6">
+            <TableID>dbo_TB_AS_BoletimEscolar</TableID>
+            <ColumnID>Boletim_ID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="4d7deece-ffce-43cd-a61a-43d2617a964e">
+      <ID>Campus</ID>
+      <Name>Campus</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="62bb768c-e7be-47be-beee-38e7654c3cc3">
+          <DataType>WChar</DataType>
+          <DataSize>35</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d48f9978-d343-4763-a5be-712afe27b392">
+            <TableID>dbo_TB_AS_BoletimEscolar</TableID>
+            <ColumnID>Campus</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="7b2aa325-f927-40d4-af85-ac6c67233167">
+      <ID>Coeficiente Rendimento</ID>
+      <Name>Coeficiente Rendimento</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="089b1696-833c-43ef-a55f-db22a1530790">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="fa412714-d4c0-4d9d-9f12-0d44e7af0933">
+            <TableID>dbo_TB_AS_BoletimEscolar</TableID>
+            <ColumnID>CoeficienteRendimento</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="33123d54-1fca-4da3-92cb-d54b36237e1d">
+      <ID>Curso</ID>
+      <Name>Curso</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="86b0d434-66a4-4c24-b8c1-079c402190ce">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3fb420c8-170f-41ca-8f42-ea4a8ef9c568">
+            <TableID>dbo_TB_AS_BoletimEscolar</TableID>
+            <ColumnID>Curso</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="51f35ed9-16a0-442d-a757-2222cc6eb17f">
+      <ID>Frequencia</ID>
+      <Name>Frequencia</Name>
+      <Type>Double</Type>
+      <Content>Discretized</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7fcc583f-3efd-4544-a469-83c04e00ca93">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="09953cb6-54e8-4209-aca9-d366b3d6402b">
+            <TableID>dbo_TB_AS_BoletimEscolar</TableID>
+            <ColumnID>Frequencia</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="df00a030-20e2-4f29-9198-c1ce9eaf6c98">
+      <ID>Matricula</ID>
+      <Name>Matricula</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="20797737-5c21-4fd3-96f5-4317506a226e">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7874bbac-7396-4abb-9d9c-36e816b5a396">
+            <TableID>dbo_TB_AS_BoletimEscolar</TableID>
+            <ColumnID>Matricula</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="6be6d9ac-6cb9-4964-af56-11805a73d05f">
+      <ID>Media Final</ID>
+      <Name>Media Final</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="cd4f601a-f571-4b72-b401-b635e84baaee">
+          <DataType>WChar</DataType>
+          <DataSize>15</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3445c3ed-1783-4e44-a9e9-bf08d2ed7f0f">
+            <TableID>dbo_TB_AS_BoletimEscolar</TableID>
+            <ColumnID>MediaFinal</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="31681c92-9eae-4b36-a153-401ae1e9d07f">
+      <ID>Percentual Frequencia</ID>
+      <Name>Percentual Frequencia</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ad047af2-09a2-494f-abc9-91febd0a936c">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3902b167-b7a0-493f-85f6-cb27f6d7f96d">
+            <TableID>dbo_TB_AS_BoletimEscolar</TableID>
+            <ColumnID>PercentualFrequencia</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="74721225-7fd7-4f98-b1f4-9a92a8eb3369">
+      <ID>Periodo Letivo</ID>
+      <Name>Periodo Letivo</Name>
+      <Type>Long</Type>
+      <Content>Discretized</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="635f3347-d15f-4c34-9ff5-afed8e5b781a">
+          <DataType>Integer</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a97c1fa4-460b-466b-8155-3d64e5f781f0">
+            <TableID>dbo_TB_AS_BoletimEscolar</TableID>
+            <ColumnID>PeriodoLetivo</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="c48a3827-c325-40ee-91e2-62f9321edf73">
+      <ID>Sigla Curso</ID>
+      <Name>Sigla Curso</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c7a6a0db-b3a6-4c6d-bd80-6b86f37ed99a">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6098c72c-9234-464c-906e-b785baf225ec">
+            <TableID>dbo_TB_AS_BoletimEscolar</TableID>
+            <ColumnID>SiglaCurso</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="e4c59fd0-3b7e-4c70-a780-ab976f24ff65">
+      <ID>Situacao</ID>
+      <Name>Situacao</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="508036f0-dc1a-4404-b0a9-9c1e9d3643ee">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="10e9d3dc-73e9-4135-9e66-d837f7fa5080">
+            <TableID>dbo_TB_AS_BoletimEscolar</TableID>
+            <ColumnID>Situacao</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="7a13801d-f513-454f-9936-62556d090ec1">
+      <ID>Turma</ID>
+      <Name>Turma</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="db403490-485f-4436-9f77-aa4add3da2fd">
+          <DataType>WChar</DataType>
+          <DataSize>30</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2e997023-efc6-4485-a0ce-650c9886e143">
+            <TableID>dbo_TB_AS_BoletimEscolar</TableID>
+            <ColumnID>Turma</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+  </Columns>
+  <MiningModels>
+    <MiningModel dwd:design-time-name="475204fa-4818-4f69-837b-71ff2bb789f9">
+      <ID>MINE AS Boletim Escolar</ID>
+      <Name>MINE AS Boletim Escolar</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <Annotations>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Microsoft.AnalysisServices.MiningModel</Name>
+          <Value>
+            <Microsoft.AnalysisServices.MiningModel xmlns="">
+              <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;MiningModelFilter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Items&gt;
+    &lt;FilterGridItem&gt;
+      &lt;IsGroup&gt;false&lt;/IsGroup&gt;
+      &lt;IsDataTable&gt;false&lt;/IsDataTable&gt;
+      &lt;ColumnName /&gt;
+      &lt;AndOr&gt;None&lt;/AndOr&gt;
+      &lt;ChildItems /&gt;
+    &lt;/FilterGridItem&gt;
+  &lt;/Items&gt;
+&lt;/MiningModelFilter&gt;</Filter>
+            </Microsoft.AnalysisServices.MiningModel>
+          </Value>
+        </Annotation>
+      </Annotations>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Algorithm>Microsoft_Association_Rules</Algorithm>
+      <AlgorithmParameters>
+        <AlgorithmParameter>
+          <Name>MAXIMUM_ITEMSET_COUNT</Name>
+          <Value xsi:type="xsd:int">2000</Value>
+        </AlgorithmParameter>
+        <AlgorithmParameter>
+          <Name>MINIMUM_PROBABILITY</Name>
+          <Value xsi:type="xsd:double">0.75</Value>
+        </AlgorithmParameter>
+        <AlgorithmParameter>
+          <Name>MINIMUM_SUPPORT</Name>
+          <Value xsi:type="xsd:double">0.03</Value>
+        </AlgorithmParameter>
+      </AlgorithmParameters>
+      <Columns>
+        <Column dwd:design-time-name="7025f382-eec0-4f1b-a3b8-89647bf8dd3d">
+          <ID>Ano Letivo</ID>
+          <Name>Ano Letivo</Name>
+          <SourceColumnID>Ano Letivo</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="7e21bb3b-12da-4a81-aeab-ecd40d4d552c">
+          <ID>Boletim ID</ID>
+          <Name>Boletim ID</Name>
+          <SourceColumnID>Boletim ID</SourceColumnID>
+          <Usage>Key</Usage>
+        </Column>
+        <Column dwd:design-time-name="9ef6c905-9c27-4861-b5c5-327b03c1550d">
+          <ID>Campus</ID>
+          <Name>Campus</Name>
+          <SourceColumnID>Campus</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="bb89dc3a-1b5c-45d3-8e6f-32e06180c579">
+          <ID>Coeficiente Rendimento</ID>
+          <Name>Coeficiente Rendimento</Name>
+          <SourceColumnID>Coeficiente Rendimento</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="e21f5329-5c46-43bc-b332-b58c1a46db6c">
+          <ID>Curso</ID>
+          <Name>Curso</Name>
+          <SourceColumnID>Curso</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="9b76ce60-4f4a-4659-bff0-7a008c82be49">
+          <ID>Frequencia</ID>
+          <Name>Frequencia</Name>
+          <SourceColumnID>Frequencia</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="db31a002-21d3-40e4-9042-5a5594ebfe88">
+          <ID>Media Final</ID>
+          <Name>Media Final</Name>
+          <SourceColumnID>Media Final</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="ca277a44-061b-46b4-a876-5185137303be">
+          <ID>Percentual Frequencia</ID>
+          <Name>Percentual Frequencia</Name>
+          <SourceColumnID>Percentual Frequencia</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="7599026a-f8d8-4c9c-9272-3d4c59713539">
+          <ID>Periodo Letivo</ID>
+          <Name>Periodo Letivo</Name>
+          <SourceColumnID>Periodo Letivo</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="239e59c4-b494-4062-a949-9c4f3fc51cc6">
+          <ID>Sigla Curso</ID>
+          <Name>Sigla Curso</Name>
+          <SourceColumnID>Sigla Curso</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="8a9ba24e-87fe-477c-a408-2e7af2c6f66a">
+          <ID>Situacao</ID>
+          <Name>Situacao</Name>
+          <SourceColumnID>Situacao</SourceColumnID>
+          <Usage>PredictOnly</Usage>
+        </Column>
+        <Column dwd:design-time-name="3ac159c4-4b6c-47be-b6fd-e1b51dfb570f">
+          <ID>Turma</ID>
+          <Name>Turma</Name>
+          <SourceColumnID>Turma</SourceColumnID>
+        </Column>
+      </Columns>
+      <AllowDrillThrough>true</AllowDrillThrough>
+      <ddl100_100:Filter></ddl100_100:Filter>
+    </MiningModel>
+  </MiningModels>
+  <ddl100_100:HoldoutMaxPercent>30</ddl100_100:HoldoutMaxPercent>
+</MiningStructure>

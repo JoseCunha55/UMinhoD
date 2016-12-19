@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "UMinhoD", "UMinhoD\UMinhoD.dwproj", "{A2A5C641-156C-4139-9F60-B1348C856768}"
+EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "SSISDUMinho", "SSISDUMinho\SSISDUMinho.dtproj", "{A3A4FEAB-02F7-40C4-85D6-A0DD2F315901}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|x86 = Development|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A2A5C641-156C-4139-9F60-B1348C856768}.Development|x86.ActiveCfg = Development
+		{A2A5C641-156C-4139-9F60-B1348C856768}.Development|x86.Build.0 = Development
+		{A2A5C641-156C-4139-9F60-B1348C856768}.Development|x86.Deploy.0 = Development
+		{A3A4FEAB-02F7-40C4-85D6-A0DD2F315901}.Development|x86.ActiveCfg = Development
+		{A3A4FEAB-02F7-40C4-85D6-A0DD2F315901}.Development|x86.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

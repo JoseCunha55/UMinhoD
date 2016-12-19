@@ -1,0 +1,421 @@
+﻿<MiningStructure xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="f6742133-2c07-467f-be7d-f1680c7524f5" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Mine Situacao Dados Ingresso</ID>
+  <Name>Mine Situacao Dados Ingresso</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CaseTableName</Name>
+      <Value>dbo_dimAlunosSituacaoDadosIngresso</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="4" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-10266" scrolltop="-2546" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="24638" y="16150" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="dimAlunosSituacaoDadosIngresso" left="5015" top="2549" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3620" height="4466" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000a0000240e000072110000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_dimAlunosSituacaoDadosIngresso" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="FatoEvaConEntradaSaida" left="-4436" top="1080" logicalid="2" controlid="2" masterid="0" hint1="0" hint2="0" width="3429" height="3747" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000a0000650d0000a30e0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_FatoEvaConEntradaSaida" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="-1307" top="2733" logicalid="3" controlid="3" masterid="0" hint1="0" hint2="0" width="6622" height="1620" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_FatoEvaConPorFormaIngresso_dimAlunosSituacaoDadosIngresso]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="2" sourceattachpoint="14" destattachpoint="21" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="5015" y="3132" />
+              <point x="4280" y="3132" />
+              <point x="4280" y="4053" />
+              <point x="-1007" y="4053" />
+            </connector>
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-10266</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-2546</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>-4436</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>1080</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="b416658d-88b8-4cef-8722-d5b198b4f185">
+    <DataSourceViewID>Fato Evidados Entrada Saida</DataSourceViewID>
+  </Source>
+  <Columns>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="cb8d25e9-df31-466a-af49-99122812500f">
+      <ID>Ano Final</ID>
+      <Name>Ano Final</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f5fa289c-e4ef-426e-8492-9d067188a8a4">
+          <DataType>WChar</DataType>
+          <DataSize>30</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="369ae9d0-7fb5-4d9c-b4a0-3a74117d164a">
+            <TableID>dbo_dimAlunosSituacaoDadosIngresso</TableID>
+            <ColumnID>Ano_Final</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="9aa58f7d-6efd-44c5-ac6d-e6d01510b4c2">
+      <ID>Ano Ingresso</ID>
+      <Name>Ano Ingresso</Name>
+      <Type>Long</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="79864baa-2378-4af5-b5c6-92b0b2080f58">
+          <DataType>SmallInt</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="72d159d8-4b28-4d85-bc77-684434ce88bd">
+            <TableID>dbo_dimAlunosSituacaoDadosIngresso</TableID>
+            <ColumnID>Ano_Ingresso</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="580a10b3-6f7b-4bdd-bb5e-87eea1ca82c8">
+      <ID>Curso</ID>
+      <Name>Curso</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7f0cea0d-2173-456a-87b9-2b13112680c0">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="75f55b5e-302b-403d-919d-5be1d95454e7">
+            <TableID>dbo_dimAlunosSituacaoDadosIngresso</TableID>
+            <ColumnID>Curso</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="f4ee5fa8-d3f8-4fcd-a51e-a4b634323c4d">
+      <ID>Desc Instituicao</ID>
+      <Name>Desc Instituicao</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0a51aef4-39dc-43ab-bb48-296cbe915174">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="bde9adc6-3c38-4f96-9e06-4e19b0eaaf9f">
+            <TableID>dbo_dimAlunosSituacaoDadosIngresso</TableID>
+            <ColumnID>Desc_Instituicao</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="f1d8094a-9bd5-4393-a5a0-50ce3a4c82f7">
+      <ID>Forma Ingresso</ID>
+      <Name>Forma Ingresso</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="14d3cc27-2074-458e-93e1-acd16c9ab9f7">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="da1bbc3d-8e4c-4af2-84e4-30df6e748a02">
+            <TableID>dbo_dimAlunosSituacaoDadosIngresso</TableID>
+            <ColumnID>Forma_Ingresso</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="71002b8f-1d83-4d49-a07a-051a1fc0b108">
+      <ID>Forma Ingr ID</ID>
+      <Name>Forma Ingr ID</Name>
+      <IsKey>true</IsKey>
+      <Type>Long</Type>
+      <Content>Key</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="63fbb23d-287e-4905-9aed-f9b57a2330ba">
+          <DataType>Integer</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a16b609b-0025-429e-b06f-aedb83d5d768">
+            <TableID>dbo_dimAlunosSituacaoDadosIngresso</TableID>
+            <ColumnID>FormaIngr_ID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="1b744147-158a-4539-a4b1-6fbea94f2f3b">
+      <ID>Periodo Final</ID>
+      <Name>Periodo Final</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c0b1ce02-2ce6-41e2-a2ca-3365ff1cfc88">
+          <DataType>WChar</DataType>
+          <DataSize>30</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e1b663dc-792d-425b-9f1e-69c9d597ba48">
+            <TableID>dbo_dimAlunosSituacaoDadosIngresso</TableID>
+            <ColumnID>Periodo_Final</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="6cb408b6-a939-4d14-87cd-db9d2c6fa781">
+      <ID>Periodo Ingresso</ID>
+      <Name>Periodo Ingresso</Name>
+      <Type>Long</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="cc157572-5fcd-4bce-9d6c-7df8ad48020f">
+          <DataType>UnsignedTinyInt</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="70e84c01-6f8c-43a7-b675-ac2cf274ff04">
+            <TableID>dbo_dimAlunosSituacaoDadosIngresso</TableID>
+            <ColumnID>Periodo_Ingresso</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="c25b9164-c657-48be-9695-b03d7d7f0b55">
+      <ID>Situacao Matricula</ID>
+      <Name>Situacao Matricula</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="55c333d5-b8f0-40fc-a8f5-877bf7735fab">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="36c9aaf4-5531-4eff-9623-ced594ad0478">
+            <TableID>dbo_dimAlunosSituacaoDadosIngresso</TableID>
+            <ColumnID>Situacao_Matricula</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="TableMiningStructureColumn" dwd:design-time-name="35f78005-cf61-446c-8d15-a5821ea4568d">
+      <Annotations>
+        <Annotation>
+          <Name>MDXFilterComponent</Name>
+          <Value></Value>
+        </Annotation>
+      </Annotations>
+      <ID>Fato Eva Con Entrada Saida</ID>
+      <Name>Fato Eva Con Entrada Saida</Name>
+      <ForeignKeyColumns>
+        <ForeignKeyColumn dwd:design-time-name="d32b5d17-35a8-4449-9c47-7ea4f44944d0">
+          <DataType>Integer</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a9d2eb4a-cfe5-4886-af4b-273aa64b8483">
+            <TableID>dbo_FatoEvaConEntradaSaida</TableID>
+            <ColumnID>FormaIngressoID</ColumnID>
+          </Source>
+        </ForeignKeyColumn>
+      </ForeignKeyColumns>
+      <Columns>
+        <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="20df228c-2127-48f8-929d-7595d19ec0ae">
+          <ID>Curso</ID>
+          <Name>Curso</Name>
+          <Type>Text</Type>
+          <Content>Discrete</Content>
+          <KeyColumns>
+            <KeyColumn dwd:design-time-name="af8a2b38-4d0c-467c-8349-4259de4cfe31">
+              <DataType>WChar</DataType>
+              <DataSize>10</DataSize>
+              <Source xsi:type="ColumnBinding" dwd:design-time-name="695d3275-34d8-4461-91bf-a1258bcf79a1">
+                <TableID>dbo_FatoEvaConEntradaSaida</TableID>
+                <ColumnID>Curso</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+        </Column>
+        <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="c8d221d1-c068-4744-9401-4cd375178d3e">
+          <ID>Data ID</ID>
+          <Name>Data ID</Name>
+          <IsKey>true</IsKey>
+          <Type>Long</Type>
+          <Content>Key</Content>
+          <KeyColumns>
+            <KeyColumn dwd:design-time-name="48b360fe-e145-4d24-b4e6-50994a80c8f0">
+              <DataType>SmallInt</DataType>
+              <DataSize>-1</DataSize>
+              <Source xsi:type="ColumnBinding" dwd:design-time-name="ab2286dd-742f-4a02-9ae6-1ab3ccce9efa">
+                <TableID>dbo_FatoEvaConEntradaSaida</TableID>
+                <ColumnID>Data_ID</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+        </Column>
+        <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="a6ad6622-ed51-4735-83d3-ef4085423911">
+          <ID>Total Con FIA</ID>
+          <Name>Total Con FIA</Name>
+          <Type>Long</Type>
+          <Content>Continuous</Content>
+          <KeyColumns>
+            <KeyColumn dwd:design-time-name="eba109e5-890e-4dd1-9113-7ce0dc95d777">
+              <DataType>Integer</DataType>
+              <DataSize>-1</DataSize>
+              <Source xsi:type="ColumnBinding" dwd:design-time-name="b858317a-e032-47d8-95a8-4678dff89774">
+                <TableID>dbo_FatoEvaConEntradaSaida</TableID>
+                <ColumnID>TotalConFIA</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+        </Column>
+        <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="0260ed88-6cfb-456a-87e9-e1da0f359b53">
+          <ID>Total Evadido FIA</ID>
+          <Name>Total Evadido FIA</Name>
+          <Type>Long</Type>
+          <Content>Continuous</Content>
+          <KeyColumns>
+            <KeyColumn dwd:design-time-name="fc36c5ec-b751-4028-85a9-ec4f3e70bdd7">
+              <DataType>Integer</DataType>
+              <DataSize>-1</DataSize>
+              <Source xsi:type="ColumnBinding" dwd:design-time-name="a40d977e-7f6e-464c-9eca-d30d44808ea3">
+                <TableID>dbo_FatoEvaConEntradaSaida</TableID>
+                <ColumnID>TotalEvadidoFIA</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+        </Column>
+      </Columns>
+    </Column>
+  </Columns>
+  <MiningModels>
+    <MiningModel dwd:design-time-name="a169767a-b6a3-4045-be3d-690b34c870af">
+      <ID>Dim Alunos Situacao Dados Ingresso</ID>
+      <Name>Modelo Arvore Situacao Dados Ingresso</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Algorithm>Microsoft_Decision_Trees</Algorithm>
+      <AlgorithmParameters>
+        <AlgorithmParameter>
+          <Name>SCORE_METHOD</Name>
+          <Value xsi:type="xsd:int">3</Value>
+        </AlgorithmParameter>
+        <AlgorithmParameter>
+          <Name>SPLIT_METHOD</Name>
+          <Value xsi:type="xsd:int">1</Value>
+        </AlgorithmParameter>
+      </AlgorithmParameters>
+      <Columns>
+        <Column dwd:design-time-name="21bc7965-ab21-4d93-a3e7-f56f6336e24a">
+          <ID>Ano Final</ID>
+          <Name>Ano Final</Name>
+          <SourceColumnID>Ano Final</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="596c9be3-84fb-4c74-94be-a60b7da7bfe8">
+          <ID>Ano Ingresso</ID>
+          <Name>Ano Ingresso</Name>
+          <SourceColumnID>Ano Ingresso</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="9e53661a-c723-45e0-8c2f-1a2682a6e94c">
+          <ID>Curso</ID>
+          <Name>Curso</Name>
+          <SourceColumnID>Curso</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="b7ab560d-fecf-41d9-84c5-95be702b56b3">
+          <ID>Desc Instituicao</ID>
+          <Name>Desc Instituicao</Name>
+          <SourceColumnID>Desc Instituicao</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="45f8d18d-6b3c-4c55-9f5a-52b90c110f90">
+          <ID>Forma Ingresso</ID>
+          <Name>Forma Ingresso</Name>
+          <SourceColumnID>Forma Ingresso</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="100712df-06ef-4a74-ad72-097d0abacf8f">
+          <ID>Forma Ingr ID</ID>
+          <Name>Forma Ingr ID</Name>
+          <SourceColumnID>Forma Ingr ID</SourceColumnID>
+          <Usage>Key</Usage>
+        </Column>
+        <Column dwd:design-time-name="6e5beb98-017e-4a65-9f48-32538e3afd19">
+          <ID>Periodo Final</ID>
+          <Name>Periodo Final</Name>
+          <SourceColumnID>Periodo Final</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="8382b7b1-dc33-4976-844b-316960e7a790">
+          <ID>Periodo Ingresso</ID>
+          <Name>Periodo Ingresso</Name>
+          <SourceColumnID>Periodo Ingresso</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="99cc2c42-5613-4e64-b537-4d0f28986cf6">
+          <ID>Situacao Matricula</ID>
+          <Name>Situacao Matricula</Name>
+          <SourceColumnID>Situacao Matricula</SourceColumnID>
+          <Usage>PredictOnly</Usage>
+        </Column>
+      </Columns>
+      <AllowDrillThrough>true</AllowDrillThrough>
+    </MiningModel>
+  </MiningModels>
+  <ddl100_100:HoldoutMaxPercent>70</ddl100_100:HoldoutMaxPercent>
+</MiningStructure>

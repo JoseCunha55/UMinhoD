@@ -1,0 +1,69 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="237aece1-791c-48b7-9d27-7d6e7e964523" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Total Aluno Evadidos_DMDSV</ID>
+  <Name>Total Aluno Evadidos_DMDSV</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>.</DataSourceID>
+  <Schema>
+    <xs:schema id="DIMENSION_CONTENT_SCHEMA" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="DIMENSION_CONTENT_SCHEMA" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="9590697f-c910-42e3-a465-de7bb9f1a9e4">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="DIMENSION_CONTENT_ROWSET" msprop:QueryDefinition="SELECT * FROM [Mine Total Aluno Evadidos].DIMENSION_CONTENT" msprop:design-time-name="95e0b33d-439a-47a4-82a5-2f62e2e3cf23">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ATTRIBUTE_NAME" msprop:design-time-name="95642579-e307-4383-b3fd-a9891365b7c2" type="xs:string" minOccurs="0" />
+                  <xs:element name="NODE_NAME" msprop:design-time-name="7b041e09-c698-45c2-b87c-6db076892bd5" type="xs:string" minOccurs="0" />
+                  <xs:element name="NODE_TYPE" msprop:design-time-name="4cf878ef-9cfa-4ee3-ac54-a4c59a419300" type="xs:int" minOccurs="0" />
+                  <xs:element name="NODE_GUID" msprop:design-time-name="dd01ee3c-bddc-4547-bcbf-3f184034fd69" type="xs:string" minOccurs="0" />
+                  <xs:element name="NODE_CAPTION" msprop:design-time-name="f9010928-6e08-44d0-82ca-bfebbd61aa7e" type="xs:string" minOccurs="0" />
+                  <xs:element name="CHILDREN_CARDINALITY" msprop:design-time-name="b64a74fa-b2ff-4c8f-bf74-9cc9d1311a1f" type="xs:unsignedInt" minOccurs="0" />
+                  <xs:element name="PARENT_UNIQUE_NAME" msprop:design-time-name="afc327bf-9e3b-4f77-8d3e-0885d7ea9b9f" type="xs:string" minOccurs="0" />
+                  <xs:element name="NODE_DESCRIPTION" msprop:design-time-name="0bfccb36-0671-4121-a7ee-64174a2f1fc3" type="xs:string" minOccurs="0" />
+                  <xs:element name="NODE_RULE" msprop:design-time-name="c244e630-8109-4554-bfd5-b2811de951bb" type="xs:string" minOccurs="0" />
+                  <xs:element name="MARGINAL_RULE" msprop:design-time-name="15c6f161-5ea5-4677-9224-b371659332cb" type="xs:string" minOccurs="0" />
+                  <xs:element name="NODE_PROBABILITY" msprop:design-time-name="0f7ffb28-6b70-4cdf-965c-7863db327ebe" type="xs:double" minOccurs="0" />
+                  <xs:element name="MARGINAL_PROBABILITY" msprop:design-time-name="f5cc9ee2-b629-4402-a600-5748e518620b" type="xs:double" minOccurs="0" />
+                  <xs:element name="NODE_SUPPORT" msprop:design-time-name="6021741a-6d29-4a47-8d9e-2185f880c9a7" type="xs:double" minOccurs="0" />
+                  <xs:element name="MSOLAP_MODEL_COLUMN" msprop:design-time-name="15769157-831a-40f8-97cb-a843adac6f72" type="xs:string" minOccurs="0" />
+                  <xs:element name="MSOLAP_NODE_SCORE" msprop:design-time-name="27cc5e99-c167-4ccb-82b8-2ae3ecad1bd1" type="xs:double" minOccurs="0" />
+                  <xs:element name="MSOLAP_NODE_SHORT_CAPTION" msprop:design-time-name="fe8f1457-8f01-4e42-b597-778665416457" type="xs:string" minOccurs="0" />
+                  <xs:element name="NODE_UNIQUE_NAME" msprop:design-time-name="1afc7b05-5e99-457d-98cb-f1361fb41c9f" type="xs:string" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <DIMENSION_CONTENT_SCHEMA xmlns="" />
+  </Schema>
+</DataSourceView>

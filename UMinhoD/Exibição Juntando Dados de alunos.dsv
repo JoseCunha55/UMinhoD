@@ -1,0 +1,168 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="49114c82-e917-4f15-ada6-3855b28b65fa" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Exibição Juntando Dados de alunos</ID>
+  <Name>Exibição Juntando Dados de alunos</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>DDS Educacional</DataSourceID>
+  <Schema>
+    <xs:schema id="Exibição_x0020_Juntando_x0020_Dados_x0020_de_x0020_alunos" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="Exibição_x0020_Juntando_x0020_Dados_x0020_de_x0020_alunos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="fdc9130d-d957-4270-9989-5028c2988ad1">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_TB_JuntandoDadosAlunos" msprop:design-time-name="54f30f89-9e53-49f6-b2a7-12ddeceddf09" msprop:DbTableName="TB_JuntandoDadosAlunos" msprop:FriendlyName="TB_JuntandoDadosAlunos" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Codigo_Campus" msprop:design-time-name="81afa84e-d76c-4190-88d9-6ef08bd7041d" msprop:DbColumnName="Codigo_Campus" msprop:FriendlyName="Codigo_Campus" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="35" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Codigo_Curso" msprop:design-time-name="9730e3f2-f2ea-4a73-b40e-9cdc2b0482df" msprop:DbColumnName="Codigo_Curso" msprop:FriendlyName="Codigo_Curso" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Data_de_Nascimento" msprop:design-time-name="fbf9b13f-92b8-42ee-a649-3d16f5af2b4d" msprop:DbColumnName="Data_de_Nascimento" msprop:FriendlyName="Data_de_Nascimento" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="Idade" msprop:design-time-name="a4adf000-7e3d-4ac8-8f18-3b0934ad8440" msprop:DbColumnName="Idade" msprop:FriendlyName="Idade" type="xs:int" minOccurs="0" />
+                  <xs:element name="Matricula" msprop:design-time-name="2ecf5081-e0f5-4ec5-8f33-bf75887b405c" msprop:DbColumnName="Matricula" msprop:FriendlyName="Matricula" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Ano" msprop:design-time-name="a2ab0ca7-741a-4b8f-8a61-4aa43b1b219d" msprop:DbColumnName="Ano" msprop:FriendlyName="Ano" type="xs:short" minOccurs="0" />
+                  <xs:element name="Forma_Ingresso" msprop:design-time-name="4f759883-3370-4a10-803a-63342fdf1fd4" msprop:DbColumnName="Forma_Ingresso" msprop:FriendlyName="Forma_Ingresso" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="SituacaoIng" msprop:design-time-name="4a74124c-f016-4d09-86a3-4cc191767478" msprop:DbColumnName="SituacaoIng" msprop:FriendlyName="SituacaoIng" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Codigo_Disciplina" msprop:design-time-name="f739dbf9-4e9a-4aaa-b965-4b5c3315b889" msprop:DbColumnName="Codigo_Disciplina" msprop:FriendlyName="Codigo_Disciplina" type="xs:int" minOccurs="0" />
+                  <xs:element name="Coeficiente_Rendimento" msprop:design-time-name="40edaeab-ea79-4f08-8715-6a9b4574c107" msprop:DbColumnName="Coeficiente_Rendimento" msprop:FriendlyName="Coeficiente_Rendimento" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="Disciplina" msprop:design-time-name="c736d724-fa27-4462-a676-27ca1f7d564b" msprop:DbColumnName="Disciplina" msprop:FriendlyName="Disciplina" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Semestre" msprop:design-time-name="a9603aa2-756a-4e78-8c61-4c465acc9ea2" msprop:DbColumnName="Semestre" msprop:FriendlyName="Semestre" type="xs:unsignedByte" minOccurs="0" />
+                  <xs:element name="Area_Procedencia_Escola_Origem" msprop:design-time-name="827b6e5d-aed0-494e-a080-137e0a0593e2" msprop:DbColumnName="Area_Procedencia_Escola_Origem" msprop:FriendlyName="Area_Procedencia_Escola_Origem" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="30" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Codigo_Turma" msprop:design-time-name="ce1183c1-4561-4bb8-a4f0-2ee28df3d85c" msprop:DbColumnName="Codigo_Turma" msprop:FriendlyName="Codigo_Turma" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Etnia" msprop:design-time-name="94082fdf-d74c-4d5c-bc30-fd1699409099" msprop:DbColumnName="Etnia" msprop:FriendlyName="Etnia" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="30" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Media_Final" msprop:design-time-name="9f615067-a174-4787-ad33-e567bd3c7d1d" msprop:DbColumnName="Media_Final" msprop:FriendlyName="Media_Final" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="Aulas_Dadas" msprop:design-time-name="b4c7a230-61c5-47ae-bb23-46d7f4cf9e2c" msprop:DbColumnName="Aulas_Dadas" msprop:FriendlyName="Aulas_Dadas" type="xs:int" minOccurs="0" />
+                  <xs:element name="Faltas" msprop:design-time-name="796f552f-4f28-489b-920a-0eee935d841a" msprop:DbColumnName="Faltas" msprop:FriendlyName="Faltas" type="xs:short" minOccurs="0" />
+                  <xs:element name="Renda_Familiar" msprop:design-time-name="343c75e8-9e1b-4b8d-b3d6-55f3fac15cb7" msprop:DbColumnName="Renda_Familiar" msprop:FriendlyName="Renda_Familiar" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="60" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Reside" msprop:design-time-name="9af8f3ba-9c2a-48ce-99ac-ede6447e34b8" msprop:DbColumnName="Reside" msprop:FriendlyName="Reside" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="35" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Sexo" msprop:design-time-name="8b6c8abd-0432-4e63-85a7-fd90bd069aba" msprop:DbColumnName="Sexo" msprop:FriendlyName="Sexo" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="1" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Tipo_Escola_Origem" msprop:design-time-name="26e7925e-1949-4f71-b679-31376f295135" msprop:DbColumnName="Tipo_Escola_Origem" msprop:FriendlyName="Tipo_Escola_Origem" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="30" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Situacao" msprop:design-time-name="125482bd-bd0a-47f3-86d6-7a154003c4e4" msprop:DbColumnName="Situacao" msprop:FriendlyName="Situacao" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Renda" msprop:design-time-name="55210243-246a-4e53-888a-9c969a45548b" msprop:DbColumnName="Renda" msprop:FriendlyName="Renda" type="xs:short" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <Exibição_x0020_Juntando_x0020_Dados_x0020_de_x0020_alunos xmlns="" />
+  </Schema>
+</DataSourceView>

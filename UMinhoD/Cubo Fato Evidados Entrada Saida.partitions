@@ -1,0 +1,177 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="205addf7-0ad3-4406-98e2-a9eab1a31b23" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Cubo Fato Evidados Entrada Saida</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>Fato Eva Con Entrada Saida</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="66b1b402-aaa7-4d38-8b31-63e2799c361c">
+          <ID>Fato Eva Con Entrada Saida</ID>
+          <Name>Fato Eva Con Entrada Saida</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="e6fb491b-efdb-421e-b11c-2f596ffb8fb7">
+            <DataSourceViewID>Fato Evidados Entrada Saida</DataSourceViewID>
+            <TableID>dbo_FatoEvaConEntradaSaida</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <EstimatedRows>1296</EstimatedRows>
+          <AggregationDesignID>AggregationDesign</AggregationDesignID>
+        </Partition>
+      </Partitions>
+      <AggregationDesigns>
+        <AggregationDesign>
+          <ID>AggregationDesign</ID>
+          <Name>AggregationDesign</Name>
+          <CreatedTimestamp>2016-02-19T13:18:14.7Z</CreatedTimestamp>
+          <LastSchemaUpdate>2016-02-19T13:18:14.7Z</LastSchemaUpdate>
+          <EstimatedRows>1296</EstimatedRows>
+          <Dimensions>
+            <Dimension>
+              <CubeDimensionID>Dim CURSOS</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>COD CURSO</AttributeID>
+                  <EstimatedCount>696</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>COD INSTITUICAO</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>DESC CURSO</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>SIGLA CURSO</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>DT INICIO</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>COD DEPARTAMENTO</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim Alunos Situacao Dados Ingresso</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Forma Ingr ID</AttributeID>
+                  <EstimatedCount>104060</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Desc Instituicao</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Matricula</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Curso</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Ano Ingresso</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Periodo Ingresso</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Forma Ingresso</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Situacao Matricula</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Ano Final</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Periodo Final</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim DATA</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Data</AttributeID>
+                  <EstimatedCount>10959</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>DATA</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ANO</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>BIMESTRE</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>SEMESTRE</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim INSTITUICOES</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>COD INSTITUICAO</AttributeID>
+                  <EstimatedCount>21</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>DESC INSTITUICAO</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>SIGLA INSTITUICAO</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Aggregations>
+            <Aggregation>
+              <ID>Aggregation 0</ID>
+              <Name>Aggregation 0</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Alunos Situacao Dados Ingresso</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim INSTITUICOES</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>COD INSTITUICAO</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1</ID>
+              <Name>Aggregation 1</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Alunos Situacao Dados Ingresso</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim INSTITUICOES</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+          </Aggregations>
+        </AggregationDesign>
+      </AggregationDesigns>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

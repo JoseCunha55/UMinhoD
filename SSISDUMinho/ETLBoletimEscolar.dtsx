@@ -1,0 +1,954 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/9/2015 12:24:11 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="CUNHA-PC"
+  DTS:CreatorName="CUNHA-PC\Cunha"
+  DTS:DTSID="{6CB2CC3F-A3FC-4F99-BE31-2518CD121FA6}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.700.219"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="ETLBoletimEscolar"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{ACD07B67-AEB3-47A4-BBBD-F77C6F082888}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DadosAcademico]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8F88892E-43BD-46C4-803C-2479E882ACE1}"
+      DTS:ObjectName="CUNHA-PC\SQLSERVER2014.DadosAcademico">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=CUNHA-PC\SQLSERVER2014;Initial Catalog=DadosAcademico;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{5C9A1C29-F964-4B41-9845-A6124EA6948E}"
+      DTS:ObjectName="CUNHA-PC\SQLSERVER2014.DDSEducacional">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=CUNHA-PC\SQLSERVER2014;Initial Catalog=DDSEducacional;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarefa Fluxo de Dados"
+      DTS:DTSID="{C524A84A-5243-475C-9E38-2F354283B98D}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Extrair dados do Sistema Acadêmico (Boletim Escolar)"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+              description="Origem OLE DB"
+              name="Boletim Escolar - Planilha Excel"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[dimBoletim_Escolar]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="A variável que contém o comando SQL a ser executado."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DadosAcademico]"
+                  connectionManagerRefId="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DadosAcademico]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB]"
+                  name="Saída de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[ChaveBoletimEscolar]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].ExternalColumns[ChaveBoletimEscolar]"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[ChaveBoletimEscolar]"
+                      name="ChaveBoletimEscolar"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].ExternalColumns[Matricula]"
+                      length="30"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[Matricula]"
+                      name="Matricula"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[NomeAluno]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].ExternalColumns[NomeAluno]"
+                      length="60"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[NomeAluno]"
+                      name="NomeAluno"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[AnoLetivo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].ExternalColumns[AnoLetivo]"
+                      length="4"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[AnoLetivo]"
+                      name="AnoLetivo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[PeriodoLetivo]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].ExternalColumns[PeriodoLetivo]"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[PeriodoLetivo]"
+                      name="PeriodoLetivo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[DescricaoPeriodo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].ExternalColumns[DescricaoPeriodo]"
+                      length="10"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[DescricaoPeriodo]"
+                      name="DescricaoPeriodo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[AnoPeriodoLetivo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].ExternalColumns[AnoPeriodoLetivo]"
+                      length="10"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[AnoPeriodoLetivo]"
+                      name="AnoPeriodoLetivo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[MatriculaPeriodoLetivo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].ExternalColumns[MatriculaPeriodoLetivo]"
+                      length="30"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[MatriculaPeriodoLetivo]"
+                      name="MatriculaPeriodoLetivo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[DescricaoHistoricoCurso]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].ExternalColumns[DescricaoHistoricoCurso]"
+                      length="100"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[DescricaoHistoricoCurso]"
+                      name="DescricaoHistoricoCurso"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[Periodo]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].ExternalColumns[Periodo]"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[Periodo]"
+                      name="Periodo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[TurmaAluno]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].ExternalColumns[TurmaAluno]"
+                      length="30"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[TurmaAluno]"
+                      name="TurmaAluno"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[Campus]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].ExternalColumns[Campus]"
+                      length="35"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[Campus]"
+                      name="Campus"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[SituacaoMatriculaPeriodo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].ExternalColumns[SituacaoMatriculaPeriodo]"
+                      length="50"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[SituacaoMatriculaPeriodo]"
+                      name="SituacaoMatriculaPeriodo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[PercentualFrequencia]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].ExternalColumns[PercentualFrequencia]"
+                      length="20"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[PercentualFrequencia]"
+                      name="PercentualFrequencia"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[SiglaCurso]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].ExternalColumns[SiglaCurso]"
+                      length="10"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[SiglaCurso]"
+                      name="SiglaCurso"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[CoeficienteRendimento]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].ExternalColumns[CoeficienteRendimento]"
+                      length="10"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[CoeficienteRendimento]"
+                      name="CoeficienteRendimento"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[Nota]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].ExternalColumns[Nota]"
+                      length="20"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[Nota]"
+                      name="Nota"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].ExternalColumns[ChaveBoletimEscolar]"
+                      dataType="i4"
+                      name="ChaveBoletimEscolar" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].ExternalColumns[Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="Matricula" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].ExternalColumns[NomeAluno]"
+                      codePage="1252"
+                      dataType="str"
+                      length="60"
+                      name="NomeAluno" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].ExternalColumns[AnoLetivo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="AnoLetivo" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].ExternalColumns[PeriodoLetivo]"
+                      dataType="i4"
+                      name="PeriodoLetivo" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].ExternalColumns[DescricaoPeriodo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="DescricaoPeriodo" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].ExternalColumns[AnoPeriodoLetivo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="AnoPeriodoLetivo" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].ExternalColumns[MatriculaPeriodoLetivo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="MatriculaPeriodoLetivo" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].ExternalColumns[DescricaoHistoricoCurso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="DescricaoHistoricoCurso" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].ExternalColumns[Periodo]"
+                      dataType="i4"
+                      name="Periodo" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].ExternalColumns[TurmaAluno]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="TurmaAluno" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].ExternalColumns[Campus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="35"
+                      name="Campus" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].ExternalColumns[SituacaoMatriculaPeriodo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SituacaoMatriculaPeriodo" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].ExternalColumns[PercentualFrequencia]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="PercentualFrequencia" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].ExternalColumns[SiglaCurso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="SiglaCurso" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].ExternalColumns[CoeficienteRendimento]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="CoeficienteRendimento" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].ExternalColumns[Nota]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Nota" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB]"
+                  isErrorOut="true"
+                  name="Saída de Erro de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[ChaveBoletimEscolar]"
+                      dataType="i4"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[ChaveBoletimEscolar]"
+                      name="ChaveBoletimEscolar" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[Matricula]"
+                      name="Matricula" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[NomeAluno]"
+                      codePage="1252"
+                      dataType="str"
+                      length="60"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[NomeAluno]"
+                      name="NomeAluno" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[AnoLetivo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[AnoLetivo]"
+                      name="AnoLetivo" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[PeriodoLetivo]"
+                      dataType="i4"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[PeriodoLetivo]"
+                      name="PeriodoLetivo" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[DescricaoPeriodo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[DescricaoPeriodo]"
+                      name="DescricaoPeriodo" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[AnoPeriodoLetivo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[AnoPeriodoLetivo]"
+                      name="AnoPeriodoLetivo" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[MatriculaPeriodoLetivo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[MatriculaPeriodoLetivo]"
+                      name="MatriculaPeriodoLetivo" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[DescricaoHistoricoCurso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[DescricaoHistoricoCurso]"
+                      name="DescricaoHistoricoCurso" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[Periodo]"
+                      dataType="i4"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[Periodo]"
+                      name="Periodo" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[TurmaAluno]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[TurmaAluno]"
+                      name="TurmaAluno" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[Campus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="35"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[Campus]"
+                      name="Campus" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[SituacaoMatriculaPeriodo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[SituacaoMatriculaPeriodo]"
+                      name="SituacaoMatriculaPeriodo" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[PercentualFrequencia]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[PercentualFrequencia]"
+                      name="PercentualFrequencia" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[SiglaCurso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[SiglaCurso]"
+                      name="SiglaCurso" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[CoeficienteRendimento]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[CoeficienteRendimento]"
+                      name="CoeficienteRendimento" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[Nota]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[Nota]"
+                      name="Nota" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar"
+              componentClassID="Microsoft.SQLServerDestination"
+              contactInfo="Destino do SQL Server;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;5"
+              description="Destino do SQL Server"
+              name="DDS - dimBoletimEscolar"
+              version="5">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.String"
+                  description="O nome do objeto de banco de dados no qual copiar dados."
+                  expressionType="Notify"
+                  name="BulkInsertTableName">[dimBoletimEscolar]</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica que qualquer restrição no objeto de destino será verificada durante a operação de cópia de dados. Corresponde a opção de inserção em massa CHECK_CONSTRAINTS."
+                  name="BulkInsertCheckConstraints">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o número da primeira linha a ser copiada. Corresponde à opção de inserção em massa FIRSTROW."
+                  expressionType="Notify"
+                  name="BulkInsertFirstRow">-1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica que qualquer disparador de inserção definido no objeto de destino será executado durante a cópia de dados. Corresponde à opção de inserção em massa FIRE_TRIGGERS."
+                  name="BulkInsertFireTriggers">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Corresponde à opção de inserção em massa KEEPIDENTITY."
+                  name="BulkInsertKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as colunas que contêm null terão null copiado no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável somente se o carregamento rápido estiver ativado."
+                  name="BulkInsertKeepNulls">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o número da última linha a ser copiada. Corresponde à opção de inserção em massa LASTROW."
+                  expressionType="Notify"
+                  name="BulkInsertLastRow">-1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o número máximo de erros de sintaxe e erros de compilação que podem ocorrer antes do cancelamento da operação de cópia de dados. Cada linha que não puder ser copiada será ignorada e contada como um erro. Corresponde à opção de inserção em massa MAXERRORS."
+                  name="BulkInsertMaxErrors">-1</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica como os dados a serem copiados estão classificados. Corresponde à opção de inserção em massa ORDER."
+                  expressionType="Notify"
+                  name="BulkInsertOrder"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica que um bloqueio de nível de tabela é adquirido para a duração da operação de cópia de dados. Corresponde à opção de inserção em massa TABLOCK."
+                  name="BulkInsertTablock">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a quantidade de tempo em segundos que o adaptador de Destino SQL aguardará antes de encerrar se não houver dados disponíveis para inserção. Um valor de tempo limite de 0 significa que o adaptador de Destino SQL não terá tempo limite."
+                  expressionType="Notify"
+                  name="Timeout">30</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção dos dados."
+                  name="MaxInsertCommitSize">0</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+                  connectionManagerRefId="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server]"
+                  hasSideEffects="true"
+                  name="Entrada de Destino do SQL Server">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].Columns[ChaveBoletimEscolar]"
+                      cachedDataType="i4"
+                      cachedName="ChaveBoletimEscolar"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].ExternalColumns[ChaveBoletimEscolar]"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[ChaveBoletimEscolar]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].Columns[Matricula]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="Matricula"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].ExternalColumns[Matricula]"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[Matricula]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].Columns[NomeAluno]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="60"
+                      cachedName="NomeAluno"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].ExternalColumns[NomeAluno]"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[NomeAluno]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].Columns[AnoLetivo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="AnoLetivo"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].ExternalColumns[AnoLetivo]"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[AnoLetivo]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].Columns[PeriodoLetivo]"
+                      cachedDataType="i4"
+                      cachedName="PeriodoLetivo"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].ExternalColumns[PeriodoLetivo]"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[PeriodoLetivo]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].Columns[DescricaoPeriodo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="DescricaoPeriodo"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].ExternalColumns[DescricaoPeriodo]"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[DescricaoPeriodo]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].Columns[AnoPeriodoLetivo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="AnoPeriodoLetivo"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].ExternalColumns[AnoPeriodoLetivo]"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[AnoPeriodoLetivo]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].Columns[MatriculaPeriodoLetivo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="MatriculaPeriodoLetivo"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].ExternalColumns[MatriculaPeriodoLetivo]"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[MatriculaPeriodoLetivo]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].Columns[DescricaoHistoricoCurso]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="DescricaoHistoricoCurso"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].ExternalColumns[DescricaoHistoricoCurso]"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[DescricaoHistoricoCurso]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].Columns[Periodo]"
+                      cachedDataType="i4"
+                      cachedName="Periodo"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].ExternalColumns[Periodo]"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[Periodo]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].Columns[TurmaAluno]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="TurmaAluno"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].ExternalColumns[TurmaAluno]"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[TurmaAluno]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].Columns[Campus]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="35"
+                      cachedName="Campus"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].ExternalColumns[Campus]"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[Campus]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].Columns[SituacaoMatriculaPeriodo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SituacaoMatriculaPeriodo"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].ExternalColumns[SituacaoMatriculaPeriodo]"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[SituacaoMatriculaPeriodo]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].Columns[PercentualFrequencia]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="PercentualFrequencia"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].ExternalColumns[PercentualFrequencia]"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[PercentualFrequencia]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].Columns[SiglaCurso]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="SiglaCurso"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].ExternalColumns[SiglaCurso]"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[SiglaCurso]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].Columns[CoeficienteRendimento]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="CoeficienteRendimento"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].ExternalColumns[CoeficienteRendimento]"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[CoeficienteRendimento]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].Columns[Nota]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Nota"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].ExternalColumns[Nota]"
+                      lineageId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB].Columns[Nota]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].ExternalColumns[ChaveBoletimEscolar]"
+                      dataType="i4"
+                      name="ChaveBoletimEscolar" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].ExternalColumns[Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="Matricula" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].ExternalColumns[NomeAluno]"
+                      codePage="1252"
+                      dataType="str"
+                      length="60"
+                      name="NomeAluno" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].ExternalColumns[AnoLetivo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="AnoLetivo" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].ExternalColumns[PeriodoLetivo]"
+                      dataType="i4"
+                      name="PeriodoLetivo" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].ExternalColumns[DescricaoPeriodo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="DescricaoPeriodo" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].ExternalColumns[AnoPeriodoLetivo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="AnoPeriodoLetivo" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].ExternalColumns[MatriculaPeriodoLetivo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="MatriculaPeriodoLetivo" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].ExternalColumns[DescricaoHistoricoCurso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="DescricaoHistoricoCurso" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].ExternalColumns[Periodo]"
+                      dataType="i4"
+                      name="Periodo" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].ExternalColumns[TurmaAluno]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="TurmaAluno" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].ExternalColumns[Campus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="35"
+                      name="Campus" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].ExternalColumns[SituacaoMatriculaPeriodo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SituacaoMatriculaPeriodo" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].ExternalColumns[PercentualFrequencia]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="PercentualFrequencia" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].ExternalColumns[SiglaCurso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="SiglaCurso" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].ExternalColumns[CoeficienteRendimento]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="CoeficienteRendimento" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server].ExternalColumns[Nota]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Nota" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar).Paths[Saída de Origem OLE DB]"
+              endId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar.Inputs[Entrada de Destino do SQL Server]"
+              name="Saída de Origem OLE DB"
+              startId="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel.Outputs[Saída de Origem OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="333,42"
+          Id="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)"
+          TopLeft="231,51" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="225,42"
+          Id="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel"
+          TopLeft="196,49" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar"
+          TopLeft="318,195" />
+        <EdgeLayout
+          Id="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar).Paths[Saída de Origem OLE DB]"
+          TopLeft="308.5,91">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="107.5,104"
+              Start="0,0"
+              End="107.5,96.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,48"
+                    Point2="0,52"
+                    Point3="4,52" />
+                  <mssgle:LineSegment
+                    End="103.5,52" />
+                  <mssgle:CubicBezierSegment
+                    Point1="103.5,52"
+                    Point2="107.5,52"
+                    Point3="107.5,56" />
+                  <mssgle:LineSegment
+                    End="107.5,96.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\DDS - dimBoletimEscolar">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extrair dados do Sistema Acadêmico (Boletim Escolar)\Boletim Escolar - Planilha Excel">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

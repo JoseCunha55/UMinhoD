@@ -1,0 +1,1610 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/11/2016 3:42:58 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="JOSEANTONIO-PC"
+  DTS:CreatorName="JOSEANTONIO-PC\José Antonio"
+  DTS:DTSID="{04B74B8B-95D3-4452-9C9D-3EF2D81C1273}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.700.219"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{BFDCD265-D673-452E-A4C0-B19E2725E7E0}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[JoseAntonio-pc.DDSEducacional]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2A0E3526-B5E9-4DC9-BC91-CA97C083FC0B}"
+      DTS:ObjectName="JoseAntonio-pc.DDSEducacional">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=JoseAntonio-pc;Initial Catalog=DDSEducacional;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[JoseAntonio-PC.sistema_academico]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8F010FBB-678C-4AF5-96DB-E01F34F2D682}"
+      DTS:ObjectName="JoseAntonio-PC.sistema_academico">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=JoseAntonio-PC;Initial Catalog=sistema_academico;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{1D61E79E-77AC-4B6B-A9EA-C79E18F2C964}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\DDSEducacional Cocluidos"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DDSEducacional Cocluidos"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Total_Aluno_Concluidos]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\DDSEducacional Cocluidos.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[JoseAntonio-pc.DDSEducacional]"
+                  connectionManagerRefId="Package.ConnectionManagers[JoseAntonio-pc.DDSEducacional]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\DDSEducacional Cocluidos.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\DDSEducacional Cocluidos.Inputs[OLE DB Destination Input].Columns[DESC_INSTITUICAO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DESC_INSTITUICAO"
+                      externalMetadataColumnId="Package\Data Flow Task\DDSEducacional Cocluidos.Inputs[OLE DB Destination Input].ExternalColumns[Campus]"
+                      lineageId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output].Columns[DESC_INSTITUICAO]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\DDSEducacional Cocluidos.Inputs[OLE DB Destination Input].Columns[SIGLA_CURSO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="SIGLA_CURSO"
+                      externalMetadataColumnId="Package\Data Flow Task\DDSEducacional Cocluidos.Inputs[OLE DB Destination Input].ExternalColumns[Sigla_Do_Curso]"
+                      lineageId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output].Columns[SIGLA_CURSO]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\DDSEducacional Cocluidos.Inputs[OLE DB Destination Input].Columns[Desc_Curso]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="273"
+                      cachedName="Desc_Curso"
+                      externalMetadataColumnId="Package\Data Flow Task\DDSEducacional Cocluidos.Inputs[OLE DB Destination Input].ExternalColumns[Curso]"
+                      lineageId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output].Columns[Desc_Curso]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\DDSEducacional Cocluidos.Inputs[OLE DB Destination Input].Columns[Situacao_Da_Matricula]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Situacao_Da_Matricula"
+                      externalMetadataColumnId="Package\Data Flow Task\DDSEducacional Cocluidos.Inputs[OLE DB Destination Input].ExternalColumns[Situacao]"
+                      lineageId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output].Columns[Situacao_Da_Matricula]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\DDSEducacional Cocluidos.Inputs[OLE DB Destination Input].Columns[ANO_LET]"
+                      cachedDataType="i2"
+                      cachedName="ANO_LET"
+                      externalMetadataColumnId="Package\Data Flow Task\DDSEducacional Cocluidos.Inputs[OLE DB Destination Input].ExternalColumns[Ano_Letivo]"
+                      lineageId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output].Columns[ANO_LET]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\DDSEducacional Cocluidos.Inputs[OLE DB Destination Input].Columns[PERIODO_LET]"
+                      cachedDataType="ui1"
+                      cachedName="PERIODO_LET"
+                      externalMetadataColumnId="Package\Data Flow Task\DDSEducacional Cocluidos.Inputs[OLE DB Destination Input].ExternalColumns[Semestre_Letivo]"
+                      lineageId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output].Columns[PERIODO_LET]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\DDSEducacional Cocluidos.Inputs[OLE DB Destination Input].Columns[QTD_ALUNO]"
+                      cachedDataType="i4"
+                      cachedName="QTD_ALUNO"
+                      externalMetadataColumnId="Package\Data Flow Task\DDSEducacional Cocluidos.Inputs[OLE DB Destination Input].ExternalColumns[QTD_Concluido]"
+                      lineageId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output].Columns[QTD_ALUNO]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DDSEducacional Cocluidos.Inputs[OLE DB Destination Input].ExternalColumns[Chave_Alternativa]"
+                      dataType="i4"
+                      name="Chave_Alternativa" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DDSEducacional Cocluidos.Inputs[OLE DB Destination Input].ExternalColumns[Campus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Campus" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DDSEducacional Cocluidos.Inputs[OLE DB Destination Input].ExternalColumns[Sigla_Do_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="Sigla_Do_Curso" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DDSEducacional Cocluidos.Inputs[OLE DB Destination Input].ExternalColumns[Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="300"
+                      name="Curso" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DDSEducacional Cocluidos.Inputs[OLE DB Destination Input].ExternalColumns[Situacao]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Situacao" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DDSEducacional Cocluidos.Inputs[OLE DB Destination Input].ExternalColumns[Ano_Letivo]"
+                      dataType="i2"
+                      name="Ano_Letivo" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DDSEducacional Cocluidos.Inputs[OLE DB Destination Input].ExternalColumns[Semestre_Letivo]"
+                      dataType="ui1"
+                      name="Semestre_Letivo" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DDSEducacional Cocluidos.Inputs[OLE DB Destination Input].ExternalColumns[QTD_Concluido]"
+                      dataType="i4"
+                      name="QTD_Concluido" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\DDSEducacional Cocluidos.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\DDSEducacional Cocluidos.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\DDSEducacional Cocluidos.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\DDSEducacional Cocluidos.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DDSEducacional Cocluidos.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\DDSEducacional Cocluidos.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\DDSEducacional Evadidos"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DDSEducacional Evadidos"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Total_Aluno_Evadidos]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\DDSEducacional Evadidos.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[JoseAntonio-pc.DDSEducacional]"
+                  connectionManagerRefId="Package.ConnectionManagers[JoseAntonio-pc.DDSEducacional]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\DDSEducacional Evadidos.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\DDSEducacional Evadidos.Inputs[OLE DB Destination Input].Columns[DESC_INSTITUICAO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DESC_INSTITUICAO"
+                      externalMetadataColumnId="Package\Data Flow Task\DDSEducacional Evadidos.Inputs[OLE DB Destination Input].ExternalColumns[Campus]"
+                      lineageId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output].Columns[DESC_INSTITUICAO]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\DDSEducacional Evadidos.Inputs[OLE DB Destination Input].Columns[SIGLA_CURSO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="SIGLA_CURSO"
+                      externalMetadataColumnId="Package\Data Flow Task\DDSEducacional Evadidos.Inputs[OLE DB Destination Input].ExternalColumns[Sigla_Do_Curso]"
+                      lineageId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output].Columns[SIGLA_CURSO]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\DDSEducacional Evadidos.Inputs[OLE DB Destination Input].Columns[Desc_Curso]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="273"
+                      cachedName="Desc_Curso"
+                      externalMetadataColumnId="Package\Data Flow Task\DDSEducacional Evadidos.Inputs[OLE DB Destination Input].ExternalColumns[Curso]"
+                      lineageId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output].Columns[Desc_Curso]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\DDSEducacional Evadidos.Inputs[OLE DB Destination Input].Columns[Situacao_Da_Matricula]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Situacao_Da_Matricula"
+                      externalMetadataColumnId="Package\Data Flow Task\DDSEducacional Evadidos.Inputs[OLE DB Destination Input].ExternalColumns[Situacao]"
+                      lineageId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output].Columns[Situacao_Da_Matricula]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\DDSEducacional Evadidos.Inputs[OLE DB Destination Input].Columns[ANO_LET]"
+                      cachedDataType="i2"
+                      cachedName="ANO_LET"
+                      externalMetadataColumnId="Package\Data Flow Task\DDSEducacional Evadidos.Inputs[OLE DB Destination Input].ExternalColumns[Ano_Letivo]"
+                      lineageId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output].Columns[ANO_LET]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\DDSEducacional Evadidos.Inputs[OLE DB Destination Input].Columns[PERIODO_LET]"
+                      cachedDataType="ui1"
+                      cachedName="PERIODO_LET"
+                      externalMetadataColumnId="Package\Data Flow Task\DDSEducacional Evadidos.Inputs[OLE DB Destination Input].ExternalColumns[Semestre_Letivo]"
+                      lineageId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output].Columns[PERIODO_LET]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\DDSEducacional Evadidos.Inputs[OLE DB Destination Input].Columns[QTD_ALUNO]"
+                      cachedDataType="i4"
+                      cachedName="QTD_ALUNO"
+                      externalMetadataColumnId="Package\Data Flow Task\DDSEducacional Evadidos.Inputs[OLE DB Destination Input].ExternalColumns[QTD_Evadido]"
+                      lineageId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output].Columns[QTD_ALUNO]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DDSEducacional Evadidos.Inputs[OLE DB Destination Input].ExternalColumns[Chave_Alternativa]"
+                      dataType="i4"
+                      name="Chave_Alternativa" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DDSEducacional Evadidos.Inputs[OLE DB Destination Input].ExternalColumns[Campus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Campus" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DDSEducacional Evadidos.Inputs[OLE DB Destination Input].ExternalColumns[Sigla_Do_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="Sigla_Do_Curso" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DDSEducacional Evadidos.Inputs[OLE DB Destination Input].ExternalColumns[Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="300"
+                      name="Curso" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DDSEducacional Evadidos.Inputs[OLE DB Destination Input].ExternalColumns[Situacao]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Situacao" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DDSEducacional Evadidos.Inputs[OLE DB Destination Input].ExternalColumns[Ano_Letivo]"
+                      dataType="i2"
+                      name="Ano_Letivo" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DDSEducacional Evadidos.Inputs[OLE DB Destination Input].ExternalColumns[Semestre_Letivo]"
+                      dataType="ui1"
+                      name="Semestre_Letivo" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DDSEducacional Evadidos.Inputs[OLE DB Destination Input].ExternalColumns[QTD_Evadido]"
+                      dataType="i4"
+                      name="QTD_Evadido" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\DDSEducacional Evadidos.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\DDSEducacional Evadidos.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\DDSEducacional Evadidos.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\DDSEducacional Evadidos.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DDSEducacional Evadidos.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\DDSEducacional Evadidos.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Total_Aluno_Desligados]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[JoseAntonio-pc.DDSEducacional]"
+                  connectionManagerRefId="Package.ConnectionManagers[JoseAntonio-pc.DDSEducacional]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DESC_INSTITUICAO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DESC_INSTITUICAO"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Campus]"
+                      lineageId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output].Columns[DESC_INSTITUICAO]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SIGLA_CURSO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="SIGLA_CURSO"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Sigla_Do_Curso]"
+                      lineageId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output].Columns[SIGLA_CURSO]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Desc_Curso]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="273"
+                      cachedName="Desc_Curso"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Curso]"
+                      lineageId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output].Columns[Desc_Curso]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Situacao_Da_Matricula]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Situacao_Da_Matricula"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Situacao]"
+                      lineageId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output].Columns[Situacao_Da_Matricula]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ANO_LET]"
+                      cachedDataType="i2"
+                      cachedName="ANO_LET"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ano_Letivo]"
+                      lineageId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output].Columns[ANO_LET]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PERIODO_LET]"
+                      cachedDataType="ui1"
+                      cachedName="PERIODO_LET"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Semestre_Letivo]"
+                      lineageId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output].Columns[PERIODO_LET]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[QTD_ALUNO]"
+                      cachedDataType="i4"
+                      cachedName="QTD_ALUNO"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QTD_Desligado]"
+                      lineageId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output].Columns[QTD_ALUNO]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Chave_Alternativa]"
+                      dataType="i4"
+                      name="Chave_Alternativa" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Campus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Campus" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Sigla_Do_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="Sigla_Do_Curso" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="300"
+                      name="Curso" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Situacao]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Situacao" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ano_Letivo]"
+                      dataType="i2"
+                      name="Ano_Letivo" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Semestre_Letivo]"
+                      dataType="ui1"
+                      name="Semestre_Letivo" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QTD_Desligado]"
+                      dataType="i4"
+                      name="QTD_Desligado" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Total Conclídos Academico"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Total Conclídos Academico"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[CA_TOTAL_ALUNOS_CONCLUIDOS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Total Conclídos Academico.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[JoseAntonio-PC.sistema_academico]"
+                  connectionManagerRefId="Package.ConnectionManagers[JoseAntonio-PC.sistema_academico]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output].Columns[DESC_INSTITUICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output].ExternalColumns[DESC_INSTITUICAO]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output].Columns[DESC_INSTITUICAO]"
+                      name="DESC_INSTITUICAO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output].Columns[SIGLA_CURSO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output].ExternalColumns[SIGLA_CURSO]"
+                      length="15"
+                      lineageId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output].Columns[SIGLA_CURSO]"
+                      name="SIGLA_CURSO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output].Columns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output].ExternalColumns[Desc_Curso]"
+                      length="273"
+                      lineageId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output].Columns[Desc_Curso]"
+                      name="Desc_Curso"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output].Columns[Situacao_Da_Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output].ExternalColumns[Situacao_Da_Matricula]"
+                      length="100"
+                      lineageId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output].Columns[Situacao_Da_Matricula]"
+                      name="Situacao_Da_Matricula"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output].Columns[ANO_LET]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output].ExternalColumns[ANO_LET]"
+                      lineageId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output].Columns[ANO_LET]"
+                      name="ANO_LET"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output].Columns[PERIODO_LET]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output].ExternalColumns[PERIODO_LET]"
+                      lineageId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output].Columns[PERIODO_LET]"
+                      name="PERIODO_LET"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output].Columns[QTD_ALUNO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output].ExternalColumns[QTD_ALUNO]"
+                      lineageId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output].Columns[QTD_ALUNO]"
+                      name="QTD_ALUNO"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output].ExternalColumns[DESC_INSTITUICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DESC_INSTITUICAO" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output].ExternalColumns[SIGLA_CURSO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="SIGLA_CURSO" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output].ExternalColumns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="273"
+                      name="Desc_Curso" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output].ExternalColumns[Situacao_Da_Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Situacao_Da_Matricula" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output].ExternalColumns[ANO_LET]"
+                      dataType="i2"
+                      name="ANO_LET" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output].ExternalColumns[PERIODO_LET]"
+                      dataType="ui1"
+                      name="PERIODO_LET" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output].ExternalColumns[QTD_ALUNO]"
+                      dataType="i4"
+                      name="QTD_ALUNO" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Error Output].Columns[DESC_INSTITUICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Error Output].Columns[DESC_INSTITUICAO]"
+                      name="DESC_INSTITUICAO" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Error Output].Columns[SIGLA_CURSO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Error Output].Columns[SIGLA_CURSO]"
+                      name="SIGLA_CURSO" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Error Output].Columns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="273"
+                      lineageId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Error Output].Columns[Desc_Curso]"
+                      name="Desc_Curso" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Error Output].Columns[Situacao_Da_Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Error Output].Columns[Situacao_Da_Matricula]"
+                      name="Situacao_Da_Matricula" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Error Output].Columns[ANO_LET]"
+                      dataType="i2"
+                      lineageId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Error Output].Columns[ANO_LET]"
+                      name="ANO_LET" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Error Output].Columns[PERIODO_LET]"
+                      dataType="ui1"
+                      lineageId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Error Output].Columns[PERIODO_LET]"
+                      name="PERIODO_LET" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Error Output].Columns[QTD_ALUNO]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Error Output].Columns[QTD_ALUNO]"
+                      name="QTD_ALUNO" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Total Desligados Academico"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Total Desligados Academico"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[CA_TOTAL_ALUNOS_DESLIGADOS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Total Desligados Academico.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[JoseAntonio-PC.sistema_academico]"
+                  connectionManagerRefId="Package.ConnectionManagers[JoseAntonio-PC.sistema_academico]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output].Columns[DESC_INSTITUICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output].ExternalColumns[DESC_INSTITUICAO]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output].Columns[DESC_INSTITUICAO]"
+                      name="DESC_INSTITUICAO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output].Columns[SIGLA_CURSO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output].ExternalColumns[SIGLA_CURSO]"
+                      length="15"
+                      lineageId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output].Columns[SIGLA_CURSO]"
+                      name="SIGLA_CURSO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output].Columns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output].ExternalColumns[Desc_Curso]"
+                      length="273"
+                      lineageId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output].Columns[Desc_Curso]"
+                      name="Desc_Curso"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output].Columns[Situacao_Da_Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output].ExternalColumns[Situacao_Da_Matricula]"
+                      length="100"
+                      lineageId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output].Columns[Situacao_Da_Matricula]"
+                      name="Situacao_Da_Matricula"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output].Columns[ANO_LET]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output].ExternalColumns[ANO_LET]"
+                      lineageId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output].Columns[ANO_LET]"
+                      name="ANO_LET"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output].Columns[PERIODO_LET]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output].ExternalColumns[PERIODO_LET]"
+                      lineageId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output].Columns[PERIODO_LET]"
+                      name="PERIODO_LET"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output].Columns[QTD_ALUNO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output].ExternalColumns[QTD_ALUNO]"
+                      lineageId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output].Columns[QTD_ALUNO]"
+                      name="QTD_ALUNO"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output].ExternalColumns[DESC_INSTITUICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DESC_INSTITUICAO" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output].ExternalColumns[SIGLA_CURSO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="SIGLA_CURSO" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output].ExternalColumns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="273"
+                      name="Desc_Curso" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output].ExternalColumns[Situacao_Da_Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Situacao_Da_Matricula" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output].ExternalColumns[ANO_LET]"
+                      dataType="i2"
+                      name="ANO_LET" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output].ExternalColumns[PERIODO_LET]"
+                      dataType="ui1"
+                      name="PERIODO_LET" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output].ExternalColumns[QTD_ALUNO]"
+                      dataType="i4"
+                      name="QTD_ALUNO" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Error Output].Columns[DESC_INSTITUICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Error Output].Columns[DESC_INSTITUICAO]"
+                      name="DESC_INSTITUICAO" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Error Output].Columns[SIGLA_CURSO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Error Output].Columns[SIGLA_CURSO]"
+                      name="SIGLA_CURSO" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Error Output].Columns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="273"
+                      lineageId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Error Output].Columns[Desc_Curso]"
+                      name="Desc_Curso" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Error Output].Columns[Situacao_Da_Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Error Output].Columns[Situacao_Da_Matricula]"
+                      name="Situacao_Da_Matricula" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Error Output].Columns[ANO_LET]"
+                      dataType="i2"
+                      lineageId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Error Output].Columns[ANO_LET]"
+                      name="ANO_LET" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Error Output].Columns[PERIODO_LET]"
+                      dataType="ui1"
+                      lineageId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Error Output].Columns[PERIODO_LET]"
+                      name="PERIODO_LET" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Error Output].Columns[QTD_ALUNO]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Error Output].Columns[QTD_ALUNO]"
+                      name="QTD_ALUNO" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Total Evadidos Academico"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Total Evadidos Academico"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[CA_TOTAL_ALUNOS_EVADIDOS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Total Evadidos Academico.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[JoseAntonio-PC.sistema_academico]"
+                  connectionManagerRefId="Package.ConnectionManagers[JoseAntonio-PC.sistema_academico]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output].Columns[DESC_INSTITUICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output].ExternalColumns[DESC_INSTITUICAO]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output].Columns[DESC_INSTITUICAO]"
+                      name="DESC_INSTITUICAO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output].Columns[SIGLA_CURSO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output].ExternalColumns[SIGLA_CURSO]"
+                      length="15"
+                      lineageId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output].Columns[SIGLA_CURSO]"
+                      name="SIGLA_CURSO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output].Columns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output].ExternalColumns[Desc_Curso]"
+                      length="273"
+                      lineageId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output].Columns[Desc_Curso]"
+                      name="Desc_Curso"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output].Columns[Situacao_Da_Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output].ExternalColumns[Situacao_Da_Matricula]"
+                      length="100"
+                      lineageId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output].Columns[Situacao_Da_Matricula]"
+                      name="Situacao_Da_Matricula"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output].Columns[ANO_LET]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output].ExternalColumns[ANO_LET]"
+                      lineageId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output].Columns[ANO_LET]"
+                      name="ANO_LET"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output].Columns[PERIODO_LET]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output].ExternalColumns[PERIODO_LET]"
+                      lineageId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output].Columns[PERIODO_LET]"
+                      name="PERIODO_LET"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output].Columns[QTD_ALUNO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output].ExternalColumns[QTD_ALUNO]"
+                      lineageId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output].Columns[QTD_ALUNO]"
+                      name="QTD_ALUNO"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output].ExternalColumns[DESC_INSTITUICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DESC_INSTITUICAO" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output].ExternalColumns[SIGLA_CURSO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="SIGLA_CURSO" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output].ExternalColumns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="273"
+                      name="Desc_Curso" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output].ExternalColumns[Situacao_Da_Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Situacao_Da_Matricula" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output].ExternalColumns[ANO_LET]"
+                      dataType="i2"
+                      name="ANO_LET" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output].ExternalColumns[PERIODO_LET]"
+                      dataType="ui1"
+                      name="PERIODO_LET" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output].ExternalColumns[QTD_ALUNO]"
+                      dataType="i4"
+                      name="QTD_ALUNO" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Error Output].Columns[DESC_INSTITUICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Error Output].Columns[DESC_INSTITUICAO]"
+                      name="DESC_INSTITUICAO" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Error Output].Columns[SIGLA_CURSO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Error Output].Columns[SIGLA_CURSO]"
+                      name="SIGLA_CURSO" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Error Output].Columns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="273"
+                      lineageId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Error Output].Columns[Desc_Curso]"
+                      name="Desc_Curso" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Error Output].Columns[Situacao_Da_Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Error Output].Columns[Situacao_Da_Matricula]"
+                      name="Situacao_Da_Matricula" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Error Output].Columns[ANO_LET]"
+                      dataType="i2"
+                      lineageId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Error Output].Columns[ANO_LET]"
+                      name="ANO_LET" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Error Output].Columns[PERIODO_LET]"
+                      dataType="ui1"
+                      lineageId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Error Output].Columns[PERIODO_LET]"
+                      name="PERIODO_LET" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Error Output].Columns[QTD_ALUNO]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Error Output].Columns[QTD_ALUNO]"
+                      name="QTD_ALUNO" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\DDSEducacional Cocluidos.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\Total Conclídos Academico.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output1]"
+              endId="Package\Data Flow Task\DDSEducacional Evadidos.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\Total Evadidos Academico.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output2]"
+              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\Total Desligados Academico.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Data Flow Task"
+          TopLeft="90.2857158232709,66.6823538763713" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="204,41.6"
+          Id="Package\Data Flow Task\Total Conclídos Academico"
+          TopLeft="29.5000004087176,146.205884326288" />
+        <NodeLayout
+          Size="200.8,41.6"
+          Id="Package\Data Flow Task\Total Evadidos Academico"
+          TopLeft="252.000004291535,106.447060316409" />
+        <NodeLayout
+          Size="209.6,41.6"
+          Id="Package\Data Flow Task\Total Desligados Academico"
+          TopLeft="461.142864996073,151.105884472144" />
+        <NodeLayout
+          Size="202.4,41.6"
+          Id="Package\Data Flow Task\DDSEducacional Cocluidos"
+          TopLeft="41.5000006130764,268.558827218713" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="131.500000408718,187.805884326288">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11.2000002043588,80.7529428924244"
+              Start="0,0"
+              End="11.2000002043588,73.2529428924244">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.3764714462122" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36.3764714462122"
+                    Point2="0,40.3764714462122"
+                    Point3="4,40.3764714462122" />
+                  <mssgle:LineSegment
+                    End="7.20000020435882,40.3764714462122" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.20000020435882,40.3764714462122"
+                    Point2="11.2000002043588,40.3764714462122"
+                    Point3="11.2000002043588,44.3764714462122" />
+                  <mssgle:LineSegment
+                    End="11.2000002043588,73.2529428924244" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="199.2,41.6"
+          Id="Package\Data Flow Task\DDSEducacional Evadidos"
+          TopLeft="263.428575914733,261.835297789788" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output1]"
+          TopLeft="352.400004291535,148.047060316409">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10.6285716231987,113.788237473379"
+              Start="0,0"
+              End="10.6285716231987,106.288237473379">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.8941187366895" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,52.8941187366895"
+                    Point2="0,56.8941187366895"
+                    Point3="4,56.8941187366895" />
+                  <mssgle:LineSegment
+                    End="6.6285716231987,56.8941187366895" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.6285716231987,56.8941187366895"
+                    Point2="10.6285716231987,56.8941187366895"
+                    Point3="10.6285716231987,60.8941187366895" />
+                  <mssgle:LineSegment
+                    End="10.6285716231987,106.288237473379" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Data Flow Task\OLE DB Destination"
+          TopLeft="514.857151625108,254.494121216243" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output2]"
+          TopLeft="565.942864996073,192.705884472144">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="34.1142866290347,61.7882367440986"
+              Start="0,0"
+              End="34.1142866290347,54.2882367440986">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.8941183720493" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.8941183720493"
+                    Point2="0,30.8941183720493"
+                    Point3="4,30.8941183720493" />
+                  <mssgle:LineSegment
+                    End="30.1142866290347,30.8941183720493" />
+                  <mssgle:CubicBezierSegment
+                    Point1="30.1142866290347,30.8941183720493"
+                    Point2="34.1142866290347,30.8941183720493"
+                    Point3="34.1142866290347,34.8941183720493" />
+                  <mssgle:LineSegment
+                    End="34.1142866290347,54.2882367440986" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="ETL dos dados do sistema Acadêmico para o modelo dimensional"
+          ParentId="Package\Data Flow Task"
+          FontInfo="{assembly:Null}"
+          Size="376,60"
+          Id="6ef7bc8a-21e6-4fe8-9d7c-6eac6923c646"
+          TopLeft="9.14285729855908,6.11764714462122" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Total Conclídos Academico">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Total Evadidos Academico">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Total Desligados Academico">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\DDSEducacional Cocluidos">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\DDSEducacional Evadidos">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

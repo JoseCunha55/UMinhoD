@@ -1,0 +1,909 @@
+﻿<MiningStructure xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="641ac687-5d80-437e-bd4a-a6a55c984de0" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Arvore Dados Sociais Alunos</ID>
+  <Name>Arvore Dados Sociais Alunos</Name>
+  <CreatedTimestamp>0001-01-01T03:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T03:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CaseTableName</Name>
+      <Value>dbo_dimDadosSociaisAlunos</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-9421" scrolltop="-5575" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="24638" y="16150" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="dimDadosSociaisAlunos" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="5757" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000a00007d16000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_dimDadosSociaisAlunos" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-9421</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-5575</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T03:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="b81412b1-3670-4a05-affb-7efefa682d27">
+    <DataSourceViewID>Dados Sociais Educacional</DataSourceViewID>
+  </Source>
+  <Columns>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="70ea7f50-cc14-4ee6-933a-01b53bb88a37">
+      <ID>Ano Letivo</ID>
+      <Name>Ano Letivo</Name>
+      <Type>Long</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e3734f9b-37c5-4ad7-9524-08e4af00a2df">
+          <DataType>SmallInt</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5754b730-7435-40a8-a08c-d5d1ef5e32d9">
+            <TableID>dbo_dimDadosSociaisAlunos</TableID>
+            <ColumnID>Ano_x0020_Letivo</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="2c849082-1a47-4e9f-ac95-27dae7faa409">
+      <ID>Area Procedencia Escola Origem</ID>
+      <Name>Area Procedencia Escola Origem</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1e386e98-5312-4eec-bbe5-067421bca1f0">
+          <DataType>WChar</DataType>
+          <DataSize>30</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="96914385-9b14-4726-a8af-8c1e83fe51c2">
+            <TableID>dbo_dimDadosSociaisAlunos</TableID>
+            <ColumnID>Area_Procedencia_Escola_Origem</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="4c0cc3ee-a1f1-493b-85fa-2e6d204176e7">
+      <ID>Aulas Dadas</ID>
+      <Name>Aulas Dadas</Name>
+      <Type>Long</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b52f81bd-463f-4f66-b8fc-720b2e510172">
+          <DataType>Integer</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="47f10eae-c5fb-42ec-9da1-a05074bc9e65">
+            <TableID>dbo_dimDadosSociaisAlunos</TableID>
+            <ColumnID>Aulas_Dadas</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="1f8aafa5-781b-415a-a634-ef61009a8eb6">
+      <ID>Carga Horaria</ID>
+      <Name>Carga Horaria</Name>
+      <Type>Double</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="08d2ea6a-b4a3-46ee-a913-0ad51308021e">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6e96bf07-ad33-4fdc-8204-ca67c6fe57d9">
+            <TableID>dbo_dimDadosSociaisAlunos</TableID>
+            <ColumnID>Carga_Horaria</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="f99a2cf7-92e2-4c62-a24d-85a8ecb2648c">
+      <ID>Cod Curso</ID>
+      <Name>Cod Curso</Name>
+      <Type>Long</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d88338cb-19c7-4df7-885e-42ec71417de3">
+          <DataType>Integer</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6f38ed98-d345-48f8-ac51-5f52ddf9850e">
+            <TableID>dbo_dimDadosSociaisAlunos</TableID>
+            <ColumnID>Cod_Curso</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="dd2bbf1b-38bf-44f3-8391-2db066c5000f">
+      <ID>Cod Turma</ID>
+      <Name>Cod Turma</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c9d2d025-9b19-4f0d-8e5e-d27871524533">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="938f2d45-37c4-4073-a9ca-c4a6d2dd8a44">
+            <TableID>dbo_dimDadosSociaisAlunos</TableID>
+            <ColumnID>Cod_Turma</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="ba55fae9-2995-4a9e-9839-c1b830a89362">
+      <ID>Dados Sociais ID</ID>
+      <Name>Dados Sociais ID</Name>
+      <IsKey>true</IsKey>
+      <Type>Long</Type>
+      <Content>Key</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f922eae8-defb-4689-b798-524c306358d7">
+          <DataType>Integer</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="179218da-65d3-4c83-9b10-0c89ceed3037">
+            <TableID>dbo_dimDadosSociaisAlunos</TableID>
+            <ColumnID>DadosSociais_ID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="ca897f17-d284-41de-aa48-4839ea7700fa">
+      <ID>Desc Curso</ID>
+      <Name>Desc Curso</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2d6a7a4e-83c0-49a2-a902-c3e38b10f91e">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="256d5c0f-5943-4c0d-97af-a35a41a4832e">
+            <TableID>dbo_dimDadosSociaisAlunos</TableID>
+            <ColumnID>Desc_Curso</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="035db11a-8809-43c0-9761-4cfc45cc36cd">
+      <ID>Etnia</ID>
+      <Name>Etnia</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7b3bbe41-c2bb-44b6-9ec4-161f1e5b3cd9">
+          <DataType>WChar</DataType>
+          <DataSize>30</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="52dd62f0-d3e2-41b4-90a3-cfe3a5da3291">
+            <TableID>dbo_dimDadosSociaisAlunos</TableID>
+            <ColumnID>Etnia</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="d150fe3d-3d13-401f-9f4a-30b9f415a20c">
+      <ID>Faltas</ID>
+      <Name>Faltas</Name>
+      <Type>Long</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="113c998a-2363-43c7-b6b5-d09eb3fe7d5e">
+          <DataType>SmallInt</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="576a3561-febc-4e5d-9af1-88b47afa2766">
+            <TableID>dbo_dimDadosSociaisAlunos</TableID>
+            <ColumnID>Faltas</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="bf1a1fe4-e99f-4b35-b2a7-4708e56f48fe">
+      <ID>Forma Ingresso</ID>
+      <Name>Forma Ingresso</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b409d47e-1125-4285-8e8a-e6b9706b0a0c">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8143eaa9-9af4-4fdd-9fe8-970b07a2e712">
+            <TableID>dbo_dimDadosSociaisAlunos</TableID>
+            <ColumnID>Forma_Ingresso</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="616fa84d-167f-46c5-aea6-15d723d7356b">
+      <ID>Matricula</ID>
+      <Name>Matricula</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="bb84be98-a519-46d2-ad9f-78c1254eea5a">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="94c0d951-b9db-4f5d-9588-66858d856b8b">
+            <TableID>dbo_dimDadosSociaisAlunos</TableID>
+            <ColumnID>Matricula</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="59670b8d-8a14-4f2a-ba9a-ec9b77157914">
+      <ID>Media Final</ID>
+      <Name>Media Final</Name>
+      <Type>Double</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="cbdb53b3-f6df-454d-80d6-51b5efabeb3d">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="219c3013-7bf1-4081-96c2-1f43fdacf409">
+            <TableID>dbo_dimDadosSociaisAlunos</TableID>
+            <ColumnID>Media_Final</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="43202476-80af-43f6-9a60-e2e70f634197">
+      <ID>Renda</ID>
+      <Name>Renda</Name>
+      <Type>Long</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7c92172f-7152-459a-8c26-9055500fdef5">
+          <DataType>Integer</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ae64da77-2f8a-4de6-b122-2e5ac9e3274a">
+            <TableID>dbo_dimDadosSociaisAlunos</TableID>
+            <ColumnID>Renda</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="5610f1be-b072-4443-bd0f-7d0bac6864d7">
+      <ID>Renda Familiar</ID>
+      <Name>Renda Familiar</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="dad901bc-7d16-4774-866f-fc49abf069a0">
+          <DataType>WChar</DataType>
+          <DataSize>60</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d677341a-ea22-4b48-964d-35e35dbf56f1">
+            <TableID>dbo_dimDadosSociaisAlunos</TableID>
+            <ColumnID>Renda_Familiar</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="000ae871-2543-4496-a880-a1b0b27e4a8e">
+      <ID>Reside</ID>
+      <Name>Reside</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="574e89e6-f4cf-4b8f-af47-bd177c33ffbb">
+          <DataType>WChar</DataType>
+          <DataSize>35</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="55277439-4624-4e10-9244-530f0cab361d">
+            <TableID>dbo_dimDadosSociaisAlunos</TableID>
+            <ColumnID>Reside</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="ed76d350-e5f1-4bf8-83ac-8ada22e28c42">
+      <ID>Sexo</ID>
+      <Name>Sexo</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="eb5c01de-6380-4d7d-97e1-ce3eca4e2c34">
+          <DataType>WChar</DataType>
+          <DataSize>1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="061efd09-b079-48f9-932d-3a34969065c7">
+            <TableID>dbo_dimDadosSociaisAlunos</TableID>
+            <ColumnID>Sexo</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="669e2a45-e5d5-45e1-abe0-a165ec634fbb">
+      <ID>Sigla Curso</ID>
+      <Name>Sigla Curso</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="44e0af9b-7844-4f3a-8ed0-d643d327d543">
+          <DataType>WChar</DataType>
+          <DataSize>15</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="edbf989e-5d79-4ef5-a79f-90b9b82c8d18">
+            <TableID>dbo_dimDadosSociaisAlunos</TableID>
+            <ColumnID>Sigla_Curso</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="f18ff07d-7720-4c8b-9902-c9071c2d2813">
+      <ID>Sigla Disciplina</ID>
+      <Name>Sigla Disciplina</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1f830b28-96dc-49d5-8b5d-5adde4ff677e">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="bd3f7b4c-c924-4a7b-9a64-a2b281b6b3f7">
+            <TableID>dbo_dimDadosSociaisAlunos</TableID>
+            <ColumnID>Sigla_Disciplina</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="8190800c-e076-43ca-80df-7f413f6267cf">
+      <ID>Situacao</ID>
+      <Name>Situacao</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="42683c6e-ee1d-499a-b506-15fd3a959301">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="144be75d-a6f1-435c-97a7-c09b21114c92">
+            <TableID>dbo_dimDadosSociaisAlunos</TableID>
+            <ColumnID>Situacao</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="1d8c144b-adb4-4aa6-87ec-1741a8fa89ab">
+      <ID>Tipo Escola Origem</ID>
+      <Name>Tipo Escola Origem</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="bd20e590-ae51-4d0c-9466-fc432636f683">
+          <DataType>WChar</DataType>
+          <DataSize>30</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b7b712d3-8e94-4e68-8c47-326b315cd732">
+            <TableID>dbo_dimDadosSociaisAlunos</TableID>
+            <ColumnID>Tipo_Escola_Origem</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+  </Columns>
+  <MiningModels>
+    <MiningModel dwd:design-time-name="24ad3ab7-5b27-4261-bdaa-dbb8c12acfe5">
+      <ID>Arvore Dados Sociais Alunos</ID>
+      <Name>Arvore Dados Sociais Alunos</Name>
+      <CreatedTimestamp>0001-01-01T03:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T03:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T03:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Algorithm>Microsoft_Decision_Trees</Algorithm>
+      <AlgorithmParameters>
+        <AlgorithmParameter>
+          <Name>SPLIT_METHOD</Name>
+          <Value xsi:type="xsd:int">1</Value>
+        </AlgorithmParameter>
+      </AlgorithmParameters>
+      <Columns>
+        <Column dwd:design-time-name="a878f499-1ebd-4d7a-9c70-98c87f84fd59">
+          <ID>Ano Letivo</ID>
+          <Name>Ano Letivo</Name>
+          <SourceColumnID>Ano Letivo</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="f5a76382-d411-4278-bd39-afd4984e5978">
+          <ID>Area Procedencia Escola Origem</ID>
+          <Name>Area Procedencia Escola Origem</Name>
+          <SourceColumnID>Area Procedencia Escola Origem</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="9b584737-be54-404f-916b-8ca49e93e3dd">
+          <ID>Aulas Dadas</ID>
+          <Name>Aulas Dadas</Name>
+          <SourceColumnID>Aulas Dadas</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="970d78d6-baec-4ce6-90f2-60c7fc988255">
+          <ID>Carga Horaria</ID>
+          <Name>Carga Horaria</Name>
+          <SourceColumnID>Carga Horaria</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="18d1ac65-6875-4127-af17-e3f0c2560c37">
+          <ID>Cod Curso</ID>
+          <Name>Cod Curso</Name>
+          <SourceColumnID>Cod Curso</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="777863af-2b61-4831-8543-d400419b9b23">
+          <ID>Cod Turma</ID>
+          <Name>Cod Turma</Name>
+          <SourceColumnID>Cod Turma</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="31a96ddd-a702-439e-9069-673b4d59bd43">
+          <ID>Dados Sociais ID</ID>
+          <Name>Dados Sociais ID</Name>
+          <SourceColumnID>Dados Sociais ID</SourceColumnID>
+          <Usage>Key</Usage>
+        </Column>
+        <Column dwd:design-time-name="092ae56f-ff92-4f2a-9ff1-57fcfb4047a2">
+          <ID>Desc Curso</ID>
+          <Name>Desc Curso</Name>
+          <SourceColumnID>Desc Curso</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="9e042661-33ec-4c4f-b421-27e986f05653">
+          <ID>Etnia</ID>
+          <Name>Etnia</Name>
+          <SourceColumnID>Etnia</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="9fdbf20d-1dd4-4683-9070-25fcc7ed2147">
+          <ID>Faltas</ID>
+          <Name>Faltas</Name>
+          <SourceColumnID>Faltas</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="fb81f2b9-edfe-47b1-ac37-ffc4b4c20cec">
+          <ID>Forma Ingresso</ID>
+          <Name>Forma Ingresso</Name>
+          <SourceColumnID>Forma Ingresso</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="98de9b3b-f98a-48a5-a39b-83eb3219c6ca">
+          <ID>Media Final</ID>
+          <Name>Media Final</Name>
+          <SourceColumnID>Media Final</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="0ae15f91-d8ce-4d8f-96b7-82fc7c24570b">
+          <ID>Renda</ID>
+          <Name>Renda</Name>
+          <SourceColumnID>Renda</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="7ed3dc7e-2387-4404-bf65-dd24ea706916">
+          <ID>Renda Familiar</ID>
+          <Name>Renda Familiar</Name>
+          <SourceColumnID>Renda Familiar</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="568a77d7-2768-4586-9a85-047b2d14a4bf">
+          <ID>Reside</ID>
+          <Name>Reside</Name>
+          <SourceColumnID>Reside</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="15e184ee-8cb3-493a-8a48-f1e88759e1b6">
+          <ID>Sexo</ID>
+          <Name>Sexo</Name>
+          <SourceColumnID>Sexo</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="176d4063-1156-40a5-a48b-6e21e33aa466">
+          <ID>Situacao</ID>
+          <Name>Situacao</Name>
+          <SourceColumnID>Situacao</SourceColumnID>
+          <Usage>PredictOnly</Usage>
+        </Column>
+        <Column dwd:design-time-name="f113e341-4a37-47f0-aaa3-e80dd6381109">
+          <ID>Tipo Escola Origem</ID>
+          <Name>Tipo Escola Origem</Name>
+          <SourceColumnID>Tipo Escola Origem</SourceColumnID>
+        </Column>
+      </Columns>
+      <AllowDrillThrough>true</AllowDrillThrough>
+    </MiningModel>
+    <MiningModel dwd:design-time-name="ee66a8b0-aef5-4af6-8e48-7c1ea7681e91">
+      <ID>Cluster Dados Sociais</ID>
+      <Name>Cluster Dados Sociais</Name>
+      <CreatedTimestamp>0001-01-01T03:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T03:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T03:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Algorithm>Microsoft_Clustering</Algorithm>
+      <AlgorithmParameters>
+        <AlgorithmParameter>
+          <Name>CLUSTER_COUNT</Name>
+          <Value xsi:type="xsd:int">5</Value>
+        </AlgorithmParameter>
+      </AlgorithmParameters>
+      <Columns>
+        <Column dwd:design-time-name="b4608e0d-3515-468a-b566-ef9c76f7c2ff">
+          <ID>Area Procedencia Escola Origem</ID>
+          <Name>Area Procedencia Escola Origem</Name>
+          <SourceColumnID>Area Procedencia Escola Origem</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="e213fef7-5202-4dfb-8ebe-f3b5c93d860b">
+          <ID>Aulas Dadas</ID>
+          <Name>Aulas Dadas</Name>
+          <SourceColumnID>Aulas Dadas</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="22ba84fe-6afc-4ff7-acf6-c570b24723d3">
+          <ID>Dados Sociais ID</ID>
+          <Name>Dados Sociais ID</Name>
+          <SourceColumnID>Dados Sociais ID</SourceColumnID>
+          <Usage>Key</Usage>
+        </Column>
+        <Column dwd:design-time-name="10156d7b-d1b4-4c86-8320-f8cbc7ef4a9c">
+          <ID>Desc Curso</ID>
+          <Name>Desc Curso</Name>
+          <SourceColumnID>Desc Curso</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="51efd6fd-defc-4cd9-8811-2eef47fdf2ed">
+          <ID>Etnia</ID>
+          <Name>Etnia</Name>
+          <SourceColumnID>Etnia</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="13272f9a-770b-4618-b06b-28820219bfa6">
+          <ID>Faltas</ID>
+          <Name>Faltas</Name>
+          <SourceColumnID>Faltas</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="167cbc9b-7500-4ae3-99f3-9d940a259cc3">
+          <ID>Forma Ingresso</ID>
+          <Name>Forma Ingresso</Name>
+          <SourceColumnID>Forma Ingresso</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="945c9eb6-bcf3-4491-b402-aadac7c3eb24">
+          <ID>Media Final</ID>
+          <Name>Media Final</Name>
+          <SourceColumnID>Media Final</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="9a5037a9-b178-416d-b0aa-f7a2d16cd150">
+          <ID>Renda</ID>
+          <Name>Renda</Name>
+          <SourceColumnID>Renda</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="2153751e-0d24-494f-836c-dc2ffe538aa6">
+          <ID>Renda Familiar</ID>
+          <Name>Renda Familiar</Name>
+          <SourceColumnID>Renda Familiar</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="119fc82b-2d1b-4b15-b42d-e65911c77e5d">
+          <ID>Reside</ID>
+          <Name>Reside</Name>
+          <SourceColumnID>Reside</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="9c1319af-b0a7-4b54-bd57-45207e85b9e9">
+          <ID>Sexo</ID>
+          <Name>Sexo</Name>
+          <SourceColumnID>Sexo</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="ca45b219-cbcb-4e85-a40a-bf71fdd758de">
+          <ID>Situacao</ID>
+          <Name>Situacao</Name>
+          <SourceColumnID>Situacao</SourceColumnID>
+          <Usage>PredictOnly</Usage>
+        </Column>
+        <Column dwd:design-time-name="638e0ac9-d2fc-4b9b-aba3-6b7ab4adbd16">
+          <ID>Tipo Escola Origem</ID>
+          <Name>Tipo Escola Origem</Name>
+          <SourceColumnID>Tipo Escola Origem</SourceColumnID>
+        </Column>
+      </Columns>
+      <AllowDrillThrough>true</AllowDrillThrough>
+    </MiningModel>
+    <MiningModel dwd:design-time-name="2f229ee6-d137-4630-9e69-0c6806dade32">
+      <ID>Arvore Entropia</ID>
+      <Name>Arvore Entropia</Name>
+      <CreatedTimestamp>0001-01-01T03:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T03:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T03:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Algorithm>Microsoft_Decision_Trees</Algorithm>
+      <AlgorithmParameters>
+        <AlgorithmParameter>
+          <Name>SCORE_METHOD</Name>
+          <Value xsi:type="xsd:int">1</Value>
+        </AlgorithmParameter>
+        <AlgorithmParameter>
+          <Name>SPLIT_METHOD</Name>
+          <Value xsi:type="xsd:int">1</Value>
+        </AlgorithmParameter>
+      </AlgorithmParameters>
+      <Columns>
+        <Column dwd:design-time-name="6c15fee0-e844-46e1-b62f-6bf14b4946c1">
+          <ID>Ano Letivo</ID>
+          <Name>Ano Letivo</Name>
+          <SourceColumnID>Ano Letivo</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="bcc514e2-a34c-4d28-ac3c-41c47d9ce2e1">
+          <ID>Area Procedencia Escola Origem</ID>
+          <Name>Area Procedencia Escola Origem</Name>
+          <SourceColumnID>Area Procedencia Escola Origem</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="e44d8807-e718-48e7-a064-6f77078c8da2">
+          <ID>Aulas Dadas</ID>
+          <Name>Aulas Dadas</Name>
+          <SourceColumnID>Aulas Dadas</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="980d50da-df79-4f2c-a5c8-151dc32f45c8">
+          <ID>Carga Horaria</ID>
+          <Name>Carga Horaria</Name>
+          <SourceColumnID>Carga Horaria</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="806f4fe1-78f8-4ffa-9779-d2499dc513d9">
+          <ID>Cod Curso</ID>
+          <Name>Cod Curso</Name>
+          <SourceColumnID>Cod Curso</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="9eca9fb3-160c-429d-9c3f-3061f50491fc">
+          <ID>Cod Turma</ID>
+          <Name>Cod Turma</Name>
+          <SourceColumnID>Cod Turma</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="f736dc96-cdd1-4720-939f-b075245b5684">
+          <ID>Dados Sociais ID</ID>
+          <Name>Dados Sociais ID</Name>
+          <SourceColumnID>Dados Sociais ID</SourceColumnID>
+          <Usage>Key</Usage>
+        </Column>
+        <Column dwd:design-time-name="a4058ead-0984-4cc8-8131-afc5a062359a">
+          <ID>Desc Curso</ID>
+          <Name>Desc Curso</Name>
+          <SourceColumnID>Desc Curso</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="87619752-6d70-460d-a026-0b9ad0b15074">
+          <ID>Etnia</ID>
+          <Name>Etnia</Name>
+          <SourceColumnID>Etnia</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="8623d6bc-d72a-4a3d-9cb3-d6a8ad699b76">
+          <ID>Faltas</ID>
+          <Name>Faltas</Name>
+          <SourceColumnID>Faltas</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="8f065ebe-1b69-4521-9dfc-2c03b3d744e2">
+          <ID>Forma Ingresso</ID>
+          <Name>Forma Ingresso</Name>
+          <SourceColumnID>Forma Ingresso</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="ce997c02-a85c-49f3-9c8f-e6fb1d590cb7">
+          <ID>Media Final</ID>
+          <Name>Media Final</Name>
+          <SourceColumnID>Media Final</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="e247dfc7-3637-4711-92c3-7bb2a8de469d">
+          <ID>Renda</ID>
+          <Name>Renda</Name>
+          <SourceColumnID>Renda</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="df26f1a9-34a2-4d64-860b-32bf6a82320c">
+          <ID>Renda Familiar</ID>
+          <Name>Renda Familiar</Name>
+          <SourceColumnID>Renda Familiar</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="bdc0808a-2d92-414c-8d13-fdad28f16e67">
+          <ID>Reside</ID>
+          <Name>Reside</Name>
+          <SourceColumnID>Reside</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="2f651043-40f5-42ca-be6f-ffe015eaf257">
+          <ID>Sexo</ID>
+          <Name>Sexo</Name>
+          <SourceColumnID>Sexo</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="3b181450-aa2a-4f34-9093-909cbe72d678">
+          <ID>Situacao</ID>
+          <Name>Situacao</Name>
+          <SourceColumnID>Situacao</SourceColumnID>
+          <Usage>PredictOnly</Usage>
+        </Column>
+        <Column dwd:design-time-name="309f9a7a-cc1d-4090-b5af-d982010e4fe7">
+          <ID>Tipo Escola Origem</ID>
+          <Name>Tipo Escola Origem</Name>
+          <SourceColumnID>Tipo Escola Origem</SourceColumnID>
+        </Column>
+      </Columns>
+    </MiningModel>
+    <MiningModel dwd:design-time-name="ac7bbb77-e148-4ba5-bbe2-a6a520f26240">
+      <ID>Árvore Bayesian</ID>
+      <Name>Árvore Bayesian</Name>
+      <CreatedTimestamp>0001-01-01T03:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T03:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T03:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Algorithm>Microsoft_Decision_Trees</Algorithm>
+      <AlgorithmParameters>
+        <AlgorithmParameter>
+          <Name>SCORE_METHOD</Name>
+          <Value xsi:type="xsd:int">3</Value>
+        </AlgorithmParameter>
+        <AlgorithmParameter>
+          <Name>SPLIT_METHOD</Name>
+          <Value xsi:type="xsd:int">1</Value>
+        </AlgorithmParameter>
+      </AlgorithmParameters>
+      <Columns>
+        <Column dwd:design-time-name="57eaf0e5-016c-48a5-8f55-bf8fa6f81d10">
+          <ID>Ano Letivo</ID>
+          <Name>Ano Letivo</Name>
+          <SourceColumnID>Ano Letivo</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="4943510f-0859-4204-ba4d-61300396f83c">
+          <ID>Area Procedencia Escola Origem</ID>
+          <Name>Area Procedencia Escola Origem</Name>
+          <SourceColumnID>Area Procedencia Escola Origem</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="ea15d092-b1cc-4645-bf22-706b1529a21c">
+          <ID>Aulas Dadas</ID>
+          <Name>Aulas Dadas</Name>
+          <SourceColumnID>Aulas Dadas</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="f2222384-a7de-4b6d-8d7e-bb4b1817e415">
+          <ID>Carga Horaria</ID>
+          <Name>Carga Horaria</Name>
+          <SourceColumnID>Carga Horaria</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="4c92d5ad-6b2e-4b91-a163-10a752842ee1">
+          <ID>Cod Curso</ID>
+          <Name>Cod Curso</Name>
+          <SourceColumnID>Cod Curso</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="b636d091-9769-4b3c-ba62-be69666c3d5c">
+          <ID>Cod Turma</ID>
+          <Name>Cod Turma</Name>
+          <SourceColumnID>Cod Turma</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="9569825c-bd56-4f89-a9e9-82434954f04b">
+          <ID>Dados Sociais ID</ID>
+          <Name>Dados Sociais ID</Name>
+          <SourceColumnID>Dados Sociais ID</SourceColumnID>
+          <Usage>Key</Usage>
+        </Column>
+        <Column dwd:design-time-name="0cdadda5-0d25-4c3e-9edd-db8e98d61f7c">
+          <ID>Desc Curso</ID>
+          <Name>Desc Curso</Name>
+          <SourceColumnID>Desc Curso</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="b3048d88-2b81-4466-878a-ab228653de3a">
+          <ID>Etnia</ID>
+          <Name>Etnia</Name>
+          <SourceColumnID>Etnia</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="0c518de3-7b84-4b69-ae11-d7291f32bef8">
+          <ID>Faltas</ID>
+          <Name>Faltas</Name>
+          <SourceColumnID>Faltas</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="c14c83de-45b6-4db8-b232-16f60c478c66">
+          <ID>Forma Ingresso</ID>
+          <Name>Forma Ingresso</Name>
+          <SourceColumnID>Forma Ingresso</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="25035c90-d353-44c8-92a9-e196ac39698e">
+          <ID>Media Final</ID>
+          <Name>Media Final</Name>
+          <SourceColumnID>Media Final</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="ef0da59b-08bb-4157-a4ee-48d2871a3a64">
+          <ID>Renda</ID>
+          <Name>Renda</Name>
+          <SourceColumnID>Renda</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="21e69ef7-3437-4684-b2cc-f621518acd4f">
+          <ID>Renda Familiar</ID>
+          <Name>Renda Familiar</Name>
+          <SourceColumnID>Renda Familiar</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="35070e03-18ae-43ef-b7a9-cef3ae3e1c72">
+          <ID>Reside</ID>
+          <Name>Reside</Name>
+          <SourceColumnID>Reside</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="0e0803e9-0e6b-4d2e-8ba8-4a67117c45ea">
+          <ID>Sexo</ID>
+          <Name>Sexo</Name>
+          <SourceColumnID>Sexo</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="0cf29b07-7d05-4f5d-87ee-8ad58efad143">
+          <ID>Situacao</ID>
+          <Name>Situacao</Name>
+          <SourceColumnID>Situacao</SourceColumnID>
+          <Usage>PredictOnly</Usage>
+        </Column>
+        <Column dwd:design-time-name="2ba4e308-fd15-48e8-934c-d30266535828">
+          <ID>Tipo Escola Origem</ID>
+          <Name>Tipo Escola Origem</Name>
+          <SourceColumnID>Tipo Escola Origem</SourceColumnID>
+        </Column>
+      </Columns>
+    </MiningModel>
+  </MiningModels>
+  <ddl100_100:HoldoutMaxPercent>30</ddl100_100:HoldoutMaxPercent>
+</MiningStructure>

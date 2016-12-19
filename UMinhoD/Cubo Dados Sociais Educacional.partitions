@@ -1,0 +1,1984 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="08d631b6-715c-4619-b137-34291d142f69" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Cubo Dados Sociais Educacional</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>Fato Apr Rep Curso Escola Origem DS</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="45a8ce57-17ef-4599-aa85-3ad942302537">
+          <ID>Fato Apr Rep Curso Escola Origem DS</ID>
+          <Name>Fato Apr Rep Curso Escola Origem DS</Name>
+          <CreatedTimestamp>0001-01-01T02:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T02:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T02:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="b54da636-87a0-4a4b-8756-6ba15deeac88">
+            <DataSourceViewID>Dados Sociais Educacional</DataSourceViewID>
+            <TableID>dbo_FatoAprRepCursoEscolaOrigemDS</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <EstimatedRows>4013</EstimatedRows>
+          <AggregationDesignID>AggregationDesign 1</AggregationDesignID>
+        </Partition>
+      </Partitions>
+      <AggregationDesigns>
+        <AggregationDesign>
+          <ID>AggregationDesign</ID>
+          <Name>AggregationDesign</Name>
+          <CreatedTimestamp>2016-03-02T13:00:12.816667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2016-03-02T13:00:12.816667Z</LastSchemaUpdate>
+          <EstimatedRows>4013</EstimatedRows>
+          <Dimensions>
+            <Dimension>
+              <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Dados Sociais ID</AttributeID>
+                  <EstimatedCount>1074226</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Desc Tipo Curso</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Matricula</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Cod Curso</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Sigla Curso</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Desc Curso</AttributeID>
+                  <EstimatedCount>481</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Cod Turma</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Sigla Disciplina</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Ano Letivo</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Faltas</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Periodo Let</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Situacao</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Media Final</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Forma Ingresso</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Sexo</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Renda Familiar</AttributeID>
+                  <EstimatedCount>7</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Area Procedencia Escola Origem</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Tipo Escola Origem</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Etnia</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Reside</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Renda</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Data</AttributeID>
+                  <EstimatedCount>10959</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>DATA</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ANO</AttributeID>
+                  <EstimatedCount>16</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>BIMESTRE</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>TRIMESTRE</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>SEMESTRE</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>COD CURSO</AttributeID>
+                  <EstimatedCount>696</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>DESC CURSO</AttributeID>
+                  <EstimatedCount>456</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>SIGLA CURSO</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>COD INSTITUICAO</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Aggregations>
+            <Aggregation>
+              <ID>Aggregation 0</ID>
+              <Name>Aggregation 0</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Renda Familiar</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ANO</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1</ID>
+              <Name>Aggregation 1</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Renda Familiar</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2</ID>
+              <Name>Aggregation 2</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>DESC CURSO</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 3</ID>
+              <Name>Aggregation 3</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Desc Curso</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 4</ID>
+              <Name>Aggregation 4</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ANO</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+          </Aggregations>
+        </AggregationDesign>
+        <AggregationDesign>
+          <ID>AggregationDesign 1</ID>
+          <Name>AggregationDesign 1</Name>
+          <CreatedTimestamp>2016-03-02T18:47:03.066667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2016-03-02T18:47:03.066667Z</LastSchemaUpdate>
+          <EstimatedRows>4013</EstimatedRows>
+          <Dimensions>
+            <Dimension>
+              <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Dados Sociais ID</AttributeID>
+                  <EstimatedCount>1074226</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Desc Tipo Curso</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Matricula</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Cod Curso</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Sigla Curso</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Desc Curso</AttributeID>
+                  <EstimatedCount>481</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Cod Turma</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Sigla Disciplina</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Ano Letivo</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Faltas</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Periodo Let</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Situacao</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Media Final</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Forma Ingresso</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Sexo</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Renda Familiar</AttributeID>
+                  <EstimatedCount>7</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Area Procedencia Escola Origem</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Tipo Escola Origem</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Etnia</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Reside</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Renda</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Data</AttributeID>
+                  <EstimatedCount>10959</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>DATA</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ANO</AttributeID>
+                  <EstimatedCount>16</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>BIMESTRE</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>TRIMESTRE</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>SEMESTRE</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>COD CURSO</AttributeID>
+                  <EstimatedCount>696</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>DESC CURSO</AttributeID>
+                  <EstimatedCount>456</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>SIGLA CURSO</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>COD INSTITUICAO</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Aggregations>
+            <Aggregation>
+              <ID>Aggregation 0</ID>
+              <Name>Aggregation 0</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Renda Familiar</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ANO</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1</ID>
+              <Name>Aggregation 1</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Renda Familiar</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2</ID>
+              <Name>Aggregation 2</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>DESC CURSO</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 3</ID>
+              <Name>Aggregation 3</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Desc Curso</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 4</ID>
+              <Name>Aggregation 4</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ANO</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+          </Aggregations>
+        </AggregationDesign>
+      </AggregationDesigns>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fato Apr Rep Curso Etnia DS</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="6661953d-a9cf-4139-946c-8de28e9779dc">
+          <ID>Fato Apr Rep Curso Etnia DS</ID>
+          <Name>Fato Apr Rep Curso Etnia DS</Name>
+          <CreatedTimestamp>0001-01-01T02:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T02:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T02:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="69927a8c-c617-4d27-b7ce-de5172768da2">
+            <DataSourceViewID>Dados Sociais Educacional</DataSourceViewID>
+            <TableID>dbo_FatoAprRepCursoEtniaDS</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <EstimatedRows>4514</EstimatedRows>
+          <AggregationDesignID>AggregationDesign</AggregationDesignID>
+        </Partition>
+      </Partitions>
+      <AggregationDesigns>
+        <AggregationDesign>
+          <ID>AggregationDesign</ID>
+          <Name>AggregationDesign</Name>
+          <CreatedTimestamp>2016-03-02T13:01:01.196667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2016-03-02T13:01:01.196667Z</LastSchemaUpdate>
+          <EstimatedRows>4514</EstimatedRows>
+          <Dimensions>
+            <Dimension>
+              <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Dados Sociais ID</AttributeID>
+                  <EstimatedCount>1074226</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Desc Tipo Curso</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Matricula</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Cod Curso</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Sigla Curso</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Desc Curso</AttributeID>
+                  <EstimatedCount>481</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Cod Turma</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Sigla Disciplina</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Ano Letivo</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Faltas</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Periodo Let</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Situacao</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Media Final</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Forma Ingresso</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Sexo</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Renda Familiar</AttributeID>
+                  <EstimatedCount>7</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Area Procedencia Escola Origem</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Tipo Escola Origem</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Etnia</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Reside</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Renda</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Data</AttributeID>
+                  <EstimatedCount>10959</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>DATA</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ANO</AttributeID>
+                  <EstimatedCount>16</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>BIMESTRE</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>TRIMESTRE</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>SEMESTRE</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>COD CURSO</AttributeID>
+                  <EstimatedCount>696</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>DESC CURSO</AttributeID>
+                  <EstimatedCount>456</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>SIGLA CURSO</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>COD INSTITUICAO</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Aggregations>
+            <Aggregation>
+              <ID>Aggregation 0</ID>
+              <Name>Aggregation 0</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Renda Familiar</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ANO</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1</ID>
+              <Name>Aggregation 1</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Renda Familiar</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2</ID>
+              <Name>Aggregation 2</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>DESC CURSO</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 3</ID>
+              <Name>Aggregation 3</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Desc Curso</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 4</ID>
+              <Name>Aggregation 4</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+          </Aggregations>
+        </AggregationDesign>
+      </AggregationDesigns>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fato Apr Rep Curso Renda FDS</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="80226214-4bf6-4e92-a312-2da3af2d594e">
+          <ID>Fato Apr Rep Curso Renda FDS</ID>
+          <Name>Fato Apr Rep Curso Renda FDS</Name>
+          <CreatedTimestamp>0001-01-01T02:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T02:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T02:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="7f50d77d-b5e6-414b-b730-e0db62e910f2">
+            <DataSourceViewID>Dados Sociais Educacional</DataSourceViewID>
+            <TableID>dbo_FatoAprRepCursoRendaFDS</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <EstimatedRows>7364</EstimatedRows>
+          <AggregationDesignID>AggregationDesign</AggregationDesignID>
+        </Partition>
+      </Partitions>
+      <AggregationDesigns>
+        <AggregationDesign>
+          <ID>AggregationDesign</ID>
+          <Name>AggregationDesign</Name>
+          <CreatedTimestamp>2016-03-02T13:01:38.023333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2016-03-02T13:01:38.023333Z</LastSchemaUpdate>
+          <EstimatedRows>7364</EstimatedRows>
+          <Dimensions>
+            <Dimension>
+              <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Dados Sociais ID</AttributeID>
+                  <EstimatedCount>1074226</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Desc Tipo Curso</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Matricula</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Cod Curso</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Sigla Curso</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Desc Curso</AttributeID>
+                  <EstimatedCount>481</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Cod Turma</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Sigla Disciplina</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Ano Letivo</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Faltas</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Periodo Let</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Situacao</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Media Final</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Forma Ingresso</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Sexo</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Renda Familiar</AttributeID>
+                  <EstimatedCount>7</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Area Procedencia Escola Origem</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Tipo Escola Origem</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Etnia</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Reside</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Renda</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Data</AttributeID>
+                  <EstimatedCount>10959</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>DATA</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ANO</AttributeID>
+                  <EstimatedCount>16</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>BIMESTRE</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>TRIMESTRE</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>SEMESTRE</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>COD CURSO</AttributeID>
+                  <EstimatedCount>696</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>DESC CURSO</AttributeID>
+                  <EstimatedCount>456</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>SIGLA CURSO</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>COD INSTITUICAO</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Aggregations>
+            <Aggregation>
+              <ID>Aggregation 0</ID>
+              <Name>Aggregation 0</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Renda Familiar</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ANO</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1</ID>
+              <Name>Aggregation 1</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Renda Familiar</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2</ID>
+              <Name>Aggregation 2</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>COD CURSO</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 3</ID>
+              <Name>Aggregation 3</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Desc Curso</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+          </Aggregations>
+        </AggregationDesign>
+      </AggregationDesigns>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fato Apr Repr Curso Sexo DS</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="b9375ab2-e7f4-4871-be5c-16af4bbd8e87">
+          <ID>Fato Apr Repr Curso Sexo DS</ID>
+          <Name>Fato Apr Repr Curso Sexo DS</Name>
+          <CreatedTimestamp>0001-01-01T02:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T02:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T02:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="1835ae1c-ef30-4489-9464-8874d751977b">
+            <DataSourceViewID>Dados Sociais Educacional</DataSourceViewID>
+            <TableID>dbo_FatoAprReprCursoSexoDS</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <EstimatedRows>2664</EstimatedRows>
+          <AggregationDesignID>AggregationDesign</AggregationDesignID>
+        </Partition>
+      </Partitions>
+      <AggregationDesigns>
+        <AggregationDesign>
+          <ID>AggregationDesign</ID>
+          <Name>AggregationDesign</Name>
+          <CreatedTimestamp>2016-03-02T13:02:19.176667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2016-03-02T13:02:19.176667Z</LastSchemaUpdate>
+          <EstimatedRows>2664</EstimatedRows>
+          <Dimensions>
+            <Dimension>
+              <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Dados Sociais ID</AttributeID>
+                  <EstimatedCount>1074226</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Desc Tipo Curso</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Matricula</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Cod Curso</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Sigla Curso</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Desc Curso</AttributeID>
+                  <EstimatedCount>481</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Cod Turma</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Sigla Disciplina</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Ano Letivo</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Faltas</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Periodo Let</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Situacao</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Media Final</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Forma Ingresso</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Sexo</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Renda Familiar</AttributeID>
+                  <EstimatedCount>7</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Area Procedencia Escola Origem</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Tipo Escola Origem</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Etnia</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Reside</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Renda</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Data</AttributeID>
+                  <EstimatedCount>10959</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>DATA</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ANO</AttributeID>
+                  <EstimatedCount>16</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>BIMESTRE</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>TRIMESTRE</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>SEMESTRE</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>COD CURSO</AttributeID>
+                  <EstimatedCount>696</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>DESC CURSO</AttributeID>
+                  <EstimatedCount>456</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>SIGLA CURSO</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>COD INSTITUICAO</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Aggregations>
+            <Aggregation>
+              <ID>Aggregation 0</ID>
+              <Name>Aggregation 0</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Renda Familiar</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ANO</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1</ID>
+              <Name>Aggregation 1</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Renda Familiar</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2</ID>
+              <Name>Aggregation 2</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 3</ID>
+              <Name>Aggregation 3</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ANO</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 4</ID>
+              <Name>Aggregation 4</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Desc Curso</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 5</ID>
+              <Name>Aggregation 5</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>COD CURSO</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 6</ID>
+              <Name>Aggregation 6</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>DESC CURSO</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+          </Aggregations>
+        </AggregationDesign>
+      </AggregationDesigns>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fato Apr Repr Disciplina DS</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="49b0737b-a62c-4ffc-948a-ffcb21680de9">
+          <ID>Fato Apr Repr Disciplina DS</ID>
+          <Name>Fato Apr Repr Disciplina DS</Name>
+          <CreatedTimestamp>0001-01-01T02:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T02:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T02:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="194ee477-661a-41b1-a6b4-5e543993977d">
+            <DataSourceViewID>Dados Sociais Educacional</DataSourceViewID>
+            <TableID>dbo_FatoAprReprDisciplinaDS</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <EstimatedRows>24410</EstimatedRows>
+          <AggregationDesignID>AggregationDesign</AggregationDesignID>
+        </Partition>
+      </Partitions>
+      <AggregationDesigns>
+        <AggregationDesign>
+          <ID>AggregationDesign</ID>
+          <Name>AggregationDesign</Name>
+          <CreatedTimestamp>2016-03-02T13:02:54.45Z</CreatedTimestamp>
+          <LastSchemaUpdate>2016-03-02T13:02:54.45Z</LastSchemaUpdate>
+          <EstimatedRows>24410</EstimatedRows>
+          <Dimensions>
+            <Dimension>
+              <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Dados Sociais ID</AttributeID>
+                  <EstimatedCount>1074226</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Desc Tipo Curso</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Matricula</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Cod Curso</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Sigla Curso</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Desc Curso</AttributeID>
+                  <EstimatedCount>481</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Cod Turma</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Sigla Disciplina</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Ano Letivo</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Faltas</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Periodo Let</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Situacao</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Media Final</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Forma Ingresso</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Sexo</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Renda Familiar</AttributeID>
+                  <EstimatedCount>7</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Area Procedencia Escola Origem</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Tipo Escola Origem</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Etnia</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Reside</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Renda</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim DISCIPLINAS</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>COD DISCIPLINA</AttributeID>
+                  <EstimatedCount>10029</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>SIGLA DISCIPLINA</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>DESC DISCIPLINA</AttributeID>
+                  <EstimatedCount>4494</EstimatedCount>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Data</AttributeID>
+                  <EstimatedCount>10959</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>DATA</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ANO</AttributeID>
+                  <EstimatedCount>16</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>BIMESTRE</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>TRIMESTRE</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>SEMESTRE</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>COD CURSO</AttributeID>
+                  <EstimatedCount>696</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>DESC CURSO</AttributeID>
+                  <EstimatedCount>456</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>SIGLA CURSO</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>COD INSTITUICAO</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Aggregations>
+            <Aggregation>
+              <ID>Aggregation 0</ID>
+              <Name>Aggregation 0</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Renda Familiar</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DISCIPLINAS</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ANO</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1</ID>
+              <Name>Aggregation 1</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Renda Familiar</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DISCIPLINAS</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2</ID>
+              <Name>Aggregation 2</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Desc Curso</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Renda Familiar</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DISCIPLINAS</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 3</ID>
+              <Name>Aggregation 3</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DISCIPLINAS</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ANO</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 4</ID>
+              <Name>Aggregation 4</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DISCIPLINAS</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 5</ID>
+              <Name>Aggregation 5</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Desc Curso</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DISCIPLINAS</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 6</ID>
+              <Name>Aggregation 6</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DISCIPLINAS</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>COD CURSO</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 7</ID>
+              <Name>Aggregation 7</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DISCIPLINAS</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>DESC DISCIPLINA</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 8</ID>
+              <Name>Aggregation 8</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Renda Familiar</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DISCIPLINAS</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>COD CURSO</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 9</ID>
+              <Name>Aggregation 9</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DISCIPLINAS</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ANO</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>DESC CURSO</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation a</ID>
+              <Name>Aggregation a</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Desc Curso</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DISCIPLINAS</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ANO</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation b</ID>
+              <Name>Aggregation b</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DISCIPLINAS</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>DESC CURSO</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation c</ID>
+              <Name>Aggregation c</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Renda Familiar</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DISCIPLINAS</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>DESC CURSO</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+          </Aggregations>
+        </AggregationDesign>
+      </AggregationDesigns>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fato Situacao Aluno Curso Ano DS</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="532a6e66-72f6-44b5-b0d0-3a36c3dec325">
+          <ID>Fato Situacao Aluno Curso Ano DS</ID>
+          <Name>Fato Situacao Aluno Curso Ano DS</Name>
+          <CreatedTimestamp>0001-01-01T02:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T02:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T02:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="da724ec9-ae2e-4db5-b902-c367fb6ee108">
+            <DataSourceViewID>Dados Sociais Educacional</DataSourceViewID>
+            <TableID>dbo_FatoSituacaoAlunoCursoAnoDS</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <EstimatedRows>1400</EstimatedRows>
+          <AggregationDesignID>AggregationDesign</AggregationDesignID>
+        </Partition>
+      </Partitions>
+      <AggregationDesigns>
+        <AggregationDesign>
+          <ID>AggregationDesign</ID>
+          <Name>AggregationDesign</Name>
+          <CreatedTimestamp>2016-03-02T13:03:38.703333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2016-03-02T13:03:38.703333Z</LastSchemaUpdate>
+          <EstimatedRows>1400</EstimatedRows>
+          <Dimensions>
+            <Dimension>
+              <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Dados Sociais ID</AttributeID>
+                  <EstimatedCount>1074226</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Desc Tipo Curso</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Matricula</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Cod Curso</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Sigla Curso</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Desc Curso</AttributeID>
+                  <EstimatedCount>481</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Cod Turma</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Sigla Disciplina</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Ano Letivo</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Faltas</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Periodo Let</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Situacao</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Media Final</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Forma Ingresso</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Sexo</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Renda Familiar</AttributeID>
+                  <EstimatedCount>7</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Area Procedencia Escola Origem</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Tipo Escola Origem</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Etnia</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Reside</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Renda</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Data</AttributeID>
+                  <EstimatedCount>10959</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>DATA</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ANO</AttributeID>
+                  <EstimatedCount>16</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>BIMESTRE</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>TRIMESTRE</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>SEMESTRE</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>COD CURSO</AttributeID>
+                  <EstimatedCount>696</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>DESC CURSO</AttributeID>
+                  <EstimatedCount>456</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>SIGLA CURSO</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>COD INSTITUICAO</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Aggregations>
+            <Aggregation>
+              <ID>Aggregation 0</ID>
+              <Name>Aggregation 0</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Renda Familiar</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1</ID>
+              <Name>Aggregation 1</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Renda Familiar</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ANO</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2</ID>
+              <Name>Aggregation 2</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 3</ID>
+              <Name>Aggregation 3</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Dados Sociais Alunos</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 1</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ANO</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 1</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+          </Aggregations>
+        </AggregationDesign>
+      </AggregationDesigns>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

@@ -1,0 +1,469 @@
+﻿<MiningStructure xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="32be206a-31e8-4e1b-9d67-ff092c411c92" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Mine Regressao</ID>
+  <Name>Mine Regressao</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CaseTableName</Name>
+      <Value>dbo_TB_Regressao_E_Temporal</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="d5d48ebc-5d01-4064-b005-7eb6ae1ddacf">
+    <DataSourceViewID>Exibicao Regregassão e Temporal</DataSourceViewID>
+  </Source>
+  <Columns>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="6a9f4ab1-c0f3-44c3-b1df-0724e32e4b60">
+      <ID>Area Escola Origem</ID>
+      <Name>Area Escola Origem</Name>
+      <Type>Long</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ed814816-7831-4bd7-a994-c6f2ab88eb3b">
+          <DataType>Integer</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="82420dc1-008e-4905-9180-43b31e7d9853">
+            <TableID>dbo_TB_Regressao_E_Temporal</TableID>
+            <ColumnID>Area_Escola_Origem</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="70a19a98-0114-48bb-8339-5fe855bf70a0">
+      <ID>Aulas Dadas</ID>
+      <Name>Aulas Dadas</Name>
+      <Type>Long</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="27ad0798-d022-4c16-83f8-01cde54c8398">
+          <DataType>Integer</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="76353c28-6437-48ed-9a03-52e2f323459b">
+            <TableID>dbo_TB_Regressao_E_Temporal</TableID>
+            <ColumnID>Aulas_Dadas</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="c96332e4-6171-490b-af0b-757a7981346c">
+      <ID>Chave Alternativa</ID>
+      <Name>Chave Alternativa</Name>
+      <IsKey>true</IsKey>
+      <Type>Long</Type>
+      <Content>Key</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="201f77b4-94ae-49ba-8339-425ee3619be6">
+          <DataType>Integer</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="69cc50d4-f00a-4c71-9b2d-1d9db6fbfd49">
+            <TableID>dbo_TB_Regressao_E_Temporal</TableID>
+            <ColumnID>chave_alternativa</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="f997a103-dda1-44b9-9f0a-47152584ab4e">
+      <ID>Coeficiente Rendimento</ID>
+      <Name>Coeficiente Rendimento</Name>
+      <Type>Double</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="20ebb02a-d87f-4cd5-940d-d8e5be9e8d1c">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="61bcd623-d368-4e21-98a4-9aab45a38113">
+            <TableID>dbo_TB_Regressao_E_Temporal</TableID>
+            <ColumnID>Coeficiente_Rendimento</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="c33416c8-88c4-4ac0-8fb7-d675e8f9a494">
+      <ID>Escola Origem</ID>
+      <Name>Escola Origem</Name>
+      <Type>Long</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="09b4dd8d-fc1e-400f-8c37-6d8d2dc72f70">
+          <DataType>Integer</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7b1e18a8-5485-4517-80bd-8a300f678752">
+            <TableID>dbo_TB_Regressao_E_Temporal</TableID>
+            <ColumnID>Escola_Origem</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="ec279bab-2ed1-4461-8437-5a149609e3b0">
+      <ID>Etnia</ID>
+      <Name>Etnia</Name>
+      <Type>Long</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7647fe99-0a13-40a5-b189-73d945db9c60">
+          <DataType>Integer</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c8e976ce-f4a5-4c24-a3ff-95fe6a2a9646">
+            <TableID>dbo_TB_Regressao_E_Temporal</TableID>
+            <ColumnID>Etnia</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="7afccb50-178c-4f8a-9b12-86c7c97d4ee0">
+      <ID>Faltas</ID>
+      <Name>Faltas</Name>
+      <Type>Long</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e1521d4a-3d83-4c10-b84a-2cb100b62dfb">
+          <DataType>SmallInt</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5e23995e-8544-4162-ac8d-a0591eeebdb2">
+            <TableID>dbo_TB_Regressao_E_Temporal</TableID>
+            <ColumnID>Faltas</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="10860432-87fb-41fe-9551-1eb441e2d060">
+      <ID>Forma De Ingresso</ID>
+      <Name>Forma De Ingresso</Name>
+      <Type>Long</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c053bfb9-ed38-4c75-9650-8a0614cb780c">
+          <DataType>Integer</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="29a29791-13da-479b-be27-2569db7658fe">
+            <TableID>dbo_TB_Regressao_E_Temporal</TableID>
+            <ColumnID>Forma_De_Ingresso</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="7811b805-40f5-401f-b047-11d6c2885c4b">
+      <ID>Idade</ID>
+      <Name>Idade</Name>
+      <Type>Long</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="906990d3-c71b-4a9c-8dc8-1e0d0d489b96">
+          <DataType>Integer</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="24ecff92-e767-4895-ad9b-4d4d6b834260">
+            <TableID>dbo_TB_Regressao_E_Temporal</TableID>
+            <ColumnID>Idade</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="ff11a91e-7fd4-46ba-a4c0-e628a1aa8988">
+      <ID>Matricula</ID>
+      <Name>Matricula</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="30f20dfe-e168-4e85-a9cf-5f7fa00c8df4">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="79630bf8-a2ae-48b7-af72-ff5ac292e4a6">
+            <TableID>dbo_TB_Regressao_E_Temporal</TableID>
+            <ColumnID>Matricula</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="8418f368-4dba-4a7b-a66a-670ecdb34283">
+      <ID>Media Final</ID>
+      <Name>Media Final</Name>
+      <Type>Double</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="83b1b282-d952-4ba6-83d5-40db9017098d">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4ab9d884-eb8f-451c-8643-bdc9a93bb674">
+            <TableID>dbo_TB_Regressao_E_Temporal</TableID>
+            <ColumnID>Media_Final</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="aaf7bf42-dfca-48b8-9be8-4d553230c122">
+      <ID>Renda Familiar</ID>
+      <Name>Renda Familiar</Name>
+      <Type>Long</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="580e9159-3566-46cc-8116-dfc77d328ff5">
+          <DataType>SmallInt</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="59f8fb12-574a-44d6-adc1-1ebedd150fea">
+            <TableID>dbo_TB_Regressao_E_Temporal</TableID>
+            <ColumnID>Renda_Familiar</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="9adc56e4-985b-42e6-8f5b-c37b8602e494">
+      <ID>Reside Com</ID>
+      <Name>Reside Com</Name>
+      <Type>Long</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d4db52b3-6319-4a92-be7b-5d35c08fb823">
+          <DataType>Integer</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="04288564-1f28-4ccc-9800-3d895f6a31d3">
+            <TableID>dbo_TB_Regressao_E_Temporal</TableID>
+            <ColumnID>Reside_Com</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="0cc1772f-1167-428e-860b-b4436cdd608e">
+      <ID>Semestre</ID>
+      <Name>Semestre</Name>
+      <Type>Long</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7f931109-c00d-40a0-ae35-5eef2572ce0e">
+          <DataType>UnsignedTinyInt</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="63ce6b54-7b75-4c16-9e21-d9b388e27a84">
+            <TableID>dbo_TB_Regressao_E_Temporal</TableID>
+            <ColumnID>Semestre</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="0992cb7e-ce44-45cc-9fc6-64bdc9321726">
+      <ID>Sexo</ID>
+      <Name>Sexo</Name>
+      <Type>Long</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="80d214bc-857e-46ab-bb32-624d1c337f91">
+          <DataType>Integer</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1206435e-9a81-4e57-8b7a-dc7116aa8e7b">
+            <TableID>dbo_TB_Regressao_E_Temporal</TableID>
+            <ColumnID>Sexo</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="2bab3787-f2d4-4abe-9033-63c544103819">
+      <ID>Situacao I</ID>
+      <Name>Situacao I</Name>
+      <Type>Long</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="32c0092d-3860-4950-856a-94f24bdcfb09">
+          <DataType>Integer</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1a661e50-c514-4b25-9f46-f1b22fcab1af">
+            <TableID>dbo_TB_Regressao_E_Temporal</TableID>
+            <ColumnID>SituacaoI</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="78c0c0ce-a5e4-42b5-bc2d-ef24a1334fbf">
+      <ID>Situacao II</ID>
+      <Name>Situacao II</Name>
+      <Type>Long</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b23511d3-2199-4706-9000-513ba1b65fbb">
+          <DataType>Integer</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="711fb306-830b-4c16-92b0-0336dedbbba6">
+            <TableID>dbo_TB_Regressao_E_Temporal</TableID>
+            <ColumnID>SituacaoII</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+  </Columns>
+  <MiningModels>
+    <MiningModel dwd:design-time-name="2a43b94f-ac74-4a56-8d89-2dfbb8b31bb1">
+      <ID>TB Regressao E Temporal</ID>
+      <Name>TB Regressao E Temporal</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Algorithm>Microsoft_Linear_Regression</Algorithm>
+      <Columns>
+        <Column dwd:design-time-name="7cae8136-b319-4689-9692-9baba5cfad14">
+          <ID>Area Escola Origem</ID>
+          <Name>Area Escola Origem</Name>
+          <SourceColumnID>Area Escola Origem</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="db1ad7a8-ec8a-458c-b9af-8b360e98d934">
+          <ID>Aulas Dadas</ID>
+          <Name>Aulas Dadas</Name>
+          <SourceColumnID>Aulas Dadas</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="938b6da9-d6a9-433a-b62c-d3ffa071f382">
+          <ID>Chave Alternativa</ID>
+          <Name>Chave Alternativa</Name>
+          <SourceColumnID>Chave Alternativa</SourceColumnID>
+          <Usage>Key</Usage>
+        </Column>
+        <Column dwd:design-time-name="712ad5f5-6ceb-481e-83a6-60fc060c650a">
+          <ID>Coeficiente Rendimento</ID>
+          <Name>Coeficiente Rendimento</Name>
+          <SourceColumnID>Coeficiente Rendimento</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="803e2649-2400-4ac0-a031-47535fdf1a48">
+          <ID>Escola Origem</ID>
+          <Name>Escola Origem</Name>
+          <SourceColumnID>Escola Origem</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="c9e3f988-e5a6-4177-a4f7-2a86070fd008">
+          <ID>Etnia</ID>
+          <Name>Etnia</Name>
+          <SourceColumnID>Etnia</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="80f7488d-6e51-4a60-bce7-af8915ac548e">
+          <ID>Faltas</ID>
+          <Name>Faltas</Name>
+          <SourceColumnID>Faltas</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="be2ef82c-d3b6-4a64-b4f1-3bdd769d00db">
+          <ID>Forma De Ingresso</ID>
+          <Name>Forma De Ingresso</Name>
+          <SourceColumnID>Forma De Ingresso</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="9ea90060-bef5-40db-8c27-4227f4d934ed">
+          <ID>Idade</ID>
+          <Name>Idade</Name>
+          <SourceColumnID>Idade</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="5c449bc6-a948-4b2d-b214-a02a2a78ddd1">
+          <ID>Media Final</ID>
+          <Name>Media Final</Name>
+          <SourceColumnID>Media Final</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="1ea81e29-c549-4d63-ade7-2034f01fa73d">
+          <ID>Renda Familiar</ID>
+          <Name>Renda Familiar</Name>
+          <SourceColumnID>Renda Familiar</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="7affcb97-cb45-4262-8934-9fbd2cd85a6b">
+          <ID>Reside Com</ID>
+          <Name>Reside Com</Name>
+          <SourceColumnID>Reside Com</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="3a57a241-5382-4ee6-baec-abc9843468a5">
+          <ID>Semestre</ID>
+          <Name>Semestre</Name>
+          <SourceColumnID>Semestre</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="723e7331-55b1-4002-9f8d-76d9342beca0">
+          <ID>Sexo</ID>
+          <Name>Sexo</Name>
+          <SourceColumnID>Sexo</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="e242b9ef-a4b9-4e00-aedf-369e2ec05ddc">
+          <ID>Situacao I</ID>
+          <Name>Situacao I</Name>
+          <SourceColumnID>Situacao I</SourceColumnID>
+          <Usage>PredictOnly</Usage>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="05a0366c-c4cf-447d-9ec6-b0ba8969fbfb">
+          <ID>Situacao II</ID>
+          <Name>Situacao II</Name>
+          <SourceColumnID>Situacao II</SourceColumnID>
+          <Usage>PredictOnly</Usage>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+      </Columns>
+    </MiningModel>
+  </MiningModels>
+  <ddl100_100:HoldoutMaxPercent>30</ddl100_100:HoldoutMaxPercent>
+</MiningStructure>

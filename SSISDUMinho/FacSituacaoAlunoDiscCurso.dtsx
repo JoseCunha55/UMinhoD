@@ -1,0 +1,2129 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/8/2015 10:55:56 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="CUNHA-PC"
+  DTS:CreatorName="CUNHA-PC\Cunha"
+  DTS:DTSID="{7810991C-52A6-4D33-8C26-44E4144AAA07}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.700.219"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="FacSituacaoAlunoDiscCurso"
+  DTS:PackageType="5"
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{9F2B714D-132B-4BA2-A260-23A0FC6C6649}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{4A837781-E345-456C-AE3A-36DC66C68967}"
+      DTS:ObjectName="CUNHA-PC\SQLSERVER2014.DDSEducacional">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=CUNHA-PC\SQLSERVER2014;Initial Catalog=DDSEducacional;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.sistema_academico]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{12A26046-4405-46E4-9727-EAE72BFB8D0B}"
+      DTS:ObjectName="CUNHA-PC\SQLSERVER2014.sistema_academico">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=CUNHA-PC\SQLSERVER2014;Initial Catalog=sistema_academico;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{788127A0-ADF3-4D88-BB03-6CA0545B2582}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Cunha\Desktop\Casamento.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{72E10F66-9C0F-4EAF-A81A-6C8CCF46B50F}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1046"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\Cunha\Desktop\Erros.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 0"
+              DTS:DTSID="{9D1BC2C1-CE43-4BAD-8F2B-1AD4A679F6E4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 1"
+              DTS:DTSID="{60BC12CE-E458-482F-B443-06B4B5EED22F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 2"
+              DTS:DTSID="{982C307C-ACA0-4BD8-8547-4A5B3276E912}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 3"
+              DTS:DTSID="{77030F4B-2C93-4E2F-9C39-97D5E13AA304}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 4"
+              DTS:DTSID="{72E0C308-78D0-46D5-AC44-D1F8AA483607}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 5"
+              DTS:DTSID="{494E266A-5016-42CE-BC4C-3F1B60C1B2E2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 6"
+              DTS:DTSID="{1E68EAA9-0CCB-494B-AC26-0A9BE23DBA37}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 7"
+              DTS:DTSID="{CA3B0915-E117-47C1-90DC-67691E2FF659}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 8"
+              DTS:DTSID="{07E46931-5966-4EFD-BBC5-350BE5F71AD8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 9"
+              DTS:DTSID="{B8ECA512-7507-4861-867D-4CC0243E5424}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 10"
+              DTS:DTSID="{103CF3A9-0E14-4A8F-96E2-242A88412BFF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 11"
+              DTS:DTSID="{31A6D90F-CBD0-4DA6-9F4B-8A69678939BC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 12"
+              DTS:DTSID="{150C4646-7606-4170-96F5-3EB9B32B0C09}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 13"
+              DTS:DTSID="{0BA7E4B2-384C-4F0F-A58A-95F310F2FDFE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 14"
+              DTS:DTSID="{6182E21D-5315-4DC4-9DA6-88B911C9D9C1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 15"
+              DTS:DTSID="{F26C6C18-3DFF-457B-A52B-CF7270C4C442}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 16"
+              DTS:DTSID="{F4682811-0F52-4ABC-9E96-CB8EB434B90B}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarefa Fluxo de Dados"
+      DTS:DTSID="{1014E8DF-BD08-46DB-9584-FF5969675946}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Chave Alternativa"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Pesquisa;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;6"
+              description="Une colunas adicionais aos fluxos de dados pesquisando valores de uma tabela. Por exemplo, una à coluna 'employee id' a tabela de funcionários para obter 'hire date' e 'employee name'. Essa transformação é recomendada quando a tabela de pesquisa está de acordo com a memória."
+              name="Chave Alternativa"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica a instrução SQL que gera a tabela de pesquisa."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Select ChaveAlternativa from dimAlunosRepDiscCurso</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica uma instrução SQL que usa parâmetros para gerar a tabela de pesquisa."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (Select ChaveAlternativa from dimAlunosRepDiscCurso) [refTable]
+where [refTable].[ChaveAlternativa] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o tipo de conexão usado para acessar o conjunto de dados de referência."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o tipo de cache da tabela de pesquisa."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica como a transformação Pesquisa trata as linhas sem entradas correspondentes no conjunto de dados de referência."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a porcentagem do cache alocada para linhas sem entradas correspondentes no conjunto de dados de referência."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Uso Máximo de Memória para o Cache de Referência em uma plataforma de 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Uso Máximo de Memória para o Cache de Referência em uma plataforma de 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indica se os metadados de referência em um formato XML devem ser referenciados."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ChaveAlternativa" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Especifica a lista de identificadores de linhagem mapeados para os parâmetros usados pela instrução SQL na propriedade SQLCommand. As entradas na lista são separadas por ponto e vírgulas."
+                  name="ParameterMap">#{Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[ChaveAlternativa]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina se as chaves duplicadas nos dados de referência devem ser tratadas como erros quando o modo de cache cheio é usado."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Chave Alternativa.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+                  connectionManagerRefId="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+                  description="O gerenciador de conexões usado para acessar dados de pesquisa."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Chave Alternativa.Inputs[Entrada de Pesquisa]"
+                  name="Entrada de Pesquisa">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Chave Alternativa.Inputs[Entrada de Pesquisa].Columns[ChaveAlternativa]"
+                      cachedDataType="i4"
+                      cachedName="ChaveAlternativa"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[ChaveAlternativa]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica a coluna na tabela de referência que uma coluna une."
+                          name="JoinToReferenceColumn">ChaveAlternativa</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Chave Alternativa.Outputs[Saída de Correspondência de Pesquisa]"
+                  errorOrTruncationOperation="Pesquisa"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Saída de Correspondência de Pesquisa"
+                  synchronousInputId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Chave Alternativa.Inputs[Entrada de Pesquisa]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Chave Alternativa.Outputs[Saída de Correspondência de Pesquisa].Columns[ChaveAlternativa]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copiar Coluna"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Chave Alternativa.Outputs[Saída de Correspondência de Pesquisa].Columns[ChaveAlternativa]"
+                      name="ChaveAlternativa"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
+                          name="CopyFromReferenceColumn">ChaveAlternativa</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Chave Alternativa.Outputs[Saída Sem Correspondência de Pesquisa]"
+                  description="A saída de Pesquisa que trata as linhas sem entradas correspondentes no conjunto de dados de referência. Use essa saída quando a propriedade NoMatchBehavior estiver definida como &quot;Enviar as linhas sem entradas correspondentes para a saída sem correspondência&quot;."
+                  exclusionGroup="1"
+                  name="Saída Sem Correspondência de Pesquisa"
+                  synchronousInputId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Chave Alternativa.Inputs[Entrada de Pesquisa]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Chave Alternativa.Outputs[Saída de Erro de Pesquisa]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Pesquisa"
+                  synchronousInputId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Chave Alternativa.Inputs[Entrada de Pesquisa]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Chave Alternativa.Outputs[Saída de Erro de Pesquisa].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Chave Alternativa.Outputs[Saída de Erro de Pesquisa].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Chave Alternativa.Outputs[Saída de Erro de Pesquisa].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Chave Alternativa.Outputs[Saída de Erro de Pesquisa].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+              description="Origem OLE DB"
+              name="DDS dimAlunosReprCursoDicisplina"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[dimAlunosRepDiscCurso]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="A variável que contém o comando SQL a ser executado."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+                  connectionManagerRefId="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB]"
+                  name="Saída de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].ExternalColumns[Desc_Curso]"
+                      length="273"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Desc_Curso]"
+                      name="Desc_Curso"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[ChaveAlternativa]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].ExternalColumns[ChaveAlternativa]"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[ChaveAlternativa]"
+                      name="ChaveAlternativa"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].ExternalColumns[Matricula]"
+                      length="20"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Matricula]"
+                      name="Matricula"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Nome]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].ExternalColumns[Nome]"
+                      length="70"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Nome]"
+                      name="Nome"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Cod_Disciplina]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].ExternalColumns[Cod_Disciplina]"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Cod_Disciplina]"
+                      name="Cod_Disciplina"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Cod_Pauta]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].ExternalColumns[Cod_Pauta]"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Cod_Pauta]"
+                      name="Cod_Pauta"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Situacao_Matricula_Pauta]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].ExternalColumns[Situacao_Matricula_Pauta]"
+                      length="100"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Situacao_Matricula_Pauta]"
+                      name="Situacao_Matricula_Pauta"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Desc_Disciplina]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].ExternalColumns[Desc_Disciplina]"
+                      length="255"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Desc_Disciplina]"
+                      name="Desc_Disciplina"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Cod_Curso]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].ExternalColumns[Cod_Curso]"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Cod_Curso]"
+                      name="Cod_Curso"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Ano_Letivo_Ini]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].ExternalColumns[Ano_Letivo_Ini]"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Ano_Letivo_Ini]"
+                      name="Ano_Letivo_Ini"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Periodo_Letivo_Ini]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].ExternalColumns[Periodo_Letivo_Ini]"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Periodo_Letivo_Ini]"
+                      name="Periodo_Letivo_Ini"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Ano_Let]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].ExternalColumns[Ano_Let]"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Ano_Let]"
+                      name="Ano_Let"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Periodo_Let]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].ExternalColumns[Periodo_Let]"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Periodo_Let]"
+                      name="Periodo_Let"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Coeficiente_Rendimento]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].ExternalColumns[Coeficiente_Rendimento]"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Coeficiente_Rendimento]"
+                      name="Coeficiente_Rendimento"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].ExternalColumns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="273"
+                      name="Desc_Curso" />
+                    <externalMetadataColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].ExternalColumns[ChaveAlternativa]"
+                      dataType="i4"
+                      name="ChaveAlternativa" />
+                    <externalMetadataColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].ExternalColumns[Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Matricula" />
+                    <externalMetadataColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].ExternalColumns[Nome]"
+                      codePage="1252"
+                      dataType="str"
+                      length="70"
+                      name="Nome" />
+                    <externalMetadataColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].ExternalColumns[Cod_Disciplina]"
+                      dataType="i4"
+                      name="Cod_Disciplina" />
+                    <externalMetadataColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].ExternalColumns[Cod_Pauta]"
+                      dataType="i4"
+                      name="Cod_Pauta" />
+                    <externalMetadataColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].ExternalColumns[Situacao_Matricula_Pauta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Situacao_Matricula_Pauta" />
+                    <externalMetadataColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].ExternalColumns[Desc_Disciplina]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Desc_Disciplina" />
+                    <externalMetadataColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].ExternalColumns[Cod_Curso]"
+                      dataType="i4"
+                      name="Cod_Curso" />
+                    <externalMetadataColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].ExternalColumns[Ano_Letivo_Ini]"
+                      dataType="i2"
+                      name="Ano_Letivo_Ini" />
+                    <externalMetadataColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].ExternalColumns[Periodo_Letivo_Ini]"
+                      dataType="ui1"
+                      name="Periodo_Letivo_Ini" />
+                    <externalMetadataColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].ExternalColumns[Ano_Let]"
+                      dataType="i2"
+                      name="Ano_Let" />
+                    <externalMetadataColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].ExternalColumns[Periodo_Let]"
+                      dataType="ui1"
+                      name="Periodo_Let" />
+                    <externalMetadataColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].ExternalColumns[Coeficiente_Rendimento]"
+                      dataType="numeric"
+                      name="Coeficiente_Rendimento"
+                      precision="5"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Erro de Origem OLE DB]"
+                  isErrorOut="true"
+                  name="Saída de Erro de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Erro de Origem OLE DB].Columns[ChaveAlternativa]"
+                      dataType="i4"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Erro de Origem OLE DB].Columns[ChaveAlternativa]"
+                      name="ChaveAlternativa" />
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Erro de Origem OLE DB].Columns[Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Erro de Origem OLE DB].Columns[Matricula]"
+                      name="Matricula" />
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Erro de Origem OLE DB].Columns[Nome]"
+                      codePage="1252"
+                      dataType="str"
+                      length="70"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Erro de Origem OLE DB].Columns[Nome]"
+                      name="Nome" />
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Erro de Origem OLE DB].Columns[Cod_Disciplina]"
+                      dataType="i4"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Erro de Origem OLE DB].Columns[Cod_Disciplina]"
+                      name="Cod_Disciplina" />
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Erro de Origem OLE DB].Columns[Cod_Pauta]"
+                      dataType="i4"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Erro de Origem OLE DB].Columns[Cod_Pauta]"
+                      name="Cod_Pauta" />
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Erro de Origem OLE DB].Columns[Situacao_Matricula_Pauta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Erro de Origem OLE DB].Columns[Situacao_Matricula_Pauta]"
+                      name="Situacao_Matricula_Pauta" />
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Erro de Origem OLE DB].Columns[Desc_Disciplina]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Erro de Origem OLE DB].Columns[Desc_Disciplina]"
+                      name="Desc_Disciplina" />
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Erro de Origem OLE DB].Columns[Cod_Curso]"
+                      dataType="i4"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Erro de Origem OLE DB].Columns[Cod_Curso]"
+                      name="Cod_Curso" />
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Erro de Origem OLE DB].Columns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="273"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Erro de Origem OLE DB].Columns[Desc_Curso]"
+                      name="Desc_Curso" />
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Erro de Origem OLE DB].Columns[Ano_Letivo_Ini]"
+                      dataType="i2"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Erro de Origem OLE DB].Columns[Ano_Letivo_Ini]"
+                      name="Ano_Letivo_Ini" />
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Erro de Origem OLE DB].Columns[Periodo_Letivo_Ini]"
+                      dataType="ui1"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Erro de Origem OLE DB].Columns[Periodo_Letivo_Ini]"
+                      name="Periodo_Letivo_Ini" />
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Erro de Origem OLE DB].Columns[Ano_Let]"
+                      dataType="i2"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Erro de Origem OLE DB].Columns[Ano_Let]"
+                      name="Ano_Let" />
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Erro de Origem OLE DB].Columns[Periodo_Let]"
+                      dataType="ui1"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Erro de Origem OLE DB].Columns[Periodo_Let]"
+                      name="Periodo_Let" />
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Erro de Origem OLE DB].Columns[Coeficiente_Rendimento]"
+                      dataType="numeric"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Erro de Origem OLE DB].Columns[Coeficiente_Rendimento]"
+                      name="Coeficiente_Rendimento"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS FatoSituacaoAlunoPorDiscCurso"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino OLE DB"
+              name="DDS FatoSituacaoAlunoPorDiscCurso"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[FatoSituacaoAlunoPorCursoDisciplina]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepIdentity">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS FatoSituacaoAlunoPorDiscCurso.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+                  connectionManagerRefId="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS FatoSituacaoAlunoPorDiscCurso.Inputs[Entrada de Destino OLE DB]"
+                  errorOrTruncationOperation="Inserir"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de Destino OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS FatoSituacaoAlunoPorDiscCurso.Inputs[Entrada de Destino OLE DB].Columns[ChaveAlternativa]"
+                      cachedDataType="i4"
+                      cachedName="ChaveAlternativa"
+                      externalMetadataColumnId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS FatoSituacaoAlunoPorDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[AlunosRepCursoDiscID]"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[ChaveAlternativa]" />
+                    <inputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS FatoSituacaoAlunoPorDiscCurso.Inputs[Entrada de Destino OLE DB].Columns[TotalApr]"
+                      cachedDataType="i4"
+                      cachedName="TotalApr"
+                      externalMetadataColumnId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS FatoSituacaoAlunoPorDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[Total_Aprovado]"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Aprovados.Outputs[Saída de Correspondência de Pesquisa].Columns[TotalApr]" />
+                    <inputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS FatoSituacaoAlunoPorDiscCurso.Inputs[Entrada de Destino OLE DB].Columns[TotalRepr]"
+                      cachedDataType="i4"
+                      cachedName="TotalRepr"
+                      externalMetadataColumnId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS FatoSituacaoAlunoPorDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[Total_Reprovado]"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Reprovados.Outputs[Saída de Correspondência de Pesquisa].Columns[TotalRepr]" />
+                    <inputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS FatoSituacaoAlunoPorDiscCurso.Inputs[Entrada de Destino OLE DB].Columns[TotalCur]"
+                      cachedDataType="i4"
+                      cachedName="TotalCur"
+                      externalMetadataColumnId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS FatoSituacaoAlunoPorDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[Total_Cursando]"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cursando.Outputs[Saída de Correspondência de Pesquisa].Columns[TotalCur]" />
+                    <inputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS FatoSituacaoAlunoPorDiscCurso.Inputs[Entrada de Destino OLE DB].Columns[TotalCan]"
+                      cachedDataType="i4"
+                      cachedName="TotalCan"
+                      externalMetadataColumnId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS FatoSituacaoAlunoPorDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[Total_Cancelado]"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cancelados.Outputs[Saída de Correspondência de Pesquisa].Columns[TotalCan]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS FatoSituacaoAlunoPorDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[AlunosRepCursoDiscID]"
+                      dataType="i4"
+                      name="AlunosRepCursoDiscID" />
+                    <externalMetadataColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS FatoSituacaoAlunoPorDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[Total_Aprovado]"
+                      dataType="i4"
+                      name="Total_Aprovado" />
+                    <externalMetadataColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS FatoSituacaoAlunoPorDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[Total_Reprovado]"
+                      dataType="i4"
+                      name="Total_Reprovado" />
+                    <externalMetadataColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS FatoSituacaoAlunoPorDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[Total_Cursando]"
+                      dataType="i4"
+                      name="Total_Cursando" />
+                    <externalMetadataColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS FatoSituacaoAlunoPorDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[Total_Cancelado]"
+                      dataType="i4"
+                      name="Total_Cancelado" />
+                    <externalMetadataColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS FatoSituacaoAlunoPorDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[Data_Insercao]"
+                      dataType="dbTimeStamp"
+                      name="Data_Insercao" />
+                    <externalMetadataColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS FatoSituacaoAlunoPorDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[Data_Atualizacao]"
+                      dataType="dbTimeStamp"
+                      name="Data_Atualizacao" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS FatoSituacaoAlunoPorDiscCurso.Outputs[Saída de Erro de Destino OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Destino OLE DB"
+                  synchronousInputId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS FatoSituacaoAlunoPorDiscCurso.Inputs[Entrada de Destino OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS FatoSituacaoAlunoPorDiscCurso.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS FatoSituacaoAlunoPorDiscCurso.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS FatoSituacaoAlunoPorDiscCurso.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS FatoSituacaoAlunoPorDiscCurso.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Aprovados"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Pesquisa;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;6"
+              description="Une colunas adicionais aos fluxos de dados pesquisando valores de uma tabela. Por exemplo, una à coluna 'employee id' a tabela de funcionários para obter 'hire date' e 'employee name'. Essa transformação é recomendada quando a tabela de pesquisa está de acordo com a memória."
+              name="Total Aprovados"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica a instrução SQL que gera a tabela de pesquisa."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT        Cod_Curso, Cod_Disciplina, COUNT(Situacao_Matricula_Pauta) AS TotalApr
+FROM            dbo.dimAlunosRepDiscCurso
+WHERE        (Situacao_Matricula_Pauta = 'Aprovado')
+GROUP BY Cod_Curso, Cod_Disciplina</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica uma instrução SQL que usa parâmetros para gerar a tabela de pesquisa."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT        Cod_Curso, Cod_Disciplina, COUNT(Situacao_Matricula_Pauta) AS TotalApr
+FROM            dbo.dimAlunosRepDiscCurso
+WHERE        (Situacao_Matricula_Pauta = 'Aprovado')
+GROUP BY Cod_Curso, Cod_Disciplina) [refTable]
+where [refTable].[Cod_Disciplina] = ? and [refTable].[Cod_Curso] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o tipo de conexão usado para acessar o conjunto de dados de referência."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o tipo de cache da tabela de pesquisa."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica como a transformação Pesquisa trata as linhas sem entradas correspondentes no conjunto de dados de referência."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a porcentagem do cache alocada para linhas sem entradas correspondentes no conjunto de dados de referência."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Uso Máximo de Memória para o Cache de Referência em uma plataforma de 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Uso Máximo de Memória para o Cache de Referência em uma plataforma de 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indica se os metadados de referência em um formato XML devem ser referenciados."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Cod_Curso" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Cod_Disciplina" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TotalApr" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Especifica a lista de identificadores de linhagem mapeados para os parâmetros usados pela instrução SQL na propriedade SQLCommand. As entradas na lista são separadas por ponto e vírgulas."
+                  name="ParameterMap">#{Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Cod_Disciplina]};#{Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Cod_Curso]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina se as chaves duplicadas nos dados de referência devem ser tratadas como erros quando o modo de cache cheio é usado."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Aprovados.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+                  connectionManagerRefId="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+                  description="O gerenciador de conexões usado para acessar dados de pesquisa."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Aprovados.Inputs[Entrada de Pesquisa]"
+                  name="Entrada de Pesquisa">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Aprovados.Inputs[Entrada de Pesquisa].Columns[Cod_Disciplina]"
+                      cachedDataType="i4"
+                      cachedName="Cod_Disciplina"
+                      errorOrTruncationOperation="Copiar Coluna"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Cod_Disciplina]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica a coluna na tabela de referência que uma coluna une."
+                          name="JoinToReferenceColumn">Cod_Disciplina</property>
+                        <property
+                          dataType="System.String"
+                          description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
+                          name="CopyFromReferenceColumn">Cod_Disciplina</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Aprovados.Inputs[Entrada de Pesquisa].Columns[Cod_Curso]"
+                      cachedDataType="i4"
+                      cachedName="Cod_Curso"
+                      errorOrTruncationOperation="Copiar Coluna"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Cod_Curso]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica a coluna na tabela de referência que uma coluna une."
+                          name="JoinToReferenceColumn">Cod_Curso</property>
+                        <property
+                          dataType="System.String"
+                          description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
+                          name="CopyFromReferenceColumn">Cod_Curso</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Aprovados.Outputs[Saída de Correspondência de Pesquisa]"
+                  errorOrTruncationOperation="Pesquisa"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Saída de Correspondência de Pesquisa"
+                  synchronousInputId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Aprovados.Inputs[Entrada de Pesquisa]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Aprovados.Outputs[Saída de Correspondência de Pesquisa].Columns[TotalApr]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copiar Coluna"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Aprovados.Outputs[Saída de Correspondência de Pesquisa].Columns[TotalApr]"
+                      name="TotalApr"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
+                          name="CopyFromReferenceColumn">TotalApr</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Aprovados.Outputs[Saída Sem Correspondência de Pesquisa]"
+                  description="A saída de Pesquisa que trata as linhas sem entradas correspondentes no conjunto de dados de referência. Use essa saída quando a propriedade NoMatchBehavior estiver definida como &quot;Enviar as linhas sem entradas correspondentes para a saída sem correspondência&quot;."
+                  exclusionGroup="1"
+                  name="Saída Sem Correspondência de Pesquisa"
+                  synchronousInputId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Aprovados.Inputs[Entrada de Pesquisa]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Aprovados.Outputs[Saída de Erro de Pesquisa]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Pesquisa"
+                  synchronousInputId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Aprovados.Inputs[Entrada de Pesquisa]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Aprovados.Outputs[Saída de Erro de Pesquisa].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Aprovados.Outputs[Saída de Erro de Pesquisa].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Aprovados.Outputs[Saída de Erro de Pesquisa].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Aprovados.Outputs[Saída de Erro de Pesquisa].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cancelados"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Pesquisa;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;6"
+              description="Une colunas adicionais aos fluxos de dados pesquisando valores de uma tabela. Por exemplo, una à coluna 'employee id' a tabela de funcionários para obter 'hire date' e 'employee name'. Essa transformação é recomendada quando a tabela de pesquisa está de acordo com a memória."
+              name="Total Cancelados"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica a instrução SQL que gera a tabela de pesquisa."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT        Cod_Curso, Cod_Disciplina, COUNT(Situacao_Matricula_Pauta) AS TotalCan
+FROM            dbo.dimAlunosRepDiscCurso
+WHERE        (Situacao_Matricula_Pauta = 'Cancelado')
+GROUP BY Cod_Curso, Cod_Disciplina</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica uma instrução SQL que usa parâmetros para gerar a tabela de pesquisa."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT        Cod_Curso, Cod_Disciplina, COUNT(Situacao_Matricula_Pauta) AS TotalCan
+FROM            dbo.dimAlunosRepDiscCurso
+WHERE        (Situacao_Matricula_Pauta = 'Cancelado')
+GROUP BY Cod_Curso, Cod_Disciplina) [refTable]
+where [refTable].[Cod_Disciplina] = ? and [refTable].[Cod_Curso] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o tipo de conexão usado para acessar o conjunto de dados de referência."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o tipo de cache da tabela de pesquisa."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica como a transformação Pesquisa trata as linhas sem entradas correspondentes no conjunto de dados de referência."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a porcentagem do cache alocada para linhas sem entradas correspondentes no conjunto de dados de referência."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Uso Máximo de Memória para o Cache de Referência em uma plataforma de 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Uso Máximo de Memória para o Cache de Referência em uma plataforma de 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indica se os metadados de referência em um formato XML devem ser referenciados."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Cod_Curso" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Cod_Disciplina" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TotalCan" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Especifica a lista de identificadores de linhagem mapeados para os parâmetros usados pela instrução SQL na propriedade SQLCommand. As entradas na lista são separadas por ponto e vírgulas."
+                  name="ParameterMap">#{Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cursando.Outputs[Saída de Correspondência de Pesquisa].Columns[Cod_Disciplina]};#{Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cursando.Outputs[Saída de Correspondência de Pesquisa].Columns[Cod_Curso]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina se as chaves duplicadas nos dados de referência devem ser tratadas como erros quando o modo de cache cheio é usado."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cancelados.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+                  connectionManagerRefId="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+                  description="O gerenciador de conexões usado para acessar dados de pesquisa."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cancelados.Inputs[Entrada de Pesquisa]"
+                  name="Entrada de Pesquisa">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cancelados.Inputs[Entrada de Pesquisa].Columns[Cod_Disciplina]"
+                      cachedDataType="i4"
+                      cachedName="Cod_Disciplina"
+                      errorOrTruncationOperation="Copiar Coluna"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cursando.Outputs[Saída de Correspondência de Pesquisa].Columns[Cod_Disciplina]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica a coluna na tabela de referência que uma coluna une."
+                          name="JoinToReferenceColumn">Cod_Disciplina</property>
+                        <property
+                          dataType="System.String"
+                          description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
+                          name="CopyFromReferenceColumn">Cod_Disciplina</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cancelados.Inputs[Entrada de Pesquisa].Columns[Cod_Curso]"
+                      cachedDataType="i4"
+                      cachedName="Cod_Curso"
+                      errorOrTruncationOperation="Copiar Coluna"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cursando.Outputs[Saída de Correspondência de Pesquisa].Columns[Cod_Curso]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica a coluna na tabela de referência que uma coluna une."
+                          name="JoinToReferenceColumn">Cod_Curso</property>
+                        <property
+                          dataType="System.String"
+                          description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
+                          name="CopyFromReferenceColumn">Cod_Curso</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cancelados.Outputs[Saída de Correspondência de Pesquisa]"
+                  errorOrTruncationOperation="Pesquisa"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Saída de Correspondência de Pesquisa"
+                  synchronousInputId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cancelados.Inputs[Entrada de Pesquisa]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cancelados.Outputs[Saída de Correspondência de Pesquisa].Columns[TotalCan]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copiar Coluna"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cancelados.Outputs[Saída de Correspondência de Pesquisa].Columns[TotalCan]"
+                      name="TotalCan"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
+                          name="CopyFromReferenceColumn">TotalCan</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cancelados.Outputs[Saída Sem Correspondência de Pesquisa]"
+                  description="A saída de Pesquisa que trata as linhas sem entradas correspondentes no conjunto de dados de referência. Use essa saída quando a propriedade NoMatchBehavior estiver definida como &quot;Enviar as linhas sem entradas correspondentes para a saída sem correspondência&quot;."
+                  exclusionGroup="1"
+                  name="Saída Sem Correspondência de Pesquisa"
+                  synchronousInputId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cancelados.Inputs[Entrada de Pesquisa]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cancelados.Outputs[Saída de Erro de Pesquisa]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Pesquisa"
+                  synchronousInputId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cancelados.Inputs[Entrada de Pesquisa]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cancelados.Outputs[Saída de Erro de Pesquisa].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cancelados.Outputs[Saída de Erro de Pesquisa].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cancelados.Outputs[Saída de Erro de Pesquisa].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cancelados.Outputs[Saída de Erro de Pesquisa].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cursando"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Pesquisa;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;6"
+              description="Une colunas adicionais aos fluxos de dados pesquisando valores de uma tabela. Por exemplo, una à coluna 'employee id' a tabela de funcionários para obter 'hire date' e 'employee name'. Essa transformação é recomendada quando a tabela de pesquisa está de acordo com a memória."
+              name="Total Cursando"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica a instrução SQL que gera a tabela de pesquisa."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT        Cod_Curso, Cod_Disciplina, COUNT(Situacao_Matricula_Pauta) AS TotalCur
+FROM            dbo.dimAlunosRepDiscCurso
+WHERE        (Situacao_Matricula_Pauta = 'Cursando')
+GROUP BY Cod_Curso, Cod_Disciplina</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica uma instrução SQL que usa parâmetros para gerar a tabela de pesquisa."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT        Cod_Curso, Cod_Disciplina, COUNT(Situacao_Matricula_Pauta) AS TotalCur
+FROM            dbo.dimAlunosRepDiscCurso
+WHERE        (Situacao_Matricula_Pauta = 'Cursando')
+GROUP BY Cod_Curso, Cod_Disciplina) [refTable]
+where [refTable].[Cod_Disciplina] = ? and [refTable].[Cod_Curso] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o tipo de conexão usado para acessar o conjunto de dados de referência."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o tipo de cache da tabela de pesquisa."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica como a transformação Pesquisa trata as linhas sem entradas correspondentes no conjunto de dados de referência."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a porcentagem do cache alocada para linhas sem entradas correspondentes no conjunto de dados de referência."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Uso Máximo de Memória para o Cache de Referência em uma plataforma de 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Uso Máximo de Memória para o Cache de Referência em uma plataforma de 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indica se os metadados de referência em um formato XML devem ser referenciados."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Cod_Curso" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Cod_Disciplina" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TotalCur" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Especifica a lista de identificadores de linhagem mapeados para os parâmetros usados pela instrução SQL na propriedade SQLCommand. As entradas na lista são separadas por ponto e vírgulas."
+                  name="ParameterMap">#{Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Cod_Disciplina]};#{Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Cod_Curso]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina se as chaves duplicadas nos dados de referência devem ser tratadas como erros quando o modo de cache cheio é usado."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cursando.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+                  connectionManagerRefId="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+                  description="O gerenciador de conexões usado para acessar dados de pesquisa."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cursando.Inputs[Entrada de Pesquisa]"
+                  name="Entrada de Pesquisa">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cursando.Inputs[Entrada de Pesquisa].Columns[Cod_Disciplina]"
+                      cachedDataType="i4"
+                      cachedName="Cod_Disciplina"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Cod_Disciplina]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica a coluna na tabela de referência que uma coluna une."
+                          name="JoinToReferenceColumn">Cod_Disciplina</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cursando.Inputs[Entrada de Pesquisa].Columns[Cod_Curso]"
+                      cachedDataType="i4"
+                      cachedName="Cod_Curso"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Cod_Curso]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica a coluna na tabela de referência que uma coluna une."
+                          name="JoinToReferenceColumn">Cod_Curso</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cursando.Outputs[Saída de Correspondência de Pesquisa]"
+                  errorOrTruncationOperation="Pesquisa"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Saída de Correspondência de Pesquisa"
+                  synchronousInputId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cursando.Inputs[Entrada de Pesquisa]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cursando.Outputs[Saída de Correspondência de Pesquisa].Columns[TotalCur]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copiar Coluna"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cursando.Outputs[Saída de Correspondência de Pesquisa].Columns[TotalCur]"
+                      name="TotalCur"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
+                          name="CopyFromReferenceColumn">TotalCur</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cursando.Outputs[Saída de Correspondência de Pesquisa].Columns[Cod_Disciplina]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copiar Coluna"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cursando.Outputs[Saída de Correspondência de Pesquisa].Columns[Cod_Disciplina]"
+                      name="Cod_Disciplina"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
+                          name="CopyFromReferenceColumn">Cod_Disciplina</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cursando.Outputs[Saída de Correspondência de Pesquisa].Columns[Cod_Curso]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copiar Coluna"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cursando.Outputs[Saída de Correspondência de Pesquisa].Columns[Cod_Curso]"
+                      name="Cod_Curso"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
+                          name="CopyFromReferenceColumn">Cod_Curso</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cursando.Outputs[Saída Sem Correspondência de Pesquisa]"
+                  description="A saída de Pesquisa que trata as linhas sem entradas correspondentes no conjunto de dados de referência. Use essa saída quando a propriedade NoMatchBehavior estiver definida como &quot;Enviar as linhas sem entradas correspondentes para a saída sem correspondência&quot;."
+                  exclusionGroup="1"
+                  name="Saída Sem Correspondência de Pesquisa"
+                  synchronousInputId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cursando.Inputs[Entrada de Pesquisa]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cursando.Outputs[Saída de Erro de Pesquisa]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Pesquisa"
+                  synchronousInputId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cursando.Inputs[Entrada de Pesquisa]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cursando.Outputs[Saída de Erro de Pesquisa].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cursando.Outputs[Saída de Erro de Pesquisa].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cursando.Outputs[Saída de Erro de Pesquisa].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cursando.Outputs[Saída de Erro de Pesquisa].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Reprovados"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Pesquisa;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;6"
+              description="Une colunas adicionais aos fluxos de dados pesquisando valores de uma tabela. Por exemplo, una à coluna 'employee id' a tabela de funcionários para obter 'hire date' e 'employee name'. Essa transformação é recomendada quando a tabela de pesquisa está de acordo com a memória."
+              name="Total Reprovados"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica a instrução SQL que gera a tabela de pesquisa."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT        Cod_Curso, Cod_Disciplina, COUNT(Situacao_Matricula_Pauta) AS TotalRepr
+FROM            dbo.dimAlunosRepDiscCurso
+WHERE        (Situacao_Matricula_Pauta = 'Reprovado')
+GROUP BY Cod_Curso, Cod_Disciplina</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica uma instrução SQL que usa parâmetros para gerar a tabela de pesquisa."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT        Cod_Curso, Cod_Disciplina, COUNT(Situacao_Matricula_Pauta) AS TotalRepr
+FROM            dbo.dimAlunosRepDiscCurso
+WHERE        (Situacao_Matricula_Pauta = 'Reprovado')
+GROUP BY Cod_Curso, Cod_Disciplina) [refTable]
+where [refTable].[Cod_Disciplina] = ? and [refTable].[Cod_Curso] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o tipo de conexão usado para acessar o conjunto de dados de referência."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o tipo de cache da tabela de pesquisa."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica como a transformação Pesquisa trata as linhas sem entradas correspondentes no conjunto de dados de referência."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a porcentagem do cache alocada para linhas sem entradas correspondentes no conjunto de dados de referência."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Uso Máximo de Memória para o Cache de Referência em uma plataforma de 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Uso Máximo de Memória para o Cache de Referência em uma plataforma de 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indica se os metadados de referência em um formato XML devem ser referenciados."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Cod_Curso" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Cod_Disciplina" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TotalRepr" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Especifica a lista de identificadores de linhagem mapeados para os parâmetros usados pela instrução SQL na propriedade SQLCommand. As entradas na lista são separadas por ponto e vírgulas."
+                  name="ParameterMap">#{Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Cod_Disciplina]};#{Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Cod_Curso]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina se as chaves duplicadas nos dados de referência devem ser tratadas como erros quando o modo de cache cheio é usado."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Reprovados.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+                  connectionManagerRefId="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+                  description="O gerenciador de conexões usado para acessar dados de pesquisa."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Reprovados.Inputs[Entrada de Pesquisa]"
+                  name="Entrada de Pesquisa">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Reprovados.Inputs[Entrada de Pesquisa].Columns[Cod_Disciplina]"
+                      cachedDataType="i4"
+                      cachedName="Cod_Disciplina"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Cod_Disciplina]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica a coluna na tabela de referência que uma coluna une."
+                          name="JoinToReferenceColumn">Cod_Disciplina</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Reprovados.Inputs[Entrada de Pesquisa].Columns[Cod_Curso]"
+                      cachedDataType="i4"
+                      cachedName="Cod_Curso"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB].Columns[Cod_Curso]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica a coluna na tabela de referência que uma coluna une."
+                          name="JoinToReferenceColumn">Cod_Curso</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Reprovados.Outputs[Saída de Correspondência de Pesquisa]"
+                  errorOrTruncationOperation="Pesquisa"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Saída de Correspondência de Pesquisa"
+                  synchronousInputId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Reprovados.Inputs[Entrada de Pesquisa]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Reprovados.Outputs[Saída de Correspondência de Pesquisa].Columns[TotalRepr]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copiar Coluna"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Reprovados.Outputs[Saída de Correspondência de Pesquisa].Columns[TotalRepr]"
+                      name="TotalRepr"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
+                          name="CopyFromReferenceColumn">TotalRepr</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Reprovados.Outputs[Saída Sem Correspondência de Pesquisa]"
+                  description="A saída de Pesquisa que trata as linhas sem entradas correspondentes no conjunto de dados de referência. Use essa saída quando a propriedade NoMatchBehavior estiver definida como &quot;Enviar as linhas sem entradas correspondentes para a saída sem correspondência&quot;."
+                  exclusionGroup="1"
+                  name="Saída Sem Correspondência de Pesquisa"
+                  synchronousInputId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Reprovados.Inputs[Entrada de Pesquisa]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Reprovados.Outputs[Saída de Erro de Pesquisa]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Pesquisa"
+                  synchronousInputId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Reprovados.Inputs[Entrada de Pesquisa]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Reprovados.Outputs[Saída de Erro de Pesquisa].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Reprovados.Outputs[Saída de Erro de Pesquisa].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Reprovados.Outputs[Saída de Erro de Pesquisa].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Reprovados.Outputs[Saída de Erro de Pesquisa].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina.Paths[Saída de Correspondência de Pesquisa]"
+              endId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Reprovados.Inputs[Entrada de Pesquisa]"
+              name="Saída de Correspondência de Pesquisa"
+              startId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Aprovados.Outputs[Saída de Correspondência de Pesquisa]" />
+            <path
+              refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina.Paths[Saída de Correspondência de Pesquisa1]"
+              endId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cursando.Inputs[Entrada de Pesquisa]"
+              name="Saída de Correspondência de Pesquisa"
+              startId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Reprovados.Outputs[Saída de Correspondência de Pesquisa]" />
+            <path
+              refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina.Paths[Saída de Correspondência de Pesquisa2]"
+              endId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cancelados.Inputs[Entrada de Pesquisa]"
+              name="Saída de Correspondência de Pesquisa"
+              startId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cursando.Outputs[Saída de Correspondência de Pesquisa]" />
+            <path
+              refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina.Paths[Saída de Correspondência de Pesquisa3]"
+              endId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Chave Alternativa.Inputs[Entrada de Pesquisa]"
+              name="Saída de Correspondência de Pesquisa"
+              startId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cancelados.Outputs[Saída de Correspondência de Pesquisa]" />
+            <path
+              refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina.Paths[Saída de Correspondência de Pesquisa4]"
+              endId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS FatoSituacaoAlunoPorDiscCurso.Inputs[Entrada de Destino OLE DB]"
+              name="Saída de Correspondência de Pesquisa"
+              startId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Chave Alternativa.Outputs[Saída de Correspondência de Pesquisa]" />
+            <path
+              refId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina.Paths[Saída de Origem OLE DB]"
+              endId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Aprovados.Inputs[Entrada de Pesquisa]"
+              name="Saída de Origem OLE DB"
+              startId="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina.Outputs[Saída de Origem OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="352,42"
+          Id="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina"
+          TopLeft="57,66" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="244,42"
+          Id="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina"
+          TopLeft="44,17" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Aprovados"
+          TopLeft="354,22" />
+        <EdgeLayout
+          Id="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina.Paths[Saída de Origem OLE DB]"
+          TopLeft="288,40.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="66,0"
+              Start="0,0"
+              End="58.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="58.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Reprovados"
+          TopLeft="52,111" />
+        <EdgeLayout
+          Id="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina.Paths[Saída de Correspondência de Pesquisa]"
+          TopLeft="431.5,64">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-299,47"
+              Start="0,0"
+              End="-299,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.5"
+                    Point2="0,23.5"
+                    Point3="-4,23.5" />
+                  <mssgle:LineSegment
+                    End="-295,23.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-295,23.5"
+                    Point2="-299,23.5"
+                    Point3="-299,27.5" />
+                  <mssgle:LineSegment
+                    End="-299,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-234.8740234375,28.5,170.748046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cursando"
+          TopLeft="311,151" />
+        <EdgeLayout
+          Id="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina.Paths[Saída de Correspondência de Pesquisa1]"
+          TopLeft="213,132">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="98,40"
+              Start="0,0"
+              End="90.5,40">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="45,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="45,0"
+                    Point2="49,0"
+                    Point3="49,4" />
+                  <mssgle:LineSegment
+                    End="49,36" />
+                  <mssgle:CubicBezierSegment
+                    Point1="49,36"
+                    Point2="49,40"
+                    Point3="53,40" />
+                  <mssgle:LineSegment
+                    End="90.5,40" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-36.3740234375,-18.1953125,170.748046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cancelados"
+          TopLeft="63,306" />
+        <EdgeLayout
+          Id="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina.Paths[Saída de Correspondência de Pesquisa2]"
+          TopLeft="386,193">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-243.5,113"
+              Start="0,0"
+              End="-243.5,105.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,52.5"
+                    Point2="0,56.5"
+                    Point3="-4,56.5" />
+                  <mssgle:LineSegment
+                    End="-239.5,56.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-239.5,56.5"
+                    Point2="-243.5,56.5"
+                    Point3="-243.5,60.5" />
+                  <mssgle:LineSegment
+                    End="-243.5,105.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-207.1240234375,61.5,170.748046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Chave Alternativa"
+          TopLeft="313,329" />
+        <EdgeLayout
+          Id="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina.Paths[Saída de Correspondência de Pesquisa3]"
+          TopLeft="222,327">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="91,23"
+              Start="0,0"
+              End="83.5,23">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="41.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="41.5,0"
+                    Point2="45.5,0"
+                    Point3="45.5,4" />
+                  <mssgle:LineSegment
+                    End="45.5,19" />
+                  <mssgle:CubicBezierSegment
+                    Point1="45.5,19"
+                    Point2="45.5,23"
+                    Point3="49.5,23" />
+                  <mssgle:LineSegment
+                    End="83.5,23" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-39.8740234375,-18.1953125,170.748046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="251,42"
+          Id="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS FatoSituacaoAlunoPorDiscCurso"
+          TopLeft="510,249" />
+        <EdgeLayout
+          Id="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina.Paths[Saída de Correspondência de Pesquisa4]"
+          TopLeft="394,329">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="241.5,-38"
+              Start="0,0"
+              End="241.5,-30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-15" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-15"
+                    Point2="0,-19"
+                    Point3="4,-19" />
+                  <mssgle:LineSegment
+                    End="237.5,-19" />
+                  <mssgle:CubicBezierSegment
+                    Point1="237.5,-19"
+                    Point2="241.5,-19"
+                    Point3="241.5,-23" />
+                  <mssgle:LineSegment
+                    End="241.5,-30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="35.3759765625,-14,170.748046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS dimAlunosReprCursoDicisplina">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Aprovados">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Reprovados">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cursando">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Total Cancelados">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\Chave Alternativa">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Taefa para popular a fatoSituacaoAlunoPorCursoDisciplina\DDS FatoSituacaoAlunoPorDiscCurso">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

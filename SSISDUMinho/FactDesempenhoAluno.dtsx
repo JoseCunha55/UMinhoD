@@ -1,0 +1,1972 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/8/2015 4:39:42 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="CUNHA-PC"
+  DTS:CreatorName="CUNHA-PC\Cunha"
+  DTS:DTSID="{2BDFB326-8D50-4430-BC19-1C21C71A6C75}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.700.219"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="FactDesempenhoAluno"
+  DTS:PackageType="5"
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{61EB4761-D27B-4AFC-9348-8DDC75121162}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E7780BEC-1100-49F9-B427-FEE8BB67BA49}"
+      DTS:ObjectName="CUNHA-PC\SQLSERVER2014.DDSEducacional">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=CUNHA-PC\SQLSERVER2014;Initial Catalog=DDSEducacional;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[JoseAntonio-pc.DDSEducacional]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{4C13331B-99B7-437C-8A73-E3EEFFBF73EC}"
+      DTS:ObjectName="JoseAntonio-pc.DDSEducacional">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=JoseAntonio-pc;Initial Catalog=DDSEducacional;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[JoseAntonio-pc.DDSEducacional 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F66E4A91-47CC-4D81-8386-06730BCCD643}"
+      DTS:ObjectName="JoseAntonio-pc.DDSEducacional 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=JoseAntonio-pc;Initial Catalog=DDSEducacional;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[JoseAntonio-pc.DDSEducacional 2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B02ECC0E-54F0-4F48-8DA9-C398DB3BA5E9}"
+      DTS:ObjectName="JoseAntonio-pc.DDSEducacional 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=JoseAntonio-pc;Initial Catalog=DDSEducacional;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[JoseAntonio-pc.DDSEducacional 3]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9D57D120-E602-45F9-A4C3-8F0A61CB3973}"
+      DTS:ObjectName="JoseAntonio-pc.DDSEducacional 3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=JoseAntonio-pc;Initial Catalog=DDSEducacional;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Popular a FactDesemenhoAluno com dados do NDS"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarefa Fluxo de Dados"
+      DTS:DTSID="{7B97B826-2C49-48D7-9C28-50817512C242}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Popular a FactDesemenhoAluno com dados do NDS"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Agregação"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Agregação;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;3"
+              description="Dados de agregações com funções como Average, Sum, Count, Max e Min. Por exemplo, agrupe dados para computar a soma das vendas por produto ou a média de visitas por dia."
+              name="Agregação"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o número aproximado de chaves de agrupar por produzidas pela agregação. Um número Baixo indica valores de 500.000 chaves. Médio indica 5 valores de 5 milhões de chaves e Alto indica mais de 25 milhões de valores de chaves. Não especificado indica que nenhum valor de KeyScale foi usado."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica o número exato de chaves de agrupar por produzidas pela agregação. Se um valor de KeyScale for especificado, o valor em Keys terá precedência."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o número aproximado de valores distintos em uma coluna que a agregação conta de modo distinto. Baixo indica 500.000 valores de chave, Médio indica 5 milhões de valores de chave e Alto indica mais de 25 milhões de valores de chave. Não especificado indica que nenhum valor de CountDistinctScale foi usado."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica o número exato de valores distintos de uma coluna que a agregação conta de modo distinto. Se um valor de CountDistinctScale for especificado, o valor em CountDistinctKeys terá precedência."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a porcentagem pela qual a memória pode ser estendida durante a agregação. Os valores válidos ficam entre 1 e 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Agregação.Inputs[Entrada de Agregação 1]"
+                  name="Entrada de Agregação 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Agregação.Inputs[Entrada de Agregação 1].Columns[Cod_Disciplina]"
+                      cachedDataType="i4"
+                      cachedName="Cod_Disciplina"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].Columns[Cod_Disciplina]" />
+                    <inputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Agregação.Inputs[Entrada de Agregação 1].Columns[Ano_Let]"
+                      cachedDataType="i2"
+                      cachedName="Ano_Let"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].Columns[Ano_Let]" />
+                    <inputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Agregação.Inputs[Entrada de Agregação 1].Columns[Periodo_Let]"
+                      cachedDataType="ui1"
+                      cachedName="Periodo_Let"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].Columns[Periodo_Let]" />
+                    <inputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Agregação.Inputs[Entrada de Agregação 1].Columns[Situacao_Matricula_Pauta]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Situacao_Matricula_Pauta"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].Columns[Situacao_Matricula_Pauta]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Agregação.Outputs[Saída de Agregação 1]"
+                  name="Saída de Agregação 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o número aproximado de chaves de agrupar por produzidas pela agregação. Um número Baixo indica valores de 500.000 chaves. Médio indica 5 valores de 5 milhões de chaves e Alto indica mais de 25 milhões de valores de chaves. Não especificado indica que nenhum valor de KeyScale foi usado."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Especifica o número exato de chaves de agrupar por produzidas pela agregação. Se um valor de KeyScale for especificado, o valor em Keys terá precedência."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Agregação.Outputs[Saída de Agregação 1].Columns[Cod_Disciplina]"
+                      dataType="i4"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Agregação.Outputs[Saída de Agregação 1].Columns[Cod_Disciplina]"
+                      name="Cod_Disciplina">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a identificação da coluna de entrada usada na agregação."
+                          name="AggregationColumnId">#{Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].Columns[Cod_Disciplina]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica o tipo de agregação."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indica se a coluna requer tratamento especial porque pode conter dados superdimensionados ou exigir precisão superior a de um tipo de dados flutuante."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica as opções de comparação da cadeia de caracteres."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Agregação.Outputs[Saída de Agregação 1].Columns[Ano_Let]"
+                      dataType="i2"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Agregação.Outputs[Saída de Agregação 1].Columns[Ano_Let]"
+                      name="Ano_Let">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a identificação da coluna de entrada usada na agregação."
+                          name="AggregationColumnId">#{Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].Columns[Ano_Let]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica o tipo de agregação."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indica se a coluna requer tratamento especial porque pode conter dados superdimensionados ou exigir precisão superior a de um tipo de dados flutuante."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica as opções de comparação da cadeia de caracteres."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Agregação.Outputs[Saída de Agregação 1].Columns[Periodo_Let]"
+                      dataType="ui1"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Agregação.Outputs[Saída de Agregação 1].Columns[Periodo_Let]"
+                      name="Periodo_Let">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a identificação da coluna de entrada usada na agregação."
+                          name="AggregationColumnId">#{Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].Columns[Periodo_Let]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica o tipo de agregação."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indica se a coluna requer tratamento especial porque pode conter dados superdimensionados ou exigir precisão superior a de um tipo de dados flutuante."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica as opções de comparação da cadeia de caracteres."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Agregação.Outputs[Saída de Agregação 1].Columns[Situacao_Matricula_Pauta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Agregação.Outputs[Saída de Agregação 1].Columns[Situacao_Matricula_Pauta]"
+                      name="Situacao_Matricula_Pauta">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a identificação da coluna de entrada usada na agregação."
+                          name="AggregationColumnId">#{Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].Columns[Situacao_Matricula_Pauta]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica o tipo de agregação."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indica se a coluna requer tratamento especial porque pode conter dados superdimensionados ou exigir precisão superior a de um tipo de dados flutuante."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica as opções de comparação da cadeia de caracteres."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Agregação.Outputs[Saída de Agregação 1].Columns[TotalSituacao]"
+                      dataType="ui8"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Agregação.Outputs[Saída de Agregação 1].Columns[TotalSituacao]"
+                      name="TotalSituacao">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a identificação da coluna de entrada usada na agregação."
+                          name="AggregationColumnId">#{Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].Columns[Situacao_Matricula_Pauta]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica o tipo de agregação."
+                          name="AggregationType"
+                          typeConverter="AggregationType">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indica se a coluna requer tratamento especial porque pode conter dados superdimensionados ou exigir precisão superior a de um tipo de dados flutuante."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica as opções de comparação da cadeia de caracteres."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Converte o Total para DT_I4"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Conversão de Dados;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;0"
+              description="Conversão de Dados"
+              name="Converte o Total para DT_I4"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Converte o Total para DT_I4.Inputs[Entrada de Conversão de Dados]"
+                  name="Entrada de Conversão de Dados">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Converte o Total para DT_I4.Inputs[Entrada de Conversão de Dados].Columns[TotalSituacao]"
+                      cachedDataType="ui8"
+                      cachedName="TotalSituacao"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Outputs[Saída da Junção de Mesclagem].Columns[TotalSituacao]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Converte o Total para DT_I4.Outputs[Saída de Conversão de Dados]"
+                  exclusionGroup="1"
+                  name="Saída de Conversão de Dados"
+                  synchronousInputId="Package\Popular a FactDesemenhoAluno com dados do NDS\Converte o Total para DT_I4.Inputs[Entrada de Conversão de Dados]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Converte o Total para DT_I4.Outputs[Saída de Conversão de Dados].Columns[TotalSituacao]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Converte o Total para DT_I4.Outputs[Saída de Conversão de Dados].Columns[TotalSituacao]"
+                      name="TotalSituacao"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                          name="SourceInputColumnLineageID">#{Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Outputs[Saída da Junção de Mesclagem].Columns[TotalSituacao]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Converte o Total para DT_I4.Outputs[Saída de Erro de Conversão de Dados]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Conversão de Dados"
+                  synchronousInputId="Package\Popular a FactDesemenhoAluno com dados do NDS\Converte o Total para DT_I4.Inputs[Entrada de Conversão de Dados]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Converte o Total para DT_I4.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Converte o Total para DT_I4.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Converte o Total para DT_I4.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Converte o Total para DT_I4.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+              description="Origem OLE DB"
+              name="dimAlunosRepDiscCurso"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[dimAlunosRepDiscCurso]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="A variável que contém o comando SQL a ser executado."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[JoseAntonio-pc.DDSEducacional]"
+                  connectionManagerRefId="Package.ConnectionManagers[JoseAntonio-pc.DDSEducacional]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB]"
+                  name="Saída de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].Columns[Situacao_Matricula_Pauta]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].ExternalColumns[Situacao_Matricula_Pauta]"
+                      length="100"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].Columns[Situacao_Matricula_Pauta]"
+                      name="Situacao_Matricula_Pauta"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].Columns[Ano_Let]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].ExternalColumns[Ano_Let]"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].Columns[Ano_Let]"
+                      name="Ano_Let"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].Columns[Coeficiente_Rendimento]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].ExternalColumns[Coeficiente_Rendimento]"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].Columns[Coeficiente_Rendimento]"
+                      name="Coeficiente_Rendimento"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].Columns[Periodo_Let]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].ExternalColumns[Periodo_Let]"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].Columns[Periodo_Let]"
+                      name="Periodo_Let"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].Columns[Cod_Disciplina]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].ExternalColumns[Cod_Disciplina]"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].Columns[Cod_Disciplina]"
+                      name="Cod_Disciplina"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].Columns[ChaveAlternativa]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].ExternalColumns[ChaveAlternativa]"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].Columns[ChaveAlternativa]"
+                      name="ChaveAlternativa"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].Columns[Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].ExternalColumns[Matricula]"
+                      length="20"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].Columns[Matricula]"
+                      name="Matricula"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].Columns[Cod_Pauta]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].ExternalColumns[Cod_Pauta]"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].Columns[Cod_Pauta]"
+                      name="Cod_Pauta"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].Columns[Desc_Disciplina]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].ExternalColumns[Desc_Disciplina]"
+                      length="255"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].Columns[Desc_Disciplina]"
+                      name="Desc_Disciplina"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].Columns[Cod_Curso]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].ExternalColumns[Cod_Curso]"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].Columns[Cod_Curso]"
+                      name="Cod_Curso"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].Columns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].ExternalColumns[Desc_Curso]"
+                      length="273"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].Columns[Desc_Curso]"
+                      name="Desc_Curso"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].ExternalColumns[Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Matricula" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].ExternalColumns[Cod_Disciplina]"
+                      dataType="i4"
+                      name="Cod_Disciplina" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].ExternalColumns[Cod_Pauta]"
+                      dataType="i4"
+                      name="Cod_Pauta" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].ExternalColumns[Situacao_Matricula_Pauta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Situacao_Matricula_Pauta" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].ExternalColumns[Desc_Disciplina]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Desc_Disciplina" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].ExternalColumns[Cod_Curso]"
+                      dataType="i4"
+                      name="Cod_Curso" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].ExternalColumns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="273"
+                      name="Desc_Curso" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].ExternalColumns[Ano_Let]"
+                      dataType="i2"
+                      name="Ano_Let" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].ExternalColumns[Periodo_Let]"
+                      dataType="ui1"
+                      name="Periodo_Let" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].ExternalColumns[Coeficiente_Rendimento]"
+                      dataType="numeric"
+                      name="Coeficiente_Rendimento"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB].ExternalColumns[ChaveAlternativa]"
+                      dataType="i4"
+                      name="ChaveAlternativa" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Erro de Origem OLE DB]"
+                  isErrorOut="true"
+                  name="Saída de Erro de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Erro de Origem OLE DB].Columns[ChaveAlternativa]"
+                      dataType="i4"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Erro de Origem OLE DB].Columns[ChaveAlternativa]"
+                      name="ChaveAlternativa" />
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Erro de Origem OLE DB].Columns[Situacao_Matricula_Pauta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Erro de Origem OLE DB].Columns[Situacao_Matricula_Pauta]"
+                      name="Situacao_Matricula_Pauta" />
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Erro de Origem OLE DB].Columns[Ano_Let]"
+                      dataType="i2"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Erro de Origem OLE DB].Columns[Ano_Let]"
+                      name="Ano_Let" />
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Erro de Origem OLE DB].Columns[Coeficiente_Rendimento]"
+                      dataType="numeric"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Erro de Origem OLE DB].Columns[Coeficiente_Rendimento]"
+                      name="Coeficiente_Rendimento"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Erro de Origem OLE DB].Columns[Periodo_Let]"
+                      dataType="ui1"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Erro de Origem OLE DB].Columns[Periodo_Let]"
+                      name="Periodo_Let" />
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Erro de Origem OLE DB].Columns[Cod_Disciplina]"
+                      dataType="i4"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Erro de Origem OLE DB].Columns[Cod_Disciplina]"
+                      name="Cod_Disciplina" />
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Erro de Origem OLE DB].Columns[Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Erro de Origem OLE DB].Columns[Matricula]"
+                      name="Matricula" />
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Erro de Origem OLE DB].Columns[Cod_Pauta]"
+                      dataType="i4"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Erro de Origem OLE DB].Columns[Cod_Pauta]"
+                      name="Cod_Pauta" />
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Erro de Origem OLE DB].Columns[Desc_Disciplina]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Erro de Origem OLE DB].Columns[Desc_Disciplina]"
+                      name="Desc_Disciplina" />
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Erro de Origem OLE DB].Columns[Cod_Curso]"
+                      dataType="i4"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Erro de Origem OLE DB].Columns[Cod_Curso]"
+                      name="Cod_Curso" />
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Erro de Origem OLE DB].Columns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="273"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Erro de Origem OLE DB].Columns[Desc_Curso]"
+                      name="Desc_Curso" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+              description="Origem OLE DB"
+              name="dimData"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[dimDATA]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="A variável que contém o comando SQL a ser executado."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[JoseAntonio-pc.DDSEducacional 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[JoseAntonio-pc.DDSEducacional 1]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB]"
+                  name="Saída de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].Columns[ID_Data]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].ExternalColumns[ID_Data]"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].Columns[ID_Data]"
+                      name="ID_Data"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].Columns[ANO]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].ExternalColumns[ANO]"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].Columns[ANO]"
+                      name="ANO"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].ExternalColumns[ID_Data]"
+                      dataType="i2"
+                      name="ID_Data" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].ExternalColumns[DATA]"
+                      dataType="dbDate"
+                      name="DATA" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].ExternalColumns[ANO]"
+                      dataType="i2"
+                      name="ANO" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].ExternalColumns[MES]"
+                      dataType="i2"
+                      name="MES" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].ExternalColumns[DIA]"
+                      dataType="i2"
+                      name="DIA" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].ExternalColumns[DIA_SEMANA]"
+                      dataType="i2"
+                      name="DIA_SEMANA" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].ExternalColumns[DIA_ANO]"
+                      dataType="i2"
+                      name="DIA_ANO" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].ExternalColumns[ANO_BISSEXTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="ANO_BISSEXTO" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].ExternalColumns[DIA_UTIL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="DIA_UTIL" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].ExternalColumns[FIM_SEMANA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="FIM_SEMANA" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].ExternalColumns[FERIADO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="FERIADO" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].ExternalColumns[PRE_FERIADO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="PRE_FERIADO" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].ExternalColumns[POS_FERIADO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="POS_FERIADO" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME_FERIADO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="NOME_FERIADO" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME_DIA_SEMANA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="NOME_DIA_SEMANA" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME_DIA_SEMANA_ABREV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="NOME_DIA_SEMANA_ABREV" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME_MES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="NOME_MES" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME_MES_ABREV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="NOME_MES_ABREV" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].ExternalColumns[QUINZENA]"
+                      dataType="i2"
+                      name="QUINZENA" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].ExternalColumns[BIMESTRE]"
+                      dataType="i2"
+                      name="BIMESTRE" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].ExternalColumns[TRIMESTRE]"
+                      dataType="i2"
+                      name="TRIMESTRE" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].ExternalColumns[SEMESTRE]"
+                      dataType="i2"
+                      name="SEMESTRE" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].ExternalColumns[NR_SEMANA_MES]"
+                      dataType="i2"
+                      name="NR_SEMANA_MES" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].ExternalColumns[NR_SEMANA_ANO]"
+                      dataType="i2"
+                      name="NR_SEMANA_ANO" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].ExternalColumns[ESTACAO_ANO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="ESTACAO_ANO" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].ExternalColumns[DATA_POR_EXTENSO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DATA_POR_EXTENSO" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].ExternalColumns[EVENTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EVENTO" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Erro de Origem OLE DB]"
+                  isErrorOut="true"
+                  name="Saída de Erro de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Erro de Origem OLE DB].Columns[ID_Data]"
+                      dataType="i2"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Erro de Origem OLE DB].Columns[ID_Data]"
+                      name="ID_Data" />
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Erro de Origem OLE DB].Columns[ANO]"
+                      dataType="i2"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Erro de Origem OLE DB].Columns[ANO]"
+                      name="ANO" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Junção de Mesclagem;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+              description="Combina dois fluxos de dados classificados em um usando a junção FULL, LEFT ou INNER. Essa transformação é recomendável quando os fluxos de dados podem ser classificados em suas fontes."
+              name="Faz um left join pelo ano"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o tipo de junção a ser executada."
+                  name="JoinType"
+                  typeConverter="JoinType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o número de colunas na chave de ordenação."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se os valores nulos serão tratados como valores iguais."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indica o máximo de buffers solicitados por entrada antes do bloqueio."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Inputs[Entrada Esquerda da Junção de Mesclagem]"
+                  hasSideEffects="true"
+                  name="Entrada Esquerda da Junção de Mesclagem">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[Cod_Disciplina]"
+                      cachedDataType="i4"
+                      cachedName="Cod_Disciplina"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena os daos pelo Codódigo da Disciplina.Outputs[Classificar Saída].Columns[Cod_Disciplina]" />
+                    <inputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[Ano_Let]"
+                      cachedDataType="i2"
+                      cachedName="Ano_Let"
+                      cachedSortKeyPosition="2"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena os daos pelo Codódigo da Disciplina.Outputs[Classificar Saída].Columns[Ano_Let]" />
+                    <inputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[Periodo_Let]"
+                      cachedDataType="ui1"
+                      cachedName="Periodo_Let"
+                      cachedSortKeyPosition="3"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena os daos pelo Codódigo da Disciplina.Outputs[Classificar Saída].Columns[Periodo_Let]" />
+                    <inputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[Situacao_Matricula_Pauta]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Situacao_Matricula_Pauta"
+                      cachedSortKeyPosition="4"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena os daos pelo Codódigo da Disciplina.Outputs[Classificar Saída].Columns[Situacao_Matricula_Pauta]" />
+                    <inputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[TotalSituacao]"
+                      cachedDataType="ui8"
+                      cachedName="TotalSituacao"
+                      cachedSortKeyPosition="5"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena os daos pelo Codódigo da Disciplina.Outputs[Classificar Saída].Columns[TotalSituacao]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Inputs[Entrada Direita da Junção de Mesclagem]"
+                  hasSideEffects="true"
+                  name="Entrada Direita da Junção de Mesclagem">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Inputs[Entrada Direita da Junção de Mesclagem].Columns[ID_Data]"
+                      cachedDataType="i4"
+                      cachedName="ID_Data"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena dimensão pelo ID_Data.Outputs[Classificar Saída].Columns[ID_Data]" />
+                    <inputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Inputs[Entrada Direita da Junção de Mesclagem].Columns[ANO]"
+                      cachedDataType="i2"
+                      cachedName="ANO"
+                      cachedSortKeyPosition="2"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena dimensão pelo ID_Data.Outputs[Classificar Saída].Columns[ANO]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Outputs[Saída da Junção de Mesclagem]"
+                  isSorted="true"
+                  name="Saída da Junção de Mesclagem">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Outputs[Saída da Junção de Mesclagem].Columns[Ano_Let]"
+                      dataType="i2"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Outputs[Saída da Junção de Mesclagem].Columns[Ano_Let]"
+                      name="Ano_Let">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="A coluna de entrada associada a esta coluna de saída"
+                          name="InputColumnID">#{Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[Ano_Let]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Outputs[Saída da Junção de Mesclagem].Columns[ANO]"
+                      dataType="i2"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Outputs[Saída da Junção de Mesclagem].Columns[ANO]"
+                      name="ANO">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="A coluna de entrada associada a esta coluna de saída"
+                          name="InputColumnID">#{Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Inputs[Entrada Direita da Junção de Mesclagem].Columns[ANO]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Outputs[Saída da Junção de Mesclagem].Columns[Cod_Disciplina]"
+                      dataType="i4"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Outputs[Saída da Junção de Mesclagem].Columns[Cod_Disciplina]"
+                      name="Cod_Disciplina"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="A coluna de entrada associada a esta coluna de saída"
+                          name="InputColumnID">#{Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[Cod_Disciplina]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Outputs[Saída da Junção de Mesclagem].Columns[Periodo_Let]"
+                      dataType="ui1"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Outputs[Saída da Junção de Mesclagem].Columns[Periodo_Let]"
+                      name="Periodo_Let">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="A coluna de entrada associada a esta coluna de saída"
+                          name="InputColumnID">#{Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[Periodo_Let]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Outputs[Saída da Junção de Mesclagem].Columns[Situacao_Matricula_Pauta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Outputs[Saída da Junção de Mesclagem].Columns[Situacao_Matricula_Pauta]"
+                      name="Situacao_Matricula_Pauta">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="A coluna de entrada associada a esta coluna de saída"
+                          name="InputColumnID">#{Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[Situacao_Matricula_Pauta]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Outputs[Saída da Junção de Mesclagem].Columns[TotalSituacao]"
+                      dataType="ui8"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Outputs[Saída da Junção de Mesclagem].Columns[TotalSituacao]"
+                      name="TotalSituacao">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="A coluna de entrada associada a esta coluna de saída"
+                          name="InputColumnID">#{Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[TotalSituacao]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Outputs[Saída da Junção de Mesclagem].Columns[ID_Data]"
+                      dataType="i4"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Outputs[Saída da Junção de Mesclagem].Columns[ID_Data]"
+                      name="ID_Data">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="A coluna de entrada associada a esta coluna de saída"
+                          name="InputColumnID">#{Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Inputs[Entrada Direita da Junção de Mesclagem].Columns[ID_Data]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena dimensão pelo ID_Data"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Classificar;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+              description="Classifica os dados de entrada em ordem crescente ou decrescente quando eles não podem ser classificados em sua origem. Por exemplo, classifique dados de vendas por 'customer id' antes de eles serem gravados em um arquivo simples e entregues a outro departamento. Observação: essa transformação não é recomendável para fluxos de dados grandes."
+              name="Ordena dimensão pelo ID_Data"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se a transformação Classificação remove linhas com valores de classificação duplicados."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o número máximo de threads a usar para classificação."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena dimensão pelo ID_Data.Inputs[Classificar Entrada]"
+                  name="Classificar Entrada">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena dimensão pelo ID_Data.Inputs[Classificar Entrada].Columns[ID_Data]"
+                      cachedDataType="i4"
+                      cachedName="ID_Data"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].Columns[ID_Data]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica as opções de comparação para os dados de caractere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica a ordem de classificação da coluna."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena dimensão pelo ID_Data.Inputs[Classificar Entrada].Columns[ANO]"
+                      cachedDataType="i2"
+                      cachedName="ANO"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].Columns[ANO]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica as opções de comparação para os dados de caractere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica a ordem de classificação da coluna."
+                          name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena dimensão pelo ID_Data.Outputs[Classificar Saída]"
+                  isSorted="true"
+                  name="Classificar Saída">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena dimensão pelo ID_Data.Outputs[Classificar Saída].Columns[ID_Data]"
+                      dataType="i4"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena dimensão pelo ID_Data.Outputs[Classificar Saída].Columns[ID_Data]"
+                      name="ID_Data"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica o identificador de linhagem da coluna de entrada associada à coluna de saída."
+                          name="SortColumnId">#{Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].Columns[ID_Data]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena dimensão pelo ID_Data.Outputs[Classificar Saída].Columns[ANO]"
+                      dataType="i2"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena dimensão pelo ID_Data.Outputs[Classificar Saída].Columns[ANO]"
+                      name="ANO"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica o identificador de linhagem da coluna de entrada associada à coluna de saída."
+                          name="SortColumnId">#{Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB].Columns[ANO]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena os daos pelo Codódigo da Disciplina"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Classificar;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+              description="Classifica os dados de entrada em ordem crescente ou decrescente quando eles não podem ser classificados em sua origem. Por exemplo, classifique dados de vendas por 'customer id' antes de eles serem gravados em um arquivo simples e entregues a outro departamento. Observação: essa transformação não é recomendável para fluxos de dados grandes."
+              name="Ordena os daos pelo Codódigo da Disciplina"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se a transformação Classificação remove linhas com valores de classificação duplicados."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o número máximo de threads a usar para classificação."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena os daos pelo Codódigo da Disciplina.Inputs[Classificar Entrada]"
+                  name="Classificar Entrada">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena os daos pelo Codódigo da Disciplina.Inputs[Classificar Entrada].Columns[Cod_Disciplina]"
+                      cachedDataType="i4"
+                      cachedName="Cod_Disciplina"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Agregação.Outputs[Saída de Agregação 1].Columns[Cod_Disciplina]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica as opções de comparação para os dados de caractere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica a ordem de classificação da coluna."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena os daos pelo Codódigo da Disciplina.Inputs[Classificar Entrada].Columns[Ano_Let]"
+                      cachedDataType="i2"
+                      cachedName="Ano_Let"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Agregação.Outputs[Saída de Agregação 1].Columns[Ano_Let]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica as opções de comparação para os dados de caractere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica a ordem de classificação da coluna."
+                          name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena os daos pelo Codódigo da Disciplina.Inputs[Classificar Entrada].Columns[Periodo_Let]"
+                      cachedDataType="ui1"
+                      cachedName="Periodo_Let"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Agregação.Outputs[Saída de Agregação 1].Columns[Periodo_Let]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica as opções de comparação para os dados de caractere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica a ordem de classificação da coluna."
+                          name="NewSortKeyPosition">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena os daos pelo Codódigo da Disciplina.Inputs[Classificar Entrada].Columns[Situacao_Matricula_Pauta]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Situacao_Matricula_Pauta"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Agregação.Outputs[Saída de Agregação 1].Columns[Situacao_Matricula_Pauta]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica as opções de comparação para os dados de caractere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica a ordem de classificação da coluna."
+                          name="NewSortKeyPosition">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena os daos pelo Codódigo da Disciplina.Inputs[Classificar Entrada].Columns[TotalSituacao]"
+                      cachedDataType="ui8"
+                      cachedName="TotalSituacao"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Agregação.Outputs[Saída de Agregação 1].Columns[TotalSituacao]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica as opções de comparação para os dados de caractere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica a ordem de classificação da coluna."
+                          name="NewSortKeyPosition">5</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena os daos pelo Codódigo da Disciplina.Outputs[Classificar Saída]"
+                  isSorted="true"
+                  name="Classificar Saída">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena os daos pelo Codódigo da Disciplina.Outputs[Classificar Saída].Columns[Cod_Disciplina]"
+                      dataType="i4"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena os daos pelo Codódigo da Disciplina.Outputs[Classificar Saída].Columns[Cod_Disciplina]"
+                      name="Cod_Disciplina"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica o identificador de linhagem da coluna de entrada associada à coluna de saída."
+                          name="SortColumnId">#{Package\Popular a FactDesemenhoAluno com dados do NDS\Agregação.Outputs[Saída de Agregação 1].Columns[Cod_Disciplina]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena os daos pelo Codódigo da Disciplina.Outputs[Classificar Saída].Columns[Ano_Let]"
+                      dataType="i2"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena os daos pelo Codódigo da Disciplina.Outputs[Classificar Saída].Columns[Ano_Let]"
+                      name="Ano_Let"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica o identificador de linhagem da coluna de entrada associada à coluna de saída."
+                          name="SortColumnId">#{Package\Popular a FactDesemenhoAluno com dados do NDS\Agregação.Outputs[Saída de Agregação 1].Columns[Ano_Let]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena os daos pelo Codódigo da Disciplina.Outputs[Classificar Saída].Columns[Periodo_Let]"
+                      dataType="ui1"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena os daos pelo Codódigo da Disciplina.Outputs[Classificar Saída].Columns[Periodo_Let]"
+                      name="Periodo_Let"
+                      sortKeyPosition="3">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica o identificador de linhagem da coluna de entrada associada à coluna de saída."
+                          name="SortColumnId">#{Package\Popular a FactDesemenhoAluno com dados do NDS\Agregação.Outputs[Saída de Agregação 1].Columns[Periodo_Let]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena os daos pelo Codódigo da Disciplina.Outputs[Classificar Saída].Columns[Situacao_Matricula_Pauta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena os daos pelo Codódigo da Disciplina.Outputs[Classificar Saída].Columns[Situacao_Matricula_Pauta]"
+                      name="Situacao_Matricula_Pauta"
+                      sortKeyPosition="4">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica o identificador de linhagem da coluna de entrada associada à coluna de saída."
+                          name="SortColumnId">#{Package\Popular a FactDesemenhoAluno com dados do NDS\Agregação.Outputs[Saída de Agregação 1].Columns[Situacao_Matricula_Pauta]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena os daos pelo Codódigo da Disciplina.Outputs[Classificar Saída].Columns[TotalSituacao]"
+                      dataType="ui8"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena os daos pelo Codódigo da Disciplina.Outputs[Classificar Saída].Columns[TotalSituacao]"
+                      name="TotalSituacao"
+                      sortKeyPosition="5">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica o identificador de linhagem da coluna de entrada associada à coluna de saída."
+                          name="SortColumnId">#{Package\Popular a FactDesemenhoAluno com dados do NDS\Agregação.Outputs[Saída de Agregação 1].Columns[TotalSituacao]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Popula tabela FactDesempenhoAlunoPorDisciplina"
+              componentClassID="Microsoft.SQLServerDestination"
+              contactInfo="Destino do SQL Server;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;5"
+              description="Destino do SQL Server"
+              name="Popula tabela FactDesempenhoAlunoPorDisciplina"
+              version="5">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.String"
+                  description="O nome do objeto de banco de dados no qual copiar dados."
+                  expressionType="Notify"
+                  name="BulkInsertTableName">[dbo].[FactDesempenhoAluno]</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica que qualquer restrição no objeto de destino será verificada durante a operação de cópia de dados. Corresponde a opção de inserção em massa CHECK_CONSTRAINTS."
+                  name="BulkInsertCheckConstraints">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o número da primeira linha a ser copiada. Corresponde à opção de inserção em massa FIRSTROW."
+                  expressionType="Notify"
+                  name="BulkInsertFirstRow">-1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica que qualquer disparador de inserção definido no objeto de destino será executado durante a cópia de dados. Corresponde à opção de inserção em massa FIRE_TRIGGERS."
+                  name="BulkInsertFireTriggers">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Corresponde à opção de inserção em massa KEEPIDENTITY."
+                  name="BulkInsertKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as colunas que contêm null terão null copiado no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável somente se o carregamento rápido estiver ativado."
+                  name="BulkInsertKeepNulls">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o número da última linha a ser copiada. Corresponde à opção de inserção em massa LASTROW."
+                  expressionType="Notify"
+                  name="BulkInsertLastRow">-1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o número máximo de erros de sintaxe e erros de compilação que podem ocorrer antes do cancelamento da operação de cópia de dados. Cada linha que não puder ser copiada será ignorada e contada como um erro. Corresponde à opção de inserção em massa MAXERRORS."
+                  name="BulkInsertMaxErrors">-1</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica como os dados a serem copiados estão classificados. Corresponde à opção de inserção em massa ORDER."
+                  expressionType="Notify"
+                  name="BulkInsertOrder"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica que um bloqueio de nível de tabela é adquirido para a duração da operação de cópia de dados. Corresponde à opção de inserção em massa TABLOCK."
+                  name="BulkInsertTablock">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a quantidade de tempo em segundos que o adaptador de Destino SQL aguardará antes de encerrar se não houver dados disponíveis para inserção. Um valor de tempo limite de 0 significa que o adaptador de Destino SQL não terá tempo limite."
+                  expressionType="Notify"
+                  name="Timeout">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção dos dados."
+                  name="MaxInsertCommitSize">0</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Popula tabela FactDesempenhoAlunoPorDisciplina.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+                  connectionManagerRefId="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Popula tabela FactDesempenhoAlunoPorDisciplina.Inputs[Entrada de Destino do SQL Server]"
+                  hasSideEffects="true"
+                  name="Entrada de Destino do SQL Server">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Popula tabela FactDesempenhoAlunoPorDisciplina.Inputs[Entrada de Destino do SQL Server].Columns[Ano_Let]"
+                      cachedDataType="i2"
+                      cachedName="Ano_Let"
+                      externalMetadataColumnId="Package\Popular a FactDesemenhoAluno com dados do NDS\Popula tabela FactDesempenhoAlunoPorDisciplina.Inputs[Entrada de Destino do SQL Server].ExternalColumns[Ano_Letivo]"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Outputs[Saída da Junção de Mesclagem].Columns[Ano_Let]" />
+                    <inputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Popula tabela FactDesempenhoAlunoPorDisciplina.Inputs[Entrada de Destino do SQL Server].Columns[Cod_Disciplina]"
+                      cachedDataType="i4"
+                      cachedName="Cod_Disciplina"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Popular a FactDesemenhoAluno com dados do NDS\Popula tabela FactDesempenhoAlunoPorDisciplina.Inputs[Entrada de Destino do SQL Server].ExternalColumns[Codigo_Disciplina]"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Outputs[Saída da Junção de Mesclagem].Columns[Cod_Disciplina]" />
+                    <inputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Popula tabela FactDesempenhoAlunoPorDisciplina.Inputs[Entrada de Destino do SQL Server].Columns[Periodo_Let]"
+                      cachedDataType="ui1"
+                      cachedName="Periodo_Let"
+                      externalMetadataColumnId="Package\Popular a FactDesemenhoAluno com dados do NDS\Popula tabela FactDesempenhoAlunoPorDisciplina.Inputs[Entrada de Destino do SQL Server].ExternalColumns[Periodo_Letivo]"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Outputs[Saída da Junção de Mesclagem].Columns[Periodo_Let]" />
+                    <inputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Popula tabela FactDesempenhoAlunoPorDisciplina.Inputs[Entrada de Destino do SQL Server].Columns[Situacao_Matricula_Pauta]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Situacao_Matricula_Pauta"
+                      externalMetadataColumnId="Package\Popular a FactDesemenhoAluno com dados do NDS\Popula tabela FactDesempenhoAlunoPorDisciplina.Inputs[Entrada de Destino do SQL Server].ExternalColumns[Situacao]"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Outputs[Saída da Junção de Mesclagem].Columns[Situacao_Matricula_Pauta]" />
+                    <inputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Popula tabela FactDesempenhoAlunoPorDisciplina.Inputs[Entrada de Destino do SQL Server].Columns[ID_Data]"
+                      cachedDataType="i4"
+                      cachedName="ID_Data"
+                      externalMetadataColumnId="Package\Popular a FactDesemenhoAluno com dados do NDS\Popula tabela FactDesempenhoAlunoPorDisciplina.Inputs[Entrada de Destino do SQL Server].ExternalColumns[IDData]"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Outputs[Saída da Junção de Mesclagem].Columns[ID_Data]" />
+                    <inputColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Popula tabela FactDesempenhoAlunoPorDisciplina.Inputs[Entrada de Destino do SQL Server].Columns[TotalSituacao]"
+                      cachedDataType="i4"
+                      cachedName="TotalSituacao"
+                      externalMetadataColumnId="Package\Popular a FactDesemenhoAluno com dados do NDS\Popula tabela FactDesempenhoAlunoPorDisciplina.Inputs[Entrada de Destino do SQL Server].ExternalColumns[TotalSituacao]"
+                      lineageId="Package\Popular a FactDesemenhoAluno com dados do NDS\Converte o Total para DT_I4.Outputs[Saída de Conversão de Dados].Columns[TotalSituacao]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Popula tabela FactDesempenhoAlunoPorDisciplina.Inputs[Entrada de Destino do SQL Server].ExternalColumns[Codigo_Disciplina]"
+                      dataType="i4"
+                      name="Codigo_Disciplina" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Popula tabela FactDesempenhoAlunoPorDisciplina.Inputs[Entrada de Destino do SQL Server].ExternalColumns[Ano_Letivo]"
+                      dataType="i2"
+                      name="Ano_Letivo" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Popula tabela FactDesempenhoAlunoPorDisciplina.Inputs[Entrada de Destino do SQL Server].ExternalColumns[Periodo_Letivo]"
+                      dataType="ui1"
+                      name="Periodo_Letivo" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Popula tabela FactDesempenhoAlunoPorDisciplina.Inputs[Entrada de Destino do SQL Server].ExternalColumns[Situacao]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Situacao" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Popula tabela FactDesempenhoAlunoPorDisciplina.Inputs[Entrada de Destino do SQL Server].ExternalColumns[TotalSituacao]"
+                      dataType="i4"
+                      name="TotalSituacao" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Popula tabela FactDesempenhoAlunoPorDisciplina.Inputs[Entrada de Destino do SQL Server].ExternalColumns[Data_Insercao]"
+                      dataType="dbDate"
+                      name="Data_Insercao" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Popula tabela FactDesempenhoAlunoPorDisciplina.Inputs[Entrada de Destino do SQL Server].ExternalColumns[Data_Atualizacao]"
+                      dataType="dbDate"
+                      name="Data_Atualizacao" />
+                    <externalMetadataColumn
+                      refId="Package\Popular a FactDesemenhoAluno com dados do NDS\Popula tabela FactDesempenhoAlunoPorDisciplina.Inputs[Entrada de Destino do SQL Server].ExternalColumns[IDData]"
+                      dataType="i4"
+                      name="IDData" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Popular a FactDesemenhoAluno com dados do NDS.Paths[Classificar Saída]"
+              endId="Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Inputs[Entrada Esquerda da Junção de Mesclagem]"
+              name="Classificar Saída"
+              startId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena os daos pelo Codódigo da Disciplina.Outputs[Classificar Saída]" />
+            <path
+              refId="Package\Popular a FactDesemenhoAluno com dados do NDS.Paths[Classificar Saída1]"
+              endId="Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Inputs[Entrada Direita da Junção de Mesclagem]"
+              name="Classificar Saída"
+              startId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena dimensão pelo ID_Data.Outputs[Classificar Saída]" />
+            <path
+              refId="Package\Popular a FactDesemenhoAluno com dados do NDS.Paths[Saída da Junção de Mesclagem]"
+              endId="Package\Popular a FactDesemenhoAluno com dados do NDS\Converte o Total para DT_I4.Inputs[Entrada de Conversão de Dados]"
+              name="Saída da Junção de Mesclagem"
+              startId="Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano.Outputs[Saída da Junção de Mesclagem]" />
+            <path
+              refId="Package\Popular a FactDesemenhoAluno com dados do NDS.Paths[Saída de Agregação 1]"
+              endId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena os daos pelo Codódigo da Disciplina.Inputs[Classificar Entrada]"
+              name="Saída de Agregação 1"
+              startId="Package\Popular a FactDesemenhoAluno com dados do NDS\Agregação.Outputs[Saída de Agregação 1]" />
+            <path
+              refId="Package\Popular a FactDesemenhoAluno com dados do NDS.Paths[Saída de Conversão de Dados]"
+              endId="Package\Popular a FactDesemenhoAluno com dados do NDS\Popula tabela FactDesempenhoAlunoPorDisciplina.Inputs[Entrada de Destino do SQL Server]"
+              name="Saída de Conversão de Dados"
+              startId="Package\Popular a FactDesemenhoAluno com dados do NDS\Converte o Total para DT_I4.Outputs[Saída de Conversão de Dados]" />
+            <path
+              refId="Package\Popular a FactDesemenhoAluno com dados do NDS.Paths[Saída de Origem OLE DB]"
+              endId="Package\Popular a FactDesemenhoAluno com dados do NDS\Agregação.Inputs[Entrada de Agregação 1]"
+              name="Saída de Origem OLE DB"
+              startId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso.Outputs[Saída de Origem OLE DB]" />
+            <path
+              refId="Package\Popular a FactDesemenhoAluno com dados do NDS.Paths[Saída de Origem OLE DB1]"
+              endId="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena dimensão pelo ID_Data.Inputs[Classificar Entrada]"
+              name="Saída de Origem OLE DB"
+              startId="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData.Outputs[Saída de Origem OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="320.8,41.6"
+          Id="Package\Popular a FactDesemenhoAluno com dados do NDS"
+          TopLeft="177,62" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Popular a FactDesemenhoAluno com dados do NDS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="196,41.6"
+          Id="Package\Popular a FactDesemenhoAluno com dados do NDS\Faz um left join pelo ano"
+          TopLeft="442,240" />
+        <NodeLayout
+          Size="227.2,41.6"
+          Id="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena dimensão pelo ID_Data"
+          TopLeft="375,111" />
+        <NodeLayout
+          Size="284.8,41.6"
+          Id="Package\Popular a FactDesemenhoAluno com dados do NDS\Ordena os daos pelo Codódigo da Disciplina"
+          TopLeft="61,203" />
+        <NodeLayout
+          Size="214.4,41.6"
+          Id="Package\Popular a FactDesemenhoAluno com dados do NDS\Converte o Total para DT_I4"
+          TopLeft="415,359" />
+        <NodeLayout
+          Size="312.8,41.6"
+          Id="Package\Popular a FactDesemenhoAluno com dados do NDS\Popula tabela FactDesempenhoAlunoPorDisciplina"
+          TopLeft="31,320" />
+        <NodeLayout
+          Size="118.4,41.6"
+          Id="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData"
+          TopLeft="446,36" />
+        <NodeLayout
+          Size="128.8,41.6"
+          Id="Package\Popular a FactDesemenhoAluno com dados do NDS\Agregação"
+          TopLeft="111,121" />
+        <NodeLayout
+          Size="192,41.6"
+          Id="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso"
+          TopLeft="102,30" />
+        <EdgeLayout
+          Id="Package\Popular a FactDesemenhoAluno com dados do NDS.Paths[Saída de Origem OLE DB1]"
+          TopLeft="505,78">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-16.5,33"
+              Start="0,0"
+              End="-16.5,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.5"
+                    Point2="0,16.5"
+                    Point3="-4,16.5" />
+                  <mssgle:LineSegment
+                    End="-12.5,16.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-12.5,16.5"
+                    Point2="-16.5,16.5"
+                    Point3="-16.5,20.5" />
+                  <mssgle:LineSegment
+                    End="-16.5,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Popular a FactDesemenhoAluno com dados do NDS.Paths[Saída de Origem OLE DB]"
+          TopLeft="198,72">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-22.5,49"
+              Start="0,0"
+              End="-22.5,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.5"
+                    Point2="0,24.5"
+                    Point3="-4,24.5" />
+                  <mssgle:LineSegment
+                    End="-18.5,24.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,24.5"
+                    Point2="-22.5,24.5"
+                    Point3="-22.5,28.5" />
+                  <mssgle:LineSegment
+                    End="-22.5,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Popular a FactDesemenhoAluno com dados do NDS.Paths[Saída de Conversão de Dados]"
+          TopLeft="415,380">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-71,-39"
+              Start="0,0"
+              End="-63.5,-39">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-31.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-31.5,0"
+                    Point2="-35.5,0"
+                    Point3="-35.5,-4" />
+                  <mssgle:LineSegment
+                    End="-35.5,-35" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-35.5,-35"
+                    Point2="-35.5,-39"
+                    Point3="-39.5,-39" />
+                  <mssgle:LineSegment
+                    End="-63.5,-39" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Popular a FactDesemenhoAluno com dados do NDS.Paths[Saída de Agregação 1]"
+          TopLeft="175.5,163">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="28,40"
+              Start="0,0"
+              End="28,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16"
+                    Point2="0,20"
+                    Point3="4,20" />
+                  <mssgle:LineSegment
+                    End="24,20" />
+                  <mssgle:CubicBezierSegment
+                    Point1="24,20"
+                    Point2="28,20"
+                    Point3="28,24" />
+                  <mssgle:LineSegment
+                    End="28,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Popular a FactDesemenhoAluno com dados do NDS.Paths[Saída da Junção de Mesclagem]"
+          TopLeft="540,282">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-18,77"
+              Start="0,0"
+              End="-18,69.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.5"
+                    Point2="0,38.5"
+                    Point3="-4,38.5" />
+                  <mssgle:LineSegment
+                    End="-14,38.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-14,38.5"
+                    Point2="-18,38.5"
+                    Point3="-18,42.5" />
+                  <mssgle:LineSegment
+                    End="-18,69.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Popular a FactDesemenhoAluno com dados do NDS.Paths[Classificar Saída1]"
+          TopLeft="488.5,153">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="51.5,87"
+              Start="0,0"
+              End="51.5,79.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.5"
+                    Point2="0,43.5"
+                    Point3="4,43.5" />
+                  <mssgle:LineSegment
+                    End="47.5,43.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="47.5,43.5"
+                    Point2="51.5,43.5"
+                    Point3="51.5,47.5" />
+                  <mssgle:LineSegment
+                    End="51.5,79.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Popular a FactDesemenhoAluno com dados do NDS.Paths[Classificar Saída]"
+          TopLeft="346,224">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="96,37"
+              Start="0,0"
+              End="88.5,37">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="44,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="44,0"
+                    Point2="48,0"
+                    Point3="48,4" />
+                  <mssgle:LineSegment
+                    End="48,33" />
+                  <mssgle:CubicBezierSegment
+                    Point1="48,33"
+                    Point2="48,37"
+                    Point3="52,37" />
+                  <mssgle:LineSegment
+                    End="88.5,37" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="Este pacote faz a carga de dados das&#xA;dimensões para a FactTable. &#xA;&#xA;Nota: A advertência no último compo_&#xA;nente é devido um possível truncamen_&#xA;to nos dados (Situação), pois na origem&#xA;é um varchar(100) e eu laterei para um&#xA;varcha(50). "
+          ParentId="Package\Popular a FactDesemenhoAluno com dados do NDS"
+          FontInfo="{assembly:Null}"
+          Size="239.2,152"
+          Id="3bfacf3e-b93f-4da8-b759-947730d14544"
+          TopLeft="621,27" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Popular a FactDesemenhoAluno com dados do NDS\Popula tabela FactDesempenhoAlunoPorDisciplina">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Popular a FactDesemenhoAluno com dados do NDS\dimData">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Popular a FactDesemenhoAluno com dados do NDS\dimAlunosRepDiscCurso">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

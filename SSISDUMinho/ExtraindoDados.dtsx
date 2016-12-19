@@ -1,0 +1,2759 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/24/2014 10:54:11 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="CUNHA-PC"
+  DTS:CreatorName="CUNHA-PC\Cunha"
+  DTS:DTSID="{A290FC06-E3A7-4B6B-8472-8363BC3B881A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.700.219"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="ExtraindoDados"
+  DTS:PackageType="5"
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{63F052CA-69D2-47FF-8675-F6331C6811EA}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{17ACC3CC-F145-4C15-BA47-7BF965A8E956}"
+      DTS:ObjectName="CUNHA-PC\SQLSERVER2014.DDSEducacional">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=CUNHA-PC\SQLSERVER2014;Initial Catalog=DDSEducacional;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.sistema_academico]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E4430DDE-28CD-4374-89CE-8A136E3E82D3}"
+      DTS:ObjectName="CUNHA-PC\SQLSERVER2014.sistema_academico">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=CUNHA-PC\SQLSERVER2014;Initial Catalog=sistema_academico;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Extrair dados do Sistema Academico para o DDS"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarefa Fluxo de Dados"
+      DTS:DTSID="{BBC2CB0D-52C4-42F2-8E34-81103653CF50}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Extrair dados do Sistema Academico para o DDS"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosPorTurma"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino OLE DB"
+              name="DDS - dimAlunosPorTurma"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[dimAlunosPorTurma]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosPorTurma.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+                  connectionManagerRefId="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosPorTurma.Inputs[Entrada de Destino OLE DB]"
+                  errorOrTruncationOperation="Inserir"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de Destino OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosPorTurma.Inputs[Entrada de Destino OLE DB].Columns[Cod_Instituicao]"
+                      cachedDataType="i4"
+                      cachedName="Cod_Instituicao"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosPorTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[Cod_Instituicao]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].Columns[Cod_Instituicao]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosPorTurma.Inputs[Entrada de Destino OLE DB].Columns[Descricao_Instituicao]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Descricao_Instituicao"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosPorTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[Descricao_Instituicao]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].Columns[Descricao_Instituicao]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosPorTurma.Inputs[Entrada de Destino OLE DB].Columns[Codigo_Curso]"
+                      cachedDataType="i4"
+                      cachedName="Codigo_Curso"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosPorTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[Codigo_Curso]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].Columns[Codigo_Curso]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosPorTurma.Inputs[Entrada de Destino OLE DB].Columns[Desc_Curso]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="273"
+                      cachedName="Desc_Curso"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosPorTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[Desc_Curso]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].Columns[Desc_Curso]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosPorTurma.Inputs[Entrada de Destino OLE DB].Columns[Ano_letivo]"
+                      cachedDataType="i2"
+                      cachedName="Ano_letivo"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosPorTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[Ano_letivo]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].Columns[Ano_letivo]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosPorTurma.Inputs[Entrada de Destino OLE DB].Columns[Periodo_Letivo]"
+                      cachedDataType="ui1"
+                      cachedName="Periodo_Letivo"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosPorTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[Periodo_Letivo]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].Columns[Periodo_Letivo]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosPorTurma.Inputs[Entrada de Destino OLE DB].Columns[Codigo_Turma]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Codigo_Turma"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosPorTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[Codigo_Turma]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].Columns[Codigo_Turma]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosPorTurma.Inputs[Entrada de Destino OLE DB].Columns[Total_Inscritos]"
+                      cachedDataType="i4"
+                      cachedName="Total_Inscritos"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosPorTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[Total_Inscritos]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].Columns[Total_Inscritos]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosPorTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[Cod_Instituicao]"
+                      dataType="i4"
+                      name="Cod_Instituicao" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosPorTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[Descricao_Instituicao]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Descricao_Instituicao" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosPorTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[Codigo_Curso]"
+                      dataType="i4"
+                      name="Codigo_Curso" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosPorTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="273"
+                      name="Desc_Curso" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosPorTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[Ano_letivo]"
+                      dataType="i2"
+                      name="Ano_letivo" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosPorTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[Periodo_Letivo]"
+                      dataType="ui1"
+                      name="Periodo_Letivo" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosPorTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[Codigo_Turma]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Codigo_Turma" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosPorTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[Total_Inscritos]"
+                      dataType="i4"
+                      name="Total_Inscritos" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosPorTurma.Outputs[Saída de Erro de Destino OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Destino OLE DB"
+                  synchronousInputId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosPorTurma.Inputs[Entrada de Destino OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosPorTurma.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosPorTurma.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosPorTurma.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosPorTurma.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino OLE DB"
+              name="DDS - dimAlunosProgressao"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[AlunosProgressao]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+                  connectionManagerRefId="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao.Inputs[Entrada de Destino OLE DB]"
+                  errorOrTruncationOperation="Inserir"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de Destino OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao.Inputs[Entrada de Destino OLE DB].Columns[MATRICULA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="MATRICULA"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao.Inputs[Entrada de Destino OLE DB].ExternalColumns[MATRICULA]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].Columns[MATRICULA]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao.Inputs[Entrada de Destino OLE DB].Columns[ALUNO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="70"
+                      cachedName="ALUNO"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao.Inputs[Entrada de Destino OLE DB].ExternalColumns[ALUNO]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].Columns[ALUNO]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao.Inputs[Entrada de Destino OLE DB].Columns[CURSO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CURSO"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao.Inputs[Entrada de Destino OLE DB].ExternalColumns[CURSO]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].Columns[CURSO]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao.Inputs[Entrada de Destino OLE DB].Columns[TURMA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="TURMA"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao.Inputs[Entrada de Destino OLE DB].ExternalColumns[TURMA]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].Columns[TURMA]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao.Inputs[Entrada de Destino OLE DB].Columns[INSTITUICAO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="INSTITUICAO"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao.Inputs[Entrada de Destino OLE DB].ExternalColumns[INSTITUICAO]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].Columns[INSTITUICAO]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao.Inputs[Entrada de Destino OLE DB].Columns[ANO_LET_ATUAL]"
+                      cachedDataType="i2"
+                      cachedName="ANO_LET_ATUAL"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao.Inputs[Entrada de Destino OLE DB].ExternalColumns[ANO_LET_ATUAL]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].Columns[ANO_LET_ATUAL]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao.Inputs[Entrada de Destino OLE DB].Columns[PERIODO_LET_ATUAL]"
+                      cachedDataType="ui1"
+                      cachedName="PERIODO_LET_ATUAL"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao.Inputs[Entrada de Destino OLE DB].ExternalColumns[PERIODO_LET_ATUAL]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].Columns[PERIODO_LET_ATUAL]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao.Inputs[Entrada de Destino OLE DB].Columns[COEF_PROGRESSAO]"
+                      cachedDataType="numeric"
+                      cachedName="COEF_PROGRESSAO"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao.Inputs[Entrada de Destino OLE DB].ExternalColumns[COEF_PROGRESSAO]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].Columns[COEF_PROGRESSAO]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao.Inputs[Entrada de Destino OLE DB].Columns[CH_CUMPRIDA]"
+                      cachedDataType="r8"
+                      cachedName="CH_CUMPRIDA"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao.Inputs[Entrada de Destino OLE DB].ExternalColumns[CH_CUMPRIDA]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].Columns[CH_CUMPRIDA]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao.Inputs[Entrada de Destino OLE DB].ExternalColumns[MATRICULA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="MATRICULA" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao.Inputs[Entrada de Destino OLE DB].ExternalColumns[ALUNO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="70"
+                      name="ALUNO" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao.Inputs[Entrada de Destino OLE DB].ExternalColumns[CURSO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="CURSO" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao.Inputs[Entrada de Destino OLE DB].ExternalColumns[TURMA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="TURMA" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao.Inputs[Entrada de Destino OLE DB].ExternalColumns[INSTITUICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="INSTITUICAO" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao.Inputs[Entrada de Destino OLE DB].ExternalColumns[ANO_LET_ATUAL]"
+                      dataType="i2"
+                      name="ANO_LET_ATUAL" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao.Inputs[Entrada de Destino OLE DB].ExternalColumns[PERIODO_LET_ATUAL]"
+                      dataType="ui1"
+                      name="PERIODO_LET_ATUAL" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao.Inputs[Entrada de Destino OLE DB].ExternalColumns[COEF_PROGRESSAO]"
+                      dataType="numeric"
+                      name="COEF_PROGRESSAO"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao.Inputs[Entrada de Destino OLE DB].ExternalColumns[CH_CUMPRIDA]"
+                      dataType="r8"
+                      name="CH_CUMPRIDA" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao.Outputs[Saída de Erro de Destino OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Destino OLE DB"
+                  synchronousInputId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao.Inputs[Entrada de Destino OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino OLE DB"
+              name="DDS - dimAlunRepDiscCurso"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[dimAlunosRepDiscCurso]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+                  connectionManagerRefId="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB]"
+                  errorOrTruncationOperation="Inserir"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de Destino OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].Columns[Matricula]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Matricula"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[Matricula]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Matricula]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].Columns[Cod_Disciplina]"
+                      cachedDataType="i4"
+                      cachedName="Cod_Disciplina"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[Cod_Disciplina]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Cod_Disciplina]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].Columns[Cod_Pauta]"
+                      cachedDataType="i4"
+                      cachedName="Cod_Pauta"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[Cod_Pauta]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Cod_Pauta]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].Columns[Situacao_Matricula_Pauta]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Situacao_Matricula_Pauta"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[Situacao_Matricula_Pauta]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Situacao_Matricula_Pauta]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].Columns[Desc_Disciplina]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Desc_Disciplina"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[Desc_Disciplina]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Desc_Disciplina]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].Columns[Cod_Curso]"
+                      cachedDataType="i4"
+                      cachedName="Cod_Curso"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[Cod_Curso]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Cod_Curso]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].Columns[Desc_Curso]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="273"
+                      cachedName="Desc_Curso"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[Desc_Curso]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Desc_Curso]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].Columns[Ano_Letivo_Ini]"
+                      cachedDataType="i2"
+                      cachedName="Ano_Letivo_Ini"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[Ano_Letivo_Ini]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Ano_Letivo_Ini]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].Columns[Periodo_Letivo_Ini]"
+                      cachedDataType="ui1"
+                      cachedName="Periodo_Letivo_Ini"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[Periodo_Letivo_Ini]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Periodo_Letivo_Ini]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].Columns[Ano_Let]"
+                      cachedDataType="i2"
+                      cachedName="Ano_Let"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[Ano_Let]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Ano_Let]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].Columns[Periodo_Let]"
+                      cachedDataType="ui1"
+                      cachedName="Periodo_Let"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[Periodo_Let]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Periodo_Let]" />
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].Columns[Coeficiente_Rendimento]"
+                      cachedDataType="numeric"
+                      cachedName="Coeficiente_Rendimento"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[Coeficiente_Rendimento]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Coeficiente_Rendimento]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Matricula" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[Cod_Disciplina]"
+                      dataType="i4"
+                      name="Cod_Disciplina" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[Cod_Pauta]"
+                      dataType="i4"
+                      name="Cod_Pauta" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[Situacao_Matricula_Pauta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Situacao_Matricula_Pauta" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[Desc_Disciplina]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Desc_Disciplina" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[Cod_Curso]"
+                      dataType="i4"
+                      name="Cod_Curso" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="273"
+                      name="Desc_Curso" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[Ano_Letivo_Ini]"
+                      dataType="i2"
+                      name="Ano_Letivo_Ini" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[Periodo_Letivo_Ini]"
+                      dataType="ui1"
+                      name="Periodo_Letivo_Ini" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[Ano_Let]"
+                      dataType="i2"
+                      name="Ano_Let" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[Periodo_Let]"
+                      dataType="ui1"
+                      name="Periodo_Let" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[Coeficiente_Rendimento]"
+                      dataType="numeric"
+                      name="Coeficiente_Rendimento"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[ChaveAlternativa]"
+                      dataType="i4"
+                      name="ChaveAlternativa" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB].ExternalColumns[Nome]"
+                      codePage="1252"
+                      dataType="str"
+                      length="70"
+                      name="Nome" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Outputs[Saída de Erro de Destino OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Destino OLE DB"
+                  synchronousInputId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Dimensão de Alteração Lenta;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;3"
+              description="Atualiza uma dimensão de data warehouse do SQL Server Analysis Services. Atualize registros da dimensão que já estejam presentes e insira os registros que não estão. Por exemplo, atualize a tabela DimProduct do banco de dados OLAP AdventureWorksDW com dados da tabela Products do banco de dados OLTP AdventureWorks."
+              name="Dimensão de Alteração Lenta"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica a instrução SELECT usada para criar um conjunto de linhas de esquema."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Ano_Let], [Ano_Letivo_Ini], [Cod_Curso], [Cod_Disciplina], [Situacao_Matricula_Pauta] FROM [dbo].[dimAlunosRepDiscCurso]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a cláusula WHERE na instrução SELECT que seleciona a linha atual entre as linhas com chaves de negócios idênticas."
+                  name="CurrentRowWhere"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as atualizações de atributo de histórico são direcionadas para a saída de transformação para atualizações de atributo de alteração."
+                  name="UpdateChangingAttributeHistory">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se a transformação falhará quando as colunas com atributos fixos contiverem alterações."
+                  name="FailOnFixedAttributeChange">true</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome da coluna para o membro inferido."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as atualizações de membro inferido são detectadas."
+                  name="EnableInferredMember">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se a transformação falhará quando uma pesquisa de registro existente falhar."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica que todas as linhas na entrada são novas ou a transformação detecta o tipo de alteração."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta.Connections[LookupConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+                  connectionManagerRefId="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+                  description="Define a conexão a ser usada para pesquisas na tabela de dimensão"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta]"
+                  name="Entrada de Dimensão de Alteração Lenta">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].Columns[Ano_Let]"
+                      cachedDataType="i2"
+                      cachedName="Ano_Let"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[Ano_Let]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Ano_Let]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].Columns[Ano_Letivo_Ini]"
+                      cachedDataType="i2"
+                      cachedName="Ano_Letivo_Ini"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[Ano_Letivo_Ini]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Ano_Letivo_Ini]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].Columns[Cod_Curso]"
+                      cachedDataType="i4"
+                      cachedName="Cod_Curso"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[Cod_Curso]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Cod_Curso]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].Columns[Cod_Disciplina]"
+                      cachedDataType="i4"
+                      cachedName="Cod_Disciplina"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[Cod_Disciplina]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Cod_Disciplina]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].Columns[Situacao_Matricula_Pauta]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Situacao_Matricula_Pauta"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[Situacao_Matricula_Pauta]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Situacao_Matricula_Pauta]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[Ano_Let]"
+                      dataType="i2"
+                      name="Ano_Let" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[Ano_Letivo_Ini]"
+                      dataType="i2"
+                      name="Ano_Letivo_Ini" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[Cod_Curso]"
+                      dataType="i4"
+                      name="Cod_Curso" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[Cod_Disciplina]"
+                      dataType="i4"
+                      name="Cod_Disciplina" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[Situacao_Matricula_Pauta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Situacao_Matricula_Pauta" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta.Outputs[Saída Inalterada]"
+                  description="Linhas inalteradas"
+                  exclusionGroup="1"
+                  name="Saída Inalterada"
+                  synchronousInputId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta.Outputs[Nova Saída]"
+                  description="Novas linhas"
+                  exclusionGroup="1"
+                  name="Nova Saída"
+                  synchronousInputId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta.Outputs[Saída de Atributo Fixo]"
+                  description="Linhas com alterações em colunas marcadas com FixedAttribute"
+                  exclusionGroup="1"
+                  name="Saída de Atributo Fixo"
+                  synchronousInputId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta.Outputs[Saída de Atualizações de Atributo de Alteração]"
+                  description="Essas linhas contêm novas informações para as alterações da coluna ChangingAttribute (Type 1)"
+                  exclusionGroup="1"
+                  name="Saída de Atualizações de Atributo de Alteração"
+                  synchronousInputId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta.Outputs[Saída de Inserções de Atributo de Histórico]"
+                  description="O resultado de alterações de HistoricalAttribute (Type 2) nessas novas linhas"
+                  exclusionGroup="2"
+                  name="Saída de Inserções de Atributo de Histórico"
+                  synchronousInputId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta.Outputs[Saída de Atualizações de Membro Inferido]"
+                  description="Informações para atualizar a linha de dimensão inicial sem preenchimento"
+                  exclusionGroup="1"
+                  name="Saída de Atualizações de Membro Inferido"
+                  synchronousInputId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 1"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Dimensão de Alteração Lenta;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;3"
+              description="Atualiza uma dimensão de data warehouse do SQL Server Analysis Services. Atualize registros da dimensão que já estejam presentes e insira os registros que não estão. Por exemplo, atualize a tabela DimProduct do banco de dados OLAP AdventureWorksDW com dados da tabela Products do banco de dados OLTP AdventureWorks."
+              name="Dimensão de Alteração Lenta 1"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica a instrução SELECT usada para criar um conjunto de linhas de esquema."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Ano_letivo], [Cod_Instituicao], [Total_Inscritos] FROM [dbo].[dimAlunosPorTurma]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a cláusula WHERE na instrução SELECT que seleciona a linha atual entre as linhas com chaves de negócios idênticas."
+                  name="CurrentRowWhere"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as atualizações de atributo de histórico são direcionadas para a saída de transformação para atualizações de atributo de alteração."
+                  name="UpdateChangingAttributeHistory">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se a transformação falhará quando as colunas com atributos fixos contiverem alterações."
+                  name="FailOnFixedAttributeChange">true</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome da coluna para o membro inferido."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as atualizações de membro inferido são detectadas."
+                  name="EnableInferredMember">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se a transformação falhará quando uma pesquisa de registro existente falhar."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica que todas as linhas na entrada são novas ou a transformação detecta o tipo de alteração."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 1.Connections[LookupConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+                  connectionManagerRefId="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+                  description="Define a conexão a ser usada para pesquisas na tabela de dimensão"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 1.Inputs[Entrada de Dimensão de Alteração Lenta]"
+                  name="Entrada de Dimensão de Alteração Lenta">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 1.Inputs[Entrada de Dimensão de Alteração Lenta].Columns[Ano_letivo]"
+                      cachedDataType="i2"
+                      cachedName="Ano_letivo"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 1.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[Ano_letivo]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].Columns[Ano_letivo]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 1.Inputs[Entrada de Dimensão de Alteração Lenta].Columns[Cod_Instituicao]"
+                      cachedDataType="i4"
+                      cachedName="Cod_Instituicao"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 1.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[Cod_Instituicao]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].Columns[Cod_Instituicao]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 1.Inputs[Entrada de Dimensão de Alteração Lenta].Columns[Total_Inscritos]"
+                      cachedDataType="i4"
+                      cachedName="Total_Inscritos"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 1.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[Total_Inscritos]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].Columns[Total_Inscritos]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 1.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[Ano_letivo]"
+                      dataType="i2"
+                      name="Ano_letivo" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 1.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[Cod_Instituicao]"
+                      dataType="i4"
+                      name="Cod_Instituicao" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 1.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[Total_Inscritos]"
+                      dataType="i4"
+                      name="Total_Inscritos" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 1.Outputs[Saída Inalterada]"
+                  description="Linhas inalteradas"
+                  exclusionGroup="1"
+                  name="Saída Inalterada"
+                  synchronousInputId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 1.Inputs[Entrada de Dimensão de Alteração Lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 1.Outputs[Nova Saída]"
+                  description="Novas linhas"
+                  exclusionGroup="1"
+                  name="Nova Saída"
+                  synchronousInputId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 1.Inputs[Entrada de Dimensão de Alteração Lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 1.Outputs[Saída de Atributo Fixo]"
+                  description="Linhas com alterações em colunas marcadas com FixedAttribute"
+                  exclusionGroup="1"
+                  name="Saída de Atributo Fixo"
+                  synchronousInputId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 1.Inputs[Entrada de Dimensão de Alteração Lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 1.Outputs[Saída de Atualizações de Atributo de Alteração]"
+                  description="Essas linhas contêm novas informações para as alterações da coluna ChangingAttribute (Type 1)"
+                  exclusionGroup="1"
+                  name="Saída de Atualizações de Atributo de Alteração"
+                  synchronousInputId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 1.Inputs[Entrada de Dimensão de Alteração Lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 1.Outputs[Saída de Inserções de Atributo de Histórico]"
+                  description="O resultado de alterações de HistoricalAttribute (Type 2) nessas novas linhas"
+                  exclusionGroup="2"
+                  name="Saída de Inserções de Atributo de Histórico"
+                  synchronousInputId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 1.Inputs[Entrada de Dimensão de Alteração Lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 1.Outputs[Saída de Atualizações de Membro Inferido]"
+                  description="Informações para atualizar a linha de dimensão inicial sem preenchimento"
+                  exclusionGroup="1"
+                  name="Saída de Atualizações de Membro Inferido"
+                  synchronousInputId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 1.Inputs[Entrada de Dimensão de Alteração Lenta]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 2"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Dimensão de Alteração Lenta;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;3"
+              description="Atualiza uma dimensão de data warehouse do SQL Server Analysis Services. Atualize registros da dimensão que já estejam presentes e insira os registros que não estão. Por exemplo, atualize a tabela DimProduct do banco de dados OLAP AdventureWorksDW com dados da tabela Products do banco de dados OLTP AdventureWorks."
+              name="Dimensão de Alteração Lenta 2"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica a instrução SELECT usada para criar um conjunto de linhas de esquema."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [ALUNO], [ANO_LET_ATUAL], [COEF_PROGRESSAO], [MATRICULA] FROM [dbo].[AlunosProgressao]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a cláusula WHERE na instrução SELECT que seleciona a linha atual entre as linhas com chaves de negócios idênticas."
+                  name="CurrentRowWhere"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as atualizações de atributo de histórico são direcionadas para a saída de transformação para atualizações de atributo de alteração."
+                  name="UpdateChangingAttributeHistory">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se a transformação falhará quando as colunas com atributos fixos contiverem alterações."
+                  name="FailOnFixedAttributeChange">true</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome da coluna para o membro inferido."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as atualizações de membro inferido são detectadas."
+                  name="EnableInferredMember">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se a transformação falhará quando uma pesquisa de registro existente falhar."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica que todas as linhas na entrada são novas ou a transformação detecta o tipo de alteração."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 2.Connections[LookupConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+                  connectionManagerRefId="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.DDSEducacional]"
+                  description="Define a conexão a ser usada para pesquisas na tabela de dimensão"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 2.Inputs[Entrada de Dimensão de Alteração Lenta]"
+                  name="Entrada de Dimensão de Alteração Lenta">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 2.Inputs[Entrada de Dimensão de Alteração Lenta].Columns[ALUNO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="70"
+                      cachedName="ALUNO"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 2.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[ALUNO]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].Columns[ALUNO]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 2.Inputs[Entrada de Dimensão de Alteração Lenta].Columns[ANO_LET_ATUAL]"
+                      cachedDataType="i2"
+                      cachedName="ANO_LET_ATUAL"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 2.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[ANO_LET_ATUAL]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].Columns[ANO_LET_ATUAL]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 2.Inputs[Entrada de Dimensão de Alteração Lenta].Columns[COEF_PROGRESSAO]"
+                      cachedDataType="numeric"
+                      cachedName="COEF_PROGRESSAO"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 2.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[COEF_PROGRESSAO]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].Columns[COEF_PROGRESSAO]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 2.Inputs[Entrada de Dimensão de Alteração Lenta].Columns[MATRICULA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="MATRICULA"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 2.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[MATRICULA]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].Columns[MATRICULA]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 2.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[ALUNO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="70"
+                      name="ALUNO" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 2.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[ANO_LET_ATUAL]"
+                      dataType="i2"
+                      name="ANO_LET_ATUAL" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 2.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[COEF_PROGRESSAO]"
+                      dataType="numeric"
+                      name="COEF_PROGRESSAO"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 2.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[MATRICULA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="MATRICULA" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 2.Outputs[Saída Inalterada]"
+                  description="Linhas inalteradas"
+                  exclusionGroup="1"
+                  name="Saída Inalterada"
+                  synchronousInputId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 2.Inputs[Entrada de Dimensão de Alteração Lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 2.Outputs[Nova Saída]"
+                  description="Novas linhas"
+                  exclusionGroup="1"
+                  name="Nova Saída"
+                  synchronousInputId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 2.Inputs[Entrada de Dimensão de Alteração Lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 2.Outputs[Saída de Atributo Fixo]"
+                  description="Linhas com alterações em colunas marcadas com FixedAttribute"
+                  exclusionGroup="1"
+                  name="Saída de Atributo Fixo"
+                  synchronousInputId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 2.Inputs[Entrada de Dimensão de Alteração Lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 2.Outputs[Saída de Atualizações de Atributo de Alteração]"
+                  description="Essas linhas contêm novas informações para as alterações da coluna ChangingAttribute (Type 1)"
+                  exclusionGroup="1"
+                  name="Saída de Atualizações de Atributo de Alteração"
+                  synchronousInputId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 2.Inputs[Entrada de Dimensão de Alteração Lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 2.Outputs[Saída de Inserções de Atributo de Histórico]"
+                  description="O resultado de alterações de HistoricalAttribute (Type 2) nessas novas linhas"
+                  exclusionGroup="2"
+                  name="Saída de Inserções de Atributo de Histórico"
+                  synchronousInputId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 2.Inputs[Entrada de Dimensão de Alteração Lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 2.Outputs[Saída de Atualizações de Membro Inferido]"
+                  description="Informações para atualizar a linha de dimensão inicial sem preenchimento"
+                  exclusionGroup="1"
+                  name="Saída de Atualizações de Membro Inferido"
+                  synchronousInputId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 2.Inputs[Entrada de Dimensão de Alteração Lenta]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+              description="Origem OLE DB"
+              name="Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[CA_ALUNOS_COM_REPROVAÇÃO_DISCIPLINAS_CURSO]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="A variável que contém o comando SQL a ser executado."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.sistema_academico]"
+                  connectionManagerRefId="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.sistema_academico]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB]"
+                  name="Saída de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].ExternalColumns[Matricula]"
+                      length="20"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Matricula]"
+                      name="Matricula"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Nome_Pessoa]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].ExternalColumns[Nome_Pessoa]"
+                      length="70"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Nome_Pessoa]"
+                      name="Nome_Pessoa"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Cod_Disciplina]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].ExternalColumns[Cod_Disciplina]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Cod_Disciplina]"
+                      name="Cod_Disciplina"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Cod_Pauta]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].ExternalColumns[Cod_Pauta]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Cod_Pauta]"
+                      name="Cod_Pauta"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Situacao_Matricula_Pauta]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].ExternalColumns[Situacao_Matricula_Pauta]"
+                      length="100"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Situacao_Matricula_Pauta]"
+                      name="Situacao_Matricula_Pauta"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Desc_Disciplina]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].ExternalColumns[Desc_Disciplina]"
+                      length="255"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Desc_Disciplina]"
+                      name="Desc_Disciplina"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Cod_Curso]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].ExternalColumns[Cod_Curso]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Cod_Curso]"
+                      name="Cod_Curso"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].ExternalColumns[Desc_Curso]"
+                      length="273"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Desc_Curso]"
+                      name="Desc_Curso"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Ano_Letivo_Ini]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].ExternalColumns[Ano_Letivo_Ini]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Ano_Letivo_Ini]"
+                      name="Ano_Letivo_Ini"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Periodo_Letivo_Ini]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].ExternalColumns[Periodo_Letivo_Ini]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Periodo_Letivo_Ini]"
+                      name="Periodo_Letivo_Ini"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Ano_Let]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].ExternalColumns[Ano_Let]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Ano_Let]"
+                      name="Ano_Let"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Periodo_Let]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].ExternalColumns[Periodo_Let]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Periodo_Let]"
+                      name="Periodo_Let"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Coeficiente_Rendimento]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].ExternalColumns[Coeficiente_Rendimento]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].Columns[Coeficiente_Rendimento]"
+                      name="Coeficiente_Rendimento"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].ExternalColumns[Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Matricula" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].ExternalColumns[Nome_Pessoa]"
+                      codePage="1252"
+                      dataType="str"
+                      length="70"
+                      name="Nome_Pessoa" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].ExternalColumns[Cod_Disciplina]"
+                      dataType="i4"
+                      name="Cod_Disciplina" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].ExternalColumns[Cod_Pauta]"
+                      dataType="i4"
+                      name="Cod_Pauta" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].ExternalColumns[Situacao_Matricula_Pauta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Situacao_Matricula_Pauta" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].ExternalColumns[Desc_Disciplina]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Desc_Disciplina" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].ExternalColumns[Cod_Curso]"
+                      dataType="i4"
+                      name="Cod_Curso" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].ExternalColumns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="273"
+                      name="Desc_Curso" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].ExternalColumns[Ano_Letivo_Ini]"
+                      dataType="i2"
+                      name="Ano_Letivo_Ini" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].ExternalColumns[Periodo_Letivo_Ini]"
+                      dataType="ui1"
+                      name="Periodo_Letivo_Ini" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].ExternalColumns[Ano_Let]"
+                      dataType="i2"
+                      name="Ano_Let" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].ExternalColumns[Periodo_Let]"
+                      dataType="ui1"
+                      name="Periodo_Let" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB].ExternalColumns[Coeficiente_Rendimento]"
+                      dataType="numeric"
+                      name="Coeficiente_Rendimento"
+                      precision="5"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Erro de Origem OLE DB]"
+                  isErrorOut="true"
+                  name="Saída de Erro de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Erro de Origem OLE DB].Columns[Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Erro de Origem OLE DB].Columns[Matricula]"
+                      name="Matricula" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Erro de Origem OLE DB].Columns[Nome_Pessoa]"
+                      codePage="1252"
+                      dataType="str"
+                      length="70"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Erro de Origem OLE DB].Columns[Nome_Pessoa]"
+                      name="Nome_Pessoa" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Erro de Origem OLE DB].Columns[Cod_Disciplina]"
+                      dataType="i4"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Erro de Origem OLE DB].Columns[Cod_Disciplina]"
+                      name="Cod_Disciplina" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Erro de Origem OLE DB].Columns[Cod_Pauta]"
+                      dataType="i4"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Erro de Origem OLE DB].Columns[Cod_Pauta]"
+                      name="Cod_Pauta" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Erro de Origem OLE DB].Columns[Situacao_Matricula_Pauta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Erro de Origem OLE DB].Columns[Situacao_Matricula_Pauta]"
+                      name="Situacao_Matricula_Pauta" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Erro de Origem OLE DB].Columns[Desc_Disciplina]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Erro de Origem OLE DB].Columns[Desc_Disciplina]"
+                      name="Desc_Disciplina" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Erro de Origem OLE DB].Columns[Cod_Curso]"
+                      dataType="i4"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Erro de Origem OLE DB].Columns[Cod_Curso]"
+                      name="Cod_Curso" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Erro de Origem OLE DB].Columns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="273"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Erro de Origem OLE DB].Columns[Desc_Curso]"
+                      name="Desc_Curso" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Erro de Origem OLE DB].Columns[Ano_Letivo_Ini]"
+                      dataType="i2"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Erro de Origem OLE DB].Columns[Ano_Letivo_Ini]"
+                      name="Ano_Letivo_Ini" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Erro de Origem OLE DB].Columns[Periodo_Letivo_Ini]"
+                      dataType="ui1"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Erro de Origem OLE DB].Columns[Periodo_Letivo_Ini]"
+                      name="Periodo_Letivo_Ini" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Erro de Origem OLE DB].Columns[Ano_Let]"
+                      dataType="i2"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Erro de Origem OLE DB].Columns[Ano_Let]"
+                      name="Ano_Let" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Erro de Origem OLE DB].Columns[Periodo_Let]"
+                      dataType="ui1"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Erro de Origem OLE DB].Columns[Periodo_Let]"
+                      name="Periodo_Let" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Erro de Origem OLE DB].Columns[Coeficiente_Rendimento]"
+                      dataType="numeric"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Erro de Origem OLE DB].Columns[Coeficiente_Rendimento]"
+                      name="Coeficiente_Rendimento"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+              description="Origem OLE DB"
+              name="Sistema Academico CA_Alunos_Progressao"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[CA_ALUNOS_PROGRESSAO]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="A variável que contém o comando SQL a ser executado."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.sistema_academico]"
+                  connectionManagerRefId="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.sistema_academico]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB]"
+                  name="Saída de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].Columns[MATRICULA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].ExternalColumns[MATRICULA]"
+                      length="20"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].Columns[MATRICULA]"
+                      name="MATRICULA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].Columns[ALUNO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].ExternalColumns[ALUNO]"
+                      length="70"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].Columns[ALUNO]"
+                      name="ALUNO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].Columns[CURSO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].ExternalColumns[CURSO]"
+                      length="255"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].Columns[CURSO]"
+                      name="CURSO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].Columns[TURMA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].ExternalColumns[TURMA]"
+                      length="255"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].Columns[TURMA]"
+                      name="TURMA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].Columns[INSTITUICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].ExternalColumns[INSTITUICAO]"
+                      length="50"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].Columns[INSTITUICAO]"
+                      name="INSTITUICAO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].Columns[ANO_LET_ATUAL]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].ExternalColumns[ANO_LET_ATUAL]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].Columns[ANO_LET_ATUAL]"
+                      name="ANO_LET_ATUAL"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].Columns[PERIODO_LET_ATUAL]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].ExternalColumns[PERIODO_LET_ATUAL]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].Columns[PERIODO_LET_ATUAL]"
+                      name="PERIODO_LET_ATUAL"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].Columns[COEF_PROGRESSAO]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].ExternalColumns[COEF_PROGRESSAO]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].Columns[COEF_PROGRESSAO]"
+                      name="COEF_PROGRESSAO"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].Columns[CH_CUMPRIDA]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].ExternalColumns[CH_CUMPRIDA]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].Columns[CH_CUMPRIDA]"
+                      name="CH_CUMPRIDA"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].ExternalColumns[MATRICULA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="MATRICULA" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].ExternalColumns[ALUNO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="70"
+                      name="ALUNO" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].ExternalColumns[CURSO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="CURSO" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].ExternalColumns[TURMA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="TURMA" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].ExternalColumns[INSTITUICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="INSTITUICAO" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].ExternalColumns[ANO_LET_ATUAL]"
+                      dataType="i2"
+                      name="ANO_LET_ATUAL" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].ExternalColumns[PERIODO_LET_ATUAL]"
+                      dataType="ui1"
+                      name="PERIODO_LET_ATUAL" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].ExternalColumns[COEF_PROGRESSAO]"
+                      dataType="numeric"
+                      name="COEF_PROGRESSAO"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB].ExternalColumns[CH_CUMPRIDA]"
+                      dataType="r8"
+                      name="CH_CUMPRIDA" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Erro de Origem OLE DB]"
+                  isErrorOut="true"
+                  name="Saída de Erro de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Erro de Origem OLE DB].Columns[MATRICULA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Erro de Origem OLE DB].Columns[MATRICULA]"
+                      name="MATRICULA" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Erro de Origem OLE DB].Columns[ALUNO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="70"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Erro de Origem OLE DB].Columns[ALUNO]"
+                      name="ALUNO" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Erro de Origem OLE DB].Columns[CURSO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Erro de Origem OLE DB].Columns[CURSO]"
+                      name="CURSO" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Erro de Origem OLE DB].Columns[TURMA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Erro de Origem OLE DB].Columns[TURMA]"
+                      name="TURMA" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Erro de Origem OLE DB].Columns[INSTITUICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Erro de Origem OLE DB].Columns[INSTITUICAO]"
+                      name="INSTITUICAO" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Erro de Origem OLE DB].Columns[ANO_LET_ATUAL]"
+                      dataType="i2"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Erro de Origem OLE DB].Columns[ANO_LET_ATUAL]"
+                      name="ANO_LET_ATUAL" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Erro de Origem OLE DB].Columns[PERIODO_LET_ATUAL]"
+                      dataType="ui1"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Erro de Origem OLE DB].Columns[PERIODO_LET_ATUAL]"
+                      name="PERIODO_LET_ATUAL" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Erro de Origem OLE DB].Columns[COEF_PROGRESSAO]"
+                      dataType="numeric"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Erro de Origem OLE DB].Columns[COEF_PROGRESSAO]"
+                      name="COEF_PROGRESSAO"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Erro de Origem OLE DB].Columns[CH_CUMPRIDA]"
+                      dataType="r8"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Erro de Origem OLE DB].Columns[CH_CUMPRIDA]"
+                      name="CH_CUMPRIDA" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+              description="Origem OLE DB"
+              name="Sistema Academico CA_Total_Aluno_Turma"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[CA_Contagem_Alunos_Turma]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="A variável que contém o comando SQL a ser executado."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.sistema_academico]"
+                  connectionManagerRefId="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.sistema_academico]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB]"
+                  name="Saída de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].Columns[Cod_Instituicao]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].ExternalColumns[Cod_Instituicao]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].Columns[Cod_Instituicao]"
+                      name="Cod_Instituicao"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].Columns[Descricao_Instituicao]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].ExternalColumns[Descricao_Instituicao]"
+                      length="50"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].Columns[Descricao_Instituicao]"
+                      name="Descricao_Instituicao"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].Columns[Codigo_Curso]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].ExternalColumns[Codigo_Curso]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].Columns[Codigo_Curso]"
+                      name="Codigo_Curso"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].Columns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].ExternalColumns[Desc_Curso]"
+                      length="273"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].Columns[Desc_Curso]"
+                      name="Desc_Curso"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].Columns[Ano_letivo]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].ExternalColumns[Ano_letivo]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].Columns[Ano_letivo]"
+                      name="Ano_letivo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].Columns[Periodo_Letivo]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].ExternalColumns[Periodo_Letivo]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].Columns[Periodo_Letivo]"
+                      name="Periodo_Letivo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].Columns[Codigo_Turma]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].ExternalColumns[Codigo_Turma]"
+                      length="20"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].Columns[Codigo_Turma]"
+                      name="Codigo_Turma"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].Columns[Total_Inscritos]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].ExternalColumns[Total_Inscritos]"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].Columns[Total_Inscritos]"
+                      name="Total_Inscritos"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].ExternalColumns[Cod_Instituicao]"
+                      dataType="i4"
+                      name="Cod_Instituicao" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].ExternalColumns[Descricao_Instituicao]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Descricao_Instituicao" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].ExternalColumns[Codigo_Curso]"
+                      dataType="i4"
+                      name="Codigo_Curso" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].ExternalColumns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="273"
+                      name="Desc_Curso" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].ExternalColumns[Ano_letivo]"
+                      dataType="i2"
+                      name="Ano_letivo" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].ExternalColumns[Periodo_Letivo]"
+                      dataType="ui1"
+                      name="Periodo_Letivo" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].ExternalColumns[Codigo_Turma]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Codigo_Turma" />
+                    <externalMetadataColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB].ExternalColumns[Total_Inscritos]"
+                      dataType="i4"
+                      name="Total_Inscritos" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Erro de Origem OLE DB]"
+                  isErrorOut="true"
+                  name="Saída de Erro de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Erro de Origem OLE DB].Columns[Cod_Instituicao]"
+                      dataType="i4"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Erro de Origem OLE DB].Columns[Cod_Instituicao]"
+                      name="Cod_Instituicao" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Erro de Origem OLE DB].Columns[Descricao_Instituicao]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Erro de Origem OLE DB].Columns[Descricao_Instituicao]"
+                      name="Descricao_Instituicao" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Erro de Origem OLE DB].Columns[Codigo_Curso]"
+                      dataType="i4"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Erro de Origem OLE DB].Columns[Codigo_Curso]"
+                      name="Codigo_Curso" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Erro de Origem OLE DB].Columns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="273"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Erro de Origem OLE DB].Columns[Desc_Curso]"
+                      name="Desc_Curso" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Erro de Origem OLE DB].Columns[Ano_letivo]"
+                      dataType="i2"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Erro de Origem OLE DB].Columns[Ano_letivo]"
+                      name="Ano_letivo" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Erro de Origem OLE DB].Columns[Periodo_Letivo]"
+                      dataType="ui1"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Erro de Origem OLE DB].Columns[Periodo_Letivo]"
+                      name="Periodo_Letivo" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Erro de Origem OLE DB].Columns[Codigo_Turma]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Erro de Origem OLE DB].Columns[Codigo_Turma]"
+                      name="Codigo_Turma" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Erro de Origem OLE DB].Columns[Total_Inscritos]"
+                      dataType="i4"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Erro de Origem OLE DB].Columns[Total_Inscritos]"
+                      name="Total_Inscritos" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Extrair dados do Sistema Academico para o DDS.Paths[Nova Saída]"
+              endId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso.Inputs[Entrada de Destino OLE DB]"
+              name="Nova Saída"
+              startId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta.Outputs[Nova Saída]" />
+            <path
+              refId="Package\Extrair dados do Sistema Academico para o DDS.Paths[Nova Saída1]"
+              endId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosPorTurma.Inputs[Entrada de Destino OLE DB]"
+              name="Nova Saída"
+              startId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 1.Outputs[Nova Saída]" />
+            <path
+              refId="Package\Extrair dados do Sistema Academico para o DDS.Paths[Nova Saída2]"
+              endId="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao.Inputs[Entrada de Destino OLE DB]"
+              name="Nova Saída"
+              startId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 2.Outputs[Nova Saída]" />
+            <path
+              refId="Package\Extrair dados do Sistema Academico para o DDS.Paths[Saída de Origem OLE DB]"
+              endId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta]"
+              name="Saída de Origem OLE DB"
+              startId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso.Outputs[Saída de Origem OLE DB]" />
+            <path
+              refId="Package\Extrair dados do Sistema Academico para o DDS.Paths[Saída de Origem OLE DB1]"
+              endId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 1.Inputs[Entrada de Dimensão de Alteração Lenta]"
+              name="Saída de Origem OLE DB"
+              startId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma.Outputs[Saída de Origem OLE DB]" />
+            <path
+              refId="Package\Extrair dados do Sistema Academico para o DDS.Paths[Saída de Origem OLE DB2]"
+              endId="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 2.Inputs[Entrada de Dimensão de Alteração Lenta]"
+              name="Saída de Origem OLE DB"
+              startId="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao.Outputs[Saída de Origem OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="307,42"
+          Id="Package\Extrair dados do Sistema Academico para o DDS"
+          TopLeft="247,102" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Extrair dados do Sistema Academico para o DDS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosPorTurma"
+          TopLeft="344,208.5" />
+        <NodeLayout
+          Size="226,42"
+          Id="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 1"
+          TopLeft="341,102.5" />
+        <NodeLayout
+          Size="210,42"
+          Id="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunosProgressao"
+          TopLeft="594,200.5" />
+        <NodeLayout
+          Size="212,42"
+          Id="Package\Extrair dados do Sistema Academico para o DDS\DDS - dimAlunRepDiscCurso"
+          TopLeft="46.5,198.5" />
+        <NodeLayout
+          Size="228,42"
+          Id="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Total_Aluno_Turma"
+          TopLeft="349,16.4999999999999" />
+        <NodeLayout
+          Size="226,42"
+          Id="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 2"
+          TopLeft="606,92.5" />
+        <NodeLayout
+          Size="202,42"
+          Id="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Progressao"
+          TopLeft="605.5,11.4999999999999" />
+        <NodeLayout
+          Size="217,42"
+          Id="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta"
+          TopLeft="38.5,96.5" />
+        <NodeLayout
+          Size="295,42"
+          Id="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso"
+          TopLeft="23.5,14.4999999999999" />
+        <EdgeLayout
+          Id="Package\Extrair dados do Sistema Academico para o DDS.Paths[Nova Saída]"
+          TopLeft="149.75,138.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-24.993359375,21.08251953125,49.98671875,10.3349609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extrair dados do Sistema Academico para o DDS.Paths[Saída de Origem OLE DB2]"
+          TopLeft="706.5,53.4999999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12.5,39.0000000000001"
+              Start="0,0"
+              End="12.5,31.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.5000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.5000000000001"
+                    Point2="0,19.5000000000001"
+                    Point3="4,19.5000000000001" />
+                  <mssgle:LineSegment
+                    End="8.5,19.5000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.5,19.5000000000001"
+                    Point2="12.5,19.5000000000001"
+                    Point3="12.5,23.5000000000001" />
+                  <mssgle:LineSegment
+                    End="12.5,31.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extrair dados do Sistema Academico para o DDS.Paths[Saída de Origem OLE DB1]"
+          TopLeft="463,58.4999999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9,44.0000000000001"
+              Start="0,0"
+              End="-9,36.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.0000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.0000000000001"
+                    Point2="0,22.0000000000001"
+                    Point3="-4,22.0000000000001" />
+                  <mssgle:LineSegment
+                    End="-5,22.0000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5,22.0000000000001"
+                    Point2="-9,22.0000000000001"
+                    Point3="-9,26.0000000000001" />
+                  <mssgle:LineSegment
+                    End="-9,36.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extrair dados do Sistema Academico para o DDS.Paths[Saída de Origem OLE DB]"
+          TopLeft="171,56.4999999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-24,40.0000000000001"
+              Start="0,0"
+              End="-24,32.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.0000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.0000000000001"
+                    Point2="0,20.0000000000001"
+                    Point3="-4,20.0000000000001" />
+                  <mssgle:LineSegment
+                    End="-20,20.0000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-20,20.0000000000001"
+                    Point2="-24,20.0000000000001"
+                    Point3="-24,24.0000000000001" />
+                  <mssgle:LineSegment
+                    End="-24,32.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extrair dados do Sistema Academico para o DDS.Paths[Nova Saída2]"
+          TopLeft="719,134.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-20,66"
+              Start="0,0"
+              End="-20,58.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29"
+                    Point2="0,33"
+                    Point3="-4,33" />
+                  <mssgle:LineSegment
+                    End="-16,33" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-16,33"
+                    Point2="-20,33"
+                    Point3="-20,37" />
+                  <mssgle:LineSegment
+                    End="-20,58.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-34.993359375,38,49.98671875,10.3349609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extrair dados do Sistema Academico para o DDS.Paths[Nova Saída1]"
+          TopLeft="450.25,144.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64"
+              Start="0,0"
+              End="0,56.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-24.993359375,23.08251953125,49.98671875,10.3349609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{17ACC3CC-F145-4C15-BA47-7BF965A8E956}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[dimAlunosRepDiscCurso]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;CA_Alunos_Com_Reprovacao_Disciplia_Curso.Saídas[Saída de Origem OLE DB].Colunas[Ano_Let]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Ano_Let&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;CA_Alunos_Com_Reprovacao_Disciplia_Curso.Saídas[Saída de Origem OLE DB].Colunas[Ano_Letivo_Ini]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Ano_Letivo_Ini&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;CA_Alunos_Com_Reprovacao_Disciplia_Curso.Saídas[Saída de Origem OLE DB].Colunas[Cod_Curso]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Cod_Curso&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;CA_Alunos_Com_Reprovacao_Disciplia_Curso.Saídas[Saída de Origem OLE DB].Colunas[Cod_Disciplina]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Cod_Disciplina&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;CA_Alunos_Com_Reprovacao_Disciplia_Curso.Saídas[Saída de Origem OLE DB].Colunas[Cod_Pauta]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Cod_Pauta&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;CA_Alunos_Com_Reprovacao_Disciplia_Curso.Saídas[Saída de Origem OLE DB].Colunas[Coeficiente_Rendimento]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Coeficiente_Rendimento&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;CA_Alunos_Com_Reprovacao_Disciplia_Curso.Saídas[Saída de Origem OLE DB].Colunas[Desc_Curso]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Desc_Curso&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;CA_Alunos_Com_Reprovacao_Disciplia_Curso.Saídas[Saída de Origem OLE DB].Colunas[Desc_Disciplina]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Desc_Disciplina&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;CA_Alunos_Com_Reprovacao_Disciplia_Curso.Saídas[Saída de Origem OLE DB].Colunas[Matricula]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Matricula&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;CA_Alunos_Com_Reprovacao_Disciplia_Curso.Saídas[Saída de Origem OLE DB].Colunas[Nome_Pessoa]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Nome_Pessoa&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;CA_Alunos_Com_Reprovacao_Disciplia_Curso.Saídas[Saída de Origem OLE DB].Colunas[Periodo_Let]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Periodo_Let&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;CA_Alunos_Com_Reprovacao_Disciplia_Curso.Saídas[Saída de Origem OLE DB].Colunas[Periodo_Letivo_Ini]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Periodo_Letivo_Ini&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;CA_Alunos_Com_Reprovacao_Disciplia_Curso.Saídas[Saída de Origem OLE DB].Colunas[Situacao_Matricula_Pauta]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Situacao_Matricula_Pauta&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Comando OLE DB&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 1">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{17ACC3CC-F145-4C15-BA47-7BF965A8E956}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[dimAlunosPorTurma]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;CA_Total_Aluno_Turma.Saídas[Saída de Origem OLE DB].Colunas[Ano_letivo]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Ano_letivo&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;CA_Total_Aluno_Turma.Saídas[Saída de Origem OLE DB].Colunas[Cod_Instituicao]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Cod_Instituicao&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;CA_Total_Aluno_Turma.Saídas[Saída de Origem OLE DB].Colunas[Codigo_Curso]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Codigo_Curso&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;CA_Total_Aluno_Turma.Saídas[Saída de Origem OLE DB].Colunas[Codigo_Turma]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Codigo_Turma&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;CA_Total_Aluno_Turma.Saídas[Saída de Origem OLE DB].Colunas[Desc_Curso]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Desc_Curso&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;CA_Total_Aluno_Turma.Saídas[Saída de Origem OLE DB].Colunas[Descricao_Instituicao]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Descricao_Instituicao&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;CA_Total_Aluno_Turma.Saídas[Saída de Origem OLE DB].Colunas[Periodo_Letivo]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Periodo_Letivo&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;CA_Total_Aluno_Turma.Saídas[Saída de Origem OLE DB].Colunas[Total_Inscritos]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Total_Inscritos&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Comando OLE DB 1&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extrair dados do Sistema Academico para o DDS\Dimensão de Alteração Lenta 2">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{17ACC3CC-F145-4C15-BA47-7BF965A8E956}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[AlunosProgressao]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;CA_Alunos_Progressao.Saídas[Saída de Origem OLE DB].Colunas[ALUNO]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ALUNO&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;CA_Alunos_Progressao.Saídas[Saída de Origem OLE DB].Colunas[ANO_LET_ATUAL]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ANO_LET_ATUAL&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;CA_Alunos_Progressao.Saídas[Saída de Origem OLE DB].Colunas[CH_CUMPRIDA]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;CH_CUMPRIDA&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;CA_Alunos_Progressao.Saídas[Saída de Origem OLE DB].Colunas[COEF_PROGRESSAO]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;COEF_PROGRESSAO&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;CA_Alunos_Progressao.Saídas[Saída de Origem OLE DB].Colunas[CURSO]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;CURSO&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;CA_Alunos_Progressao.Saídas[Saída de Origem OLE DB].Colunas[INSTITUICAO]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;INSTITUICAO&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;CA_Alunos_Progressao.Saídas[Saída de Origem OLE DB].Colunas[MATRICULA]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;MATRICULA&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;CA_Alunos_Progressao.Saídas[Saída de Origem OLE DB].Colunas[PERIODO_LET_ATUAL]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;PERIODO_LET_ATUAL&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;CA_Alunos_Progressao.Saídas[Saída de Origem OLE DB].Colunas[TURMA]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;TURMA&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination 2&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Comando OLE DB 2&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extrair dados do Sistema Academico para o DDS\Sistema Academico CA_Alunos_Com_Reprovacao_Disciplia_Curso">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

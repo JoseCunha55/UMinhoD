@@ -1,0 +1,278 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="dfa7efe5-7011-46b2-a35a-d035319467c2" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Cubo Aprovado_Reprovado_Curso_Disciplina</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>Fato Apr Repr Curso Ano MD</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="d44c9431-cfdf-49d8-a76a-1bc840bf67eb">
+          <ID>Fato Apr Repr Curso Ano MD</ID>
+          <Name>Fato Apr Repr Curso Ano MD</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="c275a7bb-35b4-4c05-a011-80be1c635d66">
+            <DataSourceViewID>Aprovado_Reprovado_Curso_Disciplina Educacional</DataSourceViewID>
+            <TableID>dbo_FatoAprReprCursoAnoMD</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <EstimatedRows>1521</EstimatedRows>
+          <AggregationDesignID>AggregationDesign</AggregationDesignID>
+        </Partition>
+      </Partitions>
+      <AggregationDesigns>
+        <AggregationDesign>
+          <ID>AggregationDesign</ID>
+          <Name>AggregationDesign</Name>
+          <CreatedTimestamp>2016-03-03T14:14:26.986667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2016-03-03T14:14:26.986667Z</LastSchemaUpdate>
+          <EstimatedRows>1521</EstimatedRows>
+          <Dimensions>
+            <Dimension>
+              <CubeDimensionID>Dim CURSOS 2</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>COD CURSO</AttributeID>
+                  <EstimatedCount>696</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>DESC CURSO</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>SIGLA CURSO</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim DATA 2</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Data</AttributeID>
+                  <EstimatedCount>10959</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>DATA</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ANO</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>MES</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>BIMESTRE</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>TRIMESTRE</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>SEMESTRE</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Aggregations>
+            <Aggregation>
+              <ID>Aggregation 0</ID>
+              <Name>Aggregation 0</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim CURSOS 2</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 2</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+          </Aggregations>
+        </AggregationDesign>
+      </AggregationDesigns>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fato Apr Repr Disciplina Ano MD</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="4eb9843f-47bd-4267-a707-15104a8a802d">
+          <ID>Fato Apr Repr Disciplina Ano MD</ID>
+          <Name>Fato Apr Repr Disciplina Ano MD</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="403839e9-4bce-4b5c-9e91-4e066942214c">
+            <DataSourceViewID>Aprovado_Reprovado_Curso_Disciplina Educacional</DataSourceViewID>
+            <TableID>dbo_FatoAprReprDisciplinaAnoMD</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <EstimatedRows>4642</EstimatedRows>
+          <AggregationDesignID>AggregationDesign</AggregationDesignID>
+        </Partition>
+      </Partitions>
+      <AggregationDesigns>
+        <AggregationDesign>
+          <ID>AggregationDesign</ID>
+          <Name>AggregationDesign</Name>
+          <CreatedTimestamp>2016-03-03T14:14:49.356667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2016-03-03T14:14:49.356667Z</LastSchemaUpdate>
+          <EstimatedRows>4642</EstimatedRows>
+          <Dimensions>
+            <Dimension>
+              <CubeDimensionID>Dim DISCIPLINAS 1</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>COD DISCIPLINA</AttributeID>
+                  <EstimatedCount>10029</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>DESC DISCIPLINA</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>SIGLA DISCIPLINA</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>DESC DISCIPLINA SIMPLIFICADO</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim DATA 2</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Data</AttributeID>
+                  <EstimatedCount>10959</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>DATA</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ANO</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>MES</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>BIMESTRE</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>TRIMESTRE</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>SEMESTRE</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Aggregations>
+            <Aggregation>
+              <ID>Aggregation 0</ID>
+              <Name>Aggregation 0</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim DISCIPLINAS 1</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 2</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+          </Aggregations>
+        </AggregationDesign>
+      </AggregationDesigns>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fato Apr Repr Curso Disciplina Ano MD</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="562591ef-a0e8-47eb-83a2-8bc9afba7135">
+          <ID>Fato Apr Repr Curso Disciplina Ano MD</ID>
+          <Name>Fato Apr Repr Curso Disciplina Ano MD</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="806f777a-1ac2-46b1-aee8-0e5d498db2c6">
+            <DataSourceViewID>Aprovado_Reprovado_Curso_Disciplina Educacional</DataSourceViewID>
+            <TableID>dbo_FatoAprReprCursoDisciplinaAnoMD</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <EstimatedRows>5665</EstimatedRows>
+          <AggregationDesignID>AggregationDesign</AggregationDesignID>
+        </Partition>
+      </Partitions>
+      <AggregationDesigns>
+        <AggregationDesign>
+          <ID>AggregationDesign</ID>
+          <Name>AggregationDesign</Name>
+          <CreatedTimestamp>2016-03-03T14:15:09.06Z</CreatedTimestamp>
+          <LastSchemaUpdate>2016-03-03T14:15:09.06Z</LastSchemaUpdate>
+          <EstimatedRows>5665</EstimatedRows>
+          <Dimensions>
+            <Dimension>
+              <CubeDimensionID>Dim DATA 2</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Data</AttributeID>
+                  <EstimatedCount>10959</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>DATA</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ANO</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>MES</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>BIMESTRE</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>TRIMESTRE</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>SEMESTRE</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim DISCIPLINAS 1</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>COD DISCIPLINA</AttributeID>
+                  <EstimatedCount>10029</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>DESC DISCIPLINA</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>SIGLA DISCIPLINA</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>DESC DISCIPLINA SIMPLIFICADO</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Aggregations>
+            <Aggregation>
+              <ID>Aggregation 0</ID>
+              <Name>Aggregation 0</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 2</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim DISCIPLINAS 1</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+          </Aggregations>
+        </AggregationDesign>
+      </AggregationDesigns>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

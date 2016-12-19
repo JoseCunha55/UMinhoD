@@ -1,0 +1,367 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="37e32d68-5f6c-47dc-9f3d-41fd10638044" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Cubo Con_Eva_Desligados</ID>
+  <Name>Cubo Con_Eva_Desligados</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="8" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-7267" scrolltop="-235" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="24448" y="16235" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="Total_Aluno_Concluidos" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="4445" height="3747" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000a00005d110000a30e0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_Total_Aluno_Concluidos" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="Total_Aluno_Desligados" left="5934" top="5787" logicalid="2" controlid="2" masterid="0" hint1="0" hint2="0" width="4467" height="3747" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000a000073110000a30e0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_Total_Aluno_Desligados" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="FatoConEvaDesligado" left="465" top="6147" logicalid="3" controlid="3" masterid="0" hint1="0" hint2="0" width="3069" height="3027" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000a0000fd0b0000d30b0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_FatoConEvaDesligado" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="Total_Aluno_Evadidos" left="20" top="11574" logicalid="4" controlid="4" masterid="0" hint1="0" hint2="0" width="4975" height="3747" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000a00006f130000a30e0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_Total_Aluno_Evadidos" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="1293" top="3248" logicalid="5" controlid="5" masterid="0" hint1="0" hint2="0" width="1006" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[fk_Con]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="3" sourceattachpoint="5" destattachpoint="4" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="1692" y="3747" />
+              <point x="1692" y="4947" />
+              <point x="1999" y="4947" />
+              <point x="1999" y="6147" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="3234" top="7261" logicalid="6" controlid="6" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[fk_Des]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="3" sourceattachpoint="20" destattachpoint="15" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="5934" y="7660" />
+              <point x="3534" y="7660" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="1558" top="8874" logicalid="7" controlid="7" masterid="0" hint1="0" hint2="0" width="799" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[fk_Eva]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="3" sourceattachpoint="6" destattachpoint="5" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="1957" y="11574" />
+              <point x="1957" y="10374" />
+              <point x="1999" y="10374" />
+              <point x="1999" y="9174" />
+            </connector>
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-7267</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-235</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="a2e00613-1ac6-489f-892a-6b0794597d8c">
+      <ID>Total Aluno Desligados</ID>
+      <Name>Total Aluno Desligados</Name>
+      <DimensionID>Total Aluno Desligados</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="5f81654d-0147-4e1b-9546-f7fdb200ab27">
+          <AttributeID>Chave Alternativa</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="cb26f878-2505-4dfe-a1f9-c3117be01abf">
+          <AttributeID>Campus</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f275df49-dd18-41f5-a9a2-03ccee285b22">
+          <AttributeID>Sigla Do Curso</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="aa0f5fcf-87be-4740-b5d1-3f5026585f4e">
+          <AttributeID>Curso</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="44fd634c-1fcf-4c43-89eb-5cd6cb633ff8">
+          <AttributeID>Situacao</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a35bccd8-6586-4dc6-be85-a2083149be05">
+          <AttributeID>Ano Letivo</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0c2f9685-55ac-4021-9948-ca6e2e325513">
+          <AttributeID>Semestre Letivo</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="9a0b6207-3159-4d39-8f2b-0a6b2e9c0459">
+      <ID>Total Aluno Evadidos</ID>
+      <Name>Total Aluno Evadidos</Name>
+      <DimensionID>Total Aluno Evadidos</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="021f02fe-3f23-404a-9c56-e8d96c5e141b">
+          <AttributeID>Chave Alternativa</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4ceb55e9-b10b-4743-bcee-1b2e859c1582">
+          <AttributeID>Campus</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f16db40a-827e-43d3-8c3d-7dc67b9c49fd">
+          <AttributeID>Sigla Do Curso</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="26122b79-6025-4c2d-898a-66b76c1f7dbb">
+          <AttributeID>Curso</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a3219042-b09c-4aa2-b045-2ecd9e0ff8d9">
+          <AttributeID>Situacao</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a53ed437-2b79-455d-8337-49d58055aa13">
+          <AttributeID>Ano Letivo</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="6641bbd5-7456-4a1b-bf2c-e97a2c1efd4b">
+          <AttributeID>Semestre Letivo</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="7212ab3b-dd96-4ac9-bf9b-191e79495639">
+      <ID>Total Aluno Concluidos</ID>
+      <Name>Total Aluno Concluidos</Name>
+      <DimensionID>Total Aluno Concluidos</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="ab16b77f-f5df-4e43-92c0-ac2d50533a21">
+          <AttributeID>Chave Alternativa</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="53415717-527f-4e91-87f5-619976a888e0">
+          <AttributeID>Campus</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a1c71e28-b08b-475b-a9a6-480b21ab571e">
+          <AttributeID>Sigla Do Curso</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b774f62c-a4c7-49a4-9207-cda5f595953c">
+          <AttributeID>Curso</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="86d389b0-e76d-49fa-ac66-afe0874dffdc">
+          <AttributeID>Situacao</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a4396f7d-6d13-4187-99be-0754c9ac3f30">
+          <AttributeID>Ano Letivo</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0005d727-6cf4-4dd0-ac8c-1065aac4f272">
+          <AttributeID>Semestre Letivo</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="0069922b-8c08-43ab-ab65-9087f9fdded0">
+      <ID>Fato Con Eva Desligado</ID>
+      <Name>Fato Con Eva Desligado</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="17aa7a0b-e588-4aa2-8a15-595683ea852d">
+          <ID>Qtd Concluido</ID>
+          <Name>Qtd Concluido</Name>
+          <Source dwd:design-time-name="788e595f-8a82-4772-98f9-096b1f89d2e5">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="e7c82ef6-08e7-428b-a022-1d206831972c">
+              <TableID>dbo_FatoConEvaDesligado</TableID>
+              <ColumnID>Qtd_Concluido</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="a9a33910-4d1d-4a22-9f79-6d54ae6b0d9a">
+          <ID>Qtd Evadido</ID>
+          <Name>Qtd Evadido</Name>
+          <Source dwd:design-time-name="2ffe6319-e6b0-46ee-b9e5-cda3dec3e28d">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="c01c3464-cb19-421c-bf74-af66827c8518">
+              <TableID>dbo_FatoConEvaDesligado</TableID>
+              <ColumnID>Qtd_Evadido</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="71d77ba9-7987-41ed-a953-3f111e76f68f">
+          <ID>Qtd Desligado</ID>
+          <Name>Qtd Desligado</Name>
+          <Source dwd:design-time-name="d881a00d-818c-4661-ac0d-48d735bb47a1">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="21969ac1-a145-4d02-8680-8c5607a7dfa0">
+              <TableID>dbo_FatoConEvaDesligado</TableID>
+              <ColumnID>Qtd_Desligado</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="1790a737-1aef-448a-bc73-ea12327321a9">
+          <ID>Fato Con Eva Desligado Count</ID>
+          <Name>Fato Con Eva Desligado Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="d03d101e-b458-46de-bb9f-47eab5eda3c4">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="f1cb9f8b-305b-4a40-89aa-dccc0129cbd0">
+              <TableID>dbo_FatoConEvaDesligado</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="0b2170fd-c0d9-4988-ab10-c1fadab1533f">
+          <CubeDimensionID>Total Aluno Desligados</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="a6b080c5-a8a4-4d8a-8813-8f5d662cecd0">
+              <AttributeID>Chave Alternativa</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="c6ba9e04-bafa-48d8-8cf1-93a751d61312">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="3b6d1a78-e638-4e81-93cf-16ae6f264840">
+                    <TableID>dbo_FatoConEvaDesligado</TableID>
+                    <ColumnID>ChaveDes</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="be16a9a7-e4fc-49a1-8754-9aa38c4c7c8c">
+          <CubeDimensionID>Total Aluno Evadidos</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="b42bdb80-1e53-4c44-9284-a821283c9464">
+              <AttributeID>Chave Alternativa</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="d787e6be-45df-457e-b848-1178b8ce4ed1">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="32fe227f-2338-4019-8155-b12e4055324e">
+                    <TableID>dbo_FatoConEvaDesligado</TableID>
+                    <ColumnID>ChaveEva</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="91fc897c-5196-4f04-b364-09a9b5bb995e">
+          <CubeDimensionID>Total Aluno Concluidos</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="866b4942-3782-4c6d-9fcd-f32f349a6a8a">
+              <AttributeID>Chave Alternativa</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="6fbbb023-0585-4f93-bac6-6917204416ef">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="51db741e-a71e-413d-836b-60ea856669c3">
+                    <TableID>dbo_FatoConEvaDesligado</TableID>
+                    <ColumnID>ChaveCon</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="8c8c27e2-0224-4941-ab03-f6b2a29a55ac">
+    <DataSourceViewID>Con_Eva_Desligados</DataSourceViewID>
+  </Source>
+</Cube>

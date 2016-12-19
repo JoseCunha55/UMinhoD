@@ -1,0 +1,466 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="b61f3371-1ac4-4306-a671-a4f76b8a8d07" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Boletim Escolar</ID>
+  <Name>Boletim Escolar</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout>
+              <dds>
+                <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="16" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="62" scrolltop="-6561" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="93" x="26458" y="17304" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                  <font>
+                    <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+                  </font>
+                  <mouseicon>
+                    <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                  </mouseicon>
+                </diagram>
+                <layoutmanager>
+                  <ddsxmlobj />
+                </layoutmanager>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="FatoSituacaoAlunoCampusCursoAnoBE" left="9601" top="-996" logicalid="8" controlid="1" masterid="0" hint1="0" hint2="0" width="3995" height="4419" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000a00009b0f000043110000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dbo_FatoSituacaoAlunoCampusCursoAnoBE" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="dimBoletimEscolar" left="2845" top="-3272" logicalid="9" controlid="2" masterid="0" hint1="0" hint2="0" width="4128" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000a00002010000088130000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dbo_dimBoletimEscolar" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="dimCURSOS" left="3963" top="5833" logicalid="10" controlid="3" masterid="0" hint1="0" hint2="0" width="4842" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000a0000ea12000088130000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dbo_dimCURSOS" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="dimINSTITUICOES" left="16346" top="228" logicalid="11" controlid="4" masterid="0" hint1="0" hint2="0" width="6085" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000a0000c517000088130000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dbo_dimINSTITUICOES" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="6673" top="-836" logicalid="12" controlid="5" masterid="0" hint1="0" hint2="0" width="3228" height="914" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[dimBoletimEscolar-FatoSituacaoAlunoCampusCursoAnoBE]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="2" sourceattachpoint="14" destattachpoint="25" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="9601" y="-437" />
+                    <point x="8287" y="-437" />
+                    <point x="8287" y="-222" />
+                    <point x="6973" y="-222" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="13296" top="2464" logicalid="13" controlid="6" masterid="0" hint1="0" hint2="0" width="3350" height="1114" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[dimINSTITUICOES-FatoSituacaoAlunoCampusCursoAnoBE]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="4" sourceattachpoint="27" destattachpoint="32" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="13596" y="2863" />
+                    <point x="14103" y="2863" />
+                    <point x="14103" y="3278" />
+                    <point x="16346" y="3278" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="8505" top="2924" logicalid="14" controlid="7" masterid="0" hint1="0" hint2="0" width="1843" height="5159" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[dimCURSOS-FatoSituacaoAlunoCampusCursoAnoBE]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="3" sourceattachpoint="1" destattachpoint="25" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="9948" y="3423" />
+                    <point x="9948" y="7783" />
+                    <point x="8805" y="7783" />
+                  </connector>
+                </ddscontrol>
+              </dds>
+</DiagramLayout>
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>62</DiagramViewPortLeft>
+            <DiagramViewPortTop>-6561</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>93</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>DDS Educacional</DataSourceID>
+  <Schema>
+    <xs:schema id="Boletim_x0020_Escolar" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="Boletim_x0020_Escolar" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="f64989cd-84bd-4f6a-94cf-bc83245a45a1">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_FatoSituacaoAlunoCampusCursoAnoBE" msprop:design-time-name="1568b0d7-9b2c-4dcb-827b-e5878c7a41cc" msprop:FriendlyName="FatoSituacaoAlunoCampusCursoAnoBE" msprop:DbSchemaName="dbo" msprop:DbTableName="FatoSituacaoAlunoCampusCursoAnoBE" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Campus" msprop:design-time-name="d15be30f-d4f9-414d-a184-786741826527" msprop:DbColumnName="Campus" msprop:FriendlyName="Campus" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="35" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Curso" msprop:design-time-name="17207455-c3f6-4b77-a19d-017078967518" msprop:DbColumnName="Curso" msprop:FriendlyName="Curso" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="SiglaCurso" msprop:design-time-name="1984696a-1646-4889-8eb9-c35ba8668edd" msprop:DbColumnName="SiglaCurso" msprop:FriendlyName="SiglaCurso" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="AnoLetivo" msprop:design-time-name="475a2092-40f4-4f1c-9ed5-ce7c9ae831d5" msprop:DbColumnName="AnoLetivo" msprop:FriendlyName="AnoLetivo" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Boletim_ID" msprop:design-time-name="8833b662-f5e3-46f9-a64f-72f66fbfe346" msprop:DbColumnName="Boletim_ID" msprop:FriendlyName="Boletim_ID" type="xs:int" />
+                  <xs:element name="TotalAprovadoCCAB" msprop:design-time-name="ff377785-20ca-4f3b-b46f-d3d1ebf623e8" msprop:DbColumnName="TotalAprovadoCCAB" msprop:FriendlyName="TotalAprovadoCCAB" type="xs:int" minOccurs="0" />
+                  <xs:element name="TotalReprovadoCCAB" msprop:design-time-name="f4db13ab-48c9-4a5d-b499-4b6f3ac1fa6b" msprop:DbColumnName="TotalReprovadoCCAB" msprop:FriendlyName="TotalReprovadoCCAB" type="xs:int" minOccurs="0" />
+                  <xs:element name="TotalTrancadaCCAB" msprop:design-time-name="3166c9fb-a70c-4199-8819-6030be98fd31" msprop:DbColumnName="TotalTrancadaCCAB" msprop:FriendlyName="TotalTrancadaCCAB" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_dimBoletimEscolar" msprop:design-time-name="a9a428d2-d867-41ab-9993-85143a2ca7fa" msprop:IsLogical="True" msprop:FriendlyName="dimBoletimEscolar" msprop:DbTableName="dimBoletimEscolar" msprop:TableType="View" msprop:QueryDefinition="SELECT        Boletim_ID, Matricula, AnoLetivo, PeriodoLetivo, Curso, Turma, Campus, Situacao, PercentualFrequencia, SiglaCurso, CoeficienteRendimento, Frequencia, Rendimento, MediaFinal&#xD;&#xA;FROM            dimBoletimEscolar" msprop:QueryBuilder="SpecificQueryBuilder">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Boletim_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="fce4a386-ccbc-4be0-ae44-344e4971084f" msprop:DbColumnName="Boletim_ID" msprop:FriendlyName="Boletim_ID" type="xs:int" minOccurs="0" />
+                  <xs:element name="Matricula" msprop:design-time-name="7922494c-deba-410a-9bc0-06d86a68a835" msprop:DbColumnName="Matricula" msprop:FriendlyName="Matricula" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="AnoLetivo" msprop:design-time-name="e1aa9071-cbc1-437e-adb2-1d18ab20cf70" msprop:DbColumnName="AnoLetivo" msprop:FriendlyName="AnoLetivo" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="4" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PeriodoLetivo" msprop:design-time-name="f7e8fdf3-af3e-483e-891d-1dc89b708f11" msprop:DbColumnName="PeriodoLetivo" msprop:FriendlyName="PeriodoLetivo" type="xs:int" minOccurs="0" />
+                  <xs:element name="Curso" msprop:design-time-name="3724a2b9-6f0a-4a32-a123-218d78122f5f" msprop:DbColumnName="Curso" msprop:FriendlyName="Curso" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Turma" msprop:design-time-name="d5759f7a-3d2d-4f31-a2c1-4636fcba08b2" msprop:DbColumnName="Turma" msprop:FriendlyName="Turma" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="30" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Campus" msprop:design-time-name="5279f6e3-a136-4d66-b652-67d181f06a2f" msprop:DbColumnName="Campus" msprop:FriendlyName="Campus" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="35" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Situacao" msprop:design-time-name="ca9f5801-64fc-47e2-a0d0-8681fb533f4a" msprop:DbColumnName="Situacao" msprop:FriendlyName="Situacao" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PercentualFrequencia" msprop:design-time-name="bc7bfb18-e0ca-45e9-be28-26acf1a5534f" msprop:DbColumnName="PercentualFrequencia" msprop:FriendlyName="PercentualFrequencia" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="SiglaCurso" msprop:design-time-name="c0e47472-9fd3-4cab-b98b-d6a59d016ae8" msprop:DbColumnName="SiglaCurso" msprop:FriendlyName="SiglaCurso" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CoeficienteRendimento" msprop:design-time-name="37565ed7-c9d0-4bdc-8144-79bba5a3366a" msprop:DbColumnName="CoeficienteRendimento" msprop:FriendlyName="CoeficienteRendimento" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Frequencia" msprop:design-time-name="20c5978c-f78c-446b-b9ca-6e18fcda6da5" msprop:DbColumnName="Frequencia" msprop:FriendlyName="Frequencia" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="Rendimento" msprop:design-time-name="4dd25f87-0cf8-4e09-bcf8-52d0a7fb146a" msprop:DbColumnName="Rendimento" msprop:FriendlyName="Rendimento" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="MediaFinal" msprop:design-time-name="b2b18473-0a76-4082-bfc6-b3a17051764b" msprop:DbColumnName="MediaFinal" msprop:FriendlyName="MediaFinal" type="xs:decimal" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_dimCURSOS" msprop:design-time-name="6b80af72-eed2-413e-9be6-42c7614e734f" msprop:FriendlyName="dimCURSOS" msprop:DbSchemaName="dbo" msprop:DbTableName="dimCURSOS" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="COD_CURSO" msprop:design-time-name="3269e7a5-ef6d-4765-b11d-14b853540f1c" msprop:DbColumnName="COD_CURSO" msprop:FriendlyName="COD_CURSO">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="COD_TURNO" msprop:design-time-name="89ea5121-d108-4a63-a9ea-ca2f9a7ffae9" msprop:DbColumnName="COD_TURNO" msprop:FriendlyName="COD_TURNO">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="5" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="COD_INSTITUICAO" msprop:design-time-name="67557dbd-b094-412f-938a-0099af376c05" msprop:DbColumnName="COD_INSTITUICAO" msprop:FriendlyName="COD_INSTITUICAO" type="xs:int" />
+                  <xs:element name="COD_TIPO_CURSO" msprop:design-time-name="6b4920ef-86e1-4d6a-a990-08e74fda3287" msprop:DbColumnName="COD_TIPO_CURSO" msprop:FriendlyName="COD_TIPO_CURSO" type="xs:short" />
+                  <xs:element name="COD_CURSO_HABILITADO" msprop:design-time-name="e5f94141-c714-4079-9673-9ed72606267f" msprop:DbColumnName="COD_CURSO_HABILITADO" msprop:FriendlyName="COD_CURSO_HABILITADO" type="xs:short" />
+                  <xs:element name="DESC_CURSO" msprop:design-time-name="0cdbde7f-8433-4f93-8a9b-327eecd39ef4" msprop:DbColumnName="DESC_CURSO" msprop:FriendlyName="DESC_CURSO">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="SIGLA_CURSO" msprop:design-time-name="052c35f3-3f87-4934-8248-26730acf7be8" msprop:DbColumnName="SIGLA_CURSO" msprop:FriendlyName="SIGLA_CURSO">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="15" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DESC_HISTORICO" msprop:design-time-name="5f3875b2-31f2-4949-a964-15146074fd60" msprop:DbColumnName="DESC_HISTORICO" msprop:FriendlyName="DESC_HISTORICO">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="COD_CURSO_MATRICULA" msprop:design-time-name="eff873e5-d8c8-4458-8f91-ee9817635615" msprop:DbColumnName="COD_CURSO_MATRICULA" msprop:FriendlyName="COD_CURSO_MATRICULA">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DT_INICIO" msprop:design-time-name="1a5fe917-4a98-41b6-9018-2db48190a215" msprop:DbColumnName="DT_INICIO" msprop:FriendlyName="DT_INICIO" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="COD_DEPARTAMENTO" msprop:design-time-name="f9676734-37fe-4c84-8c0c-8cd56e3661dd" msprop:DbColumnName="COD_DEPARTAMENTO" msprop:FriendlyName="COD_DEPARTAMENTO" type="xs:short" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_dimINSTITUICOES" msprop:design-time-name="4fa17e9d-4718-4fec-bead-d765fed21a76" msprop:FriendlyName="dimINSTITUICOES" msprop:DbSchemaName="dbo" msprop:DbTableName="dimINSTITUICOES" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="COD_INSTITUICAO" msprop:design-time-name="19011257-bdf8-4205-82ba-c0f9306c7f05" msprop:DbColumnName="COD_INSTITUICAO" msprop:FriendlyName="COD_INSTITUICAO">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="35" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DESC_INSTITUICAO" msprop:design-time-name="afd9264d-819c-481e-ae8c-39b4022f81b5" msprop:DbColumnName="DESC_INSTITUICAO" msprop:FriendlyName="DESC_INSTITUICAO">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="TIPO_INSTITUICAO" msprop:design-time-name="0dfb3e70-90e6-406a-87c8-821432bff06a" msprop:DbColumnName="TIPO_INSTITUICAO" msprop:FriendlyName="TIPO_INSTITUICAO" type="xs:unsignedByte" />
+                  <xs:element name="SIGLA_INSTITUICAO" msprop:design-time-name="b4179677-0860-4f02-a0e9-91530d5e0ee8" msprop:DbColumnName="SIGLA_INSTITUICAO" msprop:FriendlyName="SIGLA_INSTITUICAO" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ENDERECO" msprop:design-time-name="64f79e14-26f3-42f6-bbf2-0f9bc972986a" msprop:DbColumnName="ENDERECO" msprop:FriendlyName="ENDERECO" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="COD_CIDADE" msprop:design-time-name="01babca2-84be-479f-981f-721a64b584b0" msprop:DbColumnName="COD_CIDADE" msprop:FriendlyName="COD_CIDADE" type="xs:short" minOccurs="0" />
+                  <xs:element name="NUMERO" msprop:design-time-name="7c67733d-84ae-45f4-842a-4ec487c0369a" msprop:DbColumnName="NUMERO" msprop:FriendlyName="NUMERO" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="COMPLEMENTO" msprop:design-time-name="4ca448ac-7c89-4532-be88-3e4febe7383c" msprop:DbColumnName="COMPLEMENTO" msprop:FriendlyName="COMPLEMENTO" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CEP" msprop:design-time-name="d6e8fbb1-9a4e-4deb-b07f-b4c743b8d786" msprop:DbColumnName="CEP" msprop:FriendlyName="CEP" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="BAIRRO" msprop:design-time-name="d17cfc64-c320-4cc8-ab56-58d242b048b4" msprop:DbColumnName="BAIRRO" msprop:FriendlyName="BAIRRO" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="70" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DESC_CARGO_DIRETOR" msprop:design-time-name="adb717e9-c57e-4558-8d5b-815e53c725ea" msprop:DbColumnName="DESC_CARGO_DIRETOR" msprop:FriendlyName="DESC_CARGO_DIRETOR" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="70" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="AUTORIZACAO" msprop:design-time-name="ae1f9387-dc24-49e2-abab-a006ca2e65d6" msprop:DbColumnName="AUTORIZACAO" msprop:FriendlyName="AUTORIZACAO" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="500" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CNPJ_INSTITUICAO" msprop:design-time-name="0cf85201-ca04-4e93-ba4d-03bdbab3a19c" msprop:DbColumnName="CNPJ_INSTITUICAO" msprop:FriendlyName="CNPJ_INSTITUICAO" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="18" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CERTIFICA_ENEM" msprop:design-time-name="e01c5926-2c34-4bbb-a578-b1f8e40094fb" msprop:DbColumnName="CERTIFICA_ENEM" msprop:FriendlyName="CERTIFICA_ENEM" type="xs:unsignedByte" />
+                  <xs:element name="LEI_ATUAL_CRIACAO_INSTITUICAO" msprop:design-time-name="6ff1a093-41c4-43a1-a92b-584f41efa6b2" msprop:DbColumnName="LEI_ATUAL_CRIACAO_INSTITUICAO" msprop:FriendlyName="LEI_ATUAL_CRIACAO_INSTITUICAO" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="4000" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="FAX" msprop:design-time-name="3325985e-1abb-4e50-bd38-8ede15a8cb40" msprop:DbColumnName="FAX" msprop:FriendlyName="FAX" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="TELEFONE" msprop:design-time-name="3438ac1a-1362-4376-904b-7e3cf2a8acfb" msprop:DbColumnName="TELEFONE" msprop:FriendlyName="TELEFONE" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msprop:IsLogical="True" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_FatoSituacaoAlunoCampusCursoAnoBE" />
+          <xs:field xpath="Boletim_ID" />
+        </xs:unique>
+        <xs:unique name="dbo_dimBoletimEscolar_Constraint1" msdata:ConstraintName="Constraint1" msprop:IsLogical="True" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_dimBoletimEscolar" />
+          <xs:field xpath="Boletim_ID" />
+        </xs:unique>
+        <xs:unique name="dbo_dimCURSOS_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_dimCURSOS" />
+          <xs:field xpath="COD_CURSO" />
+        </xs:unique>
+        <xs:unique name="dbo_dimINSTITUICOES_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_dimINSTITUICOES" />
+          <xs:field xpath="COD_INSTITUICAO" />
+        </xs:unique>
+      </xs:element>
+      <xs:annotation>
+        <xs:appinfo>
+          <msdata:Relationship name="dimBoletimEscolar-FatoSituacaoAlunoCampusCursoAnoBE" msdata:parent="dbo_FatoSituacaoAlunoCampusCursoAnoBE" msdata:child="dbo_dimBoletimEscolar" msdata:parentkey="Boletim_ID" msdata:childkey="Boletim_ID" msprop:Description="" msprop:IsLogical="True" />
+          <msdata:Relationship name="dimINSTITUICOES-FatoSituacaoAlunoCampusCursoAnoBE" msdata:parent="dbo_FatoSituacaoAlunoCampusCursoAnoBE" msdata:child="dbo_dimINSTITUICOES" msdata:parentkey="Campus" msdata:childkey="COD_INSTITUICAO" msprop:IsLogical="True" msprop:Description="" />
+          <msdata:Relationship name="dimCURSOS-FatoSituacaoAlunoCampusCursoAnoBE" msdata:parent="dbo_FatoSituacaoAlunoCampusCursoAnoBE" msdata:child="dbo_dimCURSOS" msdata:parentkey="Curso" msdata:childkey="COD_CURSO" msprop:IsLogical="True" msprop:Description="" />
+        </xs:appinfo>
+      </xs:annotation>
+    </xs:schema>
+    <Boletim_x0020_Escolar xmlns="" />
+  </Schema>
+</DataSourceView>

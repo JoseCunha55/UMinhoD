@@ -1,0 +1,256 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="d0c76d53-dff6-49c2-a602-d78d90082bde" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Cubo Con_Eva_Desligados_DM</ID>
+  <Name>Cubo Con_Eva_Desligados_DM</Name>
+  <CreatedTimestamp>0001-01-01T03:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T03:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T03:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="2b8bb37a-ca45-4b4a-b700-bddb0c790769">
+      <ID>Total Aluno Desligados</ID>
+      <Name>Total Aluno Desligados</Name>
+      <DimensionID>Total Aluno Desligados</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="71ebfb37-6e7b-440f-8eda-af9427357856">
+          <AttributeID>Chave Alternativa</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="1774d20f-16ca-4d0f-ad12-e288cd81dec6">
+          <AttributeID>Campus</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f6db0037-977b-4501-8dfe-716e5a89e2cc">
+          <AttributeID>Sigla Do Curso</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="fba4499d-b507-48fd-8898-181fc77d3f3d">
+          <AttributeID>Curso</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="3fe384e3-2818-46fb-b6d3-8bb8869e15d0">
+          <AttributeID>Situacao</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="527577fe-5829-4c2c-9508-87ecb3c4451b">
+          <AttributeID>Ano Letivo</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a7bbc49c-b641-490e-9882-2dd3b8a32ae7">
+          <AttributeID>Semestre Letivo</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="6dc2b34e-22c4-4604-a242-91274facd902">
+      <ID>Total Aluno Evadidos</ID>
+      <Name>Total Aluno Evadidos</Name>
+      <DimensionID>Total Aluno Evadidos</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="095d35e9-ea8d-4aac-b861-88d9a51b9d1a">
+          <AttributeID>Chave Alternativa</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5c80fadc-31eb-4b6b-9e34-4be734df21b3">
+          <AttributeID>Campus</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c544d11e-9f1c-48bf-a63c-f22b93e7aee2">
+          <AttributeID>Sigla Do Curso</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a7861d13-47d7-4877-805e-05348c168b58">
+          <AttributeID>Curso</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a1b1532b-5a7f-4a83-89bc-b6c5a08f2731">
+          <AttributeID>Situacao</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="953a6b96-41ef-4109-a612-a731a9b083db">
+          <AttributeID>Ano Letivo</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="cf4068cb-1902-4f7f-a590-b3929a07c716">
+          <AttributeID>Semestre Letivo</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="fa09de88-1f84-408c-a053-9351d3bdcc74">
+      <ID>Total Aluno Concluidos</ID>
+      <Name>Total Aluno Concluidos</Name>
+      <DimensionID>Total Aluno Concluidos</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="19fc7600-667f-4070-a4f0-25835d454a8c">
+          <AttributeID>Chave Alternativa</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f2f58bc2-75fc-4ddc-8dae-bd04de2288e2">
+          <AttributeID>Campus</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f6b4bb14-a735-4f82-b9d2-09e8a6342da7">
+          <AttributeID>Sigla Do Curso</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b7eb7ad8-e33b-492c-b08e-d70ee816c393">
+          <AttributeID>Curso</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8ff2f4bf-1074-4b39-afe6-b1c3345ea779">
+          <AttributeID>Situacao</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="62218114-571c-407c-a2eb-de65a795dd26">
+          <AttributeID>Ano Letivo</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4a920747-6daf-4869-99f8-a0e148a894a5">
+          <AttributeID>Semestre Letivo</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="89500c38-fd50-42ec-945e-0371d6582979">
+      <ID>Fato Con Eva Desligado</ID>
+      <Name>Fato Con Eva Desligado</Name>
+      <CreatedTimestamp>0001-01-01T03:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T03:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T03:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="f927a625-aebc-4015-bebd-f30b881eac3d">
+          <ID>Qtd Concluido</ID>
+          <Name>Qtd Concluido</Name>
+          <Source dwd:design-time-name="25356956-eb65-4388-91ff-36ac0044d7ac">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="fa07c42a-aa84-45ce-9a8a-e777ec9e667c">
+              <TableID>dbo_FatoConEvaDesligado</TableID>
+              <ColumnID>Qtd_Concluido</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="cf214139-d42b-492a-a2cc-d9b04e6d310e">
+          <ID>Qtd Evadido</ID>
+          <Name>Qtd Evadido</Name>
+          <Source dwd:design-time-name="bc95a420-475e-4814-861e-9f7c49a77de8">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="3bb71795-9dbd-4fb8-bfb9-e52ed13e4187">
+              <TableID>dbo_FatoConEvaDesligado</TableID>
+              <ColumnID>Qtd_Evadido</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="851a2640-5424-4381-8418-706b07457e3a">
+          <ID>Qtd Desligado</ID>
+          <Name>Qtd Desligado</Name>
+          <Source dwd:design-time-name="6b312b06-580e-4b24-85d8-587444c9304a">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="65c83c7c-e6d6-4035-8553-786e510ba4ed">
+              <TableID>dbo_FatoConEvaDesligado</TableID>
+              <ColumnID>Qtd_Desligado</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="5d890bc8-637c-4537-bd17-2eb3574bf5d2">
+          <ID>Fato Con Eva Desligado Count</ID>
+          <Name>Fato Con Eva Desligado Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="da59dc2d-7603-4b7a-8a95-803c697e1a9b">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="3572ea7d-915d-4cdc-b55d-8b3cecd08ca5">
+              <TableID>dbo_FatoConEvaDesligado</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <Source dwd:design-time-name="2b0e1d2a-c85c-4512-91bd-71b941bbe043">
+        <DataSourceID>.</DataSourceID>
+        <CubeID>Cubo Con_Eva_Desligados</CubeID>
+        <MeasureGroupID>Fato Con Eva Desligado</MeasureGroupID>
+        <Persistence>Metadata</Persistence>
+        <RefreshInterval>PT1S</RefreshInterval>
+      </Source>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="080d746e-bed3-4cde-862d-4f0401a39adf">
+          <CubeDimensionID>Total Aluno Desligados</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="3fbdb3da-a71a-4b07-8331-659258d8ba67">
+              <AttributeID>Chave Alternativa</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="783aef13-adce-4706-a471-0d06efbd0efb">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="2e4c4fe8-e200-4bea-9718-5b29dcb7db35">
+                    <TableID>dbo_FatoConEvaDesligado</TableID>
+                    <ColumnID>ChaveDes</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="8fcb08a5-dce5-4f8b-9f5c-64a43551cc02">
+          <CubeDimensionID>Total Aluno Evadidos</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="bb24025e-2c43-49a0-b06c-40a01a4124dc">
+              <AttributeID>Chave Alternativa</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="94f0b147-9fbe-4fa6-b14d-35dbd0d0bcdc">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="2c7f21f0-e741-403d-ba8d-e7ad61f0fd67">
+                    <TableID>dbo_FatoConEvaDesligado</TableID>
+                    <ColumnID>ChaveEva</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="06b40637-e81a-4f6e-af03-5d1882646918">
+          <CubeDimensionID>Total Aluno Concluidos</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="2273db2f-e7b8-4637-95fa-8a477db629e8">
+              <AttributeID>Chave Alternativa</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="5af32f65-4901-4841-8c0d-df5136919a75">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="037a8de4-2eec-4e96-8d94-36cf146e8ed1">
+                    <TableID>dbo_FatoConEvaDesligado</TableID>
+                    <ColumnID>ChaveCon</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="a9be02e8-611c-4418-8356-df4cb3565b0c">
+    <DataSourceViewID>Con_Eva_Desligados</DataSourceViewID>
+  </Source>
+</Cube>

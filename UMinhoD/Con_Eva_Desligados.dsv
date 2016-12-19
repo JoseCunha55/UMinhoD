@@ -1,0 +1,204 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="00c03df3-846f-40fe-b92c-4d87b5ea4532" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Con_Eva_Desligados</ID>
+  <Name>Con_Eva_Desligados</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>DDS Educacional</DataSourceID>
+  <Schema>
+    <xs:schema id="Con_Eva_Desligados" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="Con_Eva_Desligados" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="05b8e614-f108-4307-b9aa-0aacb3c5cdac">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_FatoConEvaDesligado" msprop:design-time-name="a36b0e8b-0273-4520-aa0a-e151894ab51e" msprop:DbTableName="FatoConEvaDesligado" msprop:FriendlyName="FatoConEvaDesligado" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ChaveCon" msprop:design-time-name="65486137-0e40-4659-8723-21d6ea95729b" msprop:DbColumnName="ChaveCon" msprop:FriendlyName="ChaveCon" type="xs:int" />
+                  <xs:element name="ChaveEva" msprop:design-time-name="261905d5-a0b8-4d95-af1a-584b572bd1e1" msprop:DbColumnName="ChaveEva" msprop:FriendlyName="ChaveEva" type="xs:int" />
+                  <xs:element name="ChaveDes" msprop:design-time-name="089c7545-d9e6-4992-9142-9bd45a8c8918" msprop:DbColumnName="ChaveDes" msprop:FriendlyName="ChaveDes" type="xs:int" />
+                  <xs:element name="Qtd_Concluido" msprop:design-time-name="4b6c2243-e781-43c0-8e85-a79a2baba991" msprop:DbColumnName="Qtd_Concluido" msprop:FriendlyName="Qtd_Concluido" type="xs:int" />
+                  <xs:element name="Qtd_Evadido" msprop:design-time-name="285d5b32-f1b3-4303-bae9-e7a7ad36fa99" msprop:DbColumnName="Qtd_Evadido" msprop:FriendlyName="Qtd_Evadido" type="xs:int" />
+                  <xs:element name="Qtd_Desligado" msprop:design-time-name="104d49da-1f0d-4f8c-9b75-31e22970f457" msprop:DbColumnName="Qtd_Desligado" msprop:FriendlyName="Qtd_Desligado" type="xs:int" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Total_Aluno_Concluidos" msprop:design-time-name="dd66f83a-b8cf-4455-a2e4-ef80476af169" msprop:DbTableName="Total_Aluno_Concluidos" msprop:FriendlyName="Total_Aluno_Concluidos" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Chave_Alternativa" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="a79c9870-6ae8-49a4-bfca-eb08af1ee1a6" msprop:DbColumnName="Chave_Alternativa" msprop:FriendlyName="Chave_Alternativa" type="xs:int" />
+                  <xs:element name="Campus" msprop:design-time-name="c0638740-f90f-4aa8-8cbd-7592d879f034" msprop:DbColumnName="Campus" msprop:FriendlyName="Campus">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Sigla_Do_Curso" msprop:design-time-name="0fd607d7-5e4a-4bd2-9337-7fdc38940003" msprop:DbColumnName="Sigla_Do_Curso" msprop:FriendlyName="Sigla_Do_Curso">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="15" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Curso" msprop:design-time-name="a2b8faa8-b280-4adb-a129-b9f0997438d2" msprop:DbColumnName="Curso" msprop:FriendlyName="Curso" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="300" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Situacao" msprop:design-time-name="d8429338-c65f-4577-a0a5-7f299e2e0fa8" msprop:DbColumnName="Situacao" msprop:FriendlyName="Situacao">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Ano_Letivo" msprop:design-time-name="0124b923-46f3-4af7-9e72-cf1a8a34d572" msprop:DbColumnName="Ano_Letivo" msprop:FriendlyName="Ano_Letivo" type="xs:short" />
+                  <xs:element name="Semestre_Letivo" msprop:design-time-name="05836152-010f-4df9-b316-7b2b166e8c3a" msprop:DbColumnName="Semestre_Letivo" msprop:FriendlyName="Semestre_Letivo" type="xs:unsignedByte" />
+                  <xs:element name="QTD_Concluido" msprop:design-time-name="821202e7-8764-4613-a5d0-4eaebb352327" msprop:DbColumnName="QTD_Concluido" msprop:FriendlyName="QTD_Concluido" type="xs:int" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Total_Aluno_Evadidos" msprop:design-time-name="37752b2c-abe7-4f6c-9a28-8dea3b7d2917" msprop:DbTableName="Total_Aluno_Evadidos" msprop:FriendlyName="Total_Aluno_Evadidos" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Chave_Alternativa" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="8f0561dd-82be-4a43-b5bf-d96d26ae4de1" msprop:DbColumnName="Chave_Alternativa" msprop:FriendlyName="Chave_Alternativa" type="xs:int" />
+                  <xs:element name="Campus" msprop:design-time-name="30ba7aef-9954-4c8a-b58d-3852a15e7cbe" msprop:DbColumnName="Campus" msprop:FriendlyName="Campus">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Sigla_Do_Curso" msprop:design-time-name="8099ff5b-80b5-42f5-814e-1b61719a1a30" msprop:DbColumnName="Sigla_Do_Curso" msprop:FriendlyName="Sigla_Do_Curso">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="15" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Curso" msprop:design-time-name="b5f46683-8ace-4c0e-a466-c6b7dfa4c7be" msprop:DbColumnName="Curso" msprop:FriendlyName="Curso" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="300" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Situacao" msprop:design-time-name="23dcca6c-26ee-435f-9f9f-b48ef6f9c433" msprop:DbColumnName="Situacao" msprop:FriendlyName="Situacao">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Ano_Letivo" msprop:design-time-name="2646665e-b597-4180-b456-0680db261af0" msprop:DbColumnName="Ano_Letivo" msprop:FriendlyName="Ano_Letivo" type="xs:short" />
+                  <xs:element name="Semestre_Letivo" msprop:design-time-name="46920c12-c61d-444e-a5fa-a36236d77f0a" msprop:DbColumnName="Semestre_Letivo" msprop:FriendlyName="Semestre_Letivo" type="xs:unsignedByte" />
+                  <xs:element name="QTD_Evadido" msprop:design-time-name="c6c6d5ae-8fea-424a-ada6-820942fce313" msprop:DbColumnName="QTD_Evadido" msprop:FriendlyName="QTD_Evadido" type="xs:int" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Total_Aluno_Desligados" msprop:design-time-name="0c1a462d-9850-4b14-8d39-1b79f2db31a3" msprop:DbTableName="Total_Aluno_Desligados" msprop:FriendlyName="Total_Aluno_Desligados" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Chave_Alternativa" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="c40280ef-434c-4260-b6a3-810b53d1187a" msprop:DbColumnName="Chave_Alternativa" msprop:FriendlyName="Chave_Alternativa" type="xs:int" />
+                  <xs:element name="Campus" msprop:design-time-name="6a2e8a08-c92e-4967-a6f1-823179061edc" msprop:DbColumnName="Campus" msprop:FriendlyName="Campus">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Sigla_Do_Curso" msprop:design-time-name="d9d94e99-1d80-4be6-9783-c79b55d5c86f" msprop:DbColumnName="Sigla_Do_Curso" msprop:FriendlyName="Sigla_Do_Curso">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="15" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Curso" msprop:design-time-name="49f5e354-97af-4b4a-aae3-4208f2737da5" msprop:DbColumnName="Curso" msprop:FriendlyName="Curso" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="300" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Situacao" msprop:design-time-name="1fbb6b7a-5349-4049-a309-fd6804758ee4" msprop:DbColumnName="Situacao" msprop:FriendlyName="Situacao">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Ano_Letivo" msprop:design-time-name="1f59622b-7a60-44cf-9e13-0cdcf57ce1ca" msprop:DbColumnName="Ano_Letivo" msprop:FriendlyName="Ano_Letivo" type="xs:short" />
+                  <xs:element name="Semestre_Letivo" msprop:design-time-name="adb68688-ee13-4c44-bc8f-8f02d66f92f6" msprop:DbColumnName="Semestre_Letivo" msprop:FriendlyName="Semestre_Letivo" type="xs:unsignedByte" />
+                  <xs:element name="QTD_Desligado" msprop:design-time-name="c00ba922-63fa-4c2e-8022-cf023bc085d4" msprop:DbColumnName="QTD_Desligado" msprop:FriendlyName="QTD_Desligado" type="xs:int" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Total_Aluno_Concluidos" />
+          <xs:field xpath="Chave_Alternativa" />
+        </xs:unique>
+        <xs:unique name="dbo_Total_Aluno_Evadidos_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Total_Aluno_Evadidos" />
+          <xs:field xpath="Chave_Alternativa" />
+        </xs:unique>
+        <xs:unique name="dbo_Total_Aluno_Desligados_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Total_Aluno_Desligados" />
+          <xs:field xpath="Chave_Alternativa" />
+        </xs:unique>
+        <xs:keyref name="fk_Con" refer="Constraint1">
+          <xs:selector xpath=".//dbo_FatoConEvaDesligado" />
+          <xs:field xpath="ChaveCon" />
+        </xs:keyref>
+        <xs:keyref name="fk_Eva" refer="dbo_Total_Aluno_Evadidos_Constraint1">
+          <xs:selector xpath=".//dbo_FatoConEvaDesligado" />
+          <xs:field xpath="ChaveEva" />
+        </xs:keyref>
+        <xs:keyref name="fk_Des" refer="dbo_Total_Aluno_Desligados_Constraint1">
+          <xs:selector xpath=".//dbo_FatoConEvaDesligado" />
+          <xs:field xpath="ChaveDes" />
+        </xs:keyref>
+      </xs:element>
+    </xs:schema>
+    <Con_Eva_Desligados xmlns="" />
+  </Schema>
+</DataSourceView>

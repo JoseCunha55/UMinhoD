@@ -1,0 +1,118 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="4d18209b-a5c9-4639-b8c9-4eb4264e99d8" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Cubo Dados Professor</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>Fato Aprovados Reprovados Prof Ano</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="7ddbefad-5b51-4305-bf04-2181b6726bca">
+          <ID>Fato Aprovados Reprovados Prof Ano</ID>
+          <Name>Fato Aprovados Reprovados Prof Ano</Name>
+          <CreatedTimestamp>0001-01-01T02:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T02:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T02:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="c85419bc-592c-4a22-bfbd-fbc6011ac36b">
+            <DataSourceViewID>Dados Professor</DataSourceViewID>
+            <TableID>dbo_FatoAprovadosReprovadosProfAno</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <EstimatedRows>9083</EstimatedRows>
+          <AggregationDesignID>AggregationDesign</AggregationDesignID>
+        </Partition>
+      </Partitions>
+      <AggregationDesigns>
+        <AggregationDesign>
+          <ID>AggregationDesign</ID>
+          <Name>AggregationDesign</Name>
+          <CreatedTimestamp>2016-03-02T14:20:34.273333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2016-03-02T14:20:34.273333Z</LastSchemaUpdate>
+          <EstimatedRows>9083</EstimatedRows>
+          <Dimensions>
+            <Dimension>
+              <CubeDimensionID>Dim DATA 3</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Data</AttributeID>
+                  <EstimatedCount>10959</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>DATA</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ANO</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>MES</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>BIMESTRE</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>TRIMESTRE</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>SEMESTRE</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim PROFESSORES</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>COD PROFESSOR</AttributeID>
+                  <EstimatedCount>3185</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>COD PESSOA</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>NOME USUAL</AttributeID>
+                  <EstimatedCount>2464</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>COD GRAU INSTRUCAO</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>TIPO REGIME TRABALHO</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Aggregations>
+            <Aggregation>
+              <ID>Aggregation 0</ID>
+              <Name>Aggregation 0</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 3</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim PROFESSORES</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1</ID>
+              <Name>Aggregation 1</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim DATA 3</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim PROFESSORES</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>NOME USUAL</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+          </Aggregations>
+        </AggregationDesign>
+      </AggregationDesigns>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

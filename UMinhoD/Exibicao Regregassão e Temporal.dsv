@@ -1,0 +1,124 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="228f1a59-408b-474a-ba79-43c859141e97" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Exibicao Regregassão e Temporal</ID>
+  <Name>Exibicao Regregassão e Temporal</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout>
+              <dds>
+                <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-11410" scrolltop="-6231" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="27199" y="17463" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                  <font>
+                    <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
+                  </font>
+                  <mouseicon>
+                    <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                  </mouseicon>
+                </diagram>
+                <layoutmanager>
+                  <ddsxmlobj />
+                </layoutmanager>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="TB_Regressao_E_Temporal" left="0" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="4339" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000a0000f310000088130000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dbo_TB_Regressao_E_Temporal" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+              </dds>
+</DiagramLayout>
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>-11410</DiagramViewPortLeft>
+            <DiagramViewPortTop>-6231</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>DDS Educacional</DataSourceID>
+  <Schema>
+    <xs:schema id="Exibicao_x0020_Regregassão_x0020_e_x0020_Temporal" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="Exibicao_x0020_Regregassão_x0020_e_x0020_Temporal" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="54bf7cdf-dade-433b-b058-7bfd2d901971">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_TB_Regressao_E_Temporal" msprop:design-time-name="2f046975-e81a-40b8-aede-f9526b445be6" msprop:IsLogical="True" msprop:FriendlyName="TB_Regressao_E_Temporal" msprop:DbTableName="TB_Regressao_E_Temporal" msprop:TableType="View" msprop:QueryDefinition="SELECT Codigo_Campus, Codigo_Curso, Idade, Matricula, Ano, Codigo_Disciplina, Coeficiente_Rendimento, Semestre, Media_Final, Aulas_Dadas, Faltas, Renda_Familiar, Forma_De_Ingresso, SituacaoI, SituacaoII, &#xD;&#xA;                  Area_Escola_Origem, Etnia, Reside_Com, Sexo, Escola_Origem, chave_alternativa&#xD;&#xA;FROM     TB_Regressao_E_Temporal" msprop:QueryBuilder="SpecificQueryBuilder">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Codigo_Campus" msprop:design-time-name="49a72e78-71ea-4295-8a0c-e593dd09ab11" msprop:DbColumnName="Codigo_Campus" msprop:FriendlyName="Codigo_Campus" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="35" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Codigo_Curso" msprop:design-time-name="428c7105-9596-4cb5-84de-aa0b73f2fffc" msprop:DbColumnName="Codigo_Curso" msprop:FriendlyName="Codigo_Curso" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Idade" msprop:design-time-name="7d9326b8-2db2-461f-b931-6a39588d1c55" msprop:DbColumnName="Idade" msprop:FriendlyName="Idade" type="xs:int" minOccurs="0" />
+                  <xs:element name="Matricula" msprop:design-time-name="ecacc563-d385-4034-8f9b-7625a048bf92" msprop:DbColumnName="Matricula" msprop:FriendlyName="Matricula" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Ano" msprop:design-time-name="a3581510-ed5b-4fc8-9c5e-db07d5a93ba3" msprop:DbColumnName="Ano" msprop:FriendlyName="Ano" type="xs:short" minOccurs="0" />
+                  <xs:element name="Codigo_Disciplina" msprop:design-time-name="47cad0cd-b275-4fe0-a12a-2836022ffe53" msprop:DbColumnName="Codigo_Disciplina" msprop:FriendlyName="Codigo_Disciplina" type="xs:int" minOccurs="0" />
+                  <xs:element name="Coeficiente_Rendimento" msprop:design-time-name="411d02f7-0a0f-47ca-8bc3-317df3a758d3" msprop:DbColumnName="Coeficiente_Rendimento" msprop:FriendlyName="Coeficiente_Rendimento" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="Semestre" msprop:design-time-name="1fa39411-ad83-4100-8814-9d5470062606" msprop:DbColumnName="Semestre" msprop:FriendlyName="Semestre" type="xs:unsignedByte" minOccurs="0" />
+                  <xs:element name="Media_Final" msprop:design-time-name="bd10463e-1d51-4068-9ccb-244cc4ba2a5a" msprop:DbColumnName="Media_Final" msprop:FriendlyName="Media_Final" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="Aulas_Dadas" msprop:design-time-name="da953c31-4274-4d08-9a07-45eb641a7f59" msprop:DbColumnName="Aulas_Dadas" msprop:FriendlyName="Aulas_Dadas" type="xs:int" minOccurs="0" />
+                  <xs:element name="Faltas" msprop:design-time-name="224346f2-da5a-4ba8-af49-f02f7a290671" msprop:DbColumnName="Faltas" msprop:FriendlyName="Faltas" type="xs:short" minOccurs="0" />
+                  <xs:element name="Renda_Familiar" msprop:design-time-name="f474c423-9ce5-4ea1-8bb5-006fcf9a7eb0" msprop:DbColumnName="Renda_Familiar" msprop:FriendlyName="Renda_Familiar" type="xs:short" minOccurs="0" />
+                  <xs:element name="Forma_De_Ingresso" msprop:design-time-name="d711181e-a0db-4891-81ac-9ebec674313a" msprop:DbColumnName="Forma_De_Ingresso" msprop:FriendlyName="Forma_De_Ingresso" type="xs:int" minOccurs="0" />
+                  <xs:element name="SituacaoI" msprop:design-time-name="be7eb884-cbff-4d5a-b788-65cafc557b55" msprop:DbColumnName="SituacaoI" msprop:FriendlyName="SituacaoI" type="xs:int" minOccurs="0" />
+                  <xs:element name="SituacaoII" msprop:design-time-name="511562ed-6cfe-463a-85d5-fb3a8722641f" msprop:DbColumnName="SituacaoII" msprop:FriendlyName="SituacaoII" type="xs:int" minOccurs="0" />
+                  <xs:element name="Area_Escola_Origem" msprop:design-time-name="374dd81b-8823-423e-87dd-fd408fe9a664" msprop:DbColumnName="Area_Escola_Origem" msprop:FriendlyName="Area_Escola_Origem" type="xs:int" minOccurs="0" />
+                  <xs:element name="Etnia" msprop:design-time-name="f325738b-5f11-489b-b327-f385ea43a122" msprop:DbColumnName="Etnia" msprop:FriendlyName="Etnia" type="xs:int" minOccurs="0" />
+                  <xs:element name="Reside_Com" msprop:design-time-name="bcbc578c-4dfe-4be8-8e92-78f8d529530a" msprop:DbColumnName="Reside_Com" msprop:FriendlyName="Reside_Com" type="xs:int" minOccurs="0" />
+                  <xs:element name="Sexo" msprop:design-time-name="ec612dd3-384d-4668-9950-6dea91d58e05" msprop:DbColumnName="Sexo" msprop:FriendlyName="Sexo" type="xs:int" minOccurs="0" />
+                  <xs:element name="Escola_Origem" msprop:design-time-name="41ee3e92-12ac-40df-bd06-f4aa35bc033d" msprop:DbColumnName="Escola_Origem" msprop:FriendlyName="Escola_Origem" type="xs:int" minOccurs="0" />
+                  <xs:element name="chave_alternativa" msprop:DbColumnName="chave_alternativa" msprop:design-time-name="2ab32437-1aeb-4b12-aa4a-f60b3589c7d4" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <Exibicao_x0020_Regregassão_x0020_e_x0020_Temporal xmlns="" />
+  </Schema>
+</DataSourceView>

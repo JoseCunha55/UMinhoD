@@ -1,0 +1,1833 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/6/2016 12:14:06 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="JOSEANTONIO-PC"
+  DTS:CreatorName="JOSEANTONIO-PC\José Antonio"
+  DTS:DTSID="{9E367D68-5A4A-486E-8F68-68028B8D9762}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.700.219"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="JuntarEvaDesConcluidos"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{E2B52A4A-3778-4AA3-A440-5E102F81658D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[JoseAntonio-pc.DDSEducacional]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{DA218CD3-C6B2-4A34-B18B-63B0CD1C6CD3}"
+      DTS:ObjectName="JoseAntonio-pc.DDSEducacional">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=JoseAntonio-pc;Initial Catalog=DDSEducacional;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[JOSEANTONIO-PC.sistema_academico]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{45B9C231-D56F-46F0-8B2D-5451531CDB55}"
+      DTS:ObjectName="JOSEANTONIO-PC.sistema_academico">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=JOSEANTONIO-PC;Initial Catalog=sistema_academico;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Unir dados de várias tabelas"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{25E24244-3640-4B9B-B891-74E254428AD6}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Unir dados de várias tabelas"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Alunos concluidos Acadêmico"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[CA_TOTAL_ALUNOS_CONCLUIDOS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[JOSEANTONIO-PC.sistema_academico]"
+                  connectionManagerRefId="Package.ConnectionManagers[JOSEANTONIO-PC.sistema_academico]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output].Columns[DESC_INSTITUICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output].ExternalColumns[DESC_INSTITUICAO]"
+                      length="50"
+                      lineageId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output].Columns[DESC_INSTITUICAO]"
+                      name="DESC_INSTITUICAO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output].Columns[SIGLA_CURSO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output].ExternalColumns[SIGLA_CURSO]"
+                      length="15"
+                      lineageId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output].Columns[SIGLA_CURSO]"
+                      name="SIGLA_CURSO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output].Columns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output].ExternalColumns[Desc_Curso]"
+                      length="273"
+                      lineageId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output].Columns[Desc_Curso]"
+                      name="Desc_Curso"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output].Columns[Situacao_Da_Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output].ExternalColumns[Situacao_Da_Matricula]"
+                      length="100"
+                      lineageId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output].Columns[Situacao_Da_Matricula]"
+                      name="Situacao_Da_Matricula"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output].Columns[ANO_LET]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output].ExternalColumns[ANO_LET]"
+                      lineageId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output].Columns[ANO_LET]"
+                      name="ANO_LET"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output].Columns[PERIODO_LET]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output].ExternalColumns[PERIODO_LET]"
+                      lineageId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output].Columns[PERIODO_LET]"
+                      name="PERIODO_LET"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output].Columns[QTD_ALUNO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output].ExternalColumns[QTD_ALUNO]"
+                      lineageId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output].Columns[QTD_ALUNO]"
+                      name="QTD_ALUNO"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output].ExternalColumns[DESC_INSTITUICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DESC_INSTITUICAO" />
+                    <externalMetadataColumn
+                      refId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output].ExternalColumns[SIGLA_CURSO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="SIGLA_CURSO" />
+                    <externalMetadataColumn
+                      refId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output].ExternalColumns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="273"
+                      name="Desc_Curso" />
+                    <externalMetadataColumn
+                      refId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output].ExternalColumns[Situacao_Da_Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Situacao_Da_Matricula" />
+                    <externalMetadataColumn
+                      refId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output].ExternalColumns[ANO_LET]"
+                      dataType="i2"
+                      name="ANO_LET" />
+                    <externalMetadataColumn
+                      refId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output].ExternalColumns[PERIODO_LET]"
+                      dataType="ui1"
+                      name="PERIODO_LET" />
+                    <externalMetadataColumn
+                      refId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output].ExternalColumns[QTD_ALUNO]"
+                      dataType="i4"
+                      name="QTD_ALUNO" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Error Output].Columns[DESC_INSTITUICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Error Output].Columns[DESC_INSTITUICAO]"
+                      name="DESC_INSTITUICAO" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Error Output].Columns[SIGLA_CURSO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Error Output].Columns[SIGLA_CURSO]"
+                      name="SIGLA_CURSO" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Error Output].Columns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="273"
+                      lineageId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Error Output].Columns[Desc_Curso]"
+                      name="Desc_Curso" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Error Output].Columns[Situacao_Da_Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Error Output].Columns[Situacao_Da_Matricula]"
+                      name="Situacao_Da_Matricula" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Error Output].Columns[ANO_LET]"
+                      dataType="i2"
+                      lineageId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Error Output].Columns[ANO_LET]"
+                      name="ANO_LET" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Error Output].Columns[PERIODO_LET]"
+                      dataType="ui1"
+                      lineageId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Error Output].Columns[PERIODO_LET]"
+                      name="PERIODO_LET" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Error Output].Columns[QTD_ALUNO]"
+                      dataType="i4"
+                      lineageId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Error Output].Columns[QTD_ALUNO]"
+                      name="QTD_ALUNO" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Unir dados de várias tabelas\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[dimCONDESLEVADIDOS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Unir dados de várias tabelas\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[JoseAntonio-pc.DDSEducacional]"
+                  connectionManagerRefId="Package.ConnectionManagers[JoseAntonio-pc.DDSEducacional]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Unir dados de várias tabelas\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Unir dados de várias tabelas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SIGLA_CURSO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="SIGLA_CURSO"
+                      externalMetadataColumnId="Package\Unir dados de várias tabelas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Sigla_Curso]"
+                      lineageId="Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1].Columns[SIGLA_CURSO]" />
+                    <inputColumn
+                      refId="Package\Unir dados de várias tabelas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[QTD_ALUNO]"
+                      cachedDataType="i4"
+                      cachedName="QTD_ALUNO"
+                      externalMetadataColumnId="Package\Unir dados de várias tabelas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QTD_Aluno]"
+                      lineageId="Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1].Columns[QTD_ALUNO]" />
+                    <inputColumn
+                      refId="Package\Unir dados de várias tabelas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DESC_INSTITUICAO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DESC_INSTITUICAO"
+                      externalMetadataColumnId="Package\Unir dados de várias tabelas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Campus]"
+                      lineageId="Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1].Columns[DESC_INSTITUICAO]" />
+                    <inputColumn
+                      refId="Package\Unir dados de várias tabelas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Desc_Curso]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="273"
+                      cachedName="Desc_Curso"
+                      externalMetadataColumnId="Package\Unir dados de várias tabelas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Curso]"
+                      lineageId="Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1].Columns[Desc_Curso]" />
+                    <inputColumn
+                      refId="Package\Unir dados de várias tabelas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Situacao_Da_Matricula]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Situacao_Da_Matricula"
+                      externalMetadataColumnId="Package\Unir dados de várias tabelas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Situacao]"
+                      lineageId="Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1].Columns[Situacao_Da_Matricula]" />
+                    <inputColumn
+                      refId="Package\Unir dados de várias tabelas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ANO_LET]"
+                      cachedDataType="i2"
+                      cachedName="ANO_LET"
+                      externalMetadataColumnId="Package\Unir dados de várias tabelas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ano]"
+                      lineageId="Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1].Columns[ANO_LET]" />
+                    <inputColumn
+                      refId="Package\Unir dados de várias tabelas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PERIODO_LET]"
+                      cachedDataType="ui1"
+                      cachedName="PERIODO_LET"
+                      externalMetadataColumnId="Package\Unir dados de várias tabelas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Periodo]"
+                      lineageId="Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1].Columns[PERIODO_LET]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Unir dados de várias tabelas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AlunoID]"
+                      dataType="i4"
+                      name="AlunoID" />
+                    <externalMetadataColumn
+                      refId="Package\Unir dados de várias tabelas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Campus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Campus" />
+                    <externalMetadataColumn
+                      refId="Package\Unir dados de várias tabelas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Sigla_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="Sigla_Curso" />
+                    <externalMetadataColumn
+                      refId="Package\Unir dados de várias tabelas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="273"
+                      name="Curso" />
+                    <externalMetadataColumn
+                      refId="Package\Unir dados de várias tabelas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Situacao]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Situacao" />
+                    <externalMetadataColumn
+                      refId="Package\Unir dados de várias tabelas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ano]"
+                      dataType="i2"
+                      name="Ano" />
+                    <externalMetadataColumn
+                      refId="Package\Unir dados de várias tabelas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Periodo]"
+                      dataType="ui1"
+                      name="Periodo" />
+                    <externalMetadataColumn
+                      refId="Package\Unir dados de várias tabelas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QTD_Aluno]"
+                      dataType="i4"
+                      name="QTD_Aluno" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Unir dados de várias tabelas\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Unir dados de várias tabelas\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Unir dados de várias tabelas\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Unir dados de várias tabelas\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Total aluno desligados acadêmico"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[CA_TOTAL_ALUNOS_DESLIGADOS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[JOSEANTONIO-PC.sistema_academico]"
+                  connectionManagerRefId="Package.ConnectionManagers[JOSEANTONIO-PC.sistema_academico]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output].Columns[DESC_INSTITUICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output].ExternalColumns[DESC_INSTITUICAO]"
+                      length="50"
+                      lineageId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output].Columns[DESC_INSTITUICAO]"
+                      name="DESC_INSTITUICAO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output].Columns[SIGLA_CURSO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output].ExternalColumns[SIGLA_CURSO]"
+                      length="15"
+                      lineageId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output].Columns[SIGLA_CURSO]"
+                      name="SIGLA_CURSO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output].Columns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output].ExternalColumns[Desc_Curso]"
+                      length="273"
+                      lineageId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output].Columns[Desc_Curso]"
+                      name="Desc_Curso"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output].Columns[Situacao_Da_Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output].ExternalColumns[Situacao_Da_Matricula]"
+                      length="100"
+                      lineageId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output].Columns[Situacao_Da_Matricula]"
+                      name="Situacao_Da_Matricula"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output].Columns[ANO_LET]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output].ExternalColumns[ANO_LET]"
+                      lineageId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output].Columns[ANO_LET]"
+                      name="ANO_LET"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output].Columns[PERIODO_LET]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output].ExternalColumns[PERIODO_LET]"
+                      lineageId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output].Columns[PERIODO_LET]"
+                      name="PERIODO_LET"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output].Columns[QTD_ALUNO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output].ExternalColumns[QTD_ALUNO]"
+                      lineageId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output].Columns[QTD_ALUNO]"
+                      name="QTD_ALUNO"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output].ExternalColumns[DESC_INSTITUICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DESC_INSTITUICAO" />
+                    <externalMetadataColumn
+                      refId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output].ExternalColumns[SIGLA_CURSO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="SIGLA_CURSO" />
+                    <externalMetadataColumn
+                      refId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output].ExternalColumns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="273"
+                      name="Desc_Curso" />
+                    <externalMetadataColumn
+                      refId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output].ExternalColumns[Situacao_Da_Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Situacao_Da_Matricula" />
+                    <externalMetadataColumn
+                      refId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output].ExternalColumns[ANO_LET]"
+                      dataType="i2"
+                      name="ANO_LET" />
+                    <externalMetadataColumn
+                      refId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output].ExternalColumns[PERIODO_LET]"
+                      dataType="ui1"
+                      name="PERIODO_LET" />
+                    <externalMetadataColumn
+                      refId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output].ExternalColumns[QTD_ALUNO]"
+                      dataType="i4"
+                      name="QTD_ALUNO" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Error Output].Columns[DESC_INSTITUICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Error Output].Columns[DESC_INSTITUICAO]"
+                      name="DESC_INSTITUICAO" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Error Output].Columns[SIGLA_CURSO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Error Output].Columns[SIGLA_CURSO]"
+                      name="SIGLA_CURSO" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Error Output].Columns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="273"
+                      lineageId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Error Output].Columns[Desc_Curso]"
+                      name="Desc_Curso" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Error Output].Columns[Situacao_Da_Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Error Output].Columns[Situacao_Da_Matricula]"
+                      name="Situacao_Da_Matricula" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Error Output].Columns[ANO_LET]"
+                      dataType="i2"
+                      lineageId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Error Output].Columns[ANO_LET]"
+                      name="ANO_LET" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Error Output].Columns[PERIODO_LET]"
+                      dataType="ui1"
+                      lineageId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Error Output].Columns[PERIODO_LET]"
+                      name="PERIODO_LET" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Error Output].Columns[QTD_ALUNO]"
+                      dataType="i4"
+                      lineageId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Error Output].Columns[QTD_ALUNO]"
+                      name="QTD_ALUNO" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Total alunos evadidos acadêmico"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[CA_TOTAL_ALUNOS_EVADIDOS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[JOSEANTONIO-PC.sistema_academico]"
+                  connectionManagerRefId="Package.ConnectionManagers[JOSEANTONIO-PC.sistema_academico]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output].Columns[DESC_INSTITUICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output].ExternalColumns[DESC_INSTITUICAO]"
+                      length="50"
+                      lineageId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output].Columns[DESC_INSTITUICAO]"
+                      name="DESC_INSTITUICAO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output].Columns[SIGLA_CURSO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output].ExternalColumns[SIGLA_CURSO]"
+                      length="15"
+                      lineageId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output].Columns[SIGLA_CURSO]"
+                      name="SIGLA_CURSO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output].Columns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output].ExternalColumns[Desc_Curso]"
+                      length="273"
+                      lineageId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output].Columns[Desc_Curso]"
+                      name="Desc_Curso"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output].Columns[Situacao_Da_Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output].ExternalColumns[Situacao_Da_Matricula]"
+                      length="100"
+                      lineageId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output].Columns[Situacao_Da_Matricula]"
+                      name="Situacao_Da_Matricula"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output].Columns[ANO_LET]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output].ExternalColumns[ANO_LET]"
+                      lineageId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output].Columns[ANO_LET]"
+                      name="ANO_LET"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output].Columns[PERIODO_LET]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output].ExternalColumns[PERIODO_LET]"
+                      lineageId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output].Columns[PERIODO_LET]"
+                      name="PERIODO_LET"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output].Columns[QTD_ALUNO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output].ExternalColumns[QTD_ALUNO]"
+                      lineageId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output].Columns[QTD_ALUNO]"
+                      name="QTD_ALUNO"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output].ExternalColumns[DESC_INSTITUICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DESC_INSTITUICAO" />
+                    <externalMetadataColumn
+                      refId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output].ExternalColumns[SIGLA_CURSO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="SIGLA_CURSO" />
+                    <externalMetadataColumn
+                      refId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output].ExternalColumns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="273"
+                      name="Desc_Curso" />
+                    <externalMetadataColumn
+                      refId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output].ExternalColumns[Situacao_Da_Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Situacao_Da_Matricula" />
+                    <externalMetadataColumn
+                      refId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output].ExternalColumns[ANO_LET]"
+                      dataType="i2"
+                      name="ANO_LET" />
+                    <externalMetadataColumn
+                      refId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output].ExternalColumns[PERIODO_LET]"
+                      dataType="ui1"
+                      name="PERIODO_LET" />
+                    <externalMetadataColumn
+                      refId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output].ExternalColumns[QTD_ALUNO]"
+                      dataType="i4"
+                      name="QTD_ALUNO" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Error Output].Columns[DESC_INSTITUICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Error Output].Columns[DESC_INSTITUICAO]"
+                      name="DESC_INSTITUICAO" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Error Output].Columns[SIGLA_CURSO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Error Output].Columns[SIGLA_CURSO]"
+                      name="SIGLA_CURSO" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Error Output].Columns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="273"
+                      lineageId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Error Output].Columns[Desc_Curso]"
+                      name="Desc_Curso" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Error Output].Columns[Situacao_Da_Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Error Output].Columns[Situacao_Da_Matricula]"
+                      name="Situacao_Da_Matricula" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Error Output].Columns[ANO_LET]"
+                      dataType="i2"
+                      lineageId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Error Output].Columns[ANO_LET]"
+                      name="ANO_LET" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Error Output].Columns[PERIODO_LET]"
+                      dataType="ui1"
+                      lineageId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Error Output].Columns[PERIODO_LET]"
+                      name="PERIODO_LET" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Error Output].Columns[QTD_ALUNO]"
+                      dataType="i4"
+                      lineageId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Error Output].Columns[QTD_ALUNO]"
+                      name="QTD_ALUNO" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Unir dados de várias tabelas\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Unir dados de várias tabelas\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All.Inputs[Union All Input 1].Columns[DESC_INSTITUICAO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DESC_INSTITUICAO"
+                      lineageId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output].Columns[DESC_INSTITUICAO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1].Columns[DESC_INSTITUICAO]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All.Inputs[Union All Input 1].Columns[SIGLA_CURSO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="SIGLA_CURSO"
+                      lineageId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output].Columns[SIGLA_CURSO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1].Columns[SIGLA_CURSO]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All.Inputs[Union All Input 1].Columns[Desc_Curso]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="273"
+                      cachedName="Desc_Curso"
+                      lineageId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output].Columns[Desc_Curso]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1].Columns[Desc_Curso]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All.Inputs[Union All Input 1].Columns[Situacao_Da_Matricula]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Situacao_Da_Matricula"
+                      lineageId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output].Columns[Situacao_Da_Matricula]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1].Columns[Situacao_Da_Matricula]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All.Inputs[Union All Input 1].Columns[ANO_LET]"
+                      cachedDataType="i2"
+                      cachedName="ANO_LET"
+                      lineageId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output].Columns[ANO_LET]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1].Columns[ANO_LET]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All.Inputs[Union All Input 1].Columns[PERIODO_LET]"
+                      cachedDataType="ui1"
+                      cachedName="PERIODO_LET"
+                      lineageId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output].Columns[PERIODO_LET]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1].Columns[PERIODO_LET]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All.Inputs[Union All Input 1].Columns[QTD_ALUNO]"
+                      cachedDataType="i4"
+                      cachedName="QTD_ALUNO"
+                      lineageId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output].Columns[QTD_ALUNO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1].Columns[QTD_ALUNO]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Unir dados de várias tabelas\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All.Inputs[Union All Input 2].Columns[DESC_INSTITUICAO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DESC_INSTITUICAO"
+                      lineageId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output].Columns[DESC_INSTITUICAO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1].Columns[DESC_INSTITUICAO]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All.Inputs[Union All Input 2].Columns[SIGLA_CURSO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="SIGLA_CURSO"
+                      lineageId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output].Columns[SIGLA_CURSO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1].Columns[SIGLA_CURSO]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All.Inputs[Union All Input 2].Columns[Desc_Curso]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="273"
+                      cachedName="Desc_Curso"
+                      lineageId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output].Columns[Desc_Curso]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1].Columns[Desc_Curso]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All.Inputs[Union All Input 2].Columns[Situacao_Da_Matricula]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Situacao_Da_Matricula"
+                      lineageId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output].Columns[Situacao_Da_Matricula]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1].Columns[Situacao_Da_Matricula]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All.Inputs[Union All Input 2].Columns[ANO_LET]"
+                      cachedDataType="i2"
+                      cachedName="ANO_LET"
+                      lineageId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output].Columns[ANO_LET]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1].Columns[ANO_LET]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All.Inputs[Union All Input 2].Columns[PERIODO_LET]"
+                      cachedDataType="ui1"
+                      cachedName="PERIODO_LET"
+                      lineageId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output].Columns[PERIODO_LET]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1].Columns[PERIODO_LET]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All.Inputs[Union All Input 2].Columns[QTD_ALUNO]"
+                      cachedDataType="i4"
+                      cachedName="QTD_ALUNO"
+                      lineageId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output].Columns[QTD_ALUNO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1].Columns[QTD_ALUNO]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Unir dados de várias tabelas\Union All.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1].Columns[DESC_INSTITUICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1].Columns[DESC_INSTITUICAO]"
+                      name="DESC_INSTITUICAO" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1].Columns[SIGLA_CURSO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1].Columns[SIGLA_CURSO]"
+                      name="SIGLA_CURSO" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1].Columns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="273"
+                      lineageId="Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1].Columns[Desc_Curso]"
+                      name="Desc_Curso" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1].Columns[Situacao_Da_Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1].Columns[Situacao_Da_Matricula]"
+                      name="Situacao_Da_Matricula" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1].Columns[ANO_LET]"
+                      dataType="i2"
+                      lineageId="Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1].Columns[ANO_LET]"
+                      name="ANO_LET" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1].Columns[PERIODO_LET]"
+                      dataType="ui1"
+                      lineageId="Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1].Columns[PERIODO_LET]"
+                      name="PERIODO_LET" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1].Columns[QTD_ALUNO]"
+                      dataType="i4"
+                      lineageId="Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1].Columns[QTD_ALUNO]"
+                      name="QTD_ALUNO" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Unir dados de várias tabelas\Union All 1"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All 1"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Unir dados de várias tabelas\Union All 1.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All 1.Inputs[Union All Input 1].Columns[DESC_INSTITUICAO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DESC_INSTITUICAO"
+                      lineageId="Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1].Columns[DESC_INSTITUICAO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1].Columns[DESC_INSTITUICAO]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All 1.Inputs[Union All Input 1].Columns[SIGLA_CURSO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="SIGLA_CURSO"
+                      lineageId="Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1].Columns[SIGLA_CURSO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1].Columns[SIGLA_CURSO]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All 1.Inputs[Union All Input 1].Columns[Desc_Curso]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="273"
+                      cachedName="Desc_Curso"
+                      lineageId="Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1].Columns[Desc_Curso]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1].Columns[Desc_Curso]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All 1.Inputs[Union All Input 1].Columns[Situacao_Da_Matricula]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Situacao_Da_Matricula"
+                      lineageId="Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1].Columns[Situacao_Da_Matricula]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1].Columns[Situacao_Da_Matricula]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All 1.Inputs[Union All Input 1].Columns[ANO_LET]"
+                      cachedDataType="i2"
+                      cachedName="ANO_LET"
+                      lineageId="Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1].Columns[ANO_LET]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1].Columns[ANO_LET]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All 1.Inputs[Union All Input 1].Columns[PERIODO_LET]"
+                      cachedDataType="ui1"
+                      cachedName="PERIODO_LET"
+                      lineageId="Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1].Columns[PERIODO_LET]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1].Columns[PERIODO_LET]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All 1.Inputs[Union All Input 1].Columns[QTD_ALUNO]"
+                      cachedDataType="i4"
+                      cachedName="QTD_ALUNO"
+                      lineageId="Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1].Columns[QTD_ALUNO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1].Columns[QTD_ALUNO]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Unir dados de várias tabelas\Union All 1.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All 1.Inputs[Union All Input 2].Columns[DESC_INSTITUICAO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DESC_INSTITUICAO"
+                      lineageId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output].Columns[DESC_INSTITUICAO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1].Columns[DESC_INSTITUICAO]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All 1.Inputs[Union All Input 2].Columns[SIGLA_CURSO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="SIGLA_CURSO"
+                      lineageId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output].Columns[SIGLA_CURSO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1].Columns[SIGLA_CURSO]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All 1.Inputs[Union All Input 2].Columns[Desc_Curso]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="273"
+                      cachedName="Desc_Curso"
+                      lineageId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output].Columns[Desc_Curso]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1].Columns[Desc_Curso]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All 1.Inputs[Union All Input 2].Columns[Situacao_Da_Matricula]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Situacao_Da_Matricula"
+                      lineageId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output].Columns[Situacao_Da_Matricula]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1].Columns[Situacao_Da_Matricula]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All 1.Inputs[Union All Input 2].Columns[ANO_LET]"
+                      cachedDataType="i2"
+                      cachedName="ANO_LET"
+                      lineageId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output].Columns[ANO_LET]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1].Columns[ANO_LET]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All 1.Inputs[Union All Input 2].Columns[PERIODO_LET]"
+                      cachedDataType="ui1"
+                      cachedName="PERIODO_LET"
+                      lineageId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output].Columns[PERIODO_LET]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1].Columns[PERIODO_LET]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All 1.Inputs[Union All Input 2].Columns[QTD_ALUNO]"
+                      cachedDataType="i4"
+                      cachedName="QTD_ALUNO"
+                      lineageId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output].Columns[QTD_ALUNO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1].Columns[QTD_ALUNO]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Unir dados de várias tabelas\Union All 1.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1].Columns[DESC_INSTITUICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1].Columns[DESC_INSTITUICAO]"
+                      name="DESC_INSTITUICAO" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1].Columns[SIGLA_CURSO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1].Columns[SIGLA_CURSO]"
+                      name="SIGLA_CURSO" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1].Columns[Desc_Curso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="273"
+                      lineageId="Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1].Columns[Desc_Curso]"
+                      name="Desc_Curso" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1].Columns[Situacao_Da_Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1].Columns[Situacao_Da_Matricula]"
+                      name="Situacao_Da_Matricula" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1].Columns[ANO_LET]"
+                      dataType="i2"
+                      lineageId="Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1].Columns[ANO_LET]"
+                      name="ANO_LET" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1].Columns[PERIODO_LET]"
+                      dataType="ui1"
+                      lineageId="Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1].Columns[PERIODO_LET]"
+                      name="PERIODO_LET" />
+                    <outputColumn
+                      refId="Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1].Columns[QTD_ALUNO]"
+                      dataType="i4"
+                      lineageId="Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1].Columns[QTD_ALUNO]"
+                      name="QTD_ALUNO" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Unir dados de várias tabelas.Paths[OLE DB Source Output]"
+              endId="Package\Unir dados de várias tabelas\Union All.Inputs[Union All Input 1]"
+              name="OLE DB Source Output"
+              startId="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Unir dados de várias tabelas.Paths[OLE DB Source Output1]"
+              endId="Package\Unir dados de várias tabelas\Union All.Inputs[Union All Input 2]"
+              name="OLE DB Source Output"
+              startId="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Unir dados de várias tabelas.Paths[OLE DB Source Output2]"
+              endId="Package\Unir dados de várias tabelas\Union All 1.Inputs[Union All Input 2]"
+              name="OLE DB Source Output"
+              startId="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Unir dados de várias tabelas.Paths[Union All Output 1]"
+              endId="Package\Unir dados de várias tabelas\Union All 1.Inputs[Union All Input 1]"
+              name="Union All Output 1"
+              startId="Package\Unir dados de várias tabelas\Union All.Outputs[Union All Output 1]" />
+            <path
+              refId="Package\Unir dados de várias tabelas.Paths[Union All Output 11]"
+              endId="Package\Unir dados de várias tabelas\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Union All Output 1"
+              startId="Package\Unir dados de várias tabelas\Union All 1.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="211.2,41.6"
+          Id="Package\Unir dados de várias tabelas"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Unir dados de várias tabelas">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="236.8,41.6"
+          Id="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico"
+          TopLeft="318.642862475648,9.17058828677276" />
+        <NodeLayout
+          Size="216,41.6"
+          Id="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico"
+          TopLeft="40.6428572304395,7.3588231347424" />
+        <NodeLayout
+          Size="233.6,41.6"
+          Id="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico"
+          TopLeft="368.35714801477,108.323530012349" />
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\Unir dados de várias tabelas\Union All"
+          TopLeft="170.857145766823,118.682354605652" />
+        <EdgeLayout
+          Id="Package\Unir dados de várias tabelas.Paths[OLE DB Source Output]"
+          TopLeft="148.642857230439,48.9588231347424">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="63.5476218697166,69.7235314709093"
+              Start="0,0"
+              End="63.5476218697166,62.2235314709093">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.2836699498805" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.2836699498805"
+                    Point2="0,41.2836699498805"
+                    Point3="4,41.2836699498805" />
+                  <mssgle:LineSegment
+                    End="59.5476218697166,41.2836699498805" />
+                  <mssgle:CubicBezierSegment
+                    Point1="59.5476218697166,41.2836699498805"
+                    Point2="63.5476218697166,41.2836699498805"
+                    Point3="63.5476218697166,45.2836699498805" />
+                  <mssgle:LineSegment
+                    End="63.5476218697166,62.2235314709093" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Unir dados de várias tabelas.Paths[OLE DB Source Output1]"
+          TopLeft="437.042862475648,50.7705882867728">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-187.519050042159,67.9117663188789"
+              Start="0,0"
+              End="-187.519050042159,60.4117663188789">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.2109142677573" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36.2109142677573"
+                    Point2="0,40.2109142677573"
+                    Point3="-4,40.2109142677573" />
+                  <mssgle:LineSegment
+                    End="-183.519050042159,40.2109142677573" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-183.519050042159,40.2109142677573"
+                    Point2="-187.519050042159,40.2109142677573"
+                    Point3="-187.519050042159,44.2109142677573" />
+                  <mssgle:LineSegment
+                    End="-187.519050042159,60.4117663188789" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Unir dados de várias tabelas\Union All 1"
+          TopLeft="254.857147197334,208.611767631584" />
+        <EdgeLayout
+          Id="Package\Unir dados de várias tabelas.Paths[Union All Output 1]"
+          TopLeft="230.857145766823,160.282354605652">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="88.8000014305115,48.3294130259319"
+              Start="0,0"
+              End="88.8000014305115,40.8294130259319">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.164706512966" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.164706512966"
+                    Point2="0,24.164706512966"
+                    Point3="4,24.164706512966" />
+                  <mssgle:LineSegment
+                    End="84.8000014305115,24.164706512966" />
+                  <mssgle:CubicBezierSegment
+                    Point1="84.8000014305115,24.164706512966"
+                    Point2="88.8000014305115,24.164706512966"
+                    Point3="88.8000014305115,28.164706512966" />
+                  <mssgle:LineSegment
+                    End="88.8000014305115,40.8294130259319" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Unir dados de várias tabelas.Paths[OLE DB Source Output2]"
+          TopLeft="485.15714801477,149.923530012349">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-145.233334150769,58.6882376192351"
+              Start="0,0"
+              End="-145.233334150769,51.1882376192351">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.7835164426198" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.7835164426198"
+                    Point2="0,34.7835164426198"
+                    Point3="-4,34.7835164426198" />
+                  <mssgle:LineSegment
+                    End="-141.233334150769,34.7835164426198" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-141.233334150769,34.7835164426198"
+                    Point2="-145.233334150769,34.7835164426198"
+                    Point3="-145.233334150769,38.7835164426198" />
+                  <mssgle:LineSegment
+                    End="-145.233334150769,51.1882376192351" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Unir dados de várias tabelas\OLE DB Destination"
+          TopLeft="104.642857298559,334.70000335469" />
+        <EdgeLayout
+          Id="Package\Unir dados de várias tabelas.Paths[Union All Output 11]"
+          TopLeft="319.657147197334,250.211767631584">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-129.814289898775,84.4882357231061"
+              Start="0,0"
+              End="-129.814289898775,76.9882357231061">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.2441178615531" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38.2441178615531"
+                    Point2="0,42.2441178615531"
+                    Point3="-4,42.2441178615531" />
+                  <mssgle:LineSegment
+                    End="-125.814289898775,42.2441178615531" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-125.814289898775,42.2441178615531"
+                    Point2="-129.814289898775,42.2441178615531"
+                    Point3="-129.814289898775,46.2441178615531" />
+                  <mssgle:LineSegment
+                    End="-129.814289898775,76.9882357231061" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Unir dados de várias tabelas\Total aluno desligados acadêmico">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Unir dados de várias tabelas\Alunos concluidos Acadêmico">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Unir dados de várias tabelas\Total alunos evadidos acadêmico">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Unir dados de várias tabelas\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

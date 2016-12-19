@@ -1,0 +1,1521 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/25/2014 10:43:04 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="CUNHA-PC"
+  DTS:CreatorName="CUNHA-PC\Cunha"
+  DTS:DTSID="{964CF3C7-F780-443F-8378-0AB9BA322C44}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.700.219"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="ETLTurma"
+  DTS:PackageType="5"
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{4DA7D474-B851-450E-9413-D18D74A749AD}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.NDSEducacional]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{15B96481-1DFD-42D1-837F-2714D2AC1CE4}"
+      DTS:ObjectName="CUNHA-PC\SQLSERVER2014.NDSEducacional">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=CUNHA-PC\SQLSERVER2014;Initial Catalog=NDSEducacional;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{035CA602-BAF5-4A48-8D6A-5B02DE6F8BB9}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Cunha\Dropbox\SISEDUCA\Planilhas 2007\Turmas2014.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 3]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{6588316C-00E6-4112-A5F2-5E08C0615398}"
+      DTS:ObjectName="Excel Connection Manager 3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Cunha\Dropbox\SISEDUCA\Planilhas 2007\Turmas.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Tarefa Fluxo de Dados"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarefa Fluxo de Dados"
+      DTS:DTSID="{5E7DA30B-140B-4AE5-88D9-86966DB3324C}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarefa Fluxo de Dados"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Tarefa Fluxo de Dados\Classificar"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Classificar;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+              description="Classifica os dados de entrada em ordem crescente ou decrescente quando eles não podem ser classificados em sua origem. Por exemplo, classifique dados de vendas por 'customer id' antes de eles serem gravados em um arquivo simples e entregues a outro departamento. Observação: essa transformação não é recomendável para fluxos de dados grandes."
+              name="Classificar"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se a transformação Classificação remove linhas com valores de classificação duplicados."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o número máximo de threads a usar para classificação."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Tarefa Fluxo de Dados\Classificar.Inputs[Classificar Entrada]"
+                  name="Classificar Entrada">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Classificar.Inputs[Classificar Entrada].Columns[COD_HABILITACAO]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="COD_HABILITACAO"
+                      lineageId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[COD_HABILITACAO]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica as opções de comparação para os dados de caractere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica a ordem de classificação da coluna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Classificar.Inputs[Classificar Entrada].Columns[COD_INSTITUICAO]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="COD_INSTITUICAO"
+                      lineageId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[COD_INSTITUICAO]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica as opções de comparação para os dados de caractere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica a ordem de classificação da coluna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Classificar.Inputs[Classificar Entrada].Columns[COD_MATRIZ_CURRICULAR]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="COD_MATRIZ_CURRICULAR"
+                      lineageId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[COD_MATRIZ_CURRICULAR]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica as opções de comparação para os dados de caractere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica a ordem de classificação da coluna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Classificar.Inputs[Classificar Entrada].Columns[COD_CURSO]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="COD_CURSO"
+                      lineageId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[COD_CURSO]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica as opções de comparação para os dados de caractere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica a ordem de classificação da coluna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Classificar.Inputs[Classificar Entrada].Columns[DESC_TURMA]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DESC_TURMA"
+                      lineageId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[DESC_TURMA]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica as opções de comparação para os dados de caractere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica a ordem de classificação da coluna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Classificar.Inputs[Classificar Entrada].Columns[ANO_LET]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ANO_LET"
+                      lineageId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[ANO_LET]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica as opções de comparação para os dados de caractere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica a ordem de classificação da coluna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Classificar.Inputs[Classificar Entrada].Columns[PERIODO_LET]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PERIODO_LET"
+                      lineageId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[PERIODO_LET]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica as opções de comparação para os dados de caractere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica a ordem de classificação da coluna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Classificar.Inputs[Classificar Entrada].Columns[PERIODO]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PERIODO"
+                      lineageId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[PERIODO]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica as opções de comparação para os dados de caractere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica a ordem de classificação da coluna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Classificar.Inputs[Classificar Entrada].Columns[N_VAGAS]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="N_VAGAS"
+                      lineageId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[N_VAGAS]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica as opções de comparação para os dados de caractere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica a ordem de classificação da coluna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Classificar.Inputs[Classificar Entrada].Columns[Sigla_Turma]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Sigla_Turma"
+                      lineageId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[Sigla_Turma]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica as opções de comparação para os dados de caractere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica a ordem de classificação da coluna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Classificar.Inputs[Classificar Entrada].Columns[COD_TURMA]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="COD_TURMA"
+                      lineageId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[COD_TURMA]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica as opções de comparação para os dados de caractere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica a ordem de classificação da coluna."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída]"
+                  isSorted="true"
+                  name="Classificar Saída">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[COD_HABILITACAO]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[COD_HABILITACAO]"
+                      name="COD_HABILITACAO">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica o identificador de linhagem da coluna de entrada associada à coluna de saída."
+                          name="SortColumnId">#{Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[COD_HABILITACAO]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[COD_INSTITUICAO]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[COD_INSTITUICAO]"
+                      name="COD_INSTITUICAO">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica o identificador de linhagem da coluna de entrada associada à coluna de saída."
+                          name="SortColumnId">#{Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[COD_INSTITUICAO]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[COD_MATRIZ_CURRICULAR]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[COD_MATRIZ_CURRICULAR]"
+                      name="COD_MATRIZ_CURRICULAR">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica o identificador de linhagem da coluna de entrada associada à coluna de saída."
+                          name="SortColumnId">#{Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[COD_MATRIZ_CURRICULAR]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[COD_CURSO]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[COD_CURSO]"
+                      name="COD_CURSO">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica o identificador de linhagem da coluna de entrada associada à coluna de saída."
+                          name="SortColumnId">#{Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[COD_CURSO]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[DESC_TURMA]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[DESC_TURMA]"
+                      name="DESC_TURMA">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica o identificador de linhagem da coluna de entrada associada à coluna de saída."
+                          name="SortColumnId">#{Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[DESC_TURMA]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[ANO_LET]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[ANO_LET]"
+                      name="ANO_LET">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica o identificador de linhagem da coluna de entrada associada à coluna de saída."
+                          name="SortColumnId">#{Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[ANO_LET]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[PERIODO_LET]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[PERIODO_LET]"
+                      name="PERIODO_LET">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica o identificador de linhagem da coluna de entrada associada à coluna de saída."
+                          name="SortColumnId">#{Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[PERIODO_LET]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[PERIODO]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[PERIODO]"
+                      name="PERIODO">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica o identificador de linhagem da coluna de entrada associada à coluna de saída."
+                          name="SortColumnId">#{Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[PERIODO]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[N_VAGAS]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[N_VAGAS]"
+                      name="N_VAGAS">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica o identificador de linhagem da coluna de entrada associada à coluna de saída."
+                          name="SortColumnId">#{Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[N_VAGAS]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[Sigla_Turma]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[Sigla_Turma]"
+                      name="Sigla_Turma">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica o identificador de linhagem da coluna de entrada associada à coluna de saída."
+                          name="SortColumnId">#{Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[Sigla_Turma]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[COD_TURMA]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[COD_TURMA]"
+                      name="COD_TURMA"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica o identificador de linhagem da coluna de entrada associada à coluna de saída."
+                          name="SortColumnId">#{Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[COD_TURMA]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarefa Fluxo de Dados\Conversão de Dados"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Conversão de Dados;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;0"
+              description="Conversão de Dados"
+              name="Conversão de Dados"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Inputs[Entrada de Conversão de Dados]"
+                  name="Entrada de Conversão de Dados">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Inputs[Entrada de Conversão de Dados].Columns[COD_TURMA]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="COD_TURMA"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[COD_TURMA]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Inputs[Entrada de Conversão de Dados].Columns[COD_HABILITACAO]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="COD_HABILITACAO"
+                      lineageId="Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[COD_HABILITACAO]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Inputs[Entrada de Conversão de Dados].Columns[COD_INSTITUICAO]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="COD_INSTITUICAO"
+                      lineageId="Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[COD_INSTITUICAO]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Inputs[Entrada de Conversão de Dados].Columns[COD_MATRIZ_CURRICULAR]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="COD_MATRIZ_CURRICULAR"
+                      lineageId="Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[COD_MATRIZ_CURRICULAR]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Inputs[Entrada de Conversão de Dados].Columns[COD_CURSO]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="COD_CURSO"
+                      lineageId="Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[COD_CURSO]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Inputs[Entrada de Conversão de Dados].Columns[DESC_TURMA]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DESC_TURMA"
+                      lineageId="Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[DESC_TURMA]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Inputs[Entrada de Conversão de Dados].Columns[ANO_LET]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ANO_LET"
+                      lineageId="Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[ANO_LET]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Inputs[Entrada de Conversão de Dados].Columns[PERIODO_LET]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PERIODO_LET"
+                      lineageId="Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[PERIODO_LET]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Inputs[Entrada de Conversão de Dados].Columns[PERIODO]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PERIODO"
+                      lineageId="Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[PERIODO]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Inputs[Entrada de Conversão de Dados].Columns[N_VAGAS]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="N_VAGAS"
+                      lineageId="Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[N_VAGAS]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Inputs[Entrada de Conversão de Dados].Columns[Sigla_Turma]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Sigla_Turma"
+                      lineageId="Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[Sigla_Turma]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados]"
+                  exclusionGroup="1"
+                  name="Saída de Conversão de Dados"
+                  synchronousInputId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Inputs[Entrada de Conversão de Dados]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[COD_TURMA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      length="30"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[COD_TURMA]"
+                      name="COD_TURMA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                          name="SourceInputColumnLineageID">#{Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[COD_TURMA]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[COD_HABILITACAO]"
+                      dataType="i1"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[COD_HABILITACAO]"
+                      name="COD_HABILITACAO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                          name="SourceInputColumnLineageID">#{Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[COD_HABILITACAO]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[COD_INSTITUICAO]"
+                      dataType="i1"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[COD_INSTITUICAO]"
+                      name="COD_INSTITUICAO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                          name="SourceInputColumnLineageID">#{Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[COD_INSTITUICAO]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[COD_MATRIZ_CURRICULAR]"
+                      dataType="i1"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[COD_MATRIZ_CURRICULAR]"
+                      name="COD_MATRIZ_CURRICULAR"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                          name="SourceInputColumnLineageID">#{Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[COD_MATRIZ_CURRICULAR]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[COD_CURSO]"
+                      dataType="i1"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[COD_CURSO]"
+                      name="COD_CURSO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                          name="SourceInputColumnLineageID">#{Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[COD_CURSO]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[DESC_TURMA]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[DESC_TURMA]"
+                      name="DESC_TURMA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                          name="SourceInputColumnLineageID">#{Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[DESC_TURMA]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[ANO_LET]"
+                      dataType="i1"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[ANO_LET]"
+                      name="ANO_LET"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                          name="SourceInputColumnLineageID">#{Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[ANO_LET]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[PERIODO_LET]"
+                      dataType="i1"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[PERIODO_LET]"
+                      name="PERIODO_LET"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                          name="SourceInputColumnLineageID">#{Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[PERIODO_LET]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[PERIODO]"
+                      dataType="i1"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[PERIODO]"
+                      name="PERIODO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                          name="SourceInputColumnLineageID">#{Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[PERIODO]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[N_VAGAS]"
+                      dataType="i1"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[N_VAGAS]"
+                      name="N_VAGAS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                          name="SourceInputColumnLineageID">#{Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[N_VAGAS]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Sigla_Turma]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      length="30"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Sigla_Turma]"
+                      name="Sigla_Turma"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                          name="SourceInputColumnLineageID">#{Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída].Columns[Sigla_Turma]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Conversão de Dados"
+                  synchronousInputId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Inputs[Entrada de Conversão de Dados]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarefa Fluxo de Dados\DDS - dimTurma"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino OLE DB"
+              name="DDS - dimTurma"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[Turma]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.NDSEducacional]"
+                  connectionManagerRefId="Package.ConnectionManagers[CUNHA-PC\SQLSERVER2014.NDSEducacional]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Inputs[Entrada de Destino OLE DB]"
+                  errorOrTruncationOperation="Inserir"
+                  errorRowDisposition="IgnoreFailure"
+                  hasSideEffects="true"
+                  name="Entrada de Destino OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Inputs[Entrada de Destino OLE DB].Columns[COD_HABILITACAO]"
+                      cachedDataType="i1"
+                      cachedName="COD_HABILITACAO"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[COD_HABILITACAO]"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[COD_HABILITACAO]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Inputs[Entrada de Destino OLE DB].Columns[COD_INSTITUICAO]"
+                      cachedDataType="i1"
+                      cachedName="COD_INSTITUICAO"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[COD_INSTITUICAO]"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[COD_INSTITUICAO]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Inputs[Entrada de Destino OLE DB].Columns[COD_MATRIZ_CURRICULAR]"
+                      cachedDataType="i1"
+                      cachedName="COD_MATRIZ_CURRICULAR"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[COD_MATRIZ_CURRICULAR]"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[COD_MATRIZ_CURRICULAR]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Inputs[Entrada de Destino OLE DB].Columns[COD_CURSO]"
+                      cachedDataType="i1"
+                      cachedName="COD_CURSO"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[COD_CURSO]"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[COD_CURSO]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Inputs[Entrada de Destino OLE DB].Columns[DESC_TURMA]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DESC_TURMA"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[DESC_TURMA]"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[DESC_TURMA]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Inputs[Entrada de Destino OLE DB].Columns[ANO_LET]"
+                      cachedDataType="i1"
+                      cachedName="ANO_LET"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[ANO_LET]"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[ANO_LET]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Inputs[Entrada de Destino OLE DB].Columns[PERIODO_LET]"
+                      cachedDataType="i1"
+                      cachedName="PERIODO_LET"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[PERIODO_LET]"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[PERIODO_LET]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Inputs[Entrada de Destino OLE DB].Columns[PERIODO]"
+                      cachedDataType="i1"
+                      cachedName="PERIODO"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[PERIODO]"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[PERIODO]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Inputs[Entrada de Destino OLE DB].Columns[N_VAGAS]"
+                      cachedDataType="i1"
+                      cachedName="N_VAGAS"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[N_VAGAS]"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[N_VAGAS]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Inputs[Entrada de Destino OLE DB].Columns[Sigla_Turma]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="Sigla_Turma"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[Sigla_Turma]"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Sigla_Turma]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Inputs[Entrada de Destino OLE DB].Columns[COD_TURMA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="COD_TURMA"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[COD_TURMA]"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[COD_TURMA]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[COD_TURMA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="COD_TURMA" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[COD_HABILITACAO]"
+                      dataType="i4"
+                      name="COD_HABILITACAO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[COD_INSTITUICAO]"
+                      dataType="i4"
+                      name="COD_INSTITUICAO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[COD_MATRIZ_CURRICULAR]"
+                      dataType="i4"
+                      name="COD_MATRIZ_CURRICULAR" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[COD_CURSO]"
+                      dataType="i4"
+                      name="COD_CURSO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[DESC_TURMA]"
+                      dataType="wstr"
+                      length="255"
+                      name="DESC_TURMA" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[ANO_LET]"
+                      dataType="i4"
+                      name="ANO_LET" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[PERIODO_LET]"
+                      dataType="i4"
+                      name="PERIODO_LET" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[PERIODO]"
+                      dataType="i4"
+                      name="PERIODO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[N_VAGAS]"
+                      dataType="i4"
+                      name="N_VAGAS" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Inputs[Entrada de Destino OLE DB].ExternalColumns[Sigla_Turma]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="Sigla_Turma" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Outputs[Saída de Erro de Destino OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Destino OLE DB"
+                  synchronousInputId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Inputs[Entrada de Destino OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarefa Fluxo de Dados\Turma"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Origem do Excel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+              description="Origem do Excel"
+              name="Turma"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">Cad_Turmas1$</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="A variável que contém o comando SQL a ser executado."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="O mapeamento de parâmetros no comando SQL para variáveis."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarefa Fluxo de Dados\Turma.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel]"
+                  name="Saída de Origem do Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[COD_TURMA]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].ExternalColumns[COD_TURMA]"
+                      length="255"
+                      lineageId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[COD_TURMA]"
+                      name="COD_TURMA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[COD_HABILITACAO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].ExternalColumns[COD_HABILITACAO]"
+                      length="255"
+                      lineageId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[COD_HABILITACAO]"
+                      name="COD_HABILITACAO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[COD_INSTITUICAO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].ExternalColumns[COD_INSTITUICAO]"
+                      length="255"
+                      lineageId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[COD_INSTITUICAO]"
+                      name="COD_INSTITUICAO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[COD_MATRIZ_CURRICULAR]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].ExternalColumns[COD_MATRIZ_CURRICULAR]"
+                      length="255"
+                      lineageId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[COD_MATRIZ_CURRICULAR]"
+                      name="COD_MATRIZ_CURRICULAR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[COD_CURSO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].ExternalColumns[COD_CURSO]"
+                      length="255"
+                      lineageId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[COD_CURSO]"
+                      name="COD_CURSO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[DESC_TURMA]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].ExternalColumns[DESC_TURMA]"
+                      length="255"
+                      lineageId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[DESC_TURMA]"
+                      name="DESC_TURMA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[ANO_LET]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].ExternalColumns[ANO_LET]"
+                      length="255"
+                      lineageId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[ANO_LET]"
+                      name="ANO_LET"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[PERIODO_LET]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].ExternalColumns[PERIODO_LET]"
+                      length="255"
+                      lineageId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[PERIODO_LET]"
+                      name="PERIODO_LET"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[PERIODO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].ExternalColumns[PERIODO]"
+                      length="255"
+                      lineageId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[PERIODO]"
+                      name="PERIODO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[N_VAGAS]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].ExternalColumns[N_VAGAS]"
+                      length="255"
+                      lineageId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[N_VAGAS]"
+                      name="N_VAGAS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[Sigla_Turma]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].ExternalColumns[Sigla_Turma]"
+                      length="255"
+                      lineageId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].Columns[Sigla_Turma]"
+                      name="Sigla_Turma"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].ExternalColumns[COD_TURMA]"
+                      dataType="wstr"
+                      length="255"
+                      name="COD_TURMA" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].ExternalColumns[COD_HABILITACAO]"
+                      dataType="wstr"
+                      length="255"
+                      name="COD_HABILITACAO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].ExternalColumns[COD_INSTITUICAO]"
+                      dataType="wstr"
+                      length="255"
+                      name="COD_INSTITUICAO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].ExternalColumns[COD_MATRIZ_CURRICULAR]"
+                      dataType="wstr"
+                      length="255"
+                      name="COD_MATRIZ_CURRICULAR" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].ExternalColumns[COD_CURSO]"
+                      dataType="wstr"
+                      length="255"
+                      name="COD_CURSO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].ExternalColumns[DESC_TURMA]"
+                      dataType="wstr"
+                      length="255"
+                      name="DESC_TURMA" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].ExternalColumns[ANO_LET]"
+                      dataType="wstr"
+                      length="255"
+                      name="ANO_LET" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].ExternalColumns[PERIODO_LET]"
+                      dataType="wstr"
+                      length="255"
+                      name="PERIODO_LET" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].ExternalColumns[PERIODO]"
+                      dataType="wstr"
+                      length="255"
+                      name="PERIODO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].ExternalColumns[N_VAGAS]"
+                      dataType="wstr"
+                      length="255"
+                      name="N_VAGAS" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].ExternalColumns[Sigla_Turma]"
+                      dataType="wstr"
+                      length="255"
+                      name="Sigla_Turma" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel].ExternalColumns[Cod_Localizacao_Curso]"
+                      dataType="wstr"
+                      length="255"
+                      name="Cod_Localizacao_Curso" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Erro de Origem do Excel]"
+                  isErrorOut="true"
+                  name="Saída de Erro de Origem do Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Erro de Origem do Excel].Columns[COD_TURMA]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Erro de Origem do Excel].Columns[COD_TURMA]"
+                      name="COD_TURMA" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Erro de Origem do Excel].Columns[COD_HABILITACAO]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Erro de Origem do Excel].Columns[COD_HABILITACAO]"
+                      name="COD_HABILITACAO" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Erro de Origem do Excel].Columns[COD_INSTITUICAO]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Erro de Origem do Excel].Columns[COD_INSTITUICAO]"
+                      name="COD_INSTITUICAO" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Erro de Origem do Excel].Columns[COD_MATRIZ_CURRICULAR]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Erro de Origem do Excel].Columns[COD_MATRIZ_CURRICULAR]"
+                      name="COD_MATRIZ_CURRICULAR" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Erro de Origem do Excel].Columns[COD_CURSO]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Erro de Origem do Excel].Columns[COD_CURSO]"
+                      name="COD_CURSO" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Erro de Origem do Excel].Columns[DESC_TURMA]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Erro de Origem do Excel].Columns[DESC_TURMA]"
+                      name="DESC_TURMA" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Erro de Origem do Excel].Columns[ANO_LET]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Erro de Origem do Excel].Columns[ANO_LET]"
+                      name="ANO_LET" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Erro de Origem do Excel].Columns[PERIODO_LET]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Erro de Origem do Excel].Columns[PERIODO_LET]"
+                      name="PERIODO_LET" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Erro de Origem do Excel].Columns[PERIODO]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Erro de Origem do Excel].Columns[PERIODO]"
+                      name="PERIODO" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Erro de Origem do Excel].Columns[N_VAGAS]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Erro de Origem do Excel].Columns[N_VAGAS]"
+                      name="N_VAGAS" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Erro de Origem do Excel].Columns[Sigla_Turma]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Erro de Origem do Excel].Columns[Sigla_Turma]"
+                      name="Sigla_Turma" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Tarefa Fluxo de Dados.Paths[Classificar Saída]"
+              endId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Inputs[Entrada de Conversão de Dados]"
+              name="Classificar Saída"
+              startId="Package\Tarefa Fluxo de Dados\Classificar.Outputs[Classificar Saída]" />
+            <path
+              refId="Package\Tarefa Fluxo de Dados.Paths[Saída de Conversão de Dados]"
+              endId="Package\Tarefa Fluxo de Dados\DDS - dimTurma.Inputs[Entrada de Destino OLE DB]"
+              name="Saída de Conversão de Dados"
+              startId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados]" />
+            <path
+              refId="Package\Tarefa Fluxo de Dados.Paths[Saída de Origem do Excel]"
+              endId="Package\Tarefa Fluxo de Dados\Classificar.Inputs[Classificar Entrada]"
+              name="Saída de Origem do Excel"
+              startId="Package\Tarefa Fluxo de Dados\Turma.Outputs[Saída de Origem do Excel]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="185,42"
+          Id="Package\Tarefa Fluxo de Dados"
+          TopLeft="122,75" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Tarefa Fluxo de Dados">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Tarefa Fluxo de Dados\Conversão de Dados"
+          TopLeft="410,227" />
+        <NodeLayout
+          Size="110,42"
+          Id="Package\Tarefa Fluxo de Dados\Turma"
+          TopLeft="231,31" />
+        <NodeLayout
+          Size="126,42"
+          Id="Package\Tarefa Fluxo de Dados\Classificar"
+          TopLeft="291,136" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Tarefa Fluxo de Dados\DDS - dimTurma"
+          TopLeft="280,327" />
+        <EdgeLayout
+          Id="Package\Tarefa Fluxo de Dados.Paths[Saída de Origem do Excel]"
+          TopLeft="286,73">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="68,63"
+              Start="0,0"
+              End="68,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.5"
+                    Point2="0,31.5"
+                    Point3="4,31.5" />
+                  <mssgle:LineSegment
+                    End="64,31.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="64,31.5"
+                    Point2="68,31.5"
+                    Point3="68,35.5" />
+                  <mssgle:LineSegment
+                    End="68,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tarefa Fluxo de Dados.Paths[Saída de Conversão de Dados]"
+          TopLeft="498,269">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-139,58"
+              Start="0,0"
+              End="-139,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25"
+                    Point2="0,29"
+                    Point3="-4,29" />
+                  <mssgle:LineSegment
+                    End="-135,29" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-135,29"
+                    Point2="-139,29"
+                    Point3="-139,33" />
+                  <mssgle:LineSegment
+                    End="-139,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tarefa Fluxo de Dados.Paths[Classificar Saída]"
+          TopLeft="354,178">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="144,49"
+              Start="0,0"
+              End="144,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.5"
+                    Point2="0,24.5"
+                    Point3="4,24.5" />
+                  <mssgle:LineSegment
+                    End="140,24.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="140,24.5"
+                    Point2="144,24.5"
+                    Point3="144,28.5" />
+                  <mssgle:LineSegment
+                    End="144,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarefa Fluxo de Dados\Turma">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarefa Fluxo de Dados\DDS - dimTurma">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

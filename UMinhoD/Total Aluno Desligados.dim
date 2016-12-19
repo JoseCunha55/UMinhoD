@@ -1,0 +1,220 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="dfff5574-6316-47b8-ba1d-363a288b0e6b" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Total Aluno Desligados</ID>
+  <Name>Total Aluno Desligados</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-3091" scrolltop="-6244" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="9737" y="16235" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="Total_Aluno_Desligados" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3514" height="3747" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000a0000ba0d0000a30e0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_Total_Aluno_Desligados" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-3091</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-6244</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="e69a3e8b-b4a5-451f-9d07-9c860303a2bb">
+    <DataSourceViewID>Con_Eva_Desligados</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="31199beb-5d5b-4f2d-988d-c6db2b13472d">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="0a8d41f8-54b1-4b2d-91e9-fb23e01cbd14">
+      <ID>Chave Alternativa</ID>
+      <Name>Chave Alternativa</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="693b4455-1a09-4d75-a92d-0214b4c7060e">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="17dd6dd6-831c-474f-addd-32759cc7d48c">
+            <TableID>dbo_Total_Aluno_Desligados</TableID>
+            <ColumnID>Chave_Alternativa</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="e9f9c174-117a-4e3e-a16b-94e03be084cc">
+          <AttributeID>Campus</AttributeID>
+          <Name>Campus</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="1f78e49e-aa07-465e-9cea-8092c88a251c">
+          <AttributeID>Sigla Do Curso</AttributeID>
+          <Name>Sigla Do Curso</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="c6675706-8c3c-409e-8872-6e343aec27dd">
+          <AttributeID>Curso</AttributeID>
+          <Name>Curso</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="5425851e-712d-49e5-bad4-8210302906be">
+          <AttributeID>Situacao</AttributeID>
+          <Name>Situacao</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="01cda3e4-37a4-44e4-87dd-7a302960c97b">
+          <AttributeID>Ano Letivo</AttributeID>
+          <Name>Ano Letivo</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ff8e0c4b-f199-4ac4-b695-28c65e3caac0">
+          <AttributeID>Semestre Letivo</AttributeID>
+          <Name>Semestre Letivo</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="99dcc8ee-b621-42c7-9832-74999cc736e0">
+      <ID>Campus</ID>
+      <Name>Campus</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="704dd628-3c9a-46f8-bec0-adaabc58aeaa">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="549f420e-d2ba-47fe-b143-abeec1bf6a9e">
+            <TableID>dbo_Total_Aluno_Desligados</TableID>
+            <ColumnID>Campus</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="7268008b-8a73-429e-8bf7-324ed75d40f2">
+      <ID>Sigla Do Curso</ID>
+      <Name>Sigla Do Curso</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="31c10986-0241-4468-a45f-a8ac9a916276">
+          <DataType>WChar</DataType>
+          <DataSize>15</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="bf00aec4-4d38-423b-a70b-2dde6b2d3896">
+            <TableID>dbo_Total_Aluno_Desligados</TableID>
+            <ColumnID>Sigla_Do_Curso</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b147d705-98e7-4060-8b2d-f4b0e83f3308">
+      <ID>Curso</ID>
+      <Name>Curso</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="902e3595-c923-496d-b8d4-407d27dedcb2">
+          <DataType>WChar</DataType>
+          <DataSize>300</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="abfa4301-afab-4bfa-8621-89b21c220295">
+            <TableID>dbo_Total_Aluno_Desligados</TableID>
+            <ColumnID>Curso</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="74d8080e-01bb-4941-9750-30755fa69da6">
+      <ID>Situacao</ID>
+      <Name>Situacao</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9f100a9e-ea75-445a-af45-00e1f2d1fe25">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0c78f6d4-208a-4b23-843e-d32f7d747ef8">
+            <TableID>dbo_Total_Aluno_Desligados</TableID>
+            <ColumnID>Situacao</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="4aa73268-7d0a-4da2-882d-c82ca128ae02">
+      <ID>Ano Letivo</ID>
+      <Name>Ano Letivo</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="cae2b59b-1d19-480a-8262-2cd24d1da656">
+          <DataType>SmallInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6b7a979c-92c6-44dd-b496-9b461fd7a319">
+            <TableID>dbo_Total_Aluno_Desligados</TableID>
+            <ColumnID>Ano_Letivo</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="3dab9c05-cafd-4978-a701-d0ba8f1c7bb0">
+      <ID>Semestre Letivo</ID>
+      <Name>Semestre Letivo</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="433fe694-3b73-4f50-9861-8cfafe132d9b">
+          <DataType>UnsignedTinyInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e8a7a375-b7f6-4ad0-ad8c-6388b10daec9">
+            <TableID>dbo_Total_Aluno_Desligados</TableID>
+            <ColumnID>Semestre_Letivo</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

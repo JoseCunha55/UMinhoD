@@ -1,0 +1,635 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="91efb352-0c63-4b88-a218-17ea1b4e3aee" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Cubo Aprovado_Reprovado_Curso_Disciplina</ID>
+  <Name>Cubo Aprovado_Reprovado_Curso_Disciplina</Name>
+  <CreatedTimestamp>0001-01-01T02:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T02:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="26" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-6601" scrolltop="-867" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="75" x="23029" y="16235" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="FatoAprReprCursoDisciplinaAnoMD" left="5496" top="11655" logicalid="13" controlid="1" masterid="0" hint1="0" hint2="0" width="5567" height="2667" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000a0000bf1500006b0a0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_FatoAprReprCursoDisciplinaAnoMD" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="FatoAprReprDisciplinaAnoMD" left="3449" top="1864" logicalid="14" controlid="2" masterid="0" hint1="0" hint2="0" width="5482" height="2307" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000a00006a15000003090000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_FatoAprReprDisciplinaAnoMD" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="FatoAprReprCursoAnoMD" left="3979" top="6891" logicalid="15" controlid="3" masterid="0" hint1="0" hint2="0" width="4995" height="2307" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000a00008313000003090000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_FatoAprReprCursoAnoMD" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="dimCURSOS" left="-2435" top="9752" logicalid="16" controlid="4" masterid="0" hint1="0" hint2="0" width="4805" height="4826" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000a0000c5120000da120000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_dimCURSOS" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="dimDISCIPLINAS" left="9771" top="4199" logicalid="17" controlid="5" masterid="0" hint1="0" hint2="0" width="5821" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000a0000bd16000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_dimDISCIPLINAS" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="dimDATA" left="-2725" top="2599" logicalid="18" controlid="6" masterid="0" hint1="0" hint2="0" width="5101" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000a0000ed13000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_dimDATA" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="2076" top="5250" logicalid="19" controlid="7" masterid="0" hint1="0" hint2="0" width="8153" height="6705" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_FatoAprReprCursoDisciplinaAnoMD_dimDATA]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="6" destid="1" sourceattachpoint="29" destattachpoint="14" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="2376" y="5649" />
+              <point x="9929" y="5649" />
+              <point x="9929" y="11655" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="5779" top="8700" logicalid="20" controlid="8" masterid="0" hint1="0" hint2="0" width="6202" height="3255" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_FatoAprReprCursoDisciplinaAnoMD_dimDISCIPLINAS]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="1" sourceattachpoint="7" destattachpoint="0" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="11581" y="9199" />
+              <point x="11581" y="10653" />
+              <point x="6079" y="10653" />
+              <point x="6079" y="11655" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="8631" top="2167" logicalid="21" controlid="9" masterid="0" hint1="0" hint2="0" width="1440" height="3282" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_FatoAprReprDisciplinaAnoMD_dimDISCIPLINAS]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="2" sourceattachpoint="24" destattachpoint="19" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="9771" y="5049" />
+              <point x="9371" y="5049" />
+              <point x="9371" y="2467" />
+              <point x="8931" y="2467" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="2076" top="2500" logicalid="22" controlid="10" masterid="0" hint1="0" hint2="0" width="1673" height="817" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_FatoAprReprDisciplinaAnoMD_dimDATA]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="6" destid="2" sourceattachpoint="19" destattachpoint="20" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="2376" y="2899" />
+              <point x="2983" y="2899" />
+              <point x="2983" y="3017" />
+              <point x="3449" y="3017" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="1218" top="7744" logicalid="23" controlid="11" masterid="0" hint1="0" hint2="0" width="3061" height="2508" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_FatoAprReprCursoAnoMD_dimCURSOS]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="3" sourceattachpoint="14" destattachpoint="20" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="1617" y="9752" />
+              <point x="1617" y="8044" />
+              <point x="3979" y="8044" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="2076" top="6900" logicalid="24" controlid="12" masterid="0" hint1="0" hint2="0" width="2203" height="894" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_FatoAprReprCursoAnoMD_dimDATA]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="6" destid="3" sourceattachpoint="35" destattachpoint="18" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="2376" y="7299" />
+              <point x="2917" y="7299" />
+              <point x="2917" y="7494" />
+              <point x="3979" y="7494" />
+            </connector>
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-6601</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-867</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>-2725</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>1864</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>75</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T02:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="81775ff4-e35a-4798-a9c4-a7bf14bff549">
+      <ID>Dim CURSOS 2</ID>
+      <Name>Dim CURSOS 2</Name>
+      <DimensionID>Dim CURSOS 2</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="42095a2e-c349-47fb-9070-4ae392773ff8">
+          <AttributeID>COD CURSO</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b7b01a5f-fbae-4e46-a84f-b4241cf201cf">
+          <AttributeID>DESC CURSO</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="181ac8ff-6cb0-48aa-9cfe-f88bcd4de2a2">
+          <AttributeID>SIGLA CURSO</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="0bce9b29-7dab-41fa-b058-2c7864b21818">
+      <ID>Dim DATA 2</ID>
+      <Name>Dim DATA 2</Name>
+      <DimensionID>Dim DATA 2</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="ac421715-232d-49d2-a920-de0dbd302198">
+          <AttributeID>ID Data</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="04d1390b-d6d7-43dd-af3f-35de36802c3c">
+          <AttributeID>DATA</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="293b1d73-db18-4369-b054-fb86bd872813">
+          <AttributeID>ANO</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="01e6ecfc-7c14-45ef-87ce-0a8817f9f690">
+          <AttributeID>MES</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4b72881d-3352-4e8d-af7e-a990fc65d747">
+          <AttributeID>BIMESTRE</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4d66141b-905d-4fe3-9f4e-c272a1e16456">
+          <AttributeID>TRIMESTRE</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d4416d5e-4c3b-466d-9577-a7989124b61e">
+          <AttributeID>SEMESTRE</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="758d9667-bbcb-4bc6-a09a-3895bb927fdd">
+      <ID>Dim DISCIPLINAS 1</ID>
+      <Name>Dim DISCIPLINAS 1</Name>
+      <DimensionID>Dim DISCIPLINAS 1</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="96642ddf-a7f1-4add-9114-03bc90044289">
+          <AttributeID>COD DISCIPLINA</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8e902955-4c07-4748-b2ca-4125c1ba01f8">
+          <AttributeID>DESC DISCIPLINA</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b10076d8-cee8-46ba-99f5-b38317bbe402">
+          <AttributeID>SIGLA DISCIPLINA</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="dff2d77c-a898-4d48-b6be-21cb2623b245">
+          <AttributeID>DESC DISCIPLINA SIMPLIFICADO</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="98a19899-3468-4607-a262-3f2b0f323999">
+      <ID>Fato Apr Repr Curso Ano MD</ID>
+      <Name>Fato Apr Repr Curso Ano MD</Name>
+      <CreatedTimestamp>0001-01-01T02:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T02:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T02:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="16733b21-3e40-4a94-a0fb-55900141a600">
+          <ID>Total Aprovado Curso Ano MD</ID>
+          <Name>Total Aprovado Curso Ano MD</Name>
+          <Source dwd:design-time-name="ab213e86-9e47-4a0a-a022-19112a6de30b">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="7a6c0200-c551-4715-8822-951f39b38443">
+              <TableID>dbo_FatoAprReprCursoAnoMD</TableID>
+              <ColumnID>TotalAprovadoCursoAnoMD</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="13b3159a-13c8-4169-982e-392f471a0b4c">
+          <ID>Total Reprovado Curso Ano MD</ID>
+          <Name>Total Reprovado Curso Ano MD</Name>
+          <Source dwd:design-time-name="69eca2e9-fe05-4173-9bf0-4c85ea5bb5c6">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="548304c0-8e80-4850-a173-db8261a47702">
+              <TableID>dbo_FatoAprReprCursoAnoMD</TableID>
+              <ColumnID>TotalReprovadoCursoAnoMD</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="de6e8828-c61b-496f-b631-c0e3433de2d0">
+          <ID>Fato Apr Repr Curso Ano MD Count</ID>
+          <Name>Fato Apr Repr Curso Ano MD Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="aace94bf-e9d7-4d8d-a4c7-3f332f1deb6a">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="51ee6eb0-6c9e-4e57-b352-4bc827a42a30">
+              <TableID>dbo_FatoAprReprCursoAnoMD</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <EstimatedRows>1521</EstimatedRows>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="eb62997b-631d-4795-afe1-8b08933d19b7">
+          <CubeDimensionID>Dim CURSOS 2</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="c7fe668e-7a4e-44de-8993-39e4ed96b659">
+              <AttributeID>COD CURSO</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="db4363b8-baaa-4fb7-a6a2-391bf89dbbac">
+                  <DataType>WChar</DataType>
+                  <DataSize>10</DataSize>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="1a391683-0606-46e2-82dd-908e72ea0065">
+                    <TableID>dbo_FatoAprReprCursoAnoMD</TableID>
+                    <ColumnID>Cod_Curso</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="5868a590-3b9e-48ca-8f18-7c7f04cbf290">
+          <CubeDimensionID>Dim DATA 2</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="87a0aebd-4d97-4a6b-ac44-846b1c7b1143">
+              <AttributeID>ID Data</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="f3fb3e83-6daf-4525-8ce5-6503f98e5e7d">
+                  <DataType>SmallInt</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="2744b6b5-8cdd-4303-a1f9-be5760e30506">
+                    <TableID>dbo_FatoAprReprCursoAnoMD</TableID>
+                    <ColumnID>Data_ID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+      <AggregationDesigns />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="8e5f0bc8-3d9c-4ebb-8a77-9218c1a2d0e3">
+      <ID>Fato Apr Repr Disciplina Ano MD</ID>
+      <Name>Fato Apr Repr Disciplina Ano MD</Name>
+      <CreatedTimestamp>0001-01-01T02:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T02:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T02:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="4e6d5291-27ab-4930-b9e1-f5e23263daa4">
+          <ID>Total Aprovado Disciplina Ano MD</ID>
+          <Name>Total Aprovado Disciplina Ano MD</Name>
+          <Source dwd:design-time-name="a6d18d9c-a720-43ba-8fed-062c20175f2d">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="6d51e0a3-ade1-4736-a59a-2d1af25c620e">
+              <TableID>dbo_FatoAprReprDisciplinaAnoMD</TableID>
+              <ColumnID>TotalAprovadoDisciplinaAnoMD</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="e17c5314-63c8-4969-b2d2-59ccd1c9da03">
+          <ID>Total Reprovado Disciplina Ano MD</ID>
+          <Name>Total Reprovado Disciplina Ano MD</Name>
+          <Source dwd:design-time-name="76d91e8c-a694-44c4-95f8-71f4d30e9762">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="4ddf725f-75ab-45df-a047-b3da7b1608dd">
+              <TableID>dbo_FatoAprReprDisciplinaAnoMD</TableID>
+              <ColumnID>TotalReprovadoDisciplinaAnoMD</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="6043e9d3-8a3d-4617-8de5-4fbb6d71d4d4">
+          <ID>Fato Apr Repr Disciplina Ano MD Count</ID>
+          <Name>Fato Apr Repr Disciplina Ano MD Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="6a0a3de1-2113-4e03-953a-b8388dc0b737">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="434c08c6-265b-4977-94c3-494f02dd9b3f">
+              <TableID>dbo_FatoAprReprDisciplinaAnoMD</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <EstimatedRows>4642</EstimatedRows>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="ac3184d9-ccd1-4a3d-a434-c0a48878e1ae">
+          <CubeDimensionID>Dim DISCIPLINAS 1</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="9510efbf-ba0a-4d3d-bda7-3fbe19579e2a">
+              <AttributeID>COD DISCIPLINA</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="ddbadd01-f73d-4997-bc80-9a21af29fd5b">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="e7b502f1-ea80-4715-a8b4-5aa420747332">
+                    <TableID>dbo_FatoAprReprDisciplinaAnoMD</TableID>
+                    <ColumnID>Cod_Disciplina</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="ce2efc68-ffb4-491a-9da4-973daea90c2b">
+          <CubeDimensionID>Dim DATA 2</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="c5449c42-3c43-483f-8303-a975e1f066e1">
+              <AttributeID>ID Data</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="0fb6058b-90ab-46b9-87e3-41dc2435f90f">
+                  <DataType>SmallInt</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="2b731dfc-b824-417a-8432-37616169425a">
+                    <TableID>dbo_FatoAprReprDisciplinaAnoMD</TableID>
+                    <ColumnID>Data_ID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+      <AggregationDesigns />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="63b75afe-4fd5-4692-bc43-b64549a03c7a">
+      <ID>Fato Apr Repr Curso Disciplina Ano MD</ID>
+      <Name>Fato Apr Repr Curso Disciplina Ano MD</Name>
+      <CreatedTimestamp>0001-01-01T02:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T02:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T02:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="da9bf3e6-9806-49ea-8246-eddb2321841f">
+          <ID>Cod Curso</ID>
+          <Name>Cod Curso</Name>
+          <Source dwd:design-time-name="f8b99617-3ddc-46ac-8f07-92ca685e16a2">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="d382401d-483d-4f44-bd2d-82bbf3dc38d6">
+              <TableID>dbo_FatoAprReprCursoDisciplinaAnoMD</TableID>
+              <ColumnID>Cod_Curso</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="a8a45b9a-9452-4ed1-88b9-672900d10d5c">
+          <ID>Total Aprovado Curso Disc Ano MD</ID>
+          <Name>Total Aprovado Curso Disc Ano MD</Name>
+          <Source dwd:design-time-name="b2d485b6-c120-40ce-bea0-94c4a447d62b">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="c019936f-7bfb-47e7-98d2-df24178327f0">
+              <TableID>dbo_FatoAprReprCursoDisciplinaAnoMD</TableID>
+              <ColumnID>TotalAprovadoCursoDiscAnoMD</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="26f564e4-38f4-4228-94c7-6025f6ff79f9">
+          <ID>Total Reprovado Curso Disc Ano MD</ID>
+          <Name>Total Reprovado Curso Disc Ano MD</Name>
+          <Source dwd:design-time-name="72921df8-2b22-431b-845c-585660e972d0">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="fc98b63c-0fd2-446b-ac99-4aa39b923e6f">
+              <TableID>dbo_FatoAprReprCursoDisciplinaAnoMD</TableID>
+              <ColumnID>TotalReprovadoCursoDiscAnoMD</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="56d69496-179b-4abb-9d86-b0e04bfb6295">
+          <ID>Fato Apr Repr Curso Disciplina Ano MD Count</ID>
+          <Name>Fato Apr Repr Curso Disciplina Ano MD Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="d75c88e2-5072-42b6-ba32-5031d9b28666">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="a75ae5ef-4eee-45e2-a93a-84b69dc98625">
+              <TableID>dbo_FatoAprReprCursoDisciplinaAnoMD</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <EstimatedRows>5665</EstimatedRows>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="3ddfafe0-6a18-4e29-8331-9627a3b114b1">
+          <CubeDimensionID>Dim DATA 2</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="5dabce2d-03b2-429e-b5a3-b1df196617b4">
+              <AttributeID>ID Data</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="14d12d7a-0ada-452f-918b-e9469693bd15">
+                  <DataType>SmallInt</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d7761dde-eb42-4dc2-9fd7-6ff04e576d13">
+                    <TableID>dbo_FatoAprReprCursoDisciplinaAnoMD</TableID>
+                    <ColumnID>Data_ID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="d575234e-f6e0-40d5-81d8-8a6baeae0838">
+          <CubeDimensionID>Dim DISCIPLINAS 1</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="f42233aa-c78c-4c33-a346-3d66db6018d4">
+              <AttributeID>COD DISCIPLINA</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="391e8c33-de75-47a1-8b5c-55171af8e8b6">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="79cc6aaa-84f0-4a99-869e-0026f023c8e5">
+                    <TableID>dbo_FatoAprReprCursoDisciplinaAnoMD</TableID>
+                    <ColumnID>Cod_Disciplina</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+      <AggregationDesigns />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="ad43d660-8e5c-4a55-bbcd-6b2e7b47dbaf">
+    <DataSourceViewID>Aprovado_Reprovado_Curso_Disciplina Educacional</DataSourceViewID>
+  </Source>
+  <MdxScripts>
+    <MdxScript dwd:design-time-name="7e9c9ba0-6995-4797-b178-4f0dee845c04">
+      <ID>MdxScript</ID>
+      <Name>MdxScript</Name>
+      <CreatedTimestamp>0001-01-01T02:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T02:00:00Z</LastSchemaUpdate>
+      <Commands>
+        <Command>
+          <Text>/*
+The CALCULATE command controls the aggregation of leaf cells in the cube.
+If the CALCULATE command is deleted or modified, the data within the cube is affected.
+You should edit this command only if you manually specify how the cube is aggregated.
+*/
+CALCULATE; 
+CREATE MEMBER CURRENTCUBE.[Measures].PerReprovadoDisciplina
+ AS ([Measures].[Total Reprovado Disciplina Ano MD]*100)/([Measures].[Total Aprovado Disciplina Ano MD]+[Measures].[Total Reprovado Disciplina Ano MD]), 
+FORMAT_STRING = "Percent", 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Fato Apr Repr Disciplina Ano MD'  ; 
+CREATE MEMBER CURRENTCUBE.[Measures].PerAprovadoDisciplina
+ AS ([Measures].[Total Aprovado Disciplina Ano MD]*100)/([Measures].[Total Aprovado Disciplina Ano MD]+[Measures].[Total Reprovado Disciplina Ano MD]), 
+FORMAT_STRING = "Percent", 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Fato Apr Repr Disciplina Ano MD'  ; 
+CREATE MEMBER CURRENTCUBE.[Measures].PerReprovadoCursoDisc
+ AS ([Measures].[Total Reprovado Curso Disc Ano MD]*100)/([Measures].[Total Aprovado Curso Disc Ano MD]+[Measures].[Total Reprovado Curso Disc Ano MD]), 
+FORMAT_STRING = "Percent", 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Fato Apr Repr Curso Disciplina Ano MD'  ; 
+CREATE MEMBER CURRENTCUBE.[Measures].PerAprovadoCursoDisc
+ AS ([Measures].[Total Aprovado Curso Disc Ano MD]*100)/([Measures].[Total Aprovado Curso Disc Ano MD]+[Measures].[Total Reprovado Curso Disc Ano MD]), 
+FORMAT_STRING = "Percent", 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Fato Apr Repr Curso Disciplina Ano MD'  ; 
+CREATE MEMBER CURRENTCUBE.[Measures].PerReprovadosCurso
+ AS ([Measures].[Total Reprovado Curso Ano MD]*100)/([Measures].[Total Aprovado Curso Ano MD]+[Measures].[Total Reprovado Curso Ano MD]), 
+FORMAT_STRING = "Percent", 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Fato Apr Repr Curso Ano MD'  ; 
+CREATE MEMBER CURRENTCUBE.[Measures].PerAprovadosCurso
+ AS ([Measures].[Total Aprovado Curso Ano MD]*100)/([Measures].[Total Aprovado Curso Ano MD]+[Measures].[Total Reprovado Curso Ano MD]), 
+FORMAT_STRING = "Percent", 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Fato Apr Repr Curso Ano MD'  ; </Text>
+        </Command>
+      </Commands>
+    </MdxScript>
+  </MdxScripts>
+</Cube>

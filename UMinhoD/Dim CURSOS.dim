@@ -1,0 +1,203 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="26281ad9-0693-4248-94bf-3869f11abc2e" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Dim CURSOS</ID>
+  <Name>Dim CURSOS</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-3441" scrolltop="-5704" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="11726" y="16235" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="dimCURSOS" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="4805" height="4826" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000a0000c5120000da120000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_dimCURSOS" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-3441</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-5704</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="4a7877df-b99e-488a-8824-1dabb0375c67">
+    <DataSourceViewID>Fato Evidados Entrada Saida</DataSourceViewID>
+  </Source>
+  <UnknownMember>Visible</UnknownMember>
+  <ErrorConfiguration dwd:design-time-name="7fa4aee8-caa3-4145-a907-b57032a2f76f">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="a09bedfa-ce32-43ba-9390-b414b6db7c37">
+      <ID>COD CURSO</ID>
+      <Name>COD CURSO</Name>
+      <Usage>Key</Usage>
+      <EstimatedCount>696</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e742374f-48e2-48f9-8427-a196bff6533c">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <NullProcessing>UnknownMember</NullProcessing>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7e9c10db-5e31-4d7a-a6ab-dd762738036c">
+            <TableID>dbo_dimCURSOS</TableID>
+            <ColumnID>COD_CURSO</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="73e68956-8589-41f7-9030-a4de910a62c1">
+          <AttributeID>COD INSTITUICAO</AttributeID>
+          <Name>COD INSTITUICAO</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="1b498007-b786-4edf-a7f2-c91a3768512a">
+          <AttributeID>DESC CURSO</AttributeID>
+          <Name>DESC CURSO</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="c7df6c40-7f53-4359-8e3d-4823d7d54ce3">
+          <AttributeID>SIGLA CURSO</AttributeID>
+          <Name>SIGLA CURSO</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="be3fbf30-e3d4-4ef7-8aaa-a3ccdfc47a34">
+          <AttributeID>DT INICIO</AttributeID>
+          <Name>DT INICIO</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="185a8b1a-ec64-41e1-a821-6c3ec283337a">
+          <AttributeID>COD DEPARTAMENTO</AttributeID>
+          <Name>COD DEPARTAMENTO</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="8830ec1d-ea9b-464b-a19f-a9ad2d70c1eb">
+      <ID>COD INSTITUICAO</ID>
+      <Name>COD INSTITUICAO</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="dc5983bf-72fc-4e49-8b3a-c0ee4dfbd1d6">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="90bed3db-2a02-444f-ab70-0c029fbbc92e">
+            <TableID>dbo_dimCURSOS</TableID>
+            <ColumnID>COD_INSTITUICAO</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="6f9ea2e8-c895-4786-b1b2-689ef256732f">
+      <ID>DESC CURSO</ID>
+      <Name>DESC CURSO</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ec751893-a707-47b8-8c7c-f35e778e7437">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="328c78f8-f52c-4395-b9fd-0e9dfe94fc93">
+            <TableID>dbo_dimCURSOS</TableID>
+            <ColumnID>DESC_CURSO</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="ed04b0b1-88dc-4097-85e7-0b45cc0db1d6">
+      <ID>SIGLA CURSO</ID>
+      <Name>SIGLA CURSO</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="48b72738-42aa-42b4-b25f-3f15c7501c30">
+          <DataType>WChar</DataType>
+          <DataSize>15</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b707baf7-2d0e-49a3-a6bf-fa4a58d3db18">
+            <TableID>dbo_dimCURSOS</TableID>
+            <ColumnID>SIGLA_CURSO</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d98a35eb-e6dd-4a7b-b50f-46f79008e748">
+      <ID>DT INICIO</ID>
+      <Name>DT INICIO</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e778af39-0045-4785-9000-0a23d617d14d">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b0079d32-27bd-43fa-9926-0dab4eb8f6ef">
+            <TableID>dbo_dimCURSOS</TableID>
+            <ColumnID>DT_INICIO</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9338a49b-cc7d-4064-a515-9b757b036e02">
+      <ID>COD DEPARTAMENTO</ID>
+      <Name>COD DEPARTAMENTO</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="596e7508-a5d8-4c5b-bf3a-6b721f02f977">
+          <DataType>SmallInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d0d5564e-42db-497a-a1f2-8b4dc3cfc4ed">
+            <TableID>dbo_dimCURSOS</TableID>
+            <ColumnID>COD_DEPARTAMENTO</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

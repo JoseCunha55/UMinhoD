@@ -1,0 +1,134 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="29d600f7-3d32-4831-9579-cc870d93f49a" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Exibição Boletim Escolar AS</ID>
+  <Name>Exibição Boletim Escolar AS</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>DDS Educacional</DataSourceID>
+  <Schema>
+    <xs:schema id="Exibição_x0020_Boletim_x0020_Escolar_x0020_AS" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="Exibição_x0020_Boletim_x0020_Escolar_x0020_AS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="1092cebb-632b-4f0d-8b6c-0467e7beb29f">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_TB_AS_BoletimEscolar" msprop:design-time-name="b344fcd7-8445-48f0-80c1-9a801d7c7030" msprop:DbTableName="TB_AS_BoletimEscolar" msprop:FriendlyName="TB_AS_BoletimEscolar" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Boletim_ID" msprop:design-time-name="e81fa007-d190-4cc1-9eda-3e895c55c731" msprop:DbColumnName="Boletim_ID" msprop:FriendlyName="Boletim_ID" type="xs:int" />
+                  <xs:element name="Matricula" msprop:design-time-name="603f0c5b-598d-4ea0-8e0d-15081db463ab" msprop:DbColumnName="Matricula" msprop:FriendlyName="Matricula" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="AnoLetivo" msprop:design-time-name="ae140ebe-e7d0-4b53-84b8-dc9379de0bbb" msprop:DbColumnName="AnoLetivo" msprop:FriendlyName="AnoLetivo" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="4" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PeriodoLetivo" msprop:design-time-name="ea26eeb4-4868-4ba7-968c-c02a44efd6e5" msprop:DbColumnName="PeriodoLetivo" msprop:FriendlyName="PeriodoLetivo" type="xs:int" minOccurs="0" />
+                  <xs:element name="Curso" msprop:design-time-name="3701fdf8-1b38-4903-a458-fbc9938c3ac5" msprop:DbColumnName="Curso" msprop:FriendlyName="Curso" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Turma" msprop:design-time-name="7d5052c3-f73f-46d6-baf5-40ebcaaaee63" msprop:DbColumnName="Turma" msprop:FriendlyName="Turma" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="30" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Campus" msprop:design-time-name="04006bfe-d793-4697-94d2-0e9988ba98cb" msprop:DbColumnName="Campus" msprop:FriendlyName="Campus" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="35" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Situacao" msprop:design-time-name="d25a8137-96b4-455a-a860-df77ee720704" msprop:DbColumnName="Situacao" msprop:FriendlyName="Situacao" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PercentualFrequencia" msprop:design-time-name="b9e9b847-d53f-452a-9a82-83159b895270" msprop:DbColumnName="PercentualFrequencia" msprop:FriendlyName="PercentualFrequencia" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="SiglaCurso" msprop:design-time-name="0782d487-55ac-4866-850b-5a26251b77fb" msprop:DbColumnName="SiglaCurso" msprop:FriendlyName="SiglaCurso" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CoeficienteRendimento" msprop:design-time-name="e3e6114a-8ef0-490a-a1f2-0786cc7fc56f" msprop:DbColumnName="CoeficienteRendimento" msprop:FriendlyName="CoeficienteRendimento" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Frequencia" msprop:design-time-name="b9bb3042-cf01-4c58-a2ec-294f0ad2a231" msprop:DbColumnName="Frequencia" msprop:FriendlyName="Frequencia" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="Rendimento" msprop:design-time-name="73faaf82-c7e2-4c78-a044-b530445d692e" msprop:DbColumnName="Rendimento" msprop:FriendlyName="Rendimento" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="MediaFinal" msprop:design-time-name="085c6bba-dc3a-4d87-a0f9-5ad92d4c6512" msprop:DbColumnName="MediaFinal" msprop:FriendlyName="MediaFinal" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="15" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <Exibição_x0020_Boletim_x0020_Escolar_x0020_AS xmlns="" />
+  </Schema>
+</DataSourceView>
